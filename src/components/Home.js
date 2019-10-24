@@ -3,8 +3,8 @@ import DesignerSection from "./DesignerSection";
 import ProjectSection from "./ProjectSection";
 
 export default function Home() {
-  const [currentViewport, setCurrentViewport] = useState(0); // 0 === 'designer selection', 1 === 'project selection'
-  const [currentDesignArea, setCurrentDesignArea] = useState(0); // 0 === 'industrial, 1 === 'digital'
+  const [currentViewport, setCurrentViewport] = useState(0); // 0 === 'designer', 1 === 'project'
+  const [currentDesignArea, setCurrentDesignArea] = useState(0); // 0 === 'industrial', 1 === 'digital'
 
   const designerRef = useRef(null);
   const projectRef = useRef(null);
@@ -36,6 +36,7 @@ export default function Home() {
         projectRef={projectRef}
         currentDesignArea={currentDesignArea}
         selectViewport={selectViewport}
+        currentViewport={currentViewport}
       />
     </div>
   );

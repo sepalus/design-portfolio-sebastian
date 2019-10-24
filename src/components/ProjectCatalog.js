@@ -1,4 +1,5 @@
 import React from "react";
+import classNames from "classnames";
 
 const productDesignProjects = [
   { title: "Kaarna", subtitle: "Vehicle Design" },
@@ -6,9 +7,15 @@ const productDesignProjects = [
   { title: "Kuu", subtitle: "Light Design" }
 ];
 
-function ProjectCatalog() {
+function ProjectCatalog({ animateIn }) {
   return (
-    <div className="project-catalog">
+    <div
+      className={classNames(
+        "project-catalog",
+        { "animate-catalog-in": animateIn },
+        { "animate-catalog-out": !animateIn }
+      )}
+    >
       <h2>Product Design</h2>
       <ul className="project-catalog-projects">
         {productDesignProjects.map(project => (

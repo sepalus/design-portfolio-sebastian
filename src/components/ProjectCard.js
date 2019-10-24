@@ -1,4 +1,5 @@
 import React from "react";
+import classNames from "classnames";
 
 const kaarnaDesignProject = {
   title: "Kaarna",
@@ -17,9 +18,16 @@ const kaarnaStyle = {
 };
 
 const project = kaarnaDesignProject;
-function ProjectCard() {
+function ProjectCard({ animateIn }) {
   return (
-    <div className="project-card" style={kaarnaStyle}>
+    <div
+      className={classNames(
+        "project-card",
+        { "animate-card-in": animateIn },
+        { "animate-card-out": !animateIn }
+      )}
+      style={kaarnaStyle}
+    >
       <div className="project-card-description">
         <h1>01</h1>
         <h1>{project.title}</h1>
