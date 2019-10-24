@@ -14,21 +14,35 @@ $project-catalog-width: 360px;
 
 .project-catalog {
   display: none;
-  @media only screen and (min-width: $screen-m) {
-    position: absolute;
-    left: -$project-catalog-width;
-    display: block;
-    box-sizing: border-box;
-    width: $project-catalog-width;
-    height: 100%;
-    padding: 40px;
-    background-color: black;
-    color: white;
+  position: absolute;
+  left: -$project-catalog-width;
+  box-sizing: border-box;
+  width: $project-catalog-width;
+  height: 100%;
+  padding-top: 40px;
+  background-color: black;
+  color: white;
+
+  h2 {
+    padding-left: 40px;
   }
 
-  ul {
-    padding-left: 8px;
+  h3 {
+    margin-top: 0px;
   }
+
+  li {
+    padding: 12px 0px 12px 48px;
+  }
+
+  @media only screen and (min-width: $screen-m) {
+    display: block;
+  }
+}
+
+.project-catalog-active-project {
+  background-color: #2f2f2f;
+  padding-left: 54px !important;
 }
 
 .project-card {

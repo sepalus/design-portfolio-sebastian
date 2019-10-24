@@ -1,13 +1,12 @@
 import React from "react";
 import classNames from "classnames";
 
-const productDesignProjects = [
-  { title: "Kaarna", subtitle: "Vehicle Design" },
-  { title: "Puro", subtitle: "Acoustic Design" },
-  { title: "Kuu", subtitle: "Light Design" }
-];
-
-function ProjectCatalog({ animateIn }) {
+function ProjectCatalog({
+  projects,
+  activeProjectIndex,
+  setActiveProjectIndex,
+  animateIn
+}) {
   return (
     <div
       className={classNames(
@@ -18,20 +17,19 @@ function ProjectCatalog({ animateIn }) {
     >
       <h2>Product Design</h2>
       <ul className="project-catalog-projects">
-        {productDesignProjects.map(project => (
-          <CatalogueItem title={project.title} subtitle={project.subtitle} />
+        {projects.map((project, index) => (
+          <li
+            className={classNames({
+              "project-catalog-active-project": index === activeProjectIndex
+            })}
+            onMouseOver={() => setActiveProjectIndex(index)}
+          >
+            <h3>{project.title}</h3>
+            <p>{project.categories[project.displayableCategory]}</p>
+          </li>
         ))}
       </ul>
     </div>
-  );
-}
-
-function CatalogueItem({ title, subtitle }) {
-  return (
-    <li>
-      <h3>{title}</h3>
-      <p>{subtitle}</p>
-    </li>
   );
 }
 
