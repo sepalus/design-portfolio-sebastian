@@ -12,9 +12,8 @@ const kaarnaDesignProject = {
   isTeam: false,
   categories: ["Product Design", "Vehicle Design", "Urban Mobility"],
   displayableCategory: 1,
-  backgroundImage: "kaarna.jpg",
-  themeColor: "black",
   style: {
+    backgrounColor: "black",
     backgroundImage: `url('./assets/kaarna.jpg')`,
     color: "white"
   }
@@ -27,9 +26,8 @@ const tyyniDesignProject = {
   isTeam: false,
   categories: ["Product Design", "Acoustic Design", "Wall Panel"],
   displayableCategory: 1,
-  backgroundImage: "kuu.jpg",
-  themeColor: "black",
   style: {
+    backgrounColor: "black",
     backgroundImage: `url('./assets/tyyni.png')`,
     color: "white"
   }
@@ -42,9 +40,8 @@ const kuuDesignProject = {
   isTeam: false,
   categories: ["Product Design", "Light Design", "Smart Furniture"],
   displayableCategory: 1,
-  backgroundImage: "kuu.jpg",
-  themeColor: "black",
   style: {
+    backgrounColor: "black",
     backgroundImage: `url('./assets/kuu.png')`,
     color: "white"
   }
@@ -54,13 +51,56 @@ const museDesignProject = {
   title: "Muse",
   description: "Make Unique Successful Experiences",
   year: 2014,
-  isTeam: false,
+  isTeam: true,
   categories: ["Service Design", "Web Design", "UX Design"],
   displayableCategory: 0,
-  backgroundImage: "muse.jpg",
-  themeColor: "#5ac4ae",
   style: {
     backgroundImage: `url('./assets/muse.png')`,
+    backgroundColor: "#5ac4ae",
+    backgroundSize: "contain",
+    backgroundRepeat: "no-repeat",
+    color: "black"
+  }
+};
+
+const anneliinaDesignProject = {
+  title: "Anneliina",
+  description: "Kotihoitoa läheltäsi",
+  year: 2016,
+  isTeam: false,
+  categories: ["Web Design", "Brand Design", "UX Design"],
+  displayableCategory: 0,
+  style: {
+    backgroundImage: `url('./assets/anneliina.png')`,
+    backgroundColor: "#8abad4",
+    color: "black"
+  }
+};
+
+const scootDesignProject = {
+  title: "Scoot",
+  description: "Re-inventing urban mobility",
+  year: 2017,
+  isTeam: false,
+  categories: ["Web Design", "UI Design", "UX Design"],
+  displayableCategory: 0,
+  style: {
+    backgroundImage: `url('./assets/scoot.png')`,
+    backgroundColor: "#fff450",
+    color: "black"
+  }
+};
+
+const axiomDesignProject = {
+  title: "Axiom",
+  description: "Bringing university and industry together",
+  year: 2019,
+  isTeam: true,
+  categories: ["Service Design", "UX Design", "Concept Design"],
+  displayableCategory: 0,
+  style: {
+    backgroundImage: `url('./assets/axiom.png')`,
+    backgroundColor: "#edf7fd",
     color: "black"
   }
 };
@@ -70,7 +110,12 @@ const industrialProjects = [
   tyyniDesignProject,
   kuuDesignProject
 ];
-const digitalProjects = [museDesignProject];
+const digitalProjects = [
+  museDesignProject,
+  anneliinaDesignProject,
+  scootDesignProject,
+  axiomDesignProject
+];
 
 function ProjectSection({
   projectRef,
