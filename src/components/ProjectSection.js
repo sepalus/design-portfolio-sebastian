@@ -13,8 +13,10 @@ function ProjectSection({ projectRef, currentDesignArea, selectViewport }) {
         "project-selection-digital": currentDesignArea !== 0
       })}
     >
-      <ProjectCatalog />
-      <ProjectCard />
+      <div className="project-selection">
+        <ProjectCatalog />
+        <ProjectCard />
+      </div>
       <button onClick={() => selectViewport(0)}>Home</button>
     </section>
   );
