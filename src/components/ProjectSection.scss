@@ -1,0 +1,28 @@
+$screen-m: 768px;
+$screen-l: 1024px;
+$screen-xl: 1200px;
+
+.project-selection-digital {
+}
+
+.project-selection-container {
+}
+
+.project-catalog {
+  display: none;
+  @media only screen and (min-width: $screen-m) {
+    display: block;
+    width: 360px;
+    height: 100%;
+    padding: 40px;
+    background-color: black;
+    color: white;
+  }
+
+  ul {
+    padding-left: 8px;
+  }
+}
+
+.project-card {
+}
