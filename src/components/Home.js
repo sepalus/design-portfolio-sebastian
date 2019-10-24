@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import DesignerSection from "./DesignerSection";
 import ProjectSection from "./ProjectSection";
 
@@ -8,6 +8,16 @@ export default function Home() {
 
   const designerRef = useRef(null);
   const projectRef = useRef(null);
+  useEffect(() => {
+    window.addEventListener("scroll", detectViewportOnScroll);
+    return () => window.removeEventListener("scroll", detectViewportOnScroll);
+  }, []);
+
+  const detectViewportOnScroll = () => {
+    setCurrentViewport(
+      window.pageYOffset < projectRef.current.offsetTop ? 0 : 1
+    );
+  };
 
   const scrollToRef = ref =>
     window.scrollTo({
