@@ -27,7 +27,6 @@ export default function Home() {
     });
 
   const selectViewport = viewport => {
-    setCurrentViewport(viewport);
     scrollToRef(viewport === 0 ? designerRef : projectRef);
   };
 
