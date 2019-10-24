@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import classNames from "classnames";
 
 import ProjectCatalog from "./ProjectCatalog";
 import ProjectCard from "./ProjectCard";
@@ -37,7 +38,7 @@ const tyyniDesignProject = {
 const kuuDesignProject = {
   title: "Kuu",
   description: "Smart nightlight for smart people",
-  year: 2014,
+  year: 2016,
   isTeam: false,
   categories: ["Product Design", "Light Design", "Smart Furniture"],
   displayableCategory: 1,
@@ -49,7 +50,27 @@ const kuuDesignProject = {
   }
 };
 
-const projects = [kaarnaDesignProject, tyyniDesignProject, kuuDesignProject];
+const museDesignProject = {
+  title: "Muse",
+  description: "Make Unique Successful Experiences",
+  year: 2014,
+  isTeam: false,
+  categories: ["Service Design", "Web Design", "UX Design"],
+  displayableCategory: 0,
+  backgroundImage: "muse.jpg",
+  themeColor: "#5ac4ae",
+  style: {
+    backgroundImage: `url('./assets/muse.png')`,
+    color: "black"
+  }
+};
+
+const industrialProjects = [
+  kaarnaDesignProject,
+  tyyniDesignProject,
+  kuuDesignProject
+];
+const digitalProjects = [museDesignProject];
 
 function ProjectSection({
   projectRef,
@@ -58,10 +79,24 @@ function ProjectSection({
   selectViewport
 }) {
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
+  const projects =
+    currentDesignArea === 1 ? digitalProjects : industrialProjects;
+
+  if (activeProjectIndex >= projects.length) setActiveProjectIndex(0);
 
   return (
     <section ref={projectRef} className="project-section-container">
-      <div className="project-section">
+      <div
+        className={classNames(
+          "project-section",
+          {
+            "project-section-digital": currentDesignArea === 1
+          },
+          {
+            "project-section-industrial": currentDesignArea === 0
+          }
+        )}
+      >
         <ProjectCatalog
           projects={projects}
           activeProjectIndex={activeProjectIndex}

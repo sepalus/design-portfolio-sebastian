@@ -2,9 +2,8 @@ $screen-m: 768px;
 $screen-l: 1024px;
 $screen-xl: 1200px;
 $project-catalog-width: 360px;
-
-.project-section-digital {
-}
+$project-card-width: calc(100vw - 360px);
+$project-card-width-negative: calc(360px - 100vw);
 
 .project-section {
   width: 100%;
@@ -15,7 +14,6 @@ $project-catalog-width: 360px;
 .project-catalog {
   display: none;
   position: absolute;
-  left: -$project-catalog-width;
   box-sizing: border-box;
   width: $project-catalog-width;
   height: 100%;
@@ -47,82 +45,169 @@ $project-catalog-width: 360px;
 
 .project-card {
   position: absolute;
+  display: flex;
   background-size: cover;
   background-position: center;
   width: 100%;
   height: 100%;
   @media only screen and (min-width: $screen-m) {
-    left: 100vw;
-    width: calc(100vw - #{$project-catalog-width});
+    width: $project-card-width;
   }
 }
 
 .project-card-description {
-  padding: 30px 0px 0px 30px;
+  padding: 30px 30px 0px;
   width: 210px;
   @media only screen and (min-width: $screen-m) {
-    padding: 65px 0px 0px 40px;
+    padding: 65px 40px 0px;
     width: 260px;
   }
 }
 
-.animate-card-in {
-  @media only screen and (min-width: $screen-m) {
-    animation: cardLeftToRight 0.7s forwards;
-    animation-delay: 0.5s;
+.project-section-industrial {
+  .project-card {
+    left: 100vw;
+  }
+  .project-catalog {
+    left: -$project-catalog-width;
   }
 }
 
-.animate-card-out {
-  @media only screen and (min-width: $screen-m) {
-    animation: cardRightToLeft 0.7s forwards;
+.project-section-digital {
+  .project-card {
+    justify-content: flex-end;
+    left: $project-card-width-negative;
+    .project-card-description {
+      text-align: right;
+    }
+  }
+  .project-catalog {
+    left: 100vw;
   }
 }
 
-.animate-catalog-in {
-  @media only screen and (min-width: $screen-m) {
-    animation: catalogRightToLeft 0.5s forwards;
+.project-section-industrial {
+  .animate-card-in {
+    @media only screen and (min-width: $screen-m) {
+      animation: cardRightToLeft 0.7s forwards;
+      animation-delay: 0.5s;
+    }
+  }
+
+  .animate-card-out {
+    @media only screen and (min-width: $screen-m) {
+      animation: cardLeftToRight 0.7s forwards;
+    }
+  }
+
+  .animate-catalog-in {
+    @media only screen and (min-width: $screen-m) {
+      animation: catalogLeftToRight 0.5s forwards;
+    }
+  }
+
+  .animate-catalog-out {
+    @media only screen and (min-width: $screen-m) {
+      animation: catalogRightToLeft 0.5s forwards;
+    }
   }
 }
 
-.animate-catalog-out {
-  @media only screen and (min-width: $screen-m) {
-    animation: catalogLeftToRight 0.5s forwards;
+.project-section-digital {
+  .animate-card-in {
+    @media only screen and (min-width: $screen-m) {
+      animation: digitalCardLeftToRight 0.7s forwards;
+      animation-delay: 0.5s;
+    }
+  }
+
+  .animate-card-out {
+    @media only screen and (min-width: $screen-m) {
+      animation: digitalCardRightToLeft 0.7s forwards;
+    }
+  }
+
+  .animate-catalog-in {
+    @media only screen and (min-width: $screen-m) {
+      animation: digitalCatalogRightToLeft 0.5s forwards;
+    }
+  }
+
+  .animate-catalog-out {
+    @media only screen and (min-width: $screen-m) {
+      animation: digitalCatalogLeftToRight 0.5s forwards;
+    }
   }
 }
 
 @keyframes cardLeftToRight {
   from {
-    left: 100vw;
+    left: $project-catalog-width;
   }
   to {
-    left: $project-catalog-width;
+    left: 100vw;
   }
 }
 
 @keyframes cardRightToLeft {
   from {
+    left: 100vw;
+  }
+  to {
     left: $project-catalog-width;
+  }
+}
+
+@keyframes catalogLeftToRight {
+  from {
+    left: -$project-catalog-width;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@keyframes catalogRightToLeft {
+  from {
+    left: 0;
+  }
+  to {
+    left: -$project-catalog-width;
+  }
+}
+
+@keyframes digitalCardLeftToRight {
+  from {
+    left: $project-card-width-negative;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@keyframes digitalCardRightToLeft {
+  from {
+    left: 0;
+  }
+  to {
+    left: $project-card-width-negative;
+  }
+}
+
+@keyframes digitalCatalogLeftToRight {
+  from {
+    left: $project-card-width;
   }
   to {
     left: 100vw;
   }
 }
 
-@keyframes catalogLeftToRight {
+@keyframes digitalCatalogRightToLeft {
   from {
-    left: 0;
+    left: 100vw;
   }
   to {
-    left: -$project-catalog-width;
-  }
-}
-
-@keyframes catalogRightToLeft {
-  from {
-    left: -$project-catalog-width;
-  }
-  to {
-    left: 0;
+    left: $project-card-width;
   }
 }
