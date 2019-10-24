@@ -1,12 +1,12 @@
 import React from "react";
 
-function DesignerSection({ selectDesignArea }) {
+function DesignerSection({ designerRef, selectDesignArea }) {
   return (
-    <div>
+    <section ref={designerRef}>
       <button onClick={() => selectDesignArea(0)}>Industrial</button>
       <h1>Sebastian Design</h1>
       <button onClick={() => selectDesignArea(1)}>Digital</button>
-    </div>
+    </section>
   );
 }
 
