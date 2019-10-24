@@ -39,7 +39,7 @@ $project-catalog-width: 360px;
   height: 100%;
   @media only screen and (min-width: $screen-m) {
     left: 100vw;
-    width: calc(100vw - $project-catalog-width);
+    width: calc(100vw - #{$project-catalog-width});
   }
 }
 
@@ -54,27 +54,26 @@ $project-catalog-width: 360px;
 
 .animate-card-in {
   @media only screen and (min-width: $screen-m) {
-    animation: cardLeftToRight 0.8s forwards;
-    animation-delay: 1s;
+    animation: cardLeftToRight 0.7s forwards;
+    animation-delay: 0.5s;
   }
 }
 
 .animate-card-out {
   @media only screen and (min-width: $screen-m) {
-    animation: cardRightToLeft 0.8s forwards;
+    animation: cardRightToLeft 0.7s forwards;
   }
 }
 
 .animate-catalog-in {
   @media only screen and (min-width: $screen-m) {
-    animation: catalogRightToLeft 0.6s forwards;
-    animation-delay: 0.4s;
+    animation: catalogRightToLeft 0.5s forwards;
   }
 }
 
 .animate-catalog-out {
   @media only screen and (min-width: $screen-m) {
-    animation: catalogLeftToRight 0.6s forwards;
+    animation: catalogLeftToRight 0.5s forwards;
   }
 }
 
