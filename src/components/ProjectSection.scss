@@ -89,26 +89,26 @@ $project-card-width-negative: calc(360px - 100vw);
 .project-section-industrial {
   .animate-card-in {
     @media only screen and (min-width: $screen-m) {
-      animation: cardRightToLeft 0.7s forwards;
+      animation: industrialCardEnter 0.7s forwards;
       animation-delay: 0.5s;
     }
   }
 
   .animate-card-out {
     @media only screen and (min-width: $screen-m) {
-      animation: cardLeftToRight 0.7s forwards;
+      animation: industrialCardExit 0.7s forwards;
     }
   }
 
   .animate-catalog-in {
     @media only screen and (min-width: $screen-m) {
-      animation: catalogLeftToRight 0.5s forwards;
+      animation: industrialCatalogEnter 0.5s forwards;
     }
   }
 
   .animate-catalog-out {
     @media only screen and (min-width: $screen-m) {
-      animation: catalogRightToLeft 0.5s forwards;
+      animation: industrialCatalogExit 0.5s forwards;
     }
   }
 }
@@ -116,31 +116,31 @@ $project-card-width-negative: calc(360px - 100vw);
 .project-section-digital {
   .animate-card-in {
     @media only screen and (min-width: $screen-m) {
-      animation: digitalCardLeftToRight 0.7s forwards;
+      animation: digitalCardEnter 0.7s forwards;
       animation-delay: 0.5s;
     }
   }
 
   .animate-card-out {
     @media only screen and (min-width: $screen-m) {
-      animation: digitalCardRightToLeft 0.7s forwards;
+      animation: digitalCardExit 0.7s forwards;
     }
   }
 
   .animate-catalog-in {
     @media only screen and (min-width: $screen-m) {
-      animation: digitalCatalogRightToLeft 0.5s forwards;
+      animation: digitalCatalogEnter 0.5s forwards;
     }
   }
 
   .animate-catalog-out {
     @media only screen and (min-width: $screen-m) {
-      animation: digitalCatalogLeftToRight 0.5s forwards;
+      animation: digitalCatalogExit 0.5s forwards;
     }
   }
 }
 
-@keyframes cardLeftToRight {
+@keyframes industrialCardExit {
   from {
     left: $project-catalog-width;
   }
@@ -149,7 +149,7 @@ $project-card-width-negative: calc(360px - 100vw);
   }
 }
 
-@keyframes cardRightToLeft {
+@keyframes industrialCardEnter {
   from {
     left: 100vw;
   }
@@ -158,7 +158,7 @@ $project-card-width-negative: calc(360px - 100vw);
   }
 }
 
-@keyframes catalogLeftToRight {
+@keyframes industrialCatalogEnter {
   from {
     left: -$project-catalog-width;
   }
@@ -167,7 +167,7 @@ $project-card-width-negative: calc(360px - 100vw);
   }
 }
 
-@keyframes catalogRightToLeft {
+@keyframes industrialCatalogExit {
   from {
     left: 0;
   }
@@ -176,7 +176,7 @@ $project-card-width-negative: calc(360px - 100vw);
   }
 }
 
-@keyframes digitalCardLeftToRight {
+@keyframes digitalCardEnter {
   from {
     left: $project-card-width-negative;
   }
@@ -185,7 +185,7 @@ $project-card-width-negative: calc(360px - 100vw);
   }
 }
 
-@keyframes digitalCardRightToLeft {
+@keyframes digitalCardExit {
   from {
     left: 0;
   }
@@ -194,7 +194,7 @@ $project-card-width-negative: calc(360px - 100vw);
   }
 }
 
-@keyframes digitalCatalogLeftToRight {
+@keyframes digitalCatalogExit {
   from {
     left: $project-card-width;
   }
@@ -203,7 +203,7 @@ $project-card-width-negative: calc(360px - 100vw);
   }
 }
 
-@keyframes digitalCatalogRightToLeft {
+@keyframes digitalCatalogEnter {
   from {
     left: 100vw;
   }
