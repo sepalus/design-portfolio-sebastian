@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import classNames from "classnames";
 
 import ProjectCatalog from "./ProjectCatalog";
@@ -129,6 +129,10 @@ function ProjectSection({
     currentDesignArea.area === 1 ? digitalProjects : industrialProjects;
 
   if (activeProjectIndex >= projects.length) setActiveProjectIndex(0);
+
+  useEffect(() => {
+    setActiveProjectIndex(0);
+  }, [currentDesignArea]);
 
   return (
     <section ref={projectRef} className="project-section-container">
