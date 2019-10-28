@@ -183,7 +183,7 @@ function ProjectSection({
           className={classNames(
             "link-button project-section-button project-section-button-home",
             {
-              " project-section-button-left": currentDesignArea === 0
+              "project-section-button-left": currentDesignArea === 1
             }
           )}
           onClick={() => selectViewport(0)}
@@ -193,7 +193,7 @@ function ProjectSection({
         </button>
         <button
           className={classNames("link-button project-section-button", {
-            "project-section-button-left": currentDesignArea === 1
+            "project-section-button-left": currentDesignArea === 0
           })}
           onClick={() => {
             selectDesignArea(currentDesignArea === 1 ? 0 : 1, true);
@@ -203,12 +203,12 @@ function ProjectSection({
           {currentDesignArea === 1 ? (
             <>
               <h4>Product</h4>
-              <KeyboardArrowLeftIcon />
+              <KeyboardArrowRightIcon />
             </>
           ) : (
             <>
               <h4>Digital</h4>
-              <KeyboardArrowRightIcon />
+              <KeyboardArrowLeftIcon />
             </>
           )}
         </button>
