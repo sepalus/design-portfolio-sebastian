@@ -3,13 +3,17 @@ import classNames from "classnames";
 
 const formattedNumber = number => ("0" + number).slice(-2);
 
-function ProjectCard({ activeProject, activeProjectNumber, animateIn }) {
+function ProjectCard({
+  activeProject,
+  activeProjectNumber,
+  animationDirectionIn
+}) {
   return (
     <div
       className={classNames(
         "project-card",
-        { "animate-card-in": animateIn },
-        { "animate-card-out": !animateIn }
+        { "animate-card-in": animationDirectionIn },
+        { "animate-card-out": !animationDirectionIn }
       )}
       style={activeProject.style}
     >

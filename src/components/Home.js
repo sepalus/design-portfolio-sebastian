@@ -8,19 +8,23 @@ export default function Home() {
     area: 0,
     isSlide: false
   }); // 0 === 'industrial', 1 === 'digital'
+  const [shouldAnimate, setShouldAnimate] = useState(true);
 
   const designerRef = useRef(null);
   const projectRef = useRef(null);
+
   useEffect(() => {
+    const detectViewportOnScroll = () => {
+      const nextViewport =
+        window.pageYOffset < projectRef.current.offsetTop ? 0 : 1;
+      if (currentViewport !== nextViewport) {
+        setShouldAnimate(true);
+        setCurrentViewport(nextViewport);
+      }
+    };
     window.addEventListener("scroll", detectViewportOnScroll);
     return () => window.removeEventListener("scroll", detectViewportOnScroll);
-  }, []);
-
-  const detectViewportOnScroll = () => {
-    setCurrentViewport(
-      window.pageYOffset < projectRef.current.offsetTop ? 0 : 1
-    );
-  };
+  }, [currentViewport]);
 
   const scrollToRef = ref =>
     window.scrollTo({
@@ -29,13 +33,13 @@ export default function Home() {
       behavior: "smooth"
     });
 
-  const selectViewport = viewport => {
+  const selectViewport = viewport =>
     scrollToRef(viewport === 0 ? designerRef : projectRef);
-  };
 
-  const selectDesignArea = area => {
-    selectViewport(1);
+  const selectDesignArea = (area, animateOnChange) => {
     setCurrentDesignArea(area);
+    setShouldAnimate(animateOnChange);
+    selectViewport(1);
   };
 
   return (
@@ -47,6 +51,7 @@ export default function Home() {
       <ProjectSection
         projectRef={projectRef}
         currentViewport={currentViewport}
+        shouldAnimate={shouldAnimate}
         currentDesignArea={currentDesignArea}
         selectViewport={selectViewport}
         selectDesignArea={selectDesignArea}

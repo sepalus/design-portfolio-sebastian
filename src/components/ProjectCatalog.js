@@ -6,14 +6,14 @@ function ProjectCatalog({
   projects,
   activeProjectIndex,
   setActiveProjectIndex,
-  animateIn
+  animationDirectionIn
 }) {
   return (
     <div
       className={classNames(
         "project-catalog",
-        { "animate-catalog-in": animateIn },
-        { "animate-catalog-out": !animateIn }
+        { "animate-catalog-in": animationDirectionIn },
+        { "animate-catalog-out": !animationDirectionIn }
       )}
     >
       <h2>

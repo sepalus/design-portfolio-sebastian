@@ -64,8 +64,7 @@ $project-card-width-negative: calc(360px - 100vw);
   }
 }
 
-.project-section-industrial,
-.project-section-industrial-slide {
+.project-section-industrial {
   .project-card {
     left: 100vw;
   }
@@ -74,8 +73,7 @@ $project-card-width-negative: calc(360px - 100vw);
   }
 }
 
-.project-section-digital,
-.project-section-digital-slide {
+.project-section-digital {
   .project-card {
     justify-content: flex-end;
     left: $project-card-width-negative;
@@ -88,7 +86,7 @@ $project-card-width-negative: calc(360px - 100vw);
   }
 }
 
-.project-section-industrial {
+.project-section-industrial.project-section-animate {
   .animate-card-in {
     @media only screen and (min-width: $screen-m) {
       animation: industrialCardEnter 0.7s forwards;
@@ -115,7 +113,7 @@ $project-card-width-negative: calc(360px - 100vw);
   }
 }
 
-.project-section-digital {
+.project-section-digital.project-section-animate {
   .animate-card-in {
     @media only screen and (min-width: $screen-m) {
       animation: digitalCardEnter 0.7s forwards;
@@ -142,7 +140,7 @@ $project-card-width-negative: calc(360px - 100vw);
   }
 }
 
-.project-section-digital-slide {
+.project-section-digital.project-section-animate.project-section-slide {
   .animate-catalog-in {
     @media only screen and (min-width: $screen-m) {
       animation: catalogLeftToRight 1s forwards;
@@ -157,7 +155,7 @@ $project-card-width-negative: calc(360px - 100vw);
   }
 }
 
-.project-section-industrial-slide {
+.project-section-industrial.project-section-animate.project-section-slide {
   .animate-catalog-in {
     @media only screen and (min-width: $screen-m) {
       animation: catalogRightToLeft 1s forwards;

@@ -122,7 +122,8 @@ function ProjectSection({
   currentDesignArea,
   currentViewport,
   selectDesignArea,
-  selectViewport
+  selectViewport,
+  shouldAnimate
 }) {
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
   const projects =
@@ -140,20 +141,16 @@ function ProjectSection({
         className={classNames(
           "project-section",
           {
-            "project-section-digital":
-              currentDesignArea.area === 1 && !currentDesignArea.isSlide
+            "project-section-digital": currentDesignArea.area === 1
           },
           {
-            "project-section-digital-slide":
-              currentDesignArea.area === 1 && currentDesignArea.isSlide
+            "project-section-industrial": currentDesignArea.area === 0
           },
           {
-            "project-section-industrial":
-              currentDesignArea.area === 0 && !currentDesignArea.isSlide
+            "project-section-animate": shouldAnimate
           },
           {
-            "project-section-industrial-slide":
-              currentDesignArea.area === 0 && currentDesignArea.isSlide
+            "project-section-slide": currentDesignArea.isSlide
           }
         )}
       >
@@ -162,12 +159,12 @@ function ProjectSection({
           projects={projects}
           activeProjectIndex={activeProjectIndex}
           setActiveProjectIndex={setActiveProjectIndex}
-          animateIn={currentViewport === 1}
+          animationDirectionIn={currentViewport === 1}
         />
         <ProjectCard
           activeProject={projects[activeProjectIndex]}
           activeProjectNumber={activeProjectIndex + 1}
-          animateIn={currentViewport === 1}
+          animationDirectionIn={currentViewport === 1}
         />
       </div>
       <button
@@ -179,10 +176,13 @@ function ProjectSection({
       <button
         style={{ position: "absolute", bottom: "100px", left: " 200px" }}
         onClick={() =>
-          selectDesignArea({
-            area: currentDesignArea.area === 1 ? 0 : 1,
-            isSlide: true
-          })
+          selectDesignArea(
+            {
+              area: currentDesignArea.area === 1 ? 0 : 1,
+              isSlide: true
+            },
+            true
+          )
         }
       >
         {currentDesignArea.area === 1 ? "Product" : "Digital"}
