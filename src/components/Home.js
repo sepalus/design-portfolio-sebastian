@@ -4,7 +4,10 @@ import ProjectSection from "./ProjectSection";
 
 export default function Home() {
   const [currentViewport, setCurrentViewport] = useState(0); // 0 === 'designer', 1 === 'project'
-  const [currentDesignArea, setCurrentDesignArea] = useState(0); // 0 === 'industrial', 1 === 'digital'
+  const [currentDesignArea, setCurrentDesignArea] = useState({
+    area: 0,
+    isSlide: false
+  }); // 0 === 'industrial', 1 === 'digital'
 
   const designerRef = useRef(null);
   const projectRef = useRef(null);
@@ -43,9 +46,10 @@ export default function Home() {
       />
       <ProjectSection
         projectRef={projectRef}
+        currentViewport={currentViewport}
         currentDesignArea={currentDesignArea}
         selectViewport={selectViewport}
-        currentViewport={currentViewport}
+        selectDesignArea={selectDesignArea}
       />
     </div>
   );

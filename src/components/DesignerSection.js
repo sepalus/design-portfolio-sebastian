@@ -3,9 +3,13 @@ import React from "react";
 function DesignerSection({ designerRef, selectDesignArea }) {
   return (
     <section ref={designerRef}>
-      <button onClick={() => selectDesignArea(0)}>Industrial</button>
+      <button onClick={() => selectDesignArea({ area: 0, isSlide: false })}>
+        Product
+      </button>
       <h1>Sebastian Design</h1>
-      <button onClick={() => selectDesignArea(1)}>Digital</button>
+      <button onClick={() => selectDesignArea({ area: 1, isSlide: false })}>
+        Digital
+      </button>
     </section>
   );
 }

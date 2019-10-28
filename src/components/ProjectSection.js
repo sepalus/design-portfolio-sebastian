@@ -121,11 +121,12 @@ function ProjectSection({
   projectRef,
   currentDesignArea,
   currentViewport,
+  selectDesignArea,
   selectViewport
 }) {
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
   const projects =
-    currentDesignArea === 1 ? digitalProjects : industrialProjects;
+    currentDesignArea.area === 1 ? digitalProjects : industrialProjects;
 
   if (activeProjectIndex >= projects.length) setActiveProjectIndex(0);
 
@@ -135,14 +136,25 @@ function ProjectSection({
         className={classNames(
           "project-section",
           {
-            "project-section-digital": currentDesignArea === 1
+            "project-section-digital":
+              currentDesignArea.area === 1 && !currentDesignArea.isSlide
           },
           {
-            "project-section-industrial": currentDesignArea === 0
+            "project-section-digital-slide":
+              currentDesignArea.area === 1 && currentDesignArea.isSlide
+          },
+          {
+            "project-section-industrial":
+              currentDesignArea.area === 0 && !currentDesignArea.isSlide
+          },
+          {
+            "project-section-industrial-slide":
+              currentDesignArea.area === 0 && currentDesignArea.isSlide
           }
         )}
       >
         <ProjectCatalog
+          currentDesignArea={currentDesignArea}
           projects={projects}
           activeProjectIndex={activeProjectIndex}
           setActiveProjectIndex={setActiveProjectIndex}
@@ -159,6 +171,17 @@ function ProjectSection({
         onClick={() => selectViewport(0)}
       >
         Home
+      </button>
+      <button
+        style={{ position: "absolute", bottom: "100px", left: " 200px" }}
+        onClick={() =>
+          selectDesignArea({
+            area: currentDesignArea.area === 1 ? 0 : 1,
+            isSlide: true
+          })
+        }
+      >
+        {currentDesignArea.area === 1 ? "Product" : "Digital"}
       </button>
     </section>
   );
