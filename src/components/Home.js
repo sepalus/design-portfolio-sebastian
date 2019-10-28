@@ -4,10 +4,8 @@ import ProjectSection from "./ProjectSection";
 
 export default function Home() {
   const [currentViewport, setCurrentViewport] = useState(0); // 0 === 'designer', 1 === 'project'
-  const [currentDesignArea, setCurrentDesignArea] = useState({
-    area: 0,
-    isSlide: false
-  }); // 0 === 'industrial', 1 === 'digital'
+  const [currentDesignArea, setCurrentDesignArea] = useState(0); // 0 === 'industrial', 1 === 'digital'
+  const [isSlide, setIsSlide] = useState(false);
   const [shouldAnimate, setShouldAnimate] = useState(true);
 
   const designerRef = useRef(null);
@@ -17,6 +15,7 @@ export default function Home() {
     const detectViewportOnScroll = () => {
       const nextViewport =
         window.pageYOffset < projectRef.current.offsetTop ? 0 : 1;
+      if (nextViewport === 0) setIsSlide(false);
       if (currentViewport !== nextViewport) {
         setShouldAnimate(true);
         setCurrentViewport(nextViewport);
@@ -55,6 +54,8 @@ export default function Home() {
         currentDesignArea={currentDesignArea}
         selectViewport={selectViewport}
         selectDesignArea={selectDesignArea}
+        isSlide={isSlide}
+        setIsSlide={setIsSlide}
       />
     </div>
   );
