@@ -7,6 +7,7 @@ export default function Home() {
   const [currentDesignArea, setCurrentDesignArea] = useState(0); // 0 === 'industrial', 1 === 'digital'
   const [isSlide, setIsSlide] = useState(false);
   const [shouldAnimate, setShouldAnimate] = useState(true);
+  const [isButtonSticky, setIsButtonSticky] = useState(false);
 
   const designerRef = useRef(null);
   const projectRef = useRef(null);
@@ -15,7 +16,16 @@ export default function Home() {
     const detectViewportOnScroll = () => {
       const nextViewport =
         window.pageYOffset < projectRef.current.offsetTop ? 0 : 1;
+
+      // Set button stickyness
+      if (window.pageYOffset < window.innerHeight - 200)
+        setIsButtonSticky(false);
+      else setIsButtonSticky(true);
+
+      // Set design area slide
       if (nextViewport === 0) setIsSlide(false);
+
+      // Set viewport
       if (currentViewport !== nextViewport) {
         setShouldAnimate(true);
         setCurrentViewport(nextViewport);
@@ -45,7 +55,9 @@ export default function Home() {
     <div>
       <DesignerSection
         designerRef={designerRef}
+        currentDesignArea={currentDesignArea}
         selectDesignArea={selectDesignArea}
+        isButtonSticky={isButtonSticky && !isSlide}
       />
       <ProjectSection
         projectRef={projectRef}

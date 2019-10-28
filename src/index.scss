@@ -81,3 +81,14 @@ p {
 ul {
   list-style-type: none;
 }
+
+.link-button {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+}
+
+.link-button:focus {
+  outline: 0;
+}

@@ -1,0 +1,31 @@
+.designer-section-area {
+  button {
+    position: absolute;
+    top: calc(100vh - 150px);
+  }
+
+  .projects-button-sticky {
+    position: fixed;
+    top: 40px;
+  }
+}
+
+.designer-section-area-industrial {
+  button {
+    left: 40px;
+  }
+}
+
+.designer-section-area-digital {
+  button {
+    right: 40px;
+  }
+}
+
+.designer-section-image {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+}

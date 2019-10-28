@@ -16,9 +16,7 @@ function ProjectCatalog({
         { "animate-catalog-out": !animationDirectionIn }
       )}
     >
-      <h2>
-        {currentDesignArea.area === 1 ? "Digital Design" : "Product Design"}
-      </h2>
+      <h2>{currentDesignArea === 1 ? "Digital Design" : "Product Design"}</h2>
       <ul className="project-catalog-projects">
         {projects.map((project, index) => (
           <li
