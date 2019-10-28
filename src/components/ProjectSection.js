@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import classNames from "classnames";
+import KeyboardArrowLeftIcon from "@material-ui/icons/KeyboardArrowLeft";
+import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
+import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 
 import ProjectCatalog from "./ProjectCatalog";
 import ProjectCard from "./ProjectCard";
@@ -132,6 +135,7 @@ function ProjectSection({
     currentDesignArea === 1 ? digitalProjects : industrialProjects;
 
   if (activeProjectIndex >= projects.length) setActiveProjectIndex(0);
+  const activeProject = projects[activeProjectIndex];
 
   useEffect(() => {
     setActiveProjectIndex(0);
@@ -164,26 +168,51 @@ function ProjectSection({
           animationDirectionIn={currentViewport === 1}
         />
         <ProjectCard
-          activeProject={projects[activeProjectIndex]}
+          activeProject={activeProject}
           activeProjectNumber={activeProjectIndex + 1}
           animationDirectionIn={currentViewport === 1}
         />
       </div>
-      <button
-        style={{ position: "absolute", bottom: "100px", left: " 100px" }}
-        onClick={() => selectViewport(0)}
+      <div
+        className={classNames("project-section-button-wrapper", {
+          "project-section-button-wrapper-left": currentDesignArea === 1
+        })}
+        style={{ color: activeProject.style.color }}
       >
-        Home
-      </button>
-      <button
-        style={{ position: "absolute", bottom: "100px", left: " 200px" }}
-        onClick={() => {
-          selectDesignArea(currentDesignArea === 1 ? 0 : 1, true);
-          setIsSlide(true);
-        }}
-      >
-        {currentDesignArea === 1 ? "Product" : "Digital"}
-      </button>
+        <button
+          className={classNames(
+            "link-button project-section-button project-section-button-home",
+            {
+              " project-section-button-left": currentDesignArea === 0
+            }
+          )}
+          onClick={() => selectViewport(0)}
+        >
+          <h4>Home</h4>
+          <KeyboardArrowUpIcon />
+        </button>
+        <button
+          className={classNames("link-button project-section-button", {
+            "project-section-button-left": currentDesignArea === 1
+          })}
+          onClick={() => {
+            selectDesignArea(currentDesignArea === 1 ? 0 : 1, true);
+            setIsSlide(true);
+          }}
+        >
+          {currentDesignArea === 1 ? (
+            <>
+              <h4>Product</h4>
+              <KeyboardArrowLeftIcon />
+            </>
+          ) : (
+            <>
+              <h4>Digital</h4>
+              <KeyboardArrowRightIcon />
+            </>
+          )}
+        </button>
+      </div>
     </section>
   );
 }

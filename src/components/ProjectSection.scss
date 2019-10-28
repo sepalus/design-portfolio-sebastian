@@ -168,6 +168,34 @@ $project-card-width-negative: calc(360px - 100vw);
   }
 }
 
+.project-section-button-wrapper {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-section-button-wrapper-left {
+  left: 40px;
+}
+
+.project-section-button {
+  display: flex;
+  margin-bottom: 5px;
+  h4 {
+    margin: 0px 5px;
+  }
+  svg {
+    margin-top: 1px;
+  }
+}
+
+.project-section-button-left {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
 @keyframes industrialCardExit {
   from {
     left: $project-catalog-width;
