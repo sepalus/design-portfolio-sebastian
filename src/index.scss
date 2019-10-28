@@ -3,6 +3,7 @@ $screen-l: 1024px;
 $screen-xl: 1200px;
 
 body {
+  overflow-x: hidden;
   margin: 0;
   font-family: "Avenir", sans-serif;
   -webkit-font-smoothing: antialiased;
