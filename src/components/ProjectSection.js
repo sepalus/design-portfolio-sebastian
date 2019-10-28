@@ -16,7 +16,7 @@ const kaarnaDesignProject = {
   categories: ["Product Design", "Vehicle Design", "Urban Mobility"],
   displayableCategory: 1,
   style: {
-    backgrounColor: "black",
+    backgroundColor: "black",
     backgroundImage: `url('./assets/kaarna.jpg')`,
     color: "white"
   }
@@ -30,7 +30,7 @@ const tyyniDesignProject = {
   categories: ["Product Design", "Acoustic Design", "Wall Panel"],
   displayableCategory: 1,
   style: {
-    backgrounColor: "black",
+    backgroundColor: "black",
     backgroundImage: `url('./assets/tyyni.png')`,
     color: "white"
   }
@@ -44,7 +44,7 @@ const kuuDesignProject = {
   categories: ["Product Design", "Light Design", "Smart Furniture"],
   displayableCategory: 1,
   style: {
-    backgrounColor: "black",
+    backgroundColor: "black",
     backgroundImage: `url('./assets/kuu.png')`,
     color: "white"
   }
@@ -177,7 +177,7 @@ function ProjectSection({
         className={classNames("project-section-button-wrapper", {
           "project-section-button-wrapper-left": currentDesignArea === 1
         })}
-        style={{ color: activeProject.style.color }}
+        style={{ color: activeProject ? activeProject.style.color : "black" }}
       >
         <button
           className={classNames(
