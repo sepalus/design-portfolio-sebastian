@@ -15,9 +15,9 @@ const kaarnaDesignProject = {
   isTeam: false,
   categories: ["Product Design", "Vehicle Design", "Urban Mobility"],
   displayableCategory: 1,
+  image: "./assets/kaarna.jpg",
   style: {
     backgroundColor: "black",
-    backgroundImage: `url('./assets/kaarna.jpg')`,
     color: "white"
   }
 };
@@ -29,9 +29,9 @@ const tyyniDesignProject = {
   isTeam: false,
   categories: ["Product Design", "Acoustic Design", "Wall Panel"],
   displayableCategory: 1,
+  image: "./assets/tyyni.png",
   style: {
     backgroundColor: "black",
-    backgroundImage: `url('./assets/tyyni.png')`,
     color: "white"
   }
 };
@@ -43,9 +43,9 @@ const kuuDesignProject = {
   isTeam: false,
   categories: ["Product Design", "Light Design", "Smart Furniture"],
   displayableCategory: 1,
+  image: "./assets/kuu.png",
   style: {
     backgroundColor: "black",
-    backgroundImage: `url('./assets/kuu.png')`,
     color: "white"
   }
 };
@@ -57,8 +57,8 @@ const museDesignProject = {
   isTeam: true,
   categories: ["Service Design", "Web Design", "UX Design"],
   displayableCategory: 0,
+  image: "./assets/muse.png",
   style: {
-    backgroundImage: `url('./assets/muse.png')`,
     backgroundColor: "#5ac4ae",
     backgroundSize: "contain",
     backgroundRepeat: "no-repeat",
@@ -73,8 +73,8 @@ const anneliinaDesignProject = {
   isTeam: false,
   categories: ["Web Design", "Brand Design", "UX Design"],
   displayableCategory: 0,
+  image: "./assets/anneliina.png",
   style: {
-    backgroundImage: `url('./assets/anneliina.png')`,
     backgroundColor: "#8abad4",
     color: "black"
   }
@@ -87,8 +87,8 @@ const scootDesignProject = {
   isTeam: false,
   categories: ["Web Design", "UI Design", "UX Design"],
   displayableCategory: 0,
+  image: "./assets/scoot.png",
   style: {
-    backgroundImage: `url('./assets/scoot.png')`,
     backgroundColor: "#fff450",
     color: "black"
   }
@@ -101,8 +101,8 @@ const axiomDesignProject = {
   isTeam: true,
   categories: ["Service Design", "UX Design", "Concept Design"],
   displayableCategory: 0,
+  image: "./assets/axiom.png",
   style: {
-    backgroundImage: `url('./assets/axiom.png')`,
     backgroundColor: "#edf7fd",
     color: "black"
   }
@@ -168,8 +168,8 @@ function ProjectSection({
           animationDirectionIn={currentViewport === 1}
         />
         <ProjectCard
-          activeProject={activeProject}
-          activeProjectNumber={activeProjectIndex + 1}
+          projects={projects}
+          activeProjectIndex={activeProjectIndex}
           animationDirectionIn={currentViewport === 1}
         />
       </div>

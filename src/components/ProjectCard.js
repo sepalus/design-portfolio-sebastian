@@ -3,11 +3,9 @@ import classNames from "classnames";
 
 const formattedNumber = number => ("0" + number).slice(-2);
 
-function ProjectCard({
-  activeProject,
-  activeProjectNumber,
-  animationDirectionIn
-}) {
+function ProjectCard({ projects, activeProjectIndex, animationDirectionIn }) {
+  const activeProject = projects[activeProjectIndex];
+
   return (
     <div
       className={classNames(
@@ -17,12 +15,26 @@ function ProjectCard({
       )}
       style={activeProject.style}
     >
-      <div className="project-card-description">
-        <h1>{formattedNumber(activeProjectNumber)}</h1>
-        <h1>{activeProject.title}</h1>
-        <h4>{activeProject.description}</h4>
+      <div className="project-card-image-wrapper">
+        {projects.map((project, index) => (
+          <img
+            src={project.image}
+            alt=""
+            className={classNames(
+              { "animate-card-fade-in": activeProjectIndex === index },
+              { "animate-card-fade-out": activeProjectIndex !== index }
+            )}
+          />
+        ))}
       </div>
-      <div className="project-card-footer"></div>
+      <div className="project-card-text-wrapper">
+        <div className="project-card-description">
+          <h1>{formattedNumber(activeProjectIndex + 1)}</h1>
+          <h1>{activeProject.title}</h1>
+          <h4>{activeProject.description}</h4>
+        </div>
+        <div className="project-card-footer"></div>
+      </div>
     </div>
   );
 }
