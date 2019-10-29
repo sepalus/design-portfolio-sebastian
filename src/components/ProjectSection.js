@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import classNames from "classnames";
-import KeyboardArrowLeftIcon from "@material-ui/icons/KeyboardArrowLeft";
-import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
-import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 
 import ProjectCatalog from "./ProjectCatalog";
 import ProjectCard from "./ProjectCard";
+import NavigationButtons from "./NavigationButtons";
 import "./ProjectSection.scss";
 
 const kaarnaDesignProject = {
@@ -167,45 +165,20 @@ function ProjectSection({
           activeProjectIndex={activeProjectIndex}
           animationDirectionIn={currentViewport === 1}
         />
-      </div>
-      <div
-        className={classNames("project-section-button-wrapper", {
-          "project-section-button-wrapper-left": currentDesignArea === 1
-        })}
-        style={{ color: activeProject ? activeProject.style.color : "black" }}
-      >
-        <button
-          className={classNames(
-            "link-button project-section-button project-section-button-home",
-            {
-              "project-section-button-left": currentDesignArea === 0
-            }
-          )}
-          onClick={() => selectViewport(0)}
-        >
-          <h4>Home</h4>
-          <KeyboardArrowUpIcon />
-        </button>
-        <button
-          className={classNames("link-button project-section-button", {
-            "project-section-button-left": currentDesignArea === 1
-          })}
-          onClick={() =>
-            selectDesignArea(currentDesignArea === 1 ? 0 : 1, true)
-          }
-        >
-          {currentDesignArea === 1 ? (
-            <>
-              <h4>Product</h4>
-              <KeyboardArrowLeftIcon />
-            </>
-          ) : (
-            <>
-              <h4>Digital</h4>
-              <KeyboardArrowRightIcon />
-            </>
-          )}
-        </button>
+        <NavigationButtons
+          activeProject={activeProject}
+          currentDesignArea={currentDesignArea}
+          selectDesignArea={selectDesignArea}
+          selectViewport={selectViewport}
+          animationFadeIn={currentDesignArea === 1 && currentViewport === 1}
+        />
+        <NavigationButtons
+          activeProject={activeProject}
+          currentDesignArea={currentDesignArea}
+          selectDesignArea={selectDesignArea}
+          selectViewport={selectViewport}
+          animationFadeIn={currentDesignArea === 0 && currentViewport === 1}
+        />
       </div>
     </section>
   );
