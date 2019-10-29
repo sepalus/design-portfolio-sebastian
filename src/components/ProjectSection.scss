@@ -68,6 +68,13 @@ $project-card-width-negative: calc(360px - 100vw);
     object-fit: cover;
   }
 
+  img.contain {
+    width: auto;
+    object-fit: contain;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
   img.animate-card-fade-in {
     animation: fadein 1s forwards;
     animation-delay: 0.1s;

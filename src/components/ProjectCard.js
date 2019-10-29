@@ -16,16 +16,20 @@ function ProjectCard({ projects, activeProjectIndex, animationDirectionIn }) {
       style={activeProject.style}
     >
       <div className="project-card-image-wrapper">
-        {projects.map((project, index) => (
-          <img
-            src={project.image}
-            alt=""
-            className={classNames(
-              { "animate-card-fade-in": activeProjectIndex === index },
-              { "animate-card-fade-out": activeProjectIndex !== index }
-            )}
-          />
-        ))}
+        {projects.map((project, index) => {
+          const classes = project.classes;
+          return (
+            <img
+              src={project.image}
+              alt=""
+              className={classNames(
+                { classes: !!classes },
+                { "animate-card-fade-in": activeProjectIndex === index },
+                { "animate-card-fade-out": activeProjectIndex !== index }
+              )}
+            />
+          );
+        })}
       </div>
       <div className="project-card-text-wrapper">
         <div className="project-card-description">

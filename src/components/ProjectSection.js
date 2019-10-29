@@ -56,10 +56,9 @@ const museDesignProject = {
   categories: ["Service Design", "Web Design", "UX Design"],
   displayableCategory: 0,
   image: "./assets/muse.png",
+  classes: "contain",
   style: {
     backgroundColor: "#5ac4ae",
-    backgroundSize: "contain",
-    backgroundRepeat: "no-repeat",
     color: "black"
   }
 };
