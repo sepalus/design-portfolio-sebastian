@@ -124,6 +124,7 @@ function ProjectSection({
   currentViewport,
   selectDesignArea,
   selectViewport,
+  setIsButtonSticky,
   shouldAnimate
 }) {
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
@@ -170,6 +171,7 @@ function ProjectSection({
           currentDesignArea={currentDesignArea}
           selectDesignArea={selectDesignArea}
           selectViewport={selectViewport}
+          setIsButtonSticky={setIsButtonSticky}
           animationFadeIn={currentDesignArea === 1 && currentViewport === 1}
         />
         <NavigationButtons
@@ -177,6 +179,7 @@ function ProjectSection({
           currentDesignArea={currentDesignArea}
           selectDesignArea={selectDesignArea}
           selectViewport={selectViewport}
+          setIsButtonSticky={setIsButtonSticky}
           animationFadeIn={currentDesignArea === 0 && currentViewport === 1}
         />
       </div>

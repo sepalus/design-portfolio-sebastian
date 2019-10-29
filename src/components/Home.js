@@ -62,6 +62,7 @@ export default function Home() {
         currentDesignArea={currentDesignArea}
         selectViewport={selectViewport}
         selectDesignArea={selectDesignArea}
+        setIsButtonSticky={setIsButtonSticky}
       />
     </div>
   );
