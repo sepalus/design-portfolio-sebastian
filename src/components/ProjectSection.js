@@ -126,8 +126,6 @@ function ProjectSection({
   currentViewport,
   selectDesignArea,
   selectViewport,
-  isSlide,
-  setIsSlide,
   shouldAnimate
 }) {
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
@@ -154,9 +152,6 @@ function ProjectSection({
           },
           {
             "project-section-animate": shouldAnimate
-          },
-          {
-            "project-section-slide": isSlide
           }
         )}
       >
@@ -195,10 +190,9 @@ function ProjectSection({
           className={classNames("link-button project-section-button", {
             "project-section-button-left": currentDesignArea === 0
           })}
-          onClick={() => {
-            selectDesignArea(currentDesignArea === 1 ? 0 : 1, true);
-            setIsSlide(true);
-          }}
+          onClick={() =>
+            selectDesignArea(currentDesignArea === 1 ? 0 : 1, true)
+          }
         >
           {currentDesignArea === 1 ? (
             <>

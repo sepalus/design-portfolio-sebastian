@@ -5,7 +5,6 @@ import ProjectSection from "./ProjectSection";
 export default function Home() {
   const [currentViewport, setCurrentViewport] = useState(0); // 0 === 'designer', 1 === 'project'
   const [currentDesignArea, setCurrentDesignArea] = useState(0); // 0 === 'industrial', 1 === 'digital'
-  const [isSlide, setIsSlide] = useState(false);
   const [shouldAnimate, setShouldAnimate] = useState(true);
   const [isButtonSticky, setIsButtonSticky] = useState(false);
 
@@ -21,9 +20,6 @@ export default function Home() {
       if (window.pageYOffset < window.innerHeight - 200)
         setIsButtonSticky(false);
       else setIsButtonSticky(true);
-
-      // Set design area slide
-      if (nextViewport === 0) setIsSlide(false);
 
       // Set viewport
       if (currentViewport !== nextViewport) {
@@ -57,7 +53,7 @@ export default function Home() {
         designerRef={designerRef}
         currentDesignArea={currentDesignArea}
         selectDesignArea={selectDesignArea}
-        isButtonSticky={isButtonSticky && !isSlide}
+        isButtonSticky={isButtonSticky}
       />
       <ProjectSection
         projectRef={projectRef}
@@ -66,8 +62,6 @@ export default function Home() {
         currentDesignArea={currentDesignArea}
         selectViewport={selectViewport}
         selectDesignArea={selectDesignArea}
-        isSlide={isSlide}
-        setIsSlide={setIsSlide}
       />
     </div>
   );
