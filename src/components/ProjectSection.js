@@ -58,7 +58,7 @@ const museDesignProject = {
   image: "./assets/muse.png",
   classes: "contain",
   style: {
-    backgroundColor: "#5ac4ae",
+    backgroundColor: "#6bc9b7",
     color: "black"
   }
 };
@@ -71,8 +71,9 @@ const anneliinaDesignProject = {
   categories: ["Web Design", "Brand Design", "UX Design"],
   displayableCategory: 0,
   image: "./assets/anneliina.png",
+  classes: "contain",
   style: {
-    backgroundColor: "#8abad4",
+    backgroundColor: "#96c1d9",
     color: "black"
   }
 };
@@ -85,8 +86,9 @@ const scootDesignProject = {
   categories: ["Web Design", "UI Design", "UX Design"],
   displayableCategory: 0,
   image: "./assets/scoot.png",
+  classes: "contain",
   style: {
-    backgroundColor: "#fff450",
+    backgroundColor: "#f8f379",
     color: "black"
   }
 };
@@ -99,8 +101,9 @@ const axiomDesignProject = {
   categories: ["Service Design", "UX Design", "Concept Design"],
   displayableCategory: 0,
   image: "./assets/axiom.png",
+  classes: "contain",
   style: {
-    backgroundColor: "#edf7fd",
+    backgroundColor: "#d2ebf9",
     color: "black"
   }
 };
