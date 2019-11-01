@@ -131,7 +131,7 @@ $project-card-width-negative: calc(360px - 100vw);
   .animate-card-in {
     @media only screen and (min-width: $screen-m) {
       animation: industrialCardEnter 0.7s forwards;
-      animation-delay: 0.5s;
+      animation-delay: 1s;
     }
   }
 
@@ -144,6 +144,7 @@ $project-card-width-negative: calc(360px - 100vw);
   .animate-catalog-in {
     @media only screen and (min-width: $screen-m) {
       animation: industrialCatalogEnter 0.5s forwards;
+      animation-delay: 0.5s;
     }
   }
 
@@ -158,7 +159,7 @@ $project-card-width-negative: calc(360px - 100vw);
   .animate-card-in {
     @media only screen and (min-width: $screen-m) {
       animation: digitalCardEnter 0.7s forwards;
-      animation-delay: 0.5s;
+      animation-delay: 1s;
     }
   }
 
@@ -171,26 +172,13 @@ $project-card-width-negative: calc(360px - 100vw);
   .animate-catalog-in {
     @media only screen and (min-width: $screen-m) {
       animation: digitalCatalogEnter 0.5s forwards;
+      animation-delay: 0.5s;
     }
   }
 
   .animate-catalog-out {
     @media only screen and (min-width: $screen-m) {
       animation: digitalCatalogExit 0.5s forwards;
-    }
-  }
-}
-
-.project-section-industrial.project-section-animate.project-section-slide {
-  .animate-catalog-in {
-    @media only screen and (min-width: $screen-m) {
-      animation: catalogRightToLeft 0.7s forwards;
-    }
-  }
-
-  .animate-card-in {
-    @media only screen and (min-width: $screen-m) {
-      animation: industrialCardEnter 0.7s forwards;
     }
   }
 }
