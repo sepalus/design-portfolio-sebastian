@@ -5,7 +5,6 @@ import ProjectSection from "./ProjectSection";
 export default function Home() {
   const [previousYOffset, setPreviousYOffset] = useState(0);
   const [currentViewport, setCurrentViewport] = useState(0); // 0 === 'designer', 1 === 'project'
-  const [nextViewport, setNextViewport] = useState(0); // 0 === 'designer', 1 === 'project'
   const [currentDesignArea, setCurrentDesignArea] = useState(0); // 0 === 'industrial', 1 === 'digital'
   const [shouldAnimate, setShouldAnimate] = useState(true);
   const [isButtonSticky, setIsButtonSticky] = useState(false);
@@ -23,11 +22,12 @@ export default function Home() {
       // Set viewport
       const currentYOffset = window.pageYOffset;
       setPreviousYOffset(currentYOffset);
-
-      if (currentViewport === 0 && currentYOffset > previousYOffset)
-        setNextViewport(1);
-      else if (currentViewport === 1 && currentYOffset < previousYOffset)
-        setNextViewport(0);
+      const nextViewport =
+        currentViewport === 0 && currentYOffset > previousYOffset
+          ? 1
+          : currentViewport === 1 && currentYOffset < previousYOffset
+          ? 0
+          : currentViewport;
 
       if (currentViewport !== nextViewport) {
         setShouldAnimate(true);
@@ -37,7 +37,7 @@ export default function Home() {
     };
     window.addEventListener("scroll", detectViewportOnScroll);
     return () => window.removeEventListener("scroll", detectViewportOnScroll);
-  }, [currentViewport, nextViewport, previousYOffset]);
+  }, [currentViewport, previousYOffset]);
 
   const scrollToRef = ref =>
     window.scrollTo({
