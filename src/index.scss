@@ -8,15 +8,12 @@ body {
   font-family: "Avenir", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
   background-color: #2f2f2f;
   color: white;
 }
 
 section {
   height: 100vh;
-  scroll-snap-align: start;
   position: relative;
 }
 
