@@ -8,10 +8,10 @@ import "./ProjectSection.scss";
 
 const kaarnaDesignProject = {
   title: "Kaarna",
-  description: "The electrical foldable scooter for people who care",
+  description: "An electrical foldable scooter for laid-back cruising",
   year: 2017,
   isTeam: false,
-  categories: ["Product Design", "Vehicle Design", "Urban Mobility"],
+  categories: ["Product Design", "Vehicle Design", "Urban Mobility Design"],
   displayableCategory: 1,
   image: "./assets/kaarna.jpg",
   style: {
@@ -22,10 +22,11 @@ const kaarnaDesignProject = {
 
 const tyyniDesignProject = {
   title: "Tyyni",
-  description: "Form meets function. Science meets art. Sound meets visual.",
+  description:
+    "An acoustic sound diffuser, with functional acoustic qualities and beautiful form",
   year: 2017,
   isTeam: false,
-  categories: ["Product Design", "Acoustic Design", "Wall Panel"],
+  categories: ["Product Design", "Acoustic Design", "Wall Panel Design"],
   displayableCategory: 1,
   image: "./assets/tyyni.png",
   style: {
@@ -36,11 +37,11 @@ const tyyniDesignProject = {
 
 const kuuDesignProject = {
   title: "Kuu",
-  description: "Smart nightlight for smart people",
+  description: "A directional night light that doesn't bother your partner",
   year: 2016,
   isTeam: false,
-  categories: ["Product Design", "Light Design", "Smart Furniture"],
-  displayableCategory: 1,
+  categories: ["Product Design", "Furniture Design", "Lamp Design"],
+  displayableCategory: 2,
   image: "./assets/kuu.png",
   style: {
     backgroundColor: "black",
@@ -50,10 +51,11 @@ const kuuDesignProject = {
 
 const museDesignProject = {
   title: "Muse",
-  description: "Make Unique Successful Experiences",
+  description:
+    "A community connecting UBS bank, millennials and startups through unique experiences",
   year: 2014,
   isTeam: true,
-  categories: ["Service Design", "Web Design", "UX Design"],
+  categories: ["Service Design", "Web Design", "Concept Design"],
   displayableCategory: 0,
   image: "./assets/muse.png",
   classes: "contain",
@@ -65,10 +67,11 @@ const museDesignProject = {
 
 const anneliinaDesignProject = {
   title: "Anneliina",
-  description: "Kotihoitoa läheltäsi",
+  description:
+    "A brand identity, that communicates the caring service's core values",
   year: 2016,
   isTeam: false,
-  categories: ["Web Design", "Brand Design", "UX Design"],
+  categories: ["Brand Identity Design", "Web Design", "Graphic Design"],
   displayableCategory: 0,
   image: "./assets/anneliina.png",
   classes: "contain",
@@ -80,10 +83,10 @@ const anneliinaDesignProject = {
 
 const scootDesignProject = {
   title: "Scoot",
-  description: "Re-inventing urban mobility",
+  description: "A webpage showcasing designs for electrical foldable scooters",
   year: 2017,
   isTeam: false,
-  categories: ["Web Design", "UI Design", "UX Design"],
+  categories: ["Web Design", "UX Design", "UI Design"],
   displayableCategory: 0,
   image: "./assets/scoot.png",
   classes: "contain",
@@ -95,10 +98,11 @@ const scootDesignProject = {
 
 const axiomDesignProject = {
   title: "Axiom",
-  description: "Bringing university and industry together",
+  description:
+    "A network that brings students, university and industry together in doctoral research",
   year: 2019,
   isTeam: true,
-  categories: ["Service Design", "UX Design", "Concept Design"],
+  categories: ["Service Design", "Co-Design", "Concept Design"],
   displayableCategory: 0,
   image: "./assets/axiom.png",
   classes: "contain",
