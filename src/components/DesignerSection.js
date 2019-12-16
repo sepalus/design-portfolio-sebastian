@@ -19,7 +19,7 @@ function DesignerSection({
         alt="Sebastian"
       />
       <Typist
-        className="h1 designer-section-text designer-section-text-about"
+        className="designer-section-typist designer-section-typist-about"
         startDelay={1000}
         cursor={{
           hideWhenDone: true,
@@ -27,7 +27,7 @@ function DesignerSection({
         }}
         onTypingDone={() => setShowWorkTypist(true)}
       >
-        <span>
+        <h1>
           Hello, I am
           <br />
           <span className="designer-section-text-link">Sebastian</span>
@@ -37,18 +37,18 @@ function DesignerSection({
             fontSize="large"
             style={{ fontSize: 48 }}
           />
-        </span>{" "}
+        </h1>{" "}
       </Typist>
       {showWorkTypist && (
         <Typist
-          className="h1 designer-section-text designer-section-text-work"
+          className="designer-section-typist designer-section-typist-work"
           startDelay={700}
           cursor={{
             hideWhenDone: true,
             hideWhenDoneDelay: 0
           }}
         >
-          <span>
+          <h1>
             Please
             <br />
             check
@@ -62,7 +62,7 @@ function DesignerSection({
               fontSize="large"
               style={{ fontSize: 48 }}
             />
-          </span>{" "}
+          </h1>{" "}
         </Typist>
       )}
     </section>

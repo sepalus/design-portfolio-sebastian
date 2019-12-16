@@ -7,32 +7,32 @@ $screen-m: 768px;
   transform: translateX(-50%);
 }
 
-.h1 {
-  font-size: 32px;
-  font-family: "Arvo", serif;
-  font-weight: 300;
-  @media only screen and (min-width: $screen-m) {
-    font-size: 40px;
-  }
-}
-
-.designer-section-text {
+.designer-section-typist {
   position: absolute;
   bottom: 40vh;
   width: 300px;
+  font-size: 32px;
+
+  @media only screen and (min-width: $screen-m) {
+    font-size: 40px;
+  }
+  h1 {
+    display: inline;
+  }
 }
+
+.designer-section-typist-about {
+  left: 200px;
+}
+
+.designer-section-typist-work {
+  left: calc(100vw - 350px);
+}
+
 .designer-section-text-link {
   color: #7d3240;
   border-bottom: 2px solid white;
   cursor: pointer;
-}
-
-.designer-section-text-about {
-  left: 200px;
-}
-
-.designer-section-text-work {
-  left: calc(100vw - 350px);
 }
 
 .designer-section-text-arrow {
