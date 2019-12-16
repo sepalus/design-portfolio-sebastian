@@ -37,15 +37,21 @@ export default function Home() {
     return () => window.removeEventListener("scroll", detectViewportOnScroll);
   }, [currentViewport, previousYOffset]);
 
-  const scrollToRef = ref =>
+  const selectViewport = viewport => {
+    const ref =
+      viewport === 2
+        ? informationRef
+        : viewport === 1
+        ? projectRef
+        : designerRef;
+
     window.scrollTo({
       top: ref.current.offsetTop,
       left: 0,
       behavior: "smooth"
     });
-
-  const selectViewport = viewport =>
-    scrollToRef(viewport === 0 ? designerRef : projectRef);
+    setCurrentViewport(viewport);
+  };
 
   const selectDesignArea = (area, animateOnChange) => {
     setCurrentDesignArea(area);
