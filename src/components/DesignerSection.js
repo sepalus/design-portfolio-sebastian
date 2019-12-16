@@ -21,28 +21,30 @@ function DesignerSection({
       <Typist
         className="designer-section-typist designer-section-typist-about"
         startDelay={1000}
+        stdTypingDelay={0}
         cursor={{
           hideWhenDone: true,
           hideWhenDoneDelay: 0
         }}
-        onTypingDone={() => setShowWorkTypist(true)}
+        onTypingDone={setTimeout(() => setShowWorkTypist(true), 3500)}
       >
         <h1>
           Hello, I am
           <br />
           <span className="designer-section-text-link">Sebastian</span>
-          <Typist.Delay ms={1000} />
           <KeyboardBackspace
             className="designer-section-text-arrow designer-section-text-arrow-forward"
             fontSize="large"
             style={{ fontSize: 48 }}
           />
-        </h1>{" "}
+        </h1>
+        {""}
       </Typist>
       {showWorkTypist && (
         <Typist
           className="designer-section-typist designer-section-typist-work"
-          startDelay={700}
+          startDelay={1000}
+          stdTypingDelay={0}
           cursor={{
             hideWhenDone: true,
             hideWhenDoneDelay: 0
@@ -56,13 +58,13 @@ function DesignerSection({
             out my
             <br />
             <span className="designer-section-text-link">work</span>
-            <Typist.Delay ms={500} />
             <KeyboardBackspace
               className="designer-section-text-arrow designer-section-text-arrow-down"
               fontSize="large"
               style={{ fontSize: 48 }}
             />
           </h1>{" "}
+          {""}
         </Typist>
       )}
     </section>
