@@ -9,7 +9,6 @@ function NavigationButtons({
   currentDesignArea,
   selectDesignArea,
   selectViewport,
-  setIsButtonSticky,
   animationFadeIn
 }) {
   return (
@@ -35,10 +34,7 @@ function NavigationButtons({
         className={classNames("link-button project-section-button", {
           "project-section-button-left": currentDesignArea === 1
         })}
-        onClick={() => {
-          selectDesignArea(currentDesignArea === 1 ? 0 : 1, true);
-          setIsButtonSticky(false);
-        }}
+        onClick={() => selectDesignArea(currentDesignArea === 1 ? 0 : 1, true)}
       >
         {currentDesignArea === 1 ? (
           <>
