@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import DesignerSection from "./DesignerSection";
 import ProjectSection from "./ProjectSection";
+import InformationSection from "./InformationSection";
 
 export default function Home() {
   const [previousYOffset, setPreviousYOffset] = useState(0);
@@ -12,6 +13,7 @@ export default function Home() {
 
   const designerRef = useRef(null);
   const projectRef = useRef(null);
+  const informationRef = useRef(null);
 
   useEffect(() => {
     const detectViewportOnScroll = () => {
@@ -76,6 +78,7 @@ export default function Home() {
         shouldAnimate={shouldAnimate}
         setIsButtonSticky={setIsButtonSticky}
       />
+      <InformationSection informationRef={informationRef} />
     </div>
   );
 }
