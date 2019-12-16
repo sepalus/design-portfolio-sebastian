@@ -19,12 +19,17 @@ export default function Home() {
       // Set viewport
       const currentYOffset = window.pageYOffset;
       setPreviousYOffset(currentYOffset);
-      const nextViewport =
-        currentViewport === 0 && currentYOffset > previousYOffset
-          ? 1
-          : currentViewport === 1 && currentYOffset < previousYOffset
-          ? 0
-          : currentViewport;
+      let nextViewport = currentViewport;
+
+      if (currentViewport === 0 && currentYOffset > previousYOffset) {
+        nextViewport = 1;
+      } else if (currentViewport === 1 && currentYOffset < previousYOffset) {
+        nextViewport = 0;
+      } else if (currentViewport === 1 && currentYOffset > previousYOffset) {
+        nextViewport = 2;
+      } else if (currentViewport === 2 && currentYOffset < previousYOffset) {
+        nextViewport = 1;
+      }
 
       if (currentViewport !== nextViewport) {
         setShouldAnimate(true);
