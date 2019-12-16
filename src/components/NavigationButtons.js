@@ -28,7 +28,7 @@ function NavigationButtons({
         )}
         onClick={() => selectViewport(0)}
       >
-        <h4>Home</h4>
+        <h4 className="link">Home</h4>
         <KeyboardArrowUpIcon />
       </button>
       <button
@@ -42,12 +42,12 @@ function NavigationButtons({
       >
         {currentDesignArea === 1 ? (
           <>
-            <h4>Product</h4>
+            <h4 className="link">Product</h4>
             <KeyboardArrowLeftIcon />
           </>
         ) : (
           <>
-            <h4>Digital</h4>
+            <h4 className="link">Digital</h4>
             <KeyboardArrowRightIcon />
           </>
         )}

@@ -1,11 +1,22 @@
 import React, { useState } from "react";
+import classNames from "classnames";
 import Typist from "react-typist";
 import KeyboardBackspace from "@material-ui/icons/KeyboardBackspace";
 import "./DesignerSection.scss";
 
+const ItemLink = ({ className, title, onClick }) => (
+  <h1
+    className={classNames("link", "designer-section-menu", className)}
+    onClick={onClick}
+  >
+    {title}
+  </h1>
+);
+
 function DesignerSection({
   designerRef,
   isInitialViewPort,
+  selectViewport,
   currentDesignArea,
   selectDesignArea,
   isButtonSticky
@@ -21,8 +32,8 @@ function DesignerSection({
       />
       {isInitialViewPort ? (
         <Typist
-          className="designer-section-typist designer-section-typist-about"
-          startDelay={1000}
+          className="designer-section-menu designer-section-typist designer-section-typist-about"
+          startDelay={700}
           avgTypingDelay={50}
           stdTypingDelay={0}
           cursor={{
@@ -34,7 +45,9 @@ function DesignerSection({
           <h1>
             Hello, I am
             <br />
-            <span className="designer-section-text-link">Sebastian</span>
+            <span className="link" onClick={() => selectViewport(2)}>
+              Sebastian
+            </span>
             <KeyboardBackspace
               className="designer-section-text-arrow designer-section-text-arrow-forward"
               fontSize="large"
@@ -44,15 +57,17 @@ function DesignerSection({
           {""}
         </Typist>
       ) : (
-        <div className="designer-section-typist designer-section-typist-about">
-          <h1 className="designer-section-text-link">Sebastian</h1>
-        </div>
+        <ItemLink
+          className="designer-section-typist-about"
+          title="Sebastian"
+          onClick={() => selectViewport(2)}
+        />
       )}
       {isInitialViewPort ? (
         showWorkTypist && (
           <Typist
-            className="designer-section-typist designer-section-typist-work"
-            startDelay={1000}
+            className="designer-section-menu designer-section-typist designer-section-typist-work"
+            startDelay={200}
             avgTypingDelay={50}
             stdTypingDelay={0}
             cursor={{
@@ -67,7 +82,9 @@ function DesignerSection({
               <br />
               out my
               <br />
-              <span className="designer-section-text-link">work</span>
+              <span className="link" onClick={() => selectViewport(1)}>
+                work
+              </span>
               <KeyboardBackspace
                 className="designer-section-text-arrow designer-section-text-arrow-down"
                 fontSize="large"
@@ -78,9 +95,11 @@ function DesignerSection({
           </Typist>
         )
       ) : (
-        <div className="designer-section-typist designer-section-typist-work">
-          <h1 className="designer-section-text-link">Work</h1>
-        </div>
+        <ItemLink
+          className="designer-section-typist-work"
+          title="Work"
+          onClick={() => selectViewport(1)}
+        />
       )}
     </section>
   );

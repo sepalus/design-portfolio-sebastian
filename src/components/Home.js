@@ -62,6 +62,7 @@ export default function Home() {
       <DesignerSection
         designerRef={designerRef}
         isInitialViewPort={isInitialViewPort}
+        selectViewport={selectViewport}
         currentDesignArea={currentDesignArea}
         selectDesignArea={selectDesignArea}
         isButtonSticky={isButtonSticky}
@@ -69,10 +70,10 @@ export default function Home() {
       <ProjectSection
         projectRef={projectRef}
         currentViewport={currentViewport}
-        shouldAnimate={shouldAnimate}
-        currentDesignArea={currentDesignArea}
         selectViewport={selectViewport}
+        currentDesignArea={currentDesignArea}
         selectDesignArea={selectDesignArea}
+        shouldAnimate={shouldAnimate}
         setIsButtonSticky={setIsButtonSticky}
       />
     </div>

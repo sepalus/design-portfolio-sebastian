@@ -7,10 +7,9 @@ $screen-m: 768px;
   transform: translateX(-50%);
 }
 
-.designer-section-typist {
+.designer-section-menu {
   position: absolute;
-  bottom: 40vh;
-  width: 300px;
+  bottom: 15vh;
   font-size: 32px;
 
   @media only screen and (min-width: $screen-m) {
@@ -21,18 +20,16 @@ $screen-m: 768px;
   }
 }
 
+.designer-section-typist {
+  bottom: 30vh;
+}
+
 .designer-section-typist-about {
   left: 200px;
 }
 
 .designer-section-typist-work {
   left: calc(100vw - 350px);
-}
-
-.designer-section-text-link {
-  color: #7d3240;
-  border-bottom: 2px solid white;
-  cursor: pointer;
 }
 
 .designer-section-text-arrow {
