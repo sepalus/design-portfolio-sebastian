@@ -34,7 +34,7 @@ export default function Home() {
         setShouldAnimate(true);
         selectViewport(nextViewport);
         setCurrentViewport(nextViewport);
-        setIsInitialViewPort(false);
+        setTimeout(() => setIsInitialViewPort(false), 500);
       }
     };
     window.addEventListener("scroll", detectViewportOnScroll);
