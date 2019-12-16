@@ -5,6 +5,7 @@ import "./DesignerSection.scss";
 
 function DesignerSection({
   designerRef,
+  isInitialViewPort,
   currentDesignArea,
   selectDesignArea,
   isButtonSticky
@@ -18,54 +19,68 @@ function DesignerSection({
         src="../assets/face_industrial_transparent.png"
         alt="Sebastian"
       />
-      <Typist
-        className="designer-section-typist designer-section-typist-about"
-        startDelay={1000}
-        stdTypingDelay={0}
-        cursor={{
-          hideWhenDone: true,
-          hideWhenDoneDelay: 0
-        }}
-        onTypingDone={setTimeout(() => setShowWorkTypist(true), 3500)}
-      >
-        <h1>
-          Hello, I am
-          <br />
-          <span className="designer-section-text-link">Sebastian</span>
-          <KeyboardBackspace
-            className="designer-section-text-arrow designer-section-text-arrow-forward"
-            fontSize="large"
-            style={{ fontSize: 48 }}
-          />
-        </h1>
-        {""}
-      </Typist>
-      {showWorkTypist && (
+      {isInitialViewPort ? (
         <Typist
-          className="designer-section-typist designer-section-typist-work"
+          className="designer-section-typist designer-section-typist-about"
           startDelay={1000}
+          avgTypingDelay={50}
           stdTypingDelay={0}
           cursor={{
             hideWhenDone: true,
             hideWhenDoneDelay: 0
           }}
+          onTypingDone={setTimeout(() => setShowWorkTypist(true), 3500)}
         >
           <h1>
-            Please
+            Hello, I am
             <br />
-            check
-            <br />
-            out my
-            <br />
-            <span className="designer-section-text-link">work</span>
+            <span className="designer-section-text-link">Sebastian</span>
             <KeyboardBackspace
-              className="designer-section-text-arrow designer-section-text-arrow-down"
+              className="designer-section-text-arrow designer-section-text-arrow-forward"
               fontSize="large"
               style={{ fontSize: 48 }}
             />
-          </h1>{" "}
+          </h1>
           {""}
         </Typist>
+      ) : (
+        <div className="designer-section-typist designer-section-typist-about">
+          <h1 className="designer-section-text-link">Sebastian</h1>
+        </div>
+      )}
+      {isInitialViewPort ? (
+        showWorkTypist && (
+          <Typist
+            className="designer-section-typist designer-section-typist-work"
+            startDelay={1000}
+            avgTypingDelay={50}
+            stdTypingDelay={0}
+            cursor={{
+              hideWhenDone: true,
+              hideWhenDoneDelay: 0
+            }}
+          >
+            <h1>
+              Please
+              <br />
+              check
+              <br />
+              out my
+              <br />
+              <span className="designer-section-text-link">work</span>
+              <KeyboardBackspace
+                className="designer-section-text-arrow designer-section-text-arrow-down"
+                fontSize="large"
+                style={{ fontSize: 48 }}
+              />
+            </h1>{" "}
+            {""}
+          </Typist>
+        )
+      ) : (
+        <div className="designer-section-typist designer-section-typist-work">
+          <h1 className="designer-section-text-link">Work</h1>
+        </div>
       )}
     </section>
   );

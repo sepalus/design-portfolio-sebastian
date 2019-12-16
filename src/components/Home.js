@@ -4,6 +4,7 @@ import ProjectSection from "./ProjectSection";
 
 export default function Home() {
   const [previousYOffset, setPreviousYOffset] = useState(0);
+  const [isInitialViewPort, setIsInitialViewPort] = useState(true);
   const [currentViewport, setCurrentViewport] = useState(0); // 0 === 'designer', 1 === 'project'
   const [currentDesignArea, setCurrentDesignArea] = useState(0); // 0 === 'industrial', 1 === 'digital'
   const [shouldAnimate, setShouldAnimate] = useState(true);
@@ -33,6 +34,7 @@ export default function Home() {
         setShouldAnimate(true);
         selectViewport(nextViewport);
         setCurrentViewport(nextViewport);
+        setIsInitialViewPort(false);
       }
     };
     window.addEventListener("scroll", detectViewportOnScroll);
@@ -59,6 +61,7 @@ export default function Home() {
     <div>
       <DesignerSection
         designerRef={designerRef}
+        isInitialViewPort={isInitialViewPort}
         currentDesignArea={currentDesignArea}
         selectDesignArea={selectDesignArea}
         isButtonSticky={isButtonSticky}
