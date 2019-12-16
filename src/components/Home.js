@@ -9,7 +9,6 @@ export default function Home() {
   const [currentViewport, setCurrentViewport] = useState(0); // 0 === 'designer', 1 === 'project'
   const [currentDesignArea, setCurrentDesignArea] = useState(0); // 0 === 'industrial', 1 === 'digital'
   const [shouldAnimate, setShouldAnimate] = useState(true);
-  const [isButtonSticky, setIsButtonSticky] = useState(false);
 
   const designerRef = useRef(null);
   const projectRef = useRef(null);
@@ -17,11 +16,6 @@ export default function Home() {
 
   useEffect(() => {
     const detectViewportOnScroll = () => {
-      // Set button stickyness
-      if (window.pageYOffset < window.innerHeight - 200)
-        setIsButtonSticky(false);
-      else setIsButtonSticky(true);
-
       // Set viewport
       const currentYOffset = window.pageYOffset;
       setPreviousYOffset(currentYOffset);
@@ -67,7 +61,6 @@ export default function Home() {
         selectViewport={selectViewport}
         currentDesignArea={currentDesignArea}
         selectDesignArea={selectDesignArea}
-        isButtonSticky={isButtonSticky}
       />
       <ProjectSection
         projectRef={projectRef}
@@ -76,7 +69,6 @@ export default function Home() {
         currentDesignArea={currentDesignArea}
         selectDesignArea={selectDesignArea}
         shouldAnimate={shouldAnimate}
-        setIsButtonSticky={setIsButtonSticky}
       />
       <InformationSection informationRef={informationRef} />
     </div>

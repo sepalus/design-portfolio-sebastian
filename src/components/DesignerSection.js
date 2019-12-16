@@ -18,8 +18,7 @@ function DesignerSection({
   isInitialViewPort,
   selectViewport,
   currentDesignArea,
-  selectDesignArea,
-  isButtonSticky
+  selectDesignArea
 }) {
   const [showWorkTypist, setShowWorkTypist] = useState(false);
 
