@@ -36,7 +36,7 @@ export default function Home() {
   };
 
   return (
-    <div>
+    <>
       <DesignerSection
         designerRef={designerRef}
         isInitialViewPort={isInitialViewPort}
@@ -53,6 +53,6 @@ export default function Home() {
         shouldAnimate={shouldAnimate}
       />
       <InformationSection informationRef={informationRef} />
-    </div>
+    </>
   );
 }

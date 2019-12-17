@@ -3,7 +3,7 @@ $screen-l: 1024px;
 $screen-xl: 1200px;
 
 body {
-  overflow-x: hidden;
+  overflow: hidden;
   margin: 0;
   font-family: "Avenir", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -12,8 +12,16 @@ body {
   color: white;
 }
 
+#root {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
 section {
   height: 100vh;
+  scroll-snap-align: start;
   position: relative;
 }
 
