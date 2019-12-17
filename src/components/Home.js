@@ -1,10 +1,9 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import DesignerSection from "./DesignerSection";
 import ProjectSection from "./ProjectSection";
 import InformationSection from "./InformationSection";
 
 export default function Home() {
-  const [previousYOffset, setPreviousYOffset] = useState(0);
   const [isInitialViewPort, setIsInitialViewPort] = useState(true);
   const [currentViewport, setCurrentViewport] = useState(0); // 0 === 'designer', 1 === 'project'
   const [currentDesignArea, setCurrentDesignArea] = useState(0); // 0 === 'industrial', 1 === 'digital'
@@ -13,34 +12,6 @@ export default function Home() {
   const designerRef = useRef(null);
   const projectRef = useRef(null);
   const informationRef = useRef(null);
-
-  useEffect(() => {
-    const detectViewportOnScroll = () => {
-      // Set viewport
-      const currentYOffset = window.pageYOffset;
-      setPreviousYOffset(currentYOffset);
-      let nextViewport = currentViewport;
-
-      if (currentViewport === 0 && currentYOffset > previousYOffset) {
-        nextViewport = 1;
-      } else if (currentViewport === 1 && currentYOffset < previousYOffset) {
-        nextViewport = 0;
-      } else if (currentViewport === 1 && currentYOffset > previousYOffset) {
-        nextViewport = 2;
-      } else if (currentViewport === 2 && currentYOffset < previousYOffset) {
-        nextViewport = 1;
-      }
-
-      if (currentViewport !== nextViewport) {
-        setShouldAnimate(true);
-        selectViewport(nextViewport);
-        setCurrentViewport(nextViewport);
-        setTimeout(() => setIsInitialViewPort(false), 500);
-      }
-    };
-    window.addEventListener("scroll", detectViewportOnScroll);
-    return () => window.removeEventListener("scroll", detectViewportOnScroll);
-  }, [currentViewport, previousYOffset]);
 
   const selectViewport = viewport => {
     const ref =
