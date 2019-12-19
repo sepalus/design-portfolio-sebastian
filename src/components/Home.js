@@ -17,17 +17,28 @@ export default function Home() {
   useEffect(() => {
     const detectViewportOnScroll = () => {
       const currentYOffset = rootElement.scrollTop;
+      const designerRefOffset = designerRef.current.offsetTop;
       const projectRefOffset = projectRef.current.offsetTop;
       const informationRefOffset = informationRef.current.offsetTop;
 
       setPreviousYOffset(currentYOffset);
 
-      const nextViewport =
+      const isScrollDown = currentYOffset > previousYOffset;
+      const scrollDownNextViewport =
         currentYOffset >= informationRefOffset
           ? 2
           : currentYOffset >= projectRefOffset
           ? 1
           : 0;
+      const scrollUpNextViewport =
+        currentYOffset <= designerRefOffset
+          ? 0
+          : currentYOffset <= projectRefOffset
+          ? 1
+          : 2;
+      const nextViewport = isScrollDown
+        ? scrollDownNextViewport
+        : scrollUpNextViewport;
 
       if (currentViewport !== nextViewport) {
         setCurrentViewport(nextViewport);
