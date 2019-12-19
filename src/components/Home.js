@@ -39,9 +39,11 @@ export default function Home() {
           ? currentViewport + 1
           : currentViewport;
 
-      if (currentViewport === 0) showFirstTimeViewport0.current = false;
-      if (currentViewport === 1) showFirstTimeViewport1.current = false;
-      setCurrentViewport(nextViewport);
+      if (nextViewport !== currentViewport) {
+        if (currentViewport === 0) showFirstTimeViewport0.current = false;
+        if (currentViewport === 1) showFirstTimeViewport1.current = false;
+        setCurrentViewport(nextViewport);
+      }
     };
     rootElement.addEventListener("scroll", detectViewportOnScroll);
     return () =>
