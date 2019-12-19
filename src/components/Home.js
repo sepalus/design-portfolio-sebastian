@@ -7,21 +7,12 @@ export default function Home() {
   const [previousYOffset, setPreviousYOffset] = useState(0);
   const [currentViewport, setCurrentViewport] = useState(0); // 0 === 'designer', 1 === 'project'
   const [currentDesignArea, setCurrentDesignArea] = useState(0); // 0 === 'industrial', 1 === 'digital'
-
+  const showFirstTimeViewport0 = useRef(true);
+  const showFirstTimeViewport1 = useRef(true);
   const designerRef = useRef(null);
   const projectRef = useRef(null);
   const informationRef = useRef(null);
   const rootElement = document.getElementById("root");
-
-  const timesShownViewport0 = useRef(0);
-  const timesShownViewport1 = useRef(0);
-
-  useEffect(() => {
-    if (currentViewport === 0)
-      timesShownViewport0.current = timesShownViewport0.current + 1;
-    if (currentViewport === 1)
-      timesShownViewport1.current = timesShownViewport1.current + 1;
-  }, [currentViewport]);
 
   useEffect(() => {
     const detectViewportOnScroll = () => {
@@ -48,9 +39,9 @@ export default function Home() {
           ? currentViewport + 1
           : currentViewport;
 
-      if (currentViewport !== nextViewport) {
-        setCurrentViewport(nextViewport);
-      }
+      if (currentViewport === 0) showFirstTimeViewport0.current = false;
+      if (currentViewport === 1) showFirstTimeViewport1.current = false;
+      setCurrentViewport(nextViewport);
     };
     rootElement.addEventListener("scroll", detectViewportOnScroll);
     return () =>
@@ -84,7 +75,7 @@ export default function Home() {
         selectViewport={selectViewport}
         currentDesignArea={currentDesignArea}
         selectDesignArea={selectDesignArea}
-        showTypist={timesShownViewport0.current < 2}
+        showTypist={showFirstTimeViewport0.current}
       />
       <ProjectSection
         projectRef={projectRef}
@@ -92,7 +83,7 @@ export default function Home() {
         selectViewport={selectViewport}
         currentDesignArea={currentDesignArea}
         selectDesignArea={selectDesignArea}
-        shouldAnimate={timesShownViewport1.current < 2}
+        shouldAnimate={showFirstTimeViewport1.current}
       />
       <InformationSection informationRef={informationRef} />
     </>
