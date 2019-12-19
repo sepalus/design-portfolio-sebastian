@@ -54,7 +54,6 @@ export default function Home() {
       left: 0,
       behavior: "smooth"
     });
-    setCurrentViewport(viewport);
   };
 
   const selectDesignArea = (area, animateOnChange) => {
