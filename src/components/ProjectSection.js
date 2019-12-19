@@ -156,6 +156,9 @@ function ProjectSection({
           },
           {
             "project-section-animate": shouldAnimate
+          },
+          {
+            "project-section-static": !shouldAnimate
           }
         )}
       >

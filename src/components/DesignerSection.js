@@ -15,7 +15,7 @@ const ItemLink = ({ className, title, onClick }) => (
 
 function DesignerSection({
   designerRef,
-  isInitialViewPort,
+  showTypist,
   selectViewport,
   currentDesignArea,
   selectDesignArea
@@ -29,7 +29,7 @@ function DesignerSection({
         src="../assets/face_industrial_transparent.png"
         alt="Sebastian"
       />
-      {isInitialViewPort ? (
+      {showTypist ? (
         <Typist
           className="designer-section-menu designer-section-typist designer-section-typist-about"
           startDelay={700}
@@ -62,7 +62,7 @@ function DesignerSection({
           onClick={() => selectViewport(2)}
         />
       )}
-      {isInitialViewPort ? (
+      {showTypist ? (
         showWorkTypist && (
           <Typist
             className="designer-section-menu designer-section-typist designer-section-typist-work"

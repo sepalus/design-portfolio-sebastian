@@ -5,7 +5,6 @@ import InformationSection from "./InformationSection";
 
 export default function Home() {
   const [previousYOffset, setPreviousYOffset] = useState(0);
-  const [isInitialViewPort, setIsInitialViewPort] = useState(true);
   const [currentViewport, setCurrentViewport] = useState(0); // 0 === 'designer', 1 === 'project'
   const [currentDesignArea, setCurrentDesignArea] = useState(0); // 0 === 'industrial', 1 === 'digital'
 
@@ -13,6 +12,16 @@ export default function Home() {
   const projectRef = useRef(null);
   const informationRef = useRef(null);
   const rootElement = document.getElementById("root");
+
+  const timesShownViewport0 = useRef(0);
+  const timesShownViewport1 = useRef(0);
+
+  useEffect(() => {
+    if (currentViewport === 0)
+      timesShownViewport0.current = timesShownViewport0.current + 1;
+    if (currentViewport === 1)
+      timesShownViewport1.current = timesShownViewport1.current + 1;
+  }, [currentViewport]);
 
   useEffect(() => {
     const detectViewportOnScroll = () => {
@@ -41,7 +50,6 @@ export default function Home() {
 
       if (currentViewport !== nextViewport) {
         setCurrentViewport(nextViewport);
-        setTimeout(() => setIsInitialViewPort(false), 500);
       }
     };
     rootElement.addEventListener("scroll", detectViewportOnScroll);
@@ -73,10 +81,10 @@ export default function Home() {
     <>
       <DesignerSection
         designerRef={designerRef}
-        isInitialViewPort={isInitialViewPort}
         selectViewport={selectViewport}
         currentDesignArea={currentDesignArea}
         selectDesignArea={selectDesignArea}
+        showTypist={timesShownViewport0.current < 2}
       />
       <ProjectSection
         projectRef={projectRef}
@@ -84,7 +92,7 @@ export default function Home() {
         selectViewport={selectViewport}
         currentDesignArea={currentDesignArea}
         selectDesignArea={selectDesignArea}
-        shouldAnimate={true}
+        shouldAnimate={timesShownViewport1.current < 2}
       />
       <InformationSection informationRef={informationRef} />
     </>

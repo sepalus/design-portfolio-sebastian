@@ -127,6 +127,24 @@ $project-card-width-negative: calc(360px - 100vw);
   }
 }
 
+.project-section-industrial.project-section-static {
+  .project-card {
+    left: $project-catalog-width;
+  }
+  .project-catalog {
+    left: 0px;
+  }
+}
+
+.project-section-digital.project-section-static {
+  .project-card {
+    left: 0px;
+  }
+  .project-catalog {
+    left: $project-card-width;
+  }
+}
+
 .project-section-industrial.project-section-animate {
   .animate-card-in {
     @media only screen and (min-width: $screen-m) {
