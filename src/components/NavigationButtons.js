@@ -34,7 +34,7 @@ function NavigationButtons({
         className={classNames("link-button project-section-button", {
           "project-section-button-left": currentDesignArea === 1
         })}
-        onClick={() => selectDesignArea(currentDesignArea === 1 ? 0 : 1, true)}
+        onClick={() => selectDesignArea(currentDesignArea === 1)}
       >
         {currentDesignArea === 1 ? (
           <>

@@ -8,7 +8,6 @@ export default function Home() {
   const [isInitialViewPort, setIsInitialViewPort] = useState(true);
   const [currentViewport, setCurrentViewport] = useState(0); // 0 === 'designer', 1 === 'project'
   const [currentDesignArea, setCurrentDesignArea] = useState(0); // 0 === 'industrial', 1 === 'digital'
-  const [shouldAnimate, setShouldAnimate] = useState(true);
 
   const designerRef = useRef(null);
   const projectRef = useRef(null);
@@ -31,7 +30,6 @@ export default function Home() {
           : 0;
 
       if (currentViewport !== nextViewport) {
-        setShouldAnimate(true);
         setCurrentViewport(nextViewport);
         setTimeout(() => setIsInitialViewPort(false), 500);
       }
@@ -56,9 +54,8 @@ export default function Home() {
     });
   };
 
-  const selectDesignArea = (area, animateOnChange) => {
+  const selectDesignArea = area => {
     setCurrentDesignArea(area);
-    setShouldAnimate(animateOnChange);
     selectViewport(1);
   };
 
@@ -77,7 +74,7 @@ export default function Home() {
         selectViewport={selectViewport}
         currentDesignArea={currentDesignArea}
         selectDesignArea={selectDesignArea}
-        shouldAnimate={shouldAnimate}
+        shouldAnimate={true}
       />
       <InformationSection informationRef={informationRef} />
     </>
