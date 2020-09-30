@@ -7,6 +7,7 @@ export default function Home() {
   const [previousYOffset, setPreviousYOffset] = useState(0);
   const [currentViewport, setCurrentViewport] = useState(0); // 0 === 'designer', 1 === 'project'
   const [currentDesignArea, setCurrentDesignArea] = useState(0); // 0 === 'industrial', 1 === 'digital'
+  const [skipProjectSection, setSkipProjectSection] = useState(false);
   const [firstAreaEntry, setFirstAreaEntry] = useState(true);
   const showFirstTimeViewport0 = useRef(true);
   const showFirstTimeViewport1 = useRef(true);
@@ -46,8 +47,10 @@ export default function Home() {
 
       if (nextViewport !== currentViewport) {
         if (currentViewport === 0) showFirstTimeViewport0.current = false;
-        if (currentViewport === 1) showFirstTimeViewport1.current = false;
+        if (currentViewport === 1 && !skipProjectSection)
+          showFirstTimeViewport1.current = false;
         setCurrentViewport(nextViewport);
+        if (nextViewport === 2) setSkipProjectSection(false);
       }
     };
     rootElement.addEventListener("scroll", detectViewportOnScroll);
@@ -84,6 +87,7 @@ export default function Home() {
         currentDesignArea={currentDesignArea}
         selectDesignArea={selectDesignArea}
         showTypist={showFirstTimeViewport0.current}
+        setSkipProjectSection={setSkipProjectSection}
       />
       <ProjectSection
         projectRef={projectRef}
@@ -94,6 +98,7 @@ export default function Home() {
         firstSectionEntry={showFirstTimeViewport1.current}
         firstAreaEntry={firstAreaEntry}
         setFirstAreaEntry={setFirstAreaEntry}
+        skipProjectSection={skipProjectSection}
       />
       <InformationSection informationRef={informationRef} />
     </>

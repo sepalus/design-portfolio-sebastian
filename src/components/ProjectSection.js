@@ -186,6 +186,7 @@ function ProjectSection({
   firstSectionEntry,
   firstAreaEntry,
   setFirstAreaEntry,
+  skipProjectSection,
 }) {
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
   const projects =
@@ -197,6 +198,9 @@ function ProjectSection({
   useEffect(() => {
     setActiveProjectIndex(0);
   }, [currentDesignArea]);
+
+  if (skipProjectSection)
+    return <section ref={projectRef} className="project-section-container" />;
 
   return (
     <section ref={projectRef} className="project-section-container">

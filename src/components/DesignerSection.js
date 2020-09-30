@@ -10,6 +10,7 @@ function DesignerSection({
   selectViewport,
   currentDesignArea,
   selectDesignArea,
+  setSkipProjectSection,
 }) {
   const [showWorkTypist, setShowWorkTypist] = useState(false);
 
@@ -32,7 +33,13 @@ function DesignerSection({
               }
             >
               Hello, I am&nbsp;
-              <span className="link" onClick={() => selectViewport(2)}>
+              <span
+                className="link"
+                onClick={() => {
+                  setSkipProjectSection(true);
+                  selectViewport(2);
+                }}
+              >
                 Sebastian
               </span>
               &nbsp;a designer for the physical and digital world.
