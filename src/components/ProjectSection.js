@@ -35,8 +35,8 @@ const tyyniDesignProject = {
   },
 };
 
-const kuuDesignProject = {
-  title: "Kuu",
+const kuutamoDesignProject = {
+  title: "Kuutamo",
   description: "A directional night light that doesn't bother your partner",
   year: 2016,
   isTeam: false,
@@ -46,6 +46,55 @@ const kuuDesignProject = {
   style: {
     backgroundColor: "black",
     color: "white",
+  },
+};
+
+const kiskoDesignProject = {
+  title: "Kisko",
+  description:
+    "Elegant industrial seating for people who value confort with an edge",
+  year: 2019,
+  isTeam: false,
+  categories: ["Furniture Design", "Chair Design", "Component Design"],
+  displayableCategory: 2,
+  image: "./assets/kisko.png",
+  style: {
+    backgroundColor: "black",
+    color: "white",
+  },
+};
+
+const kolmioillaDesignProject = {
+  title: "Kohdataan Kolmioilla",
+  description: "Creating cultural encounters",
+  year: 2019,
+  isTeam: true,
+  categories: ["Street Furniture Design", "Chair Design", "Spatial Design"],
+  displayableCategory: 2,
+  image: "./assets/kolmioilla.png",
+  style: {
+    backgroundColor: "black",
+    color: "white",
+  },
+};
+
+const pyorreDesignProject = {
+  title: "Pyörre",
+  description:
+    "An electrical toothbrush designed for  recyclability and the circular economy",
+  year: 2020,
+  isTeam: true,
+  categories: [
+    "How Appliance Design Design",
+    "Design for Recyclability",
+    "Design for the Circular Economy",
+  ],
+  displayableCategory: 2,
+  image: "./assets/pyorre.png",
+  classes: "contain",
+  style: {
+    backgroundColor: "white",
+    color: "black",
   },
 };
 
@@ -114,9 +163,13 @@ const axiomDesignProject = {
 
 const industrialProjects = [
   kaarnaDesignProject,
+  kiskoDesignProject,
   tyyniDesignProject,
-  kuuDesignProject,
+  kuutamoDesignProject,
+  pyorreDesignProject,
+  kolmioillaDesignProject,
 ];
+
 const digitalProjects = [
   museDesignProject,
   anneliinaDesignProject,
