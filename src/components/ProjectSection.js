@@ -186,6 +186,7 @@ function ProjectSection({
   firstSectionEntry,
 }) {
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
+  const [firstAreaEntry, setFirstAreaEntry] = useState(true);
   const projects =
     currentDesignArea === 1 ? digitalProjects : industrialProjects;
 
@@ -194,6 +195,7 @@ function ProjectSection({
 
   useEffect(() => {
     setActiveProjectIndex(0);
+    if (currentViewport === 1) setFirstAreaEntry(false);
   }, [currentDesignArea]);
 
   return (
@@ -208,10 +210,14 @@ function ProjectSection({
             "project-section-industrial": currentDesignArea === 0,
           },
           {
-            "project-section-animate": firstSectionEntry,
+            "project-section-animate-slide": false,
           },
           {
-            "project-section-static": !firstSectionEntry,
+            "project-section-animate-compress":
+              firstAreaEntry && firstSectionEntry,
+          },
+          {
+            "project-section-static": !firstAreaEntry || !firstSectionEntry,
           }
         )}
       >
