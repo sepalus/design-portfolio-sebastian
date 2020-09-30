@@ -153,22 +153,10 @@ $project-card-width-negative: calc(360px - 100vw);
     }
   }
 
-  .animate-card-out {
-    @media only screen and (min-width: $screen-m) {
-      animation: industrialCardCompressExit 0.7s forwards;
-    }
-  }
-
   .animate-catalog-in {
     @media only screen and (min-width: $screen-m) {
       animation: industrialCatalogCompressEnter 0.5s forwards;
       animation-delay: 0.5s;
-    }
-  }
-
-  .animate-catalog-out {
-    @media only screen and (min-width: $screen-m) {
-      animation: industrialCatalogCompressExit 0.5s forwards;
     }
   }
 }
@@ -180,21 +168,9 @@ $project-card-width-negative: calc(360px - 100vw);
     }
   }
 
-  .animate-card-out {
-    @media only screen and (min-width: $screen-m) {
-      animation: industrialCardSlideExit 0.7s forwards;
-    }
-  }
-
   .animate-catalog-in {
     @media only screen and (min-width: $screen-m) {
       animation: industrialCatalogSlideEnter 0.5s forwards;
-    }
-  }
-
-  .animate-catalog-out {
-    @media only screen and (min-width: $screen-m) {
-      animation: industrialCatalogSlideExit 0.5s forwards;
     }
   }
 }
@@ -206,21 +182,9 @@ $project-card-width-negative: calc(360px - 100vw);
     }
   }
 
-  .animate-card-out {
-    @media only screen and (min-width: $screen-m) {
-      animation: digitalCardSlideExit 0.7s forwards;
-    }
-  }
-
   .animate-catalog-in {
     @media only screen and (min-width: $screen-m) {
       animation: digitalCatalogSlideEnter 0.5s forwards;
-    }
-  }
-
-  .animate-catalog-out {
-    @media only screen and (min-width: $screen-m) {
-      animation: digitalCatalogSlideExit 0.5s forwards;
     }
   }
 }
@@ -258,15 +222,6 @@ $project-card-width-negative: calc(360px - 100vw);
   animation-delay: 1s;
 }
 
-@keyframes industrialCardCompressExit {
-  from {
-    left: $project-catalog-width;
-  }
-  to {
-    left: 100vw;
-  }
-}
-
 @keyframes industrialCardCompressEnter {
   from {
     left: 100vw;
@@ -282,15 +237,6 @@ $project-card-width-negative: calc(360px - 100vw);
   }
   to {
     left: 0;
-  }
-}
-
-@keyframes industrialCatalogCompressExit {
-  from {
-    left: 0;
-  }
-  to {
-    left: -$project-catalog-width;
   }
 }
 
@@ -321,15 +267,6 @@ $project-card-width-negative: calc(360px - 100vw);
   }
 }
 
-@keyframes digitalCardSlideExit {
-  from {
-    left: 0;
-  }
-  to {
-    left: $project-card-width-negative;
-  }
-}
-
 @keyframes digitalCardSlideEnter {
   from {
     left: $project-card-width-negative;
@@ -339,30 +276,12 @@ $project-card-width-negative: calc(360px - 100vw);
   }
 }
 
-@keyframes digitalCardSlideExit {
-  from {
-    left: 0;
-  }
-  to {
-    left: $project-card-width-negative;
-  }
-}
-
 @keyframes digitalCatalogSlideEnter {
   from {
     left: 0;
   }
   to {
     left: $project-card-width;
-  }
-}
-
-@keyframes digitalCatalogSlideExit {
-  from {
-    left: $project-card-width;
-  }
-  to {
-    left: 0;
   }
 }
 
