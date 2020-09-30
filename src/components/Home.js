@@ -23,7 +23,7 @@ export default function Home() {
       const offsetBreakpoints = [
         designerRefOffset,
         projectRefOffset,
-        informationRefOffset
+        informationRefOffset,
       ];
 
       setPreviousYOffset(currentYOffset);
@@ -50,7 +50,7 @@ export default function Home() {
       rootElement.removeEventListener("scroll", detectViewportOnScroll);
   }, [currentViewport, previousYOffset, rootElement]);
 
-  const selectViewport = viewport => {
+  const selectViewport = (viewport) => {
     const ref =
       viewport === 2
         ? informationRef
@@ -61,11 +61,11 @@ export default function Home() {
     rootElement.scrollTo({
       top: ref.current.offsetTop,
       left: 0,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   };
 
-  const selectDesignArea = area => {
+  const selectDesignArea = (area) => {
     setCurrentDesignArea(area);
     selectViewport(1);
   };

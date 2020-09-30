@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 
-const formattedNumber = number => ("0" + number).slice(-2);
+const formattedNumber = (number) => ("0" + number).slice(-2);
 
 function ProjectCard({ projects, activeProjectIndex, animationDirectionIn }) {
   const activeProject = projects[activeProjectIndex];

@@ -18,7 +18,7 @@ function DesignerSection({
   showTypist,
   selectViewport,
   currentDesignArea,
-  selectDesignArea
+  selectDesignArea,
 }) {
   const [showWorkTypist, setShowWorkTypist] = useState(false);
 
@@ -37,7 +37,7 @@ function DesignerSection({
           stdTypingDelay={0}
           cursor={{
             hideWhenDone: true,
-            hideWhenDoneDelay: 0
+            hideWhenDoneDelay: 0,
           }}
           onTypingDone={setTimeout(() => setShowWorkTypist(true), 3500)}
         >
@@ -71,7 +71,7 @@ function DesignerSection({
             stdTypingDelay={0}
             cursor={{
               hideWhenDone: true,
-              hideWhenDoneDelay: 0
+              hideWhenDoneDelay: 0,
             }}
           >
             <h1>

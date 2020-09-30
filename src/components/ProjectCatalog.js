@@ -6,7 +6,7 @@ function ProjectCatalog({
   projects,
   activeProjectIndex,
   setActiveProjectIndex,
-  animationDirectionIn
+  animationDirectionIn,
 }) {
   return (
     <div
@@ -21,7 +21,7 @@ function ProjectCatalog({
         {projects.map((project, index) => (
           <li
             className={classNames({
-              "project-catalog-active-project": index === activeProjectIndex
+              "project-catalog-active-project": index === activeProjectIndex,
             })}
             onMouseOver={() => setActiveProjectIndex(index)}
           >

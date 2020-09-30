@@ -16,8 +16,8 @@ const kaarnaDesignProject = {
   image: "./assets/kaarna.jpg",
   style: {
     backgroundColor: "black",
-    color: "white"
-  }
+    color: "white",
+  },
 };
 
 const tyyniDesignProject = {
@@ -31,8 +31,8 @@ const tyyniDesignProject = {
   image: "./assets/tyyni.png",
   style: {
     backgroundColor: "black",
-    color: "white"
-  }
+    color: "white",
+  },
 };
 
 const kuuDesignProject = {
@@ -45,8 +45,8 @@ const kuuDesignProject = {
   image: "./assets/kuu.png",
   style: {
     backgroundColor: "black",
-    color: "white"
-  }
+    color: "white",
+  },
 };
 
 const museDesignProject = {
@@ -61,8 +61,8 @@ const museDesignProject = {
   classes: "contain",
   style: {
     backgroundColor: "#6bc9b7",
-    color: "black"
-  }
+    color: "black",
+  },
 };
 
 const anneliinaDesignProject = {
@@ -77,8 +77,8 @@ const anneliinaDesignProject = {
   classes: "contain",
   style: {
     backgroundColor: "#96c1d9",
-    color: "black"
-  }
+    color: "black",
+  },
 };
 
 const scootDesignProject = {
@@ -92,8 +92,8 @@ const scootDesignProject = {
   classes: "contain",
   style: {
     backgroundColor: "#f8f379",
-    color: "black"
-  }
+    color: "black",
+  },
 };
 
 const axiomDesignProject = {
@@ -108,20 +108,20 @@ const axiomDesignProject = {
   classes: "contain",
   style: {
     backgroundColor: "#d2ebf9",
-    color: "black"
-  }
+    color: "black",
+  },
 };
 
 const industrialProjects = [
   kaarnaDesignProject,
   tyyniDesignProject,
-  kuuDesignProject
+  kuuDesignProject,
 ];
 const digitalProjects = [
   museDesignProject,
   anneliinaDesignProject,
   scootDesignProject,
-  axiomDesignProject
+  axiomDesignProject,
 ];
 
 function ProjectSection({
@@ -130,7 +130,7 @@ function ProjectSection({
   currentViewport,
   selectDesignArea,
   selectViewport,
-  shouldAnimate
+  shouldAnimate,
 }) {
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
   const projects =
@@ -149,16 +149,16 @@ function ProjectSection({
         className={classNames(
           "project-section",
           {
-            "project-section-digital": currentDesignArea === 1
+            "project-section-digital": currentDesignArea === 1,
           },
           {
-            "project-section-industrial": currentDesignArea === 0
+            "project-section-industrial": currentDesignArea === 0,
           },
           {
-            "project-section-animate": shouldAnimate
+            "project-section-animate": shouldAnimate,
           },
           {
-            "project-section-static": !shouldAnimate
+            "project-section-static": !shouldAnimate,
           }
         )}
       >

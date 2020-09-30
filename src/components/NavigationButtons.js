@@ -9,7 +9,7 @@ function NavigationButtons({
   currentDesignArea,
   selectDesignArea,
   selectViewport,
-  animationFadeIn
+  animationFadeIn,
 }) {
   return (
     <div
@@ -32,7 +32,7 @@ function NavigationButtons({
       </button>
       <button
         className={classNames("link-button project-section-button", {
-          "project-section-button-left": currentDesignArea === 1
+          "project-section-button-left": currentDesignArea === 1,
         })}
         onClick={() => selectDesignArea(currentDesignArea === 1)}
       >
