@@ -5,8 +5,13 @@ $project-catalog-width: 360px;
 $project-card-width: calc(100vw - 360px);
 $project-card-width-negative: calc(360px - 100vw);
 
+.project-section-container {
+  width: 200vw;
+}
+
 .project-section {
-  width: 100%;
+  position: relative;
+  width: 100vw;
   height: 100%;
   display: flex;
 }
