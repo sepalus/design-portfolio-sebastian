@@ -47,7 +47,7 @@ h1 {
   font-family: "Arvo", serif;
   font-weight: 300;
   @media only screen and (min-width: $screen-m) {
-    font-size: 40px;
+    font-size: 36px;
     margin-bottom: 16px;
   }
 }
@@ -55,15 +55,16 @@ h1 {
 h2 {
   font-size: 24px;
   @media only screen and (min-width: $screen-m) {
-    font-size: 32px;
+    font-size: 28px;
     margin: 24px 0px 16px;
   }
 }
 
 h3 {
   font-size: 16px;
+  font-weight: 400;
   @media only screen and (min-width: $screen-m) {
-    font-size: 24px;
+    font-size: 22px;
     margin: 16px 0px 8px;
   }
 }
@@ -80,7 +81,7 @@ li,
 p {
   font-size: 12px;
   @media only screen and (min-width: $screen-m) {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 
@@ -100,7 +101,11 @@ ul {
 }
 
 .link {
-  color: #98394c;
   cursor: pointer;
-  border-bottom: 0.075em solid white;
+  border: 0.075em solid white;
+  padding: 4px 16px;
+}
+
+.link:hover {
+  background-color: rgba($color: #ffffff, $alpha: 0.1);
 }
