@@ -203,11 +203,10 @@ $project-card-width-negative: calc(360px - 100vw);
 
 .project-section-button-wrapper {
   opacity: 0;
-  position: absolute;
-  top: 40px;
+  top: 64px;
   right: 40px;
+  position: absolute;
   display: flex;
-  flex-direction: column;
 }
 
 .project-section-button-wrapper-left {
@@ -216,13 +215,12 @@ $project-card-width-negative: calc(360px - 100vw);
 
 .project-section-button {
   display: flex;
-  width: min-content;
-  margin-bottom: 5px;
-  h4 {
-    margin: 0px 5px;
+  h3 {
+    margin: 0px 8px 0px;
+    font-weight: 300;
   }
   svg {
-    margin-top: 1px;
+    margin-top: 3px;
   }
 }
 
@@ -231,7 +229,7 @@ $project-card-width-negative: calc(360px - 100vw);
   justify-content: flex-end;
 }
 
-.animate-buttons-fade-in {
+.project-section-button-wrapper.animate-buttons-fade-in {
   animation: fadein 1s forwards;
   animation-delay: 1s;
 }
