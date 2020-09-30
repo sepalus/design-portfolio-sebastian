@@ -76,6 +76,7 @@ $project-card-width-negative: calc(360px - 100vw);
 
   img.contain {
     width: auto;
+    max-width: 100%;
     object-fit: contain;
     left: 50%;
     transform: translateX(-50%);
@@ -100,7 +101,7 @@ $project-card-width-negative: calc(360px - 100vw);
   padding: 30px 30px 0px;
   width: 210px;
   @media only screen and (min-width: $screen-m) {
-    padding: 65px 40px 0px;
+    padding: 60px 40px 0px;
     width: 270px;
   }
 }
@@ -215,7 +216,7 @@ $project-card-width-negative: calc(360px - 100vw);
 
 .project-section-button-wrapper {
   opacity: 0;
-  top: 64px;
+  top: 60px;
   right: 40px;
   position: absolute;
   display: flex;

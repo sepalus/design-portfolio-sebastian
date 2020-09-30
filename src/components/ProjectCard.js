@@ -1,8 +1,6 @@
 import React from "react";
 import classNames from "classnames";
 
-const formattedNumber = (number) => ("0" + number).slice(-2);
-
 function ProjectCard({ projects, activeProjectIndex, animationDirectionIn }) {
   const activeProject = projects[activeProjectIndex];
 
@@ -30,7 +28,6 @@ function ProjectCard({ projects, activeProjectIndex, animationDirectionIn }) {
       </div>
       <div className="project-card-text-wrapper">
         <div className="project-card-description">
-          <h1>{formattedNumber(activeProjectIndex + 1)}</h1>
           <h1>{activeProject.title}</h1>
           <h4>{activeProject.description}</h4>
         </div>
