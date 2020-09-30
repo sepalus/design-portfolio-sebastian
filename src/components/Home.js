@@ -7,12 +7,17 @@ export default function Home() {
   const [previousYOffset, setPreviousYOffset] = useState(0);
   const [currentViewport, setCurrentViewport] = useState(0); // 0 === 'designer', 1 === 'project'
   const [currentDesignArea, setCurrentDesignArea] = useState(0); // 0 === 'industrial', 1 === 'digital'
+  const [firstAreaEntry, setFirstAreaEntry] = useState(true);
   const showFirstTimeViewport0 = useRef(true);
   const showFirstTimeViewport1 = useRef(true);
   const designerRef = useRef(null);
   const projectRef = useRef(null);
   const informationRef = useRef(null);
   const rootElement = document.getElementById("root");
+
+  useEffect(() => {
+    setFirstAreaEntry(true);
+  }, [currentViewport]);
 
   useEffect(() => {
     const detectViewportOnScroll = () => {
@@ -68,6 +73,7 @@ export default function Home() {
   const selectDesignArea = (area) => {
     setCurrentDesignArea(area);
     selectViewport(1);
+    setFirstAreaEntry(false);
   };
 
   return (
@@ -86,6 +92,8 @@ export default function Home() {
         currentDesignArea={currentDesignArea}
         selectDesignArea={selectDesignArea}
         firstSectionEntry={showFirstTimeViewport1.current}
+        firstAreaEntry={firstAreaEntry}
+        setFirstAreaEntry={setFirstAreaEntry}
       />
       <InformationSection informationRef={informationRef} />
     </>
