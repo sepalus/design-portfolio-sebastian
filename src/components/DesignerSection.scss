@@ -1,53 +1,26 @@
 $screen-m: 768px;
+$typist-left: calc(50vw - 691px / 2);
+$typist-top: calc(50vh - 108px / 2);
 
-.designer-section-image {
+.designer-section-items {
   position: absolute;
-  height: 100vh;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.designer-section-menu {
-  position: absolute;
-  bottom: 15vh;
-  font-size: 32px;
-
-  @media only screen and (min-width: $screen-m) {
-    font-size: 40px;
-  }
-  h1 {
-    display: inline;
-  }
+  top: $typist-top;
 }
 
 .designer-section-typist {
-  bottom: 30vh;
+  position: relative;
+  left: $typist-left;
+  white-space: nowrap;
+  h3 {
+    display: inline-block;
+  }
+  .link {
+    padding: 4px 8px;
+  }
 }
 
-.designer-section-typist-about {
-  left: 200px;
-}
-
-.designer-section-typist-work {
-  left: calc(100vw - 350px);
-}
-
-.designer-section-text-arrow {
-  opacity: 0;
-  font-size: 50px;
-  position: absolute;
-  animation: fadein 3s forwards;
-  animation-delay: 0.2s;
-}
-.designer-section-text-arrow-forward {
-  transform: rotate(0.5turn);
-  margin-left: 16px;
-}
-
-.designer-section-text-arrow-down {
-  transform: rotate(0.75turn);
-  margin-top: 24px;
-  margin-left: 4px;
+.designer-section-typist:not(:first-child) {
+  margin-top: 20px;
 }
 
 @keyframes fadein {
