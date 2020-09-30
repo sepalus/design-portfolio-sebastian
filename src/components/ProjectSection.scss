@@ -134,6 +134,9 @@ $project-card-width-negative: calc(360px - 100vw);
   .project-catalog {
     left: 0px;
   }
+  .project-section-button-wrapper {
+    opacity: 1;
+  }
 }
 
 .project-section-digital.project-section-static {
@@ -143,49 +146,63 @@ $project-card-width-negative: calc(360px - 100vw);
   .project-catalog {
     left: $project-card-width;
   }
+  .project-section-button-wrapper {
+    opacity: 1;
+  }
 }
 
 .project-section-industrial.project-section-animate-compress {
   .animate-card-in {
     @media only screen and (min-width: $screen-m) {
       animation: industrialCardCompressEnter 0.7s forwards;
-      animation-delay: 1s;
+      animation-delay: 0.5s;
     }
   }
 
   .animate-catalog-in {
     @media only screen and (min-width: $screen-m) {
       animation: industrialCatalogCompressEnter 0.5s forwards;
-      animation-delay: 0.5s;
     }
+  }
+  .project-section-button-wrapper.animate-buttons-fade-in {
+    animation: fadein 1s forwards;
+    animation-delay: 1s;
   }
 }
 
 .project-section-industrial.project-section-animate-slide {
   .animate-card-in {
     @media only screen and (min-width: $screen-m) {
-      animation: industrialCardSlideEnter 0.7s forwards;
+      animation: industrialCardSlideEnter 0.8s forwards;
     }
   }
 
   .animate-catalog-in {
     @media only screen and (min-width: $screen-m) {
-      animation: industrialCatalogSlideEnter 0.5s forwards;
+      animation: industrialCatalogSlideEnter 0.8s forwards;
     }
+  }
+  .project-section-button-wrapper.animate-buttons-fade-in {
+    animation: fadein 0.5s forwards;
+    animation-delay: 0.8s;
   }
 }
 
 .project-section-digital.project-section-animate-slide {
   .animate-card-in {
     @media only screen and (min-width: $screen-m) {
-      animation: digitalCardSlideEnter 0.7s forwards;
+      animation: digitalCardSlideEnter 0.8s forwards;
     }
   }
 
   .animate-catalog-in {
     @media only screen and (min-width: $screen-m) {
-      animation: digitalCatalogSlideEnter 0.5s forwards;
+      animation: digitalCatalogSlideEnter 0.8s forwards;
     }
+  }
+  .project-section-button-wrapper.animate-buttons-fade-in {
+    animation: fadein 0.5s forwards;
+    animation-delay: 0.8s;
   }
 }
 
@@ -215,11 +232,6 @@ $project-card-width-negative: calc(360px - 100vw);
 .project-section-button-left {
   flex-direction: row-reverse;
   justify-content: flex-end;
-}
-
-.project-section-button-wrapper.animate-buttons-fade-in {
-  animation: fadein 1s forwards;
-  animation-delay: 1s;
 }
 
 @keyframes industrialCardCompressEnter {
