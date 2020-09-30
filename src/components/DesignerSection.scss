@@ -11,16 +11,14 @@ $typist-top: calc(50vh - 108px / 2);
   position: relative;
   left: $typist-left;
   white-space: nowrap;
-  h3 {
-    display: inline-block;
-  }
+
   .link {
     padding: 4px 8px;
   }
 }
 
-.designer-section-typist:not(:first-child) {
-  margin-top: 20px;
+.designer-section-items h3:not(:first-child) {
+  margin-top: 28px;
 }
 
 @keyframes fadein {
