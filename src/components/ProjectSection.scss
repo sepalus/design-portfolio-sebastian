@@ -25,6 +25,7 @@ $project-card-width-negative: calc(360px - 100vw);
   padding-top: 40px;
   background-color: black;
   color: white;
+  z-index: 1;
 
   h2 {
     padding-left: 40px;
