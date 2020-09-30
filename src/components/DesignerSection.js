@@ -42,7 +42,7 @@ function DesignerSection({
               >
                 Sebastian
               </span>
-              &nbsp;a designer for the physical and digital world.
+              &nbsp;a designer for the physical and digital world
             </Typist>
           </h3>
         ) : (
@@ -52,7 +52,7 @@ function DesignerSection({
               <span className="link" onClick={() => selectViewport(2)}>
                 Sebastian
               </span>
-              &nbsp;a designer for the physical and digital world.
+              &nbsp;a designer for the physical and digital world
             </h3>
           </div>
         )}

@@ -160,13 +160,14 @@ $project-card-width-negative: calc(360px - 100vw);
   .animate-card-in {
     @media only screen and (min-width: $screen-m) {
       animation: industrialCardCompressEnter 0.7s forwards;
-      animation-delay: 0.5s;
+      animation-delay: 0.6s;
     }
   }
 
   .animate-catalog-in {
     @media only screen and (min-width: $screen-m) {
       animation: industrialCatalogCompressEnter 0.5s forwards;
+      animation-delay: 0.1s;
     }
   }
   .project-section-button-wrapper.animate-buttons-fade-in {

@@ -18,19 +18,19 @@ function NavigationButtons({
         { "animate-buttons-fade-in": animationFadeIn },
         { "animate-buttons-fade-out": !animationFadeIn }
       )}
-      style={{
-        color: activeProject ? activeProject.style.color : "black",
-        borderColor: activeProject ? activeProject.style.color : "black",
-        borderWidth:
-          activeProject && activeProject.style.color === "black"
-            ? "2px"
-            : "1px",
-      }}
     >
       <button
         className={classNames("link-button link project-section-button", {
           "project-section-button-left": currentDesignArea === 1,
         })}
+        style={{
+          color: activeProject ? activeProject.style.color : "black",
+          borderColor: activeProject ? activeProject.style.color : "black",
+          borderWidth:
+            activeProject && activeProject.style.color === "black"
+              ? "2px"
+              : "1px",
+        }}
         onClick={() => selectDesignArea(currentDesignArea === 1 ? 0 : 1)}
       >
         {currentDesignArea === 1 ? (

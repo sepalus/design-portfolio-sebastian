@@ -59,8 +59,8 @@ const kiskoDesignProject = {
   displayableCategory: 2,
   image: "./assets/kisko.png",
   style: {
-    backgroundColor: "black",
-    color: "white",
+    backgroundColor: "white",
+    color: "black",
   },
 };
 
