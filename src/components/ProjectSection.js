@@ -183,7 +183,7 @@ function ProjectSection({
   currentViewport,
   selectDesignArea,
   selectViewport,
-  shouldAnimate,
+  firstSectionEntry,
 }) {
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
   const projects =
@@ -208,10 +208,10 @@ function ProjectSection({
             "project-section-industrial": currentDesignArea === 0,
           },
           {
-            "project-section-animate": shouldAnimate,
+            "project-section-animate": firstSectionEntry,
           },
           {
-            "project-section-static": !shouldAnimate,
+            "project-section-static": !firstSectionEntry,
           }
         )}
       >

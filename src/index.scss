@@ -102,10 +102,10 @@ ul {
 
 .link {
   cursor: pointer;
-  border: 0.075em solid white;
+  border: 1px solid white;
   padding: 4px 16px;
 }
 
 .link:hover {
-  background-color: rgba($color: #ffffff, $alpha: 0.1);
+  background-color: rgba($color: #ffffff, $alpha: 0.2);
 }

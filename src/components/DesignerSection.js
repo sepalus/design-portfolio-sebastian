@@ -20,7 +20,7 @@ function DesignerSection({
           <Typist
             className="designer-section-typist"
             startDelay={700}
-            avgTypingDelay={25}
+            avgTypingDelay={20}
             stdTypingDelay={0}
             cursor={{
               hideWhenDone: true,
@@ -51,7 +51,7 @@ function DesignerSection({
             <Typist
               className="designer-section-typist"
               startDelay={200}
-              avgTypingDelay={25}
+              avgTypingDelay={20}
               stdTypingDelay={0}
               cursor={{
                 hideWhenDone: true,

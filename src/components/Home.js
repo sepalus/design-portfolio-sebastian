@@ -85,7 +85,7 @@ export default function Home() {
         selectViewport={selectViewport}
         currentDesignArea={currentDesignArea}
         selectDesignArea={selectDesignArea}
-        shouldAnimate={showFirstTimeViewport1.current}
+        firstSectionEntry={showFirstTimeViewport1.current}
       />
       <InformationSection informationRef={informationRef} />
     </>
