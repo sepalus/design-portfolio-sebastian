@@ -20,9 +20,16 @@ function NavigationButtons({
       )}
     >
       <button
-        className={classNames("link-button link project-section-button", {
-          "project-section-button-left": currentDesignArea === 1,
-        })}
+        className={classNames(
+          "link-button project-section-button",
+          {
+            "project-section-button-left": currentDesignArea === 1,
+          },
+          {
+            "link-button-dark":
+              activeProject && activeProject.style.color === "black",
+          }
+        )}
         style={{
           color: activeProject ? activeProject.style.color : "black",
           borderColor: activeProject ? activeProject.style.color : "black",

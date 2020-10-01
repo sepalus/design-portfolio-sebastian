@@ -215,19 +215,24 @@ $project-card-width-negative: calc(360px - 100vw);
 }
 
 .project-section-button-wrapper {
+  display: inline-block;
   opacity: 0;
   top: 60px;
   right: 40px;
   position: absolute;
-  display: flex;
 }
 
 .project-section-button-wrapper-left {
   left: 40px;
+  right: initial;
 }
 
+.project-section-button-wrapper.animate-buttons-fade-out {
+  display: none;
+}
 .project-section-button {
   display: flex;
+  z-index: 2;
   h3 {
     margin: 0px 8px 0px;
     font-weight: 300;

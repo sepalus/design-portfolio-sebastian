@@ -90,9 +90,11 @@ ul {
 }
 
 .link-button {
+  cursor: pointer;
+  padding: 4px 16px;
+  border: 1px solid white;
   background: none;
-  border: none;
-  color: inherit;
+  color: white;
   font: inherit;
 }
 
@@ -100,12 +102,15 @@ ul {
   outline: 0;
 }
 
-.link {
-  cursor: pointer;
-  border: 1px solid white;
-  padding: 4px 16px;
+.link-button.link-button-dark {
+  color: black;
+  border: 2px solid black;
 }
 
-.link:hover {
+.link-button:hover {
   background-color: rgba($color: #ffffff, $alpha: 0.2);
+}
+
+.link-button.link-button-dark:hover {
+  background-color: rgba($color: #000000, $alpha: 0.1);
 }
