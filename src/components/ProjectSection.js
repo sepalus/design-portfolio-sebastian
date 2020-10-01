@@ -14,9 +14,9 @@ const kaarnaDesignProject = {
   categories: ["Product Design", "Vehicle Design", "Urban Mobility Design"],
   displayableCategory: 1,
   image: "./assets/kaarna.jpg",
+  styleDarkColor: false,
   style: {
     backgroundColor: "black",
-    color: "white",
   },
 };
 
@@ -29,9 +29,9 @@ const tyyniDesignProject = {
   categories: ["Product Design", "Acoustic Design", "Wall Panel Design"],
   displayableCategory: 1,
   image: "./assets/tyyni.png",
+  styleDarkColor: false,
   style: {
     backgroundColor: "black",
-    color: "white",
   },
 };
 
@@ -43,9 +43,9 @@ const kuutamoDesignProject = {
   categories: ["Product Design", "Furniture Design", "Lamp Design"],
   displayableCategory: 2,
   image: "./assets/kuu.png",
+  styleDarkColor: false,
   style: {
     backgroundColor: "black",
-    color: "white",
   },
 };
 
@@ -58,9 +58,9 @@ const kiskoDesignProject = {
   categories: ["Furniture Design", "Chair Design", "Component Design"],
   displayableCategory: 2,
   image: "./assets/kisko.png",
+  styleDarkColor: true,
   style: {
     backgroundColor: "white",
-    color: "black",
   },
 };
 
@@ -72,9 +72,9 @@ const kolmioillaDesignProject = {
   categories: ["Street Furniture Design", "Chair Design", "Spatial Design"],
   displayableCategory: 2,
   image: "./assets/kolmioilla.png",
+  styleDarkColor: false,
   style: {
     backgroundColor: "black",
-    color: "white",
   },
 };
 
@@ -92,9 +92,9 @@ const pyorreDesignProject = {
   displayableCategory: 2,
   image: "./assets/pyorre.png",
   classes: "contain",
+  styleDarkColor: true,
   style: {
     backgroundColor: "white",
-    color: "black",
   },
 };
 
@@ -108,9 +108,9 @@ const museDesignProject = {
   displayableCategory: 0,
   image: "./assets/muse.png",
   classes: "contain",
+  styleDarkColor: true,
   style: {
     backgroundColor: "#6bc9b7",
-    color: "black",
   },
 };
 
@@ -124,9 +124,9 @@ const anneliinaDesignProject = {
   displayableCategory: 0,
   image: "./assets/anneliina.png",
   classes: "contain",
+  styleDarkColor: true,
   style: {
     backgroundColor: "#96c1d9",
-    color: "black",
   },
 };
 
@@ -139,9 +139,9 @@ const scootDesignProject = {
   displayableCategory: 0,
   image: "./assets/scoot.png",
   classes: "contain",
+  styleDarkColor: true,
   style: {
     backgroundColor: "#f8f379",
-    color: "black",
   },
 };
 
@@ -155,9 +155,9 @@ const axiomDesignProject = {
   displayableCategory: 0,
   image: "./assets/axiom.png",
   classes: "contain",
+  styleDarkColor: true,
   style: {
     backgroundColor: "#d2ebf9",
-    color: "black",
   },
 };
 

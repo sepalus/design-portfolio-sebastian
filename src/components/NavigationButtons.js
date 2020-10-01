@@ -26,18 +26,9 @@ function NavigationButtons({
             "project-section-button-left": currentDesignArea === 1,
           },
           {
-            "link-button-dark":
-              activeProject && activeProject.style.color === "black",
+            "link-button-dark": activeProject && activeProject.styleDarkColor,
           }
         )}
-        style={{
-          color: activeProject ? activeProject.style.color : "black",
-          borderColor: activeProject ? activeProject.style.color : "black",
-          borderWidth:
-            activeProject && activeProject.style.color === "black"
-              ? "2px"
-              : "1px",
-        }}
         onClick={() => selectDesignArea(currentDesignArea === 1 ? 0 : 1)}
       >
         {currentDesignArea === 1 ? (

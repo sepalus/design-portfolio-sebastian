@@ -11,7 +11,10 @@ function ProjectCard({ projects, activeProjectIndex, animationDirectionIn }) {
         { "animate-card-in": animationDirectionIn },
         { "animate-card-out": !animationDirectionIn }
       )}
-      style={activeProject.style}
+      style={{
+        ...activeProject.style,
+        color: activeProject.styleDarkColor ? "black" : "white",
+      }}
     >
       <div className="project-card-image-wrapper">
         {projects.map((project, index) => (
