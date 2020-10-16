@@ -71,9 +71,9 @@ h3 {
 
 h4 {
   font-weight: normal;
-  font-size: 16px;
+  font-size: 12px;
   @media only screen and (min-width: $screen-m) {
-    font-size: 19px;
+    font-size: 18px;
   }
 }
 
@@ -113,4 +113,10 @@ ul {
 
 .link-button.link-button-dark:hover {
   background-color: rgba($color: #000000, $alpha: 0.1);
+}
+
+.horizontal-line {
+  border-top: 1px solid white;
+  margin: 16px 0px;
+  width: 100%;
 }
