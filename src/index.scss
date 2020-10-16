@@ -89,6 +89,14 @@ ul {
   list-style-type: none;
 }
 
+.no-style-button {
+  font: inherit;
+  color: inherit;
+  background: inherit;
+  border: none;
+  outline: none;
+  cursor: text;
+}
 .link-button {
   cursor: pointer;
   padding: 4px 16px;

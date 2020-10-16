@@ -3,10 +3,15 @@ import classNames from "classnames";
 import "./InformationSection.scss";
 
 function InformationSection({ informationRef }) {
-  const [toggleOn, setToggleOn] = useState(false);
+  const [textExpanded, setTextExpanded] = useState(false);
 
-  const runAnimation = () => {
-    setToggleOn(!toggleOn);
+  const toggleTextExpanded = () => {
+    setTextExpanded(!textExpanded);
+  };
+
+  const openMoreInfo = () => {
+    if (!textExpanded) return;
+    console.log("Open more info");
   };
 
   return (
@@ -21,58 +26,67 @@ function InformationSection({ informationRef }) {
         </div>
         <div className="information-section-text-wrapper">
           <div className="information-section-introduction">
-            <h3>Sebastian Högnabba</h3>
+            <h3>
+              <button
+                className="link-button link-button-narrow"
+                onClick={() => {
+                  toggleTextExpanded();
+                }}
+              >
+                Sebastian Högnabba
+              </button>
+            </h3>
             <button
               className={classNames(
-                "information-section-introduction-title link-button link-button-narrow",
+                "information-section-introduction-title ",
                 {
-                  "animate-title-element-1": toggleOn,
+                  "animate-title-element-1 link-button link-button-narrow": textExpanded,
                 },
                 {
-                  "animate-title-element-1-reverse": !toggleOn,
+                  "animate-title-element-1-reverse no-style-button": !textExpanded,
                 }
               )}
               onClick={() => {
-                runAnimation();
+                openMoreInfo();
               }}
             >
               Industrial Designer
             </button>
             <button
               className={classNames(
-                "information-section-introduction-title link-button link-button-narrow",
+                "information-section-introduction-title ",
                 {
-                  "animate-title-element-2": toggleOn,
+                  "animate-title-element-2 link-button link-button-narrow": textExpanded,
                 },
                 {
-                  "animate-title-element-2-reverse": !toggleOn,
+                  "animate-title-element-2-reverse no-style-button": !textExpanded,
                 }
               )}
               onClick={() => {
-                runAnimation();
+                openMoreInfo();
               }}
             >
               Digital Creator
             </button>
             <button
               className={classNames(
-                "information-section-introduction-title link-button link-button-narrow",
+                "information-section-introduction-title ",
                 {
-                  "animate-title-element-3": toggleOn,
+                  "animate-title-element-3 link-button link-button-narrow": textExpanded,
                 },
                 {
-                  "animate-title-element-3-reverse": !toggleOn,
+                  "animate-title-element-3-reverse no-style-button": !textExpanded,
                 }
               )}
               onClick={() => {
-                runAnimation();
+                openMoreInfo();
               }}
             >
               Aethetician
             </button>
             <div
               className={classNames("verticle-line", {
-                "animate-verticle-line": toggleOn,
+                "animate-verticle-line": textExpanded,
               })}
             ></div>
             <p
@@ -80,10 +94,10 @@ function InformationSection({ informationRef }) {
               className={classNames(
                 "information-section-introduction-text",
                 {
-                  "animate-text-element": toggleOn,
+                  "animate-text-element": textExpanded,
                 },
                 {
-                  "hide-element": !toggleOn,
+                  "hide-element": !textExpanded,
                 }
               )}
             >
@@ -125,14 +139,6 @@ function InformationSection({ informationRef }) {
         </div>
       </div>
       <div class="information-section-contact-wrapper"></div>
-      <button
-        style={{ position: "absolute", bottom: "100px" }}
-        onClick={() => {
-          runAnimation();
-        }}
-      >
-        Toggle
-      </button>
     </section>
   );
 }
