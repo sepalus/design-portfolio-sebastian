@@ -34,7 +34,7 @@ function DesignerSection({
             >
               Hello, I am&nbsp;
               <span
-                className="link-button"
+                className="link-button link-button-narrow"
                 onClick={() => {
                   setSkipProjectSection(true);
                   selectViewport(2);
@@ -49,7 +49,10 @@ function DesignerSection({
           <div className="designer-section-typist">
             <h3>
               Hello, I am&nbsp;
-              <span className="link-button" onClick={() => selectViewport(2)}>
+              <span
+                className="link-button link-button-narrow"
+                onClick={() => selectViewport(2)}
+              >
                 Sebastian
               </span>
               &nbsp;a designer for the physical and digital world
@@ -71,7 +74,10 @@ function DesignerSection({
               >
                 If you’re interested in what I’ve done, please have a look at
                 my&nbsp;
-                <span className="link-button" onClick={() => selectViewport(1)}>
+                <span
+                  className="link-button link-button-narrow"
+                  onClick={() => selectViewport(1)}
+                >
                   work
                 </span>
               </Typist>
@@ -82,7 +88,10 @@ function DesignerSection({
             <div className="designer-section-typist">
               If you’re interested in what I’ve done, please have a look at
               my&nbsp;
-              <span className="link-button" onClick={() => selectViewport(1)}>
+              <span
+                className="link-button link-button-narrow"
+                onClick={() => selectViewport(1)}
+              >
                 work
               </span>
             </div>
