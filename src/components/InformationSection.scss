@@ -19,16 +19,31 @@
 }
 
 .information-section-introduction {
+  position: relative;
+  width: 420px;
+  height: 200px;
   h3 {
-    padding-right: 12px;
+    margin-right: 12px;
   }
-  p {
-    padding: 8px 0 0 12px;
+  .information-section-introduction-title {
+    z-index: 2;
+    position: absolute;
+    left: 0px;
+    margin: 8px 0 0 12px;
+    font-size: 14px;
+    white-space: nowrap;
   }
-  p:first-of-type {
-    padding-top: 0px;
+  .information-section-introduction-title:first-of-type {
+    top: 50px;
+  }
+  .information-section-introduction-title:nth-of-type(2) {
+    top: 100px;
+  }
+  .information-section-introduction-title:nth-of-type(3) {
+    top: 150px;
   }
 }
+
 .information-section-icon-wrapper {
   display: flex;
   padding-bottom: 4px;
@@ -45,5 +60,167 @@
   }
   img:hover {
     opacity: 1;
+  }
+}
+
+.information-section-introduction-text {
+  top: 50px;
+  left: 20px;
+  opacity: 0;
+  line-height: 30px;
+}
+
+.verticle-line {
+  position: absolute;
+  width: 1px;
+  height: 0px;
+  background-color: white;
+}
+
+.animate-title-element-1 {
+  animation: movetitleelement1 1s forwards;
+  animation-delay: 0s;
+}
+
+.animate-title-element-1-reverse {
+  animation: movetitleelement1reverse 1s forwards;
+  animation-delay: 0s;
+}
+
+.animate-title-element-2 {
+  animation: movetitleelement2 1.2s forwards;
+  animation-delay: 0s;
+}
+
+.animate-title-element-2-reverse {
+  animation: movetitleelement2reverse 1.2s forwards;
+  animation-delay: 0s;
+}
+
+.animate-title-element-3 {
+  animation: movetitleelement3 1.5s forwards;
+  animation-delay: 0s;
+}
+
+.animate-title-element-3-reverse {
+  animation: movetitleelement3reverse 1.5s forwards;
+  animation-delay: 0s;
+}
+
+.animate-text-element {
+  animation: fadeintextelement 1s forwards;
+  animation-delay: 0.5s;
+}
+
+.animate-verticle-line {
+  animation: linedown 1s forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes movetitleelement1 {
+  from {
+    top: 50px;
+    left: 0;
+  }
+  50% {
+    top: 50px;
+    left: 250px;
+  }
+  to {
+    top: 72px;
+    left: 170px;
+  }
+}
+
+@keyframes movetitleelement1reverse {
+  from {
+    top: 72px;
+    left: 170px;
+  }
+  50% {
+    top: 50px;
+    left: 250px;
+  }
+  to {
+    top: 50px;
+    left: 0;
+  }
+}
+
+@keyframes movetitleelement2 {
+  from {
+    top: 100px;
+    left: 0;
+  }
+  50% {
+    top: 100px;
+    left: 290px;
+  }
+  to {
+    top: 192px;
+    left: 198px;
+  }
+}
+
+@keyframes movetitleelement2reverse {
+  from {
+    top: 192px;
+    left: 198px;
+  }
+  50% {
+    top: 100px;
+    left: 290px;
+  }
+  to {
+    top: 100px;
+    left: 0;
+  }
+}
+
+@keyframes movetitleelement3 {
+  from {
+    top: 150px;
+    left: 0;
+  }
+  50% {
+    top: 150px;
+    left: 80px;
+  }
+  to {
+    top: 252px;
+    left: 8px;
+  }
+}
+
+@keyframes movetitleelement3reverse {
+  from {
+    top: 252px;
+    left: 8px;
+  }
+  50% {
+    top: 150px;
+    left: 80px;
+  }
+  to {
+    top: 150px;
+    left: 0;
+  }
+}
+
+@keyframes fadeintextelement {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes linedown {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 240px;
   }
 }
