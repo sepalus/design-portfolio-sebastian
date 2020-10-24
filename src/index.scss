@@ -89,6 +89,8 @@ ul {
   list-style-type: none;
 }
 
+/* Buttons */
+
 .no-style-button {
   font: inherit;
   color: inherit;
@@ -97,6 +99,7 @@ ul {
   outline: none;
   cursor: text;
 }
+
 .link-button {
   cursor: pointer;
   padding: 4px 16px;
@@ -106,26 +109,28 @@ ul {
   font: inherit;
 }
 
-.link-button-narrow {
-  padding: 4px 8px;
-}
-
 .link-button:focus {
   outline: 0;
-}
-
-.link-button.link-button-dark {
-  color: black;
-  border: 2px solid black;
 }
 
 .link-button:hover {
   background-color: rgba($color: #ffffff, $alpha: 0.2);
 }
 
-.link-button.link-button-dark:hover {
+.link-button-narrow {
+  padding: 4px 8px;
+}
+
+.link-button-dark {
+  color: black;
+  border: 2px solid black;
+}
+
+.link-button-dark:hover {
   background-color: rgba($color: #000000, $alpha: 0.1);
 }
+
+/* Elements */
 
 .horizontal-line {
   border-top: 1px solid white;

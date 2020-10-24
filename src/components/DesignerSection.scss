@@ -1,21 +1,34 @@
-$screen-m: 768px;
-$typist-left: calc(50vw - 691px / 2);
-$typist-top: calc(50vh - 108px / 2);
+$typist-width: 693px;
+$typist-height: 108px;
 
-.designer-section-items {
-  position: absolute;
-  top: $typist-top;
+.designer-section-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.designer-section-typist {
-  position: relative;
-  left: $typist-left;
+.designer-section-typist-wrapper {
+  width: $typist-width;
+  height: $typist-height;
   white-space: nowrap;
+
+  h3:not(:first-child) {
+    margin-top: 24px;
+  }
 }
 
-.designer-section-items h3:not(:first-child) {
-  margin-top: 28px;
+.typist-button-disabled {
+  .link-button {
+    cursor: initial;
+  }
+  .link-button:hover {
+    background-color: initial;
+  }
 }
+
+/* Animations */
 
 @keyframes fadein {
   from {
@@ -26,7 +39,7 @@ $typist-top: calc(50vh - 108px / 2);
   }
 }
 
-/* , Copied from node_modules/react-typist/dist/Typist.css */
+/* Copied from node_modules/react-typist/dist/Typist.css */
 
 .Typist .Cursor {
   display: inline-block;
