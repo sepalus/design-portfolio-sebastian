@@ -1,8 +1,13 @@
-.information-section {
-  height: 100%;
+.information-section-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.information-section-about {
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
 .information-section-image {
@@ -34,13 +39,13 @@
     white-space: nowrap;
   }
   .information-section-introduction-title:first-of-type {
-    top: 50px;
+    top: 65px;
   }
   .information-section-introduction-title:nth-of-type(2) {
-    top: 100px;
+    top: 115px;
   }
   .information-section-introduction-title:nth-of-type(3) {
-    top: 150px;
+    top: 165px;
   }
 }
 
@@ -64,7 +69,7 @@
 }
 
 .information-section-introduction-text {
-  top: 50px;
+  top: 65px;
   left: 20px;
   opacity: 0;
   line-height: 30px;
@@ -117,92 +122,98 @@
   animation-delay: 0.5s;
 }
 
+.information-section-contact {
+  display: flex;
+  position: absolute;
+  bottom: 100px;
+}
+
 @keyframes movetitleelement1 {
   from {
-    top: 50px;
+    top: 65px;
     left: 0;
   }
   50% {
-    top: 50px;
+    top: 65px;
     left: 250px;
   }
   to {
-    top: 72px;
+    top: 87px;
     left: 170px;
   }
 }
 
 @keyframes movetitleelement1reverse {
   from {
-    top: 72px;
+    top: 87px;
     left: 170px;
   }
   50% {
-    top: 50px;
+    top: 65px;
     left: 250px;
   }
   to {
-    top: 50px;
+    top: 65px;
     left: 0;
   }
 }
 
 @keyframes movetitleelement2 {
   from {
-    top: 100px;
+    top: 115px;
     left: 0;
   }
   50% {
-    top: 100px;
+    top: 115px;
     left: 290px;
   }
   to {
-    top: 192px;
+    top: 207px;
     left: 198px;
   }
 }
 
 @keyframes movetitleelement2reverse {
   from {
-    top: 192px;
+    top: 207px;
     left: 198px;
   }
   50% {
-    top: 100px;
+    top: 115px;
     left: 290px;
   }
   to {
-    top: 100px;
+    top: 115px;
     left: 0;
   }
 }
 
 @keyframes movetitleelement3 {
   from {
-    top: 150px;
+    top: 165px;
     left: 0;
   }
   50% {
-    top: 150px;
+    top: 165px;
     left: 80px;
   }
   to {
-    top: 252px;
+    top: 267px;
     left: 8px;
   }
 }
 
 @keyframes movetitleelement3reverse {
   from {
-    top: 252px;
+    top: 267px;
     left: 8px;
   }
   50% {
-    top: 150px;
+    top: 165px;
     left: 80px;
   }
   to {
-    top: 150px;
+    top: 165px;
     left: 0;
   }
 }

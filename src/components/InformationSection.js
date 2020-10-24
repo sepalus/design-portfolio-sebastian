@@ -16,7 +16,7 @@ function InformationSection({ informationRef }) {
 
   return (
     <section ref={informationRef} className="information-section-container">
-      <div class="information-section">
+      <div class="information-section-about">
         <div className="information-section-image-wrapper">
           <img
             src="./assets/face.png"
@@ -119,26 +119,25 @@ function InformationSection({ informationRef }) {
               and was super duper.
             </p>
           </div>
-
-          <div class="information-section-contact hide-element">
-            <div class="information-section-icon-wrapper">
-              <p>Check me out:</p>
-              <img src="./assets/icons/linkedin.png" alt="LinkedIn" />
-              <img src="./assets/icons/instagram.png" alt="Instagram" />
-              <img
-                src="./assets/icons/finnishdesigners.png"
-                alt="Finnish Designers"
-              />
-            </div>
-            <div class="information-section-icon-wrapper">
-              <p>Hit me up:</p>
-              <img src="./assets/icons/phone.png" alt="Phone" />
-              <img src="./assets/icons/email.png" alt="email" />
-            </div>
-          </div>
         </div>
       </div>
-      <div class="information-section-contact-wrapper"></div>
+
+      <div class="information-section-contact">
+        <div class="information-section-icon-wrapper">
+          <p>Check me out:</p>
+          <img src="./assets/icons/linkedin.png" alt="LinkedIn" />
+          <img src="./assets/icons/instagram.png" alt="Instagram" />
+          <img
+            src="./assets/icons/finnishdesigners.png"
+            alt="Finnish Designers"
+          />
+        </div>
+        <div class="information-section-icon-wrapper">
+          <p>Hit me up:</p>
+          <img src="./assets/icons/phone.png" alt="Phone" />
+          <img src="./assets/icons/email.png" alt="email" />
+        </div>
+      </div>
     </section>
   );
 }
