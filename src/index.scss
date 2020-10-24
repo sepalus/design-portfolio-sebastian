@@ -138,6 +138,13 @@ ul {
   width: 100%;
 }
 
+.vertical-line {
+  position: absolute;
+  width: 1px;
+  height: 0px;
+  background-color: white;
+}
+
 .hide-element {
   display: none !important;
 }

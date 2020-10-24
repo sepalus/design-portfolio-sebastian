@@ -16,16 +16,16 @@ function InformationSection({ informationRef }) {
 
   return (
     <section ref={informationRef} className="information-section-container">
-      <div class="information-section-about">
-        <div className="information-section-image-wrapper">
-          <img
-            src="./assets/face.png"
-            alt="Sebastian"
-            class="information-section-image"
-          />
-        </div>
-        <div className="information-section-text-wrapper">
-          <div className="information-section-introduction">
+      <div className="information-section-content">
+        <div class="information-section-about">
+          <div>
+            <img
+              src="./assets/face.png"
+              alt="Sebastian"
+              class="information-section-about-image"
+            />
+          </div>
+          <div className="information-section-about-text-wrapper">
             <h3>
               <button
                 className="link-button link-button-narrow"
@@ -38,7 +38,7 @@ function InformationSection({ informationRef }) {
             </h3>
             <button
               className={classNames(
-                "information-section-introduction-title ",
+                "information-section-about-introduction-title",
                 {
                   "animate-title-element-1 link-button link-button-narrow": textExpanded,
                 },
@@ -54,7 +54,7 @@ function InformationSection({ informationRef }) {
             </button>
             <button
               className={classNames(
-                "information-section-introduction-title ",
+                "information-section-about-introduction-title",
                 {
                   "animate-title-element-2 link-button link-button-narrow": textExpanded,
                 },
@@ -70,7 +70,7 @@ function InformationSection({ informationRef }) {
             </button>
             <button
               className={classNames(
-                "information-section-introduction-title ",
+                "information-section-about-introduction-title",
                 {
                   "animate-title-element-3 link-button link-button-narrow": textExpanded,
                 },
@@ -85,14 +85,14 @@ function InformationSection({ informationRef }) {
               Aethetician
             </button>
             <div
-              className={classNames("verticle-line", {
-                "animate-verticle-line": textExpanded,
+              className={classNames("vertical-line", {
+                "animate-vertical-line": textExpanded,
               })}
             ></div>
             <p
               style={{ position: "absolute" }}
               className={classNames(
-                "information-section-introduction-text",
+                "information-section-about-introduction-text",
                 {
                   "animate-text-element": textExpanded,
                 },
@@ -120,22 +120,22 @@ function InformationSection({ informationRef }) {
             </p>
           </div>
         </div>
-      </div>
 
-      <div class="information-section-contact">
-        <div class="information-section-icon-wrapper">
-          <p>Check me out:</p>
-          <img src="./assets/icons/linkedin.png" alt="LinkedIn" />
-          <img src="./assets/icons/instagram.png" alt="Instagram" />
-          <img
-            src="./assets/icons/finnishdesigners.png"
-            alt="Finnish Designers"
-          />
-        </div>
-        <div class="information-section-icon-wrapper">
-          <p>Hit me up:</p>
-          <img src="./assets/icons/phone.png" alt="Phone" />
-          <img src="./assets/icons/email.png" alt="email" />
+        <div class="information-section-contact">
+          <div class="information-section-contact-icon-wrapper">
+            <p>Check me out:</p>
+            <img src="./assets/icons/linkedin.png" alt="LinkedIn" />
+            <img src="./assets/icons/instagram.png" alt="Instagram" />
+            <img
+              src="./assets/icons/finnishdesigners.png"
+              alt="Finnish Designers"
+            />
+          </div>
+          <div class="information-section-contact-icon-wrapper">
+            <p>Hit me up:</p>
+            <img src="./assets/icons/phone.png" alt="Phone" />
+            <img src="./assets/icons/email.png" alt="email" />
+          </div>
         </div>
       </div>
     </section>
