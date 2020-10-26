@@ -82,7 +82,7 @@ function InformationSection({ informationRef }) {
                 openMoreInfo();
               }}
             >
-              Aethetician
+              Genuine Aesthete
             </button>
             <div
               className={classNames("vertical-line", {
@@ -101,22 +101,23 @@ function InformationSection({ informationRef }) {
                 }
               )}
             >
-              With master degrees in both art and science (M.A. and M.Sc.)
-              <br /> I am well equipped as an
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              to design products that are funcitonal as well as beautiful. I
-              don’t beleive that these are two unrealted qualities, but rather
-              that beauty comes from function. With a background in programming
-              and UX design i have worked as a &nbsp;&nbsp;&nbsp;&nbsp;
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              for various fields. Through my Master’s Thesis I dove into the
-              fields of
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              and was super duper.
+              With the problem-solving skills of an engineer and visual eye of
+              an artist, equipped with Master’s Degrees in both UX Design
+              (M.Sc.) and Industrial Design (M.A.), I design functional,
+              aesthetically pleasing solutions that are delightful to use. I am
+              a passionate
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              who believes that beauty and the capability to produce aesthetic
+              pleasure are immensely important qualities of successful products
+              and pieces of furniture. With a background in programming and UX
+              design, I have produced elegant digital solutions as a
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              in various industries. My research in design aesthetics highlights
+              the significance of aesthetic experiences in our everyday lives
+              and provides tools for measuring them. As a
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              I am a strong advocate for the importance of aesthtetics in all
+              designed solutions.
             </p>
           </div>
         </div>
