@@ -1,7 +1,9 @@
 .project-catalog {
+  height: 100%;
   position: absolute;
-  top: 40px;
-  left: 50px;
+  box-sizing: border-box;
+  padding: 40px 48px;
+  border-right: 1px solid white;
   color: white;
   z-index: 1;
 
@@ -17,21 +19,15 @@
   }
 
   .project-catalog-active-project button {
-    background-color: rgba($color: #ffffff, $alpha: 0.2);
+    background-color: rgba($color: white, $alpha: 0.2);
     border: 1px solid white;
     padding-left: 20px;
   }
 }
 
-.project-section-digital {
-  .project-catalog {
-    left: initial;
-    right: 50px;
-  }
-}
-
 .project-catalog-dark {
   color: black;
+  border-color: black;
 
   button {
     color: black;
@@ -39,7 +35,18 @@
   }
 
   .project-catalog-active-project button {
-    background-color: rgba($color: #000000, $alpha: 0.2);
+    background-color: rgba($color: black, $alpha: 0.2);
+    border-color: black;
+  }
+}
+
+.project-section-digital {
+  .project-catalog {
+    right: 0px;
+    border-left: 1px solid white;
+    border-right: none;
+  }
+  .project-catalog-dark {
     border-color: black;
   }
 }
