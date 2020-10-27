@@ -125,7 +125,6 @@ function InformationSection({ informationRef }) {
         </div>
 
         <div class="information-section-contact">
-          <div class="horizontal-line"></div>
           <div class="information-section-contact-content-wrapper">
             <div class="information-section-contact-icon-wrapper">
               <p>Check me out:</p>
