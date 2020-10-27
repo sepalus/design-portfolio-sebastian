@@ -39,7 +39,7 @@ function DesignerSection({
                   className="link-button link-button-narrow"
                   onClick={() => {
                     setSkipProjectSection(true);
-                    selectViewport(2);
+                    selectViewport(3);
                   }}
                 >
                   Sebastian
@@ -52,7 +52,7 @@ function DesignerSection({
               Hello, I'm&nbsp;
               <span
                 className="link-button link-button-narrow"
-                onClick={() => selectViewport(2)}
+                onClick={() => selectViewport(3)}
               >
                 Sebastian
               </span>

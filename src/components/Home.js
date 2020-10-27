@@ -13,7 +13,6 @@ export default function Home() {
   const designerRef = useRef(null);
   const productRef = useRef(null);
   const serviceRef = useRef(null);
-  const aestheticsRef = useRef(null);
   const informationRef = useRef(null);
   const rootElement = document.getElementById("root");
 
@@ -27,24 +26,18 @@ export default function Home() {
       const designerRefOffset = designerRef.current.offsetTop;
       const projductRefOffset = productRef.current.offsetTop;
       const serviceRefOffset = serviceRef.current.offsetTop;
-      const aestheticsRefOffset = aestheticsRef.current.offsetTop;
       const informationRefOffset = informationRef.current.offsetTop;
       const offsetBreakpoints = [
         designerRefOffset,
         projductRefOffset,
         serviceRefOffset,
-        aestheticsRefOffset,
         informationRefOffset,
       ];
 
       setPreviousYOffset(currentYOffset);
 
       const nextViewport =
-        currentYOffset <= offsetBreakpoints[currentViewport - 4]
-          ? currentViewport - 4
-          : currentYOffset >= offsetBreakpoints[currentViewport + 4]
-          ? currentViewport + 4
-          : currentYOffset <= offsetBreakpoints[currentViewport - 3]
+        currentYOffset <= offsetBreakpoints[currentViewport - 3]
           ? currentViewport - 3
           : currentYOffset >= offsetBreakpoints[currentViewport + 3]
           ? currentViewport + 3
@@ -63,7 +56,7 @@ export default function Home() {
         if (currentViewport === 1 && !skipProjectSection)
           showFirstTimeViewport1.current = false;
         setCurrentViewport(nextViewport);
-        if (nextViewport === 4) setSkipProjectSection(false);
+        if (nextViewport === 3) setSkipProjectSection(false);
       }
     };
     rootElement.addEventListener("scroll", detectViewportOnScroll);
@@ -73,10 +66,8 @@ export default function Home() {
 
   const selectViewport = (viewport) => {
     const ref =
-      viewport === 4
+      viewport === 3
         ? informationRef
-        : viewport === 3
-        ? aestheticsRef
         : viewport === 2
         ? serviceRef
         : viewport === 1
@@ -111,16 +102,6 @@ export default function Home() {
       <ProjectSection
         projectRef={serviceRef}
         designArea={2}
-        currentViewport={currentViewport}
-        selectViewport={selectViewport}
-        firstSectionEntry={showFirstTimeViewport1.current}
-        firstAreaEntry={firstAreaEntry}
-        setFirstAreaEntry={setFirstAreaEntry}
-        skipProjectSection={skipProjectSection}
-      />
-      <ProjectSection
-        projectRef={aestheticsRef}
-        designArea={3}
         currentViewport={currentViewport}
         selectViewport={selectViewport}
         firstSectionEntry={showFirstTimeViewport1.current}
