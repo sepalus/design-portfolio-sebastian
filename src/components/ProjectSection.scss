@@ -17,7 +17,7 @@ $project-card-width-negative: calc(360px - 100vw);
 }
 
 .project-catalog {
-  display: none;
+  display: block;
   position: absolute;
   box-sizing: border-box;
   width: $project-catalog-width;
@@ -38,10 +38,6 @@ $project-card-width-negative: calc(360px - 100vw);
   li {
     padding: 12px 0px 12px 48px;
   }
-
-  @media only screen and (min-width: $screen-m) {
-    display: block;
-  }
 }
 
 .project-catalog-active-project {
@@ -50,12 +46,8 @@ $project-card-width-negative: calc(360px - 100vw);
 }
 .project-card {
   position: absolute;
-  width: 100%;
+  width: $project-card-width;
   height: 100%;
-
-  @media only screen and (min-width: $screen-m) {
-    width: $project-card-width;
-  }
 }
 
 .project-card-image-wrapper {
@@ -81,15 +73,6 @@ $project-card-width-negative: calc(360px - 100vw);
     left: 50%;
     transform: translateX(-50%);
   }
-
-  img.animate-card-fade-in {
-    animation: fadein 1s forwards;
-    animation-delay: 0.1s;
-  }
-
-  img.animate-card-fade-out {
-    animation: fadeout 0.5s forwards;
-  }
 }
 
 .project-card-text-wrapper {
@@ -98,12 +81,8 @@ $project-card-width-negative: calc(360px - 100vw);
 }
 
 .project-card-description {
-  padding: 30px 30px 0px;
-  width: 210px;
-  @media only screen and (min-width: $screen-m) {
-    padding: 60px 40px 0px;
-    width: 270px;
-  }
+  padding: 60px 40px 0px;
+  width: 270px;
 }
 
 .project-section-industrial {
@@ -158,62 +137,6 @@ $project-card-width-negative: calc(360px - 100vw);
   }
 }
 
-.project-section-industrial.project-section-animate-compress {
-  .animate-card-in {
-    @media only screen and (min-width: $screen-m) {
-      animation: industrialCardCompressEnter 0.7s forwards;
-      animation-delay: 0.6s;
-    }
-  }
-
-  .animate-catalog-in {
-    @media only screen and (min-width: $screen-m) {
-      animation: industrialCatalogCompressEnter 0.5s forwards;
-      animation-delay: 0.1s;
-    }
-  }
-  .project-section-button-wrapper.animate-buttons-fade-in {
-    animation: fadein 1s forwards;
-    animation-delay: 1s;
-  }
-}
-
-.project-section-industrial.project-section-animate-slide {
-  .animate-card-in {
-    @media only screen and (min-width: $screen-m) {
-      animation: industrialCardSlideEnter 0.8s forwards;
-    }
-  }
-
-  .animate-catalog-in {
-    @media only screen and (min-width: $screen-m) {
-      animation: industrialCatalogSlideEnter 0.8s forwards;
-    }
-  }
-  .project-section-button-wrapper.animate-buttons-fade-in {
-    animation: fadein 0.5s forwards;
-    animation-delay: 0.8s;
-  }
-}
-
-.project-section-digital.project-section-animate-slide {
-  .animate-card-in {
-    @media only screen and (min-width: $screen-m) {
-      animation: digitalCardSlideEnter 0.8s forwards;
-    }
-  }
-
-  .animate-catalog-in {
-    @media only screen and (min-width: $screen-m) {
-      animation: digitalCatalogSlideEnter 0.8s forwards;
-    }
-  }
-  .project-section-button-wrapper.animate-buttons-fade-in {
-    animation: fadein 0.5s forwards;
-    animation-delay: 0.8s;
-  }
-}
-
 .project-section-button-wrapper {
   display: inline-block;
   opacity: 0;
@@ -238,85 +161,4 @@ $project-card-width-negative: calc(360px - 100vw);
 .project-section-button-left {
   flex-direction: row-reverse;
   justify-content: flex-end;
-}
-
-@keyframes industrialCardCompressEnter {
-  from {
-    left: 100vw;
-  }
-  to {
-    left: $project-catalog-width;
-  }
-}
-
-@keyframes industrialCatalogCompressEnter {
-  from {
-    left: -$project-catalog-width;
-  }
-  to {
-    left: 0;
-  }
-}
-
-@keyframes industrialCardSlideEnter {
-  from {
-    left: 100vw;
-  }
-  to {
-    left: $project-catalog-width;
-  }
-}
-
-@keyframes industrialCatalogSlideEnter {
-  from {
-    left: $project-card-width;
-  }
-  to {
-    left: 0;
-  }
-}
-
-@keyframes digitalCardSlideEnter {
-  from {
-    left: $project-card-width-negative;
-  }
-  to {
-    left: 0;
-  }
-}
-
-@keyframes digitalCardSlideEnter {
-  from {
-    left: $project-card-width-negative;
-  }
-  to {
-    left: 0;
-  }
-}
-
-@keyframes digitalCatalogSlideEnter {
-  from {
-    left: 0;
-  }
-  to {
-    left: $project-card-width;
-  }
-}
-
-@keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeout {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
 }
