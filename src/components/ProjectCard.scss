@@ -1,7 +1,6 @@
 $project-card-width: calc(100vw - 360px);
 
 .project-card {
-  position: absolute;
   width: $project-card-width;
   height: 100%;
 }
@@ -29,6 +28,10 @@ $project-card-width: calc(100vw - 360px);
     left: 50%;
     transform: translateX(-50%);
   }
+
+  .animate-card-fade-in {
+    opacity: 1;
+  }
 }
 
 .project-card-text-wrapper {
@@ -39,23 +42,4 @@ $project-card-width: calc(100vw - 360px);
 .project-card-description {
   padding: 60px 40px 0px;
   width: 270px;
-}
-
-.project-section-industrial {
-  .project-card {
-    left: 100vw;
-  }
-}
-
-.project-section-digital {
-  .project-card {
-    justify-content: flex-end;
-    left: 0;
-    .project-card-description {
-      text-align: right;
-    }
-  }
-  .project-card-text-wrapper {
-    right: 0px;
-  }
 }

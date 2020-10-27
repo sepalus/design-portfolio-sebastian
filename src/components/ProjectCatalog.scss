@@ -1,9 +1,6 @@
 $project-catalog-width: 360px;
 
 .project-catalog {
-  display: block;
-  position: absolute;
-  box-sizing: border-box;
   width: $project-catalog-width;
   height: 100%;
   padding-top: 40px;
@@ -27,16 +24,4 @@ $project-catalog-width: 360px;
 .project-catalog-active-project {
   background-color: #2f2f2f;
   padding-left: 54px !important;
-}
-
-.project-section-industrial {
-  .project-catalog {
-    left: -$project-catalog-width;
-  }
-}
-
-.project-section-digital {
-  .project-catalog {
-    left: 100vw;
-  }
 }
