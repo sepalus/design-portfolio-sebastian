@@ -5,14 +5,15 @@ import InformationSection from "./InformationSection";
 
 export default function Home() {
   const [previousYOffset, setPreviousYOffset] = useState(0);
-  const [currentViewport, setCurrentViewport] = useState(0); // 0 === 'designer', 1 === 'project'
-  const [currentDesignArea, setCurrentDesignArea] = useState(0); // 0 === 'industrial', 1 === 'digital'
+  const [currentViewport, setCurrentViewport] = useState(0); // 0 === 'designer', 1 === 'product', 2 === 'service', 3 === 'aesthetics', 4 === 'information'
   const [skipProjectSection, setSkipProjectSection] = useState(false);
   const [firstAreaEntry, setFirstAreaEntry] = useState(true);
   const showFirstTimeViewport0 = useRef(true);
   const showFirstTimeViewport1 = useRef(true);
   const designerRef = useRef(null);
-  const projectRef = useRef(null);
+  const productRef = useRef(null);
+  const serviceRef = useRef(null);
+  const aestheticsRef = useRef(null);
   const informationRef = useRef(null);
   const rootElement = document.getElementById("root");
 
@@ -24,18 +25,30 @@ export default function Home() {
     const detectViewportOnScroll = () => {
       const currentYOffset = rootElement.scrollTop;
       const designerRefOffset = designerRef.current.offsetTop;
-      const projectRefOffset = projectRef.current.offsetTop;
+      const projductRefOffset = productRef.current.offsetTop;
+      const serviceRefOffset = serviceRef.current.offsetTop;
+      const aestheticsRefOffset = aestheticsRef.current.offsetTop;
       const informationRefOffset = informationRef.current.offsetTop;
       const offsetBreakpoints = [
         designerRefOffset,
-        projectRefOffset,
+        projductRefOffset,
+        serviceRefOffset,
+        aestheticsRefOffset,
         informationRefOffset,
       ];
 
       setPreviousYOffset(currentYOffset);
 
       const nextViewport =
-        currentYOffset <= offsetBreakpoints[currentViewport - 2]
+        currentYOffset <= offsetBreakpoints[currentViewport - 4]
+          ? currentViewport - 4
+          : currentYOffset >= offsetBreakpoints[currentViewport + 4]
+          ? currentViewport + 4
+          : currentYOffset <= offsetBreakpoints[currentViewport - 3]
+          ? currentViewport - 3
+          : currentYOffset >= offsetBreakpoints[currentViewport + 3]
+          ? currentViewport + 3
+          : currentYOffset <= offsetBreakpoints[currentViewport - 2]
           ? currentViewport - 2
           : currentYOffset >= offsetBreakpoints[currentViewport + 2]
           ? currentViewport + 2
@@ -50,7 +63,7 @@ export default function Home() {
         if (currentViewport === 1 && !skipProjectSection)
           showFirstTimeViewport1.current = false;
         setCurrentViewport(nextViewport);
-        if (nextViewport === 2) setSkipProjectSection(false);
+        if (nextViewport === 4) setSkipProjectSection(false);
       }
     };
     rootElement.addEventListener("scroll", detectViewportOnScroll);
@@ -60,10 +73,14 @@ export default function Home() {
 
   const selectViewport = (viewport) => {
     const ref =
-      viewport === 2
+      viewport === 4
         ? informationRef
+        : viewport === 3
+        ? aestheticsRef
+        : viewport === 2
+        ? serviceRef
         : viewport === 1
-        ? projectRef
+        ? productRef
         : designerRef;
 
     rootElement.scrollTo({
@@ -73,28 +90,39 @@ export default function Home() {
     });
   };
 
-  const selectDesignArea = (area) => {
-    setCurrentDesignArea(area);
-    selectViewport(1);
-    setFirstAreaEntry(false);
-  };
-
   return (
     <>
       <DesignerSection
         designerRef={designerRef}
         selectViewport={selectViewport}
-        currentDesignArea={currentDesignArea}
-        selectDesignArea={selectDesignArea}
         showTypist={showFirstTimeViewport0.current}
         setSkipProjectSection={setSkipProjectSection}
       />
       <ProjectSection
-        projectRef={projectRef}
+        projectRef={productRef}
+        designArea={1}
         currentViewport={currentViewport}
         selectViewport={selectViewport}
-        currentDesignArea={currentDesignArea}
-        selectDesignArea={selectDesignArea}
+        firstSectionEntry={showFirstTimeViewport1.current}
+        firstAreaEntry={firstAreaEntry}
+        setFirstAreaEntry={setFirstAreaEntry}
+        skipProjectSection={skipProjectSection}
+      />
+      <ProjectSection
+        projectRef={serviceRef}
+        designArea={2}
+        currentViewport={currentViewport}
+        selectViewport={selectViewport}
+        firstSectionEntry={showFirstTimeViewport1.current}
+        firstAreaEntry={firstAreaEntry}
+        setFirstAreaEntry={setFirstAreaEntry}
+        skipProjectSection={skipProjectSection}
+      />
+      <ProjectSection
+        projectRef={aestheticsRef}
+        designArea={3}
+        currentViewport={currentViewport}
+        selectViewport={selectViewport}
         firstSectionEntry={showFirstTimeViewport1.current}
         firstAreaEntry={firstAreaEntry}
         setFirstAreaEntry={setFirstAreaEntry}

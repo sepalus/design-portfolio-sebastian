@@ -161,6 +161,20 @@ const axiomDesignProject = {
   },
 };
 
+const aesthteticsDesignProject = {
+  title: "Aesthteics",
+  description: "Aesthteics",
+  year: 2020,
+  isTeam: false,
+  categories: ["Beauty", "Cuteness", "Hotness"],
+  displayableCategory: 0,
+  image: "",
+  styleDarkColor: true,
+  style: {
+    backgroundColor: "black",
+  },
+};
+
 const industrialProjects = [
   kaarnaDesignProject,
   kiskoDesignProject,
@@ -179,9 +193,8 @@ const digitalProjects = [
 
 function ProjectSection({
   projectRef,
-  currentDesignArea,
+  designArea,
   currentViewport,
-  selectDesignArea,
   selectViewport,
   firstSectionEntry,
   firstAreaEntry,
@@ -190,14 +203,18 @@ function ProjectSection({
 }) {
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
   const projects =
-    currentDesignArea === 1 ? digitalProjects : industrialProjects;
+    designArea === 3
+      ? [aesthteticsDesignProject]
+      : designArea === 2
+      ? digitalProjects
+      : industrialProjects;
 
   if (activeProjectIndex >= projects.length) setActiveProjectIndex(0);
   const activeProject = projects[activeProjectIndex];
 
   useEffect(() => {
     setActiveProjectIndex(0);
-  }, [currentDesignArea]);
+  }, [designArea]);
 
   if (skipProjectSection)
     return <section ref={projectRef} className="project-section-container" />;
@@ -208,10 +225,10 @@ function ProjectSection({
         className={classNames(
           "project-section",
           {
-            "project-section-digital": currentDesignArea === 1,
+            "project-section-digital": designArea === 2,
           },
           {
-            "project-section-industrial": currentDesignArea === 0,
+            "project-section-industrial": designArea === 1,
           },
           {
             "project-section-animate-slide": !firstAreaEntry,
@@ -226,7 +243,7 @@ function ProjectSection({
         )}
       >
         <ProjectCatalog
-          currentDesignArea={currentDesignArea}
+          designArea={designArea}
           projects={projects}
           activeProjectIndex={activeProjectIndex}
           setActiveProjectIndex={setActiveProjectIndex}
@@ -239,17 +256,15 @@ function ProjectSection({
         />
         <NavigationButtons
           activeProject={activeProject}
-          currentDesignArea={currentDesignArea}
-          selectDesignArea={selectDesignArea}
+          designArea={designArea}
           selectViewport={selectViewport}
-          animationFadeIn={currentDesignArea === 1 && currentViewport === 1}
+          animationFadeIn={designArea === 1 && currentViewport === 1}
         />
         <NavigationButtons
           activeProject={activeProject}
-          currentDesignArea={currentDesignArea}
-          selectDesignArea={selectDesignArea}
+          designArea={designArea}
           selectViewport={selectViewport}
-          animationFadeIn={currentDesignArea === 0 && currentViewport === 1}
+          animationFadeIn={designArea === 0 && currentViewport === 1}
         />
       </div>
     </section>

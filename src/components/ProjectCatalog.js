@@ -2,7 +2,7 @@ import React from "react";
 import classNames from "classnames";
 
 function ProjectCatalog({
-  currentDesignArea,
+  designArea,
   projects,
   activeProjectIndex,
   setActiveProjectIndex,
@@ -16,7 +16,13 @@ function ProjectCatalog({
         { "animate-catalog-out": !animationDirectionIn }
       )}
     >
-      <h2>{currentDesignArea === 1 ? "Digital Design" : "Product Design"}</h2>
+      <h2>
+        {designArea === 3
+          ? "Aesthetics"
+          : designArea === 2
+          ? "Digital and Service Design"
+          : "Product and Furniture Design"}
+      </h2>
       <ul className="project-catalog-projects">
         {projects.map((project, index) => (
           <li

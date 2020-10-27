@@ -3,18 +3,12 @@ import classNames from "classnames";
 import KeyboardArrowLeftIcon from "@material-ui/icons/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
 
-function NavigationButtons({
-  activeProject,
-  currentDesignArea,
-  selectDesignArea,
-  selectViewport,
-  animationFadeIn,
-}) {
+function NavigationButtons({ activeProject, designArea, animationFadeIn }) {
   return (
     <div
       className={classNames(
         "project-section-button-wrapper",
-        { "project-section-button-wrapper-left": currentDesignArea === 1 },
+        { "project-section-button-wrapper-left": designArea === 2 },
         { "animate-buttons-fade-in": animationFadeIn },
         { "animate-buttons-fade-out": !animationFadeIn }
       )}
@@ -23,15 +17,15 @@ function NavigationButtons({
         className={classNames(
           "link-button icon-button",
           {
-            "project-section-button-left": currentDesignArea === 1,
+            "project-section-button-left": designArea === 2,
           },
           {
             "link-button-dark": activeProject && activeProject.styleDarkColor,
           }
         )}
-        onClick={() => selectDesignArea(currentDesignArea === 1 ? 0 : 1)}
+        onClick={() => {}}
       >
-        {currentDesignArea === 1 ? (
+        {designArea === 2 ? (
           <>
             <h3>Product</h3>
             <KeyboardArrowLeftIcon />
