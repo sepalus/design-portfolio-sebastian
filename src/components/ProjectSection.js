@@ -49,14 +49,10 @@ function ProjectSection({
             "project-section-industrial": designArea === 1,
           },
           {
-            "project-section-animate-slide": !firstAreaEntry,
+            "project-section-animation-enter": currentViewport === designArea,
           },
           {
-            "project-section-static": firstAreaEntry && !firstSectionEntry,
-          },
-          {
-            "project-section-animate-compress":
-              firstAreaEntry && firstSectionEntry,
+            "project-section-animation-exit": currentViewport !== designArea,
           }
         )}
       >

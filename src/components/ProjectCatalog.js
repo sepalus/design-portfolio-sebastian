@@ -11,12 +11,9 @@ function ProjectCatalog({
 }) {
   return (
     <div
-      className={classNames(
-        "project-catalog",
-        { "project-catalog-dark": projects[activeProjectIndex].styleDarkColor },
-        { "animate-catalog-in": animationDirectionIn },
-        { "animate-catalog-out": !animationDirectionIn }
-      )}
+      className={classNames("project-catalog", {
+        "project-catalog-dark": projects[activeProjectIndex].styleDarkColor,
+      })}
     >
       <h2>
         {designArea === 3
