@@ -3,7 +3,6 @@ import classNames from "classnames";
 
 import ProjectCatalog from "./ProjectCatalog";
 import ProjectCard from "./ProjectCard";
-import NavigationButtons from "./NavigationButtons";
 import "./ProjectSection.scss";
 
 const kaarnaDesignProject = {
@@ -253,18 +252,6 @@ function ProjectSection({
           projects={projects}
           activeProjectIndex={activeProjectIndex}
           animationDirectionIn={currentViewport === 1}
-        />
-        <NavigationButtons
-          activeProject={activeProject}
-          designArea={designArea}
-          selectViewport={selectViewport}
-          animationFadeIn={designArea === 1 && currentViewport === 1}
-        />
-        <NavigationButtons
-          activeProject={activeProject}
-          designArea={designArea}
-          selectViewport={selectViewport}
-          animationFadeIn={designArea === 0 && currentViewport === 1}
         />
       </div>
     </section>

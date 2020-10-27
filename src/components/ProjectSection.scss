@@ -8,29 +8,3 @@
   height: 100%;
   display: flex;
 }
-
-.project-section-button-wrapper {
-  display: inline-block;
-  opacity: 0;
-  top: 60px;
-  right: 40px;
-  position: absolute;
-
-  .icon-button {
-    z-index: 2;
-  }
-}
-
-.project-section-button-wrapper-left {
-  left: 40px;
-  right: initial;
-}
-
-.project-section-button-wrapper.animate-buttons-fade-out {
-  display: none;
-}
-
-.project-section-button-left {
-  flex-direction: row-reverse;
-  justify-content: flex-end;
-}
