@@ -57,7 +57,7 @@ const kiskoDesignProject = {
 };
 
 const kolmioillaDesignProject = {
-  title: "Kohdataan Kolmioilla",
+  title: "Kohdataan",
   description: "Creating cultural encounters",
   year: 2019,
   isTeam: true,
@@ -171,11 +171,11 @@ export const aesthteticsDesignProjects = [
 
 export const industrialProjects = [
   kaarnaDesignProject,
-  kiskoDesignProject,
   tyyniDesignProject,
+  kolmioillaDesignProject,
+  kiskoDesignProject,
   kuutamoDesignProject,
   pyorreDesignProject,
-  kolmioillaDesignProject,
 ];
 
 export const digitalProjects = [

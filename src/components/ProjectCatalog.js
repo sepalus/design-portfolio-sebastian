@@ -13,6 +13,7 @@ function ProjectCatalog({
     <div
       className={classNames(
         "project-catalog",
+        { "project-catalog-dark": projects[activeProjectIndex].styleDarkColor },
         { "animate-catalog-in": animationDirectionIn },
         { "animate-catalog-out": !animationDirectionIn }
       )}
@@ -21,8 +22,8 @@ function ProjectCatalog({
         {designArea === 3
           ? "Aesthetics"
           : designArea === 2
-          ? "Digital and Service Design"
-          : "Product and Furniture Design"}
+          ? "Digital and Service"
+          : "Products and Furniture"}
       </h2>
       <ul className="project-catalog-projects">
         {projects.map((project, index) => (
@@ -32,8 +33,9 @@ function ProjectCatalog({
             })}
             onMouseOver={() => setActiveProjectIndex(index)}
           >
-            <h3>{project.title}</h3>
-            <p>{project.categories[project.displayableCategory]}</p>
+            <button className="link-button">
+              <h4>{project.title}</h4>
+            </button>
           </li>
         ))}
       </ul>

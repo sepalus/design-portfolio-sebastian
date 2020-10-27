@@ -30,7 +30,7 @@ function ProjectCard({ projects, activeProjectIndex, animationDirectionIn }) {
           />
         ))}
       </div>
-      <div className="project-card-text-wrapper">
+      <div className="project-card-text-wrapper" style={{ display: "none" }}>
         <div className="project-card-description">
           <h1>{activeProject.title}</h1>
           <h4>{activeProject.description}</h4>
