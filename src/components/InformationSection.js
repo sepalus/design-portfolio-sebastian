@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import classNames from "classnames";
+import ExpandMore from "@material-ui/icons/ExpandMore";
+import ExpandLess from "@material-ui/icons/ExpandLess";
+
 import "./InformationSection.scss";
 
 function InformationSection({ informationRef }) {
@@ -26,16 +29,15 @@ function InformationSection({ informationRef }) {
             />
           </div>
           <div className="information-section-about-text-wrapper">
-            <h3>
-              <button
-                className="link-button link-button-narrow"
-                onClick={() => {
-                  toggleTextExpanded();
-                }}
-              >
-                Sebastian Högnabba
-              </button>
-            </h3>
+            <button
+              className="link-button link-button-narrow icon-button"
+              onClick={() => {
+                toggleTextExpanded();
+              }}
+            >
+              <h3> Sebastian Högnabba</h3>
+              {textExpanded ? <ExpandLess /> : <ExpandMore />}
+            </button>
             <button
               className={classNames(
                 "information-section-about-introduction-title",
@@ -97,7 +99,7 @@ function InformationSection({ informationRef }) {
                   "animate-text-element": textExpanded,
                 },
                 {
-                  "hide-element": !textExpanded,
+                  "animate-text-element-out": !textExpanded,
                 }
               )}
             >
@@ -123,19 +125,22 @@ function InformationSection({ informationRef }) {
         </div>
 
         <div class="information-section-contact">
-          <div class="information-section-contact-icon-wrapper">
-            <p>Check me out:</p>
-            <img src="./assets/icons/linkedin.png" alt="LinkedIn" />
-            <img src="./assets/icons/instagram.png" alt="Instagram" />
-            <img
-              src="./assets/icons/finnishdesigners.png"
-              alt="Finnish Designers"
-            />
-          </div>
-          <div class="information-section-contact-icon-wrapper">
-            <p>Hit me up:</p>
-            <img src="./assets/icons/phone.png" alt="Phone" />
-            <img src="./assets/icons/email.png" alt="email" />
+          <div class="horizontal-line"></div>
+          <div class="information-section-contact-content-wrapper">
+            <div class="information-section-contact-icon-wrapper">
+              <p>Check me out:</p>
+              <img src="./assets/icons/linkedin.png" alt="LinkedIn" />
+              <img src="./assets/icons/instagram.png" alt="Instagram" />
+              <img
+                src="./assets/icons/finnishdesigners.png"
+                alt="Finnish Designers"
+              />
+            </div>
+            <div class="information-section-contact-icon-wrapper">
+              <p>Hit me up:</p>
+              <img src="./assets/icons/phone.png" alt="Phone" />
+              <img src="./assets/icons/email.png" alt="email" />
+            </div>
           </div>
         </div>
       </div>

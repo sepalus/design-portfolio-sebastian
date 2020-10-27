@@ -21,7 +21,7 @@ function NavigationButtons({
     >
       <button
         className={classNames(
-          "link-button project-section-button",
+          "link-button icon-button",
           {
             "project-section-button-left": currentDesignArea === 1,
           },
