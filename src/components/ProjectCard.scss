@@ -1,0 +1,61 @@
+$project-card-width: calc(100vw - 360px);
+
+.project-card {
+  position: absolute;
+  width: $project-card-width;
+  height: 100%;
+}
+
+.project-card-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  img {
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  img.contain {
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.project-card-text-wrapper {
+  position: absolute;
+  top: 0px;
+}
+
+.project-card-description {
+  padding: 60px 40px 0px;
+  width: 270px;
+}
+
+.project-section-industrial {
+  .project-card {
+    left: 100vw;
+  }
+}
+
+.project-section-digital {
+  .project-card {
+    justify-content: flex-end;
+    left: 0;
+    .project-card-description {
+      text-align: right;
+    }
+  }
+  .project-card-text-wrapper {
+    right: 0px;
+  }
+}

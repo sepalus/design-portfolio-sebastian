@@ -1,5 +1,6 @@
 import React from "react";
 import classNames from "classnames";
+import "./ProjectCard.scss";
 
 function ProjectCard({ projects, activeProjectIndex, animationDirectionIn }) {
   const activeProject = projects[activeProjectIndex];
