@@ -109,7 +109,11 @@ export default function Home() {
         setFirstAreaEntry={setFirstAreaEntry}
         skipProjectSection={skipProjectSection}
       />
-      <InformationSection informationRef={informationRef} />
+      <InformationSection
+        informationRef={informationRef}
+        currentViewport={currentViewport}
+        selectViewport={selectViewport}
+      />
     </>
   );
 }

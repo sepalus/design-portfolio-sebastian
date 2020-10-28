@@ -1,25 +1,49 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import classNames from "classnames";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import ExpandLess from "@material-ui/icons/ExpandLess";
 
 import "./InformationSection.scss";
 
-function InformationSection({ informationRef }) {
+function InformationSection({
+  informationRef,
+  currentViewport,
+  selectViewport,
+}) {
   const [textExpanded, setTextExpanded] = useState(false);
+  const [performAnimation, setPerformAnimation] = useState(false);
+
+  useEffect(() => {
+    setPerformAnimation(!textExpanded);
+  }, [currentViewport]);
 
   const toggleTextExpanded = () => {
     setTextExpanded(!textExpanded);
   };
 
-  const openMoreInfo = () => {
+  const changeViewport = (viewport) => {
     if (!textExpanded) return;
-    console.log("Open more info");
+    selectViewport(viewport);
   };
 
   return (
     <section ref={informationRef} className="information-section-container">
-      <div className="information-section-content">
+      <div
+        className={classNames(
+          "information-section-content",
+          {
+            "information-section-static": !performAnimation,
+          },
+          {
+            "information-section-animation-enter":
+              currentViewport === 3 && performAnimation,
+          },
+          {
+            "information-section-animation-exit":
+              currentViewport !== 3 && performAnimation,
+          }
+        )}
+      >
         <div class="information-section-about">
           <div>
             <img
@@ -49,7 +73,7 @@ function InformationSection({ informationRef }) {
                 }
               )}
               onClick={() => {
-                openMoreInfo();
+                changeViewport(1);
               }}
             >
               Industrial Designer
@@ -65,7 +89,7 @@ function InformationSection({ informationRef }) {
                 }
               )}
               onClick={() => {
-                openMoreInfo();
+                changeViewport(2);
               }}
             >
               Digital Creator
@@ -81,7 +105,7 @@ function InformationSection({ informationRef }) {
                 }
               )}
               onClick={() => {
-                openMoreInfo();
+                return;
               }}
             >
               Genuine Aesthete
