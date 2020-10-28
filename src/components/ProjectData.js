@@ -50,6 +50,7 @@ const kiskoDesignProject = {
   categories: ["Furniture Design", "Chair Design", "Component Design"],
   displayableCategory: 2,
   image: "./assets/kisko.png",
+  classes: "contain",
   styleDarkColor: true,
   style: {
     backgroundColor: "white",

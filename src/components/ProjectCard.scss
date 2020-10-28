@@ -18,8 +18,22 @@
     width: auto;
     max-width: 100%;
     object-fit: contain;
+    box-sizing: border-box;
+    padding: 70px;
     left: 50%;
     transform: translateX(-50%);
+  }
+}
+
+.project-section-industrial {
+  img.contain {
+    padding-left: 300px;
+  }
+}
+
+.project-section-digital {
+  img.contain {
+    padding-right: 400px;
   }
 }
 
