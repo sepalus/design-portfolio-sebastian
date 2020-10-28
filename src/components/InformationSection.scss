@@ -13,11 +13,16 @@ $title-element-3-top-end: 326px;
   height: 100%;
   display: flex;
   flex-direction: column;
+}
+
+.information-section-about {
+  flex-grow: 1;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.information-section-about {
+.information-section-about-content-wrapper {
   opacity: 0;
   display: flex;
   margin-left: -50px;
@@ -62,8 +67,6 @@ $title-element-3-top-end: 326px;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  bottom: 0px;
   width: 100%;
   height: 140px;
   border-top: 1px solid white;
@@ -98,20 +101,20 @@ $title-element-3-top-end: 326px;
 /* Animations */
 
 .information-section-static {
-  .information-section-about {
+  .information-section-about-content-wrapper {
     opacity: 1;
     margin-left: 0px;
   }
 }
 
 .information-section-animation-enter {
-  .information-section-about {
+  .information-section-about-content-wrapper {
     animation: informationelemententer 0.5s forwards;
   }
 }
 
 .information-section-animation-exit {
-  .information-section-about {
+  .information-section-about-content-wrapper {
     animation: informationelementexit 0.5s forwards;
   }
 }
