@@ -53,9 +53,13 @@ function InformationSection({
                 class="information-section-about-image"
               />
             </div>
-            <div className="information-section-about-text-wrapper">
+            <div
+              className={classNames("information-section-about-text-wrapper", {
+                "information-section-about-text-wrapper-expanded": textExpanded,
+              })}
+            >
               <button
-                className="link-button link-button-narrow icon-button"
+                className="information-section-about-introduction-title link-button link-button-narrow icon-button"
                 onClick={() => {
                   toggleTextExpanded();
                 }}
@@ -65,7 +69,7 @@ function InformationSection({
               </button>
               <button
                 className={classNames(
-                  "information-section-about-introduction-title",
+                  "information-section-about-introduction-label",
                   {
                     "animate-title-element-1 link-button link-button-narrow": textExpanded,
                   },
@@ -81,7 +85,7 @@ function InformationSection({
               </button>
               <button
                 className={classNames(
-                  "information-section-about-introduction-title",
+                  "information-section-about-introduction-label",
                   {
                     "animate-title-element-2 link-button link-button-narrow": textExpanded,
                   },
@@ -97,7 +101,7 @@ function InformationSection({
               </button>
               <button
                 className={classNames(
-                  "information-section-about-introduction-title",
+                  "information-section-about-introduction-label",
                   {
                     "animate-title-element-3 link-button link-button-narrow": textExpanded,
                   },

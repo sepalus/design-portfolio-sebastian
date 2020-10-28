@@ -48,7 +48,13 @@ $title-element-3-top-end: 326px;
   }
 }
 
-.information-section-about-introduction-title {
+.information-section-about-text-wrapper-expanded {
+  .information-section-about-introduction-title {
+    background-color: rgba($color: white, $alpha: 0.2);
+  }
+}
+
+.information-section-about-introduction-label {
   position: absolute;
   left: $title-element-left-start;
   font-size: 14px;
