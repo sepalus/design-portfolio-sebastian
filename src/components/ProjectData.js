@@ -12,6 +12,21 @@ const kaarnaDesignProject = {
   },
 };
 
+const lamppuDesignProject = {
+  title: "Lamppu",
+  description:
+    "An atmospheric dining table lamp with three intensities of light",
+  year: 2020,
+  isTeam: false,
+  categories: ["Furniture Design", "Lamp Design", "Lighting Design"],
+  displayableCategory: 1,
+  image: "./assets/lamp.png",
+  styleDarkColor: false,
+  style: {
+    backgroundColor: "black",
+  },
+};
+
 const tyyniDesignProject = {
   title: "Tyyni",
   description:
@@ -58,7 +73,7 @@ const kiskoDesignProject = {
 };
 
 const kolmioillaDesignProject = {
-  title: "Kohdataan",
+  title: "Kohdataan Kolmioilla",
   description: "Creating cultural encounters",
   year: 2019,
   isTeam: true,
@@ -85,9 +100,12 @@ const pyorreDesignProject = {
   displayableCategory: 2,
   image: "./assets/pyorre.png",
   classes: "contain",
-  styleDarkColor: true,
+  styleDarkColor: false,
   style: {
-    backgroundColor: "white",
+    backgroundColor: "black",
+    boxSizing: "border-box",
+    paddingTop: "80px",
+    paddingBottom: "80px",
   },
 };
 
@@ -172,11 +190,10 @@ export const aesthteticsDesignProjects = [
 
 export const industrialProjects = [
   kaarnaDesignProject,
+  lamppuDesignProject,
   tyyniDesignProject,
-  kolmioillaDesignProject,
-  kiskoDesignProject,
-  kuutamoDesignProject,
   pyorreDesignProject,
+  kolmioillaDesignProject,
 ];
 
 export const digitalProjects = [
