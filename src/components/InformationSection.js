@@ -12,6 +12,8 @@ function InformationSection({
 }) {
   const [textExpanded, setTextExpanded] = useState(false);
   const [performAnimation, setPerformAnimation] = useState(false);
+  const [showPhoneNumber, setShowPhoneNumber] = useState(false);
+  const [showEmail, setShowEmail] = useState(false);
 
   useEffect(() => {
     setPerformAnimation(!textExpanded);
@@ -154,21 +156,68 @@ function InformationSection({
             </div>
           </div>
         </div>
-        <div class="information-section-contact">
+        <div
+          class="information-section-contact"
+          onMouseLeave={() => {
+            setShowEmail(false);
+            setShowPhoneNumber(false);
+          }}
+        >
           <div class="information-section-contact-content-wrapper">
             <div class="information-section-contact-icon-wrapper">
               <p>Check me out:</p>
-              <img src="./assets/icons/linkedin.png" alt="LinkedIn" />
-              <img src="./assets/icons/instagram.png" alt="Instagram" />
-              <img
-                src="./assets/icons/finnishdesigners.png"
-                alt="Finnish Designers"
-              />
+              <a
+                href="https://www.linkedin.com/in/sebastian-högnabba-9a45a19b"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="./assets/icons/linkedin.png" alt="LinkedIn" />
+              </a>
+
+              <a className="hide-element">
+                <img src="./assets/icons/instagram.png" alt="Instagram" />
+              </a>
+              <a className="hide-element">
+                <img
+                  src="./assets/icons/finnishdesigners.png"
+                  alt="Finnish Designers"
+                />
+              </a>
             </div>
             <div class="information-section-contact-icon-wrapper">
               <p>Hit me up:</p>
-              <img src="./assets/icons/phone.png" alt="Phone" />
-              <img src="./assets/icons/email.png" alt="email" />
+              <div>
+                <div class="information-section-contact-icon-expandable-content-wrapper">
+                  <div>
+                    <img
+                      src="./assets/icons/phone.png"
+                      alt="Phone"
+                      onMouseEnter={() => {
+                        setShowEmail(false);
+                        setShowPhoneNumber(true);
+                      }}
+                    />
+                  </div>
+                  {showPhoneNumber && (
+                    <button className="link-button">040 7752722</button>
+                  )}
+                  <div>
+                    <img
+                      src="./assets/icons/email.png"
+                      alt="email"
+                      onMouseEnter={() => {
+                        setShowPhoneNumber(false);
+                        setShowEmail(true);
+                      }}
+                    />
+                  </div>
+                  {showEmail && (
+                    <button className="link-button">
+                      sebastian.hognabba@gmail.com
+                    </button>
+                  )}
+                </div>
+              </div>
             </div>
           </div>
         </div>

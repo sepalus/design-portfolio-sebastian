@@ -80,28 +80,41 @@ $title-element-3-top-end: 326px;
 
 .information-section-contact-content-wrapper {
   display: flex;
-  justify-content: center;
 }
 
 .information-section-contact-icon-wrapper {
   display: flex;
-
   p {
     font-size: 16px;
   }
   img {
     align-self: center;
     opacity: 0.7;
+    padding-top: 2px;
     padding-left: 10px;
     width: 18px;
   }
   img:hover {
     opacity: 1;
   }
+
+  button {
+    font-size: 18px;
+    margin-left: 12px;
+    margin-right: 8px;
+    transform: translateY(-7px);
+  }
+}
+
+.information-section-contact-icon-expandable-content-wrapper {
+  position: absolute;
+  display: flex;
+  white-space: nowrap;
 }
 
 .information-section-contact-icon-wrapper:not(:first-of-type) {
   padding-left: 48px;
+  padding-right: 26px;
 }
 
 /* Animations */
