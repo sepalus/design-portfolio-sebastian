@@ -11,6 +11,7 @@ function ProjectCatalog({
   animationDirectionIn,
   descriptionExpanded,
   setDescriptionExpanded,
+  setAnimateOut,
 }) {
   return (
     <div
@@ -43,7 +44,10 @@ function ProjectCatalog({
                   "icon-button": isActive,
                 })}
                 onClick={() => {
-                  if (isActive) setDescriptionExpanded(!descriptionExpanded);
+                  if (isActive) {
+                    setAnimateOut(descriptionExpanded);
+                    setDescriptionExpanded(!descriptionExpanded);
+                  }
                 }}
               >
                 <h4>{project.title}</h4>

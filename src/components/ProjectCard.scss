@@ -107,15 +107,24 @@
 }
 
 .animate-description-out {
-  .project-card-description-title {
-    animation: fadeout 0.7s forwards;
-  }
+  .project-card-description-title,
   .project-card-description-text,
   .project-card-description-tag-wrapper {
     animation: fadeout 1s forwards;
   }
   .vertical-line {
     animation: lineupdescription 0.8s forwards;
+  }
+}
+
+animate-description-static {
+  .project-card-description-title,
+  .project-card-description-text,
+  .project-card-description-tag-wrapper {
+    opacity: 0;
+  }
+  .vertical-line {
+    height: 0;
   }
 }
 

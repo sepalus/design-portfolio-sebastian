@@ -7,6 +7,7 @@ function ProjectCard({
   activeProjectIndex,
   animationDirectionIn,
   descriptionExpanded,
+  animateOut,
 }) {
   const activeProject = projects[activeProjectIndex];
 
@@ -23,18 +24,22 @@ function ProjectCard({
       }}
     >
       <div className="project-card-image-wrapper">
-        {projects.map((project, index) => (
-          <img
-            src={project.image}
-            alt=""
-            className={classNames(
-              [project.classes],
-              { "animate-card-fade-in": activeProjectIndex === index },
-              { "animate-card-fade-out": activeProjectIndex !== index }
-            )}
-            style={project.style}
-          />
-        ))}
+        {projects.map((project, index) => {
+          const isActive = activeProjectIndex === index;
+
+          return (
+            <img
+              src={project.image}
+              alt=""
+              className={classNames(
+                [project.classes],
+                { "animate-card-fade-in": isActive },
+                { "animate-card-fade-out": !isActive }
+              )}
+              style={project.style}
+            />
+          );
+        })}
       </div>
 
       <div
@@ -44,7 +49,10 @@ function ProjectCard({
             "animate-description-in": descriptionExpanded,
           },
           {
-            "animate-description-out": !descriptionExpanded,
+            "animate-description-out": animateOut && !descriptionExpanded,
+          },
+          {
+            "animate-description-static": !animateOut && !descriptionExpanded,
           }
         )}
       >

@@ -21,6 +21,7 @@ function ProjectSection({
 }) {
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
   const [descriptionExpanded, setDescriptionExpanded] = useState(false);
+  const [animateOut, setAnimateOut] = useState(false);
   const projects =
     designArea === 3
       ? aesthteticsDesignProjects
@@ -65,12 +66,14 @@ function ProjectSection({
           animationDirectionIn={currentViewport === 1}
           descriptionExpanded={descriptionExpanded}
           setDescriptionExpanded={setDescriptionExpanded}
+          setAnimateOut={setAnimateOut}
         />
         <ProjectCard
           projects={projects}
           activeProjectIndex={activeProjectIndex}
           animationDirectionIn={currentViewport === 1}
           descriptionExpanded={descriptionExpanded}
+          animateOut={animateOut}
         />
       </div>
     </section>
