@@ -11,7 +11,7 @@ const kaarnaDesignProject = {
 };
 
 const lamppuDesignProject = {
-  title: "Lamppu",
+  title: "Pendant Lamp",
   description:
     "An atmospheric dining table lamp with three intensities of light",
   year: 2020,
@@ -75,9 +75,9 @@ const kolmioillaDesignProject = {
 };
 
 const pyorreDesignProject = {
-  title: "Pyörre",
+  title: "Recyclable Toothbrush",
   description:
-    "An electrical toothbrush designed for  recyclability and the circular economy",
+    "An electrical toothbrush designed for recyclability and the circular economy",
   year: 2020,
   isTeam: true,
   categories: [
