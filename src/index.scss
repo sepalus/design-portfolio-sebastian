@@ -133,12 +133,11 @@ ul {
 
 .icon-button {
   display: flex;
+  align-items: center;
+
   h3 {
-    margin: 0px 8px 0px;
+    margin: 4px 8px;
     font-weight: 300;
-  }
-  svg {
-    margin-top: 3px;
   }
 }
 

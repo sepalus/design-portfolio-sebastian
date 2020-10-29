@@ -1,6 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 import "./ProjectCatalog.scss";
+import ChevronRight from "@material-ui/icons/ChevronRight";
 
 function ProjectCatalog({
   designArea,
@@ -23,18 +24,26 @@ function ProjectCatalog({
           : "Products and Furniture"}
       </h2>
       <ul className="project-catalog-projects">
-        {projects.map((project, index) => (
-          <li
-            className={classNames({
-              "project-catalog-active-project": index === activeProjectIndex,
-            })}
-            onMouseOver={() => setActiveProjectIndex(index)}
-          >
-            <button className="link-button">
-              <h4>{project.title}</h4>
-            </button>
-          </li>
-        ))}
+        {projects.map((project, index) => {
+          const isActive = index === activeProjectIndex;
+          return (
+            <li
+              className={classNames({
+                "project-catalog-active-project": isActive,
+              })}
+              onMouseOver={() => setActiveProjectIndex(index)}
+            >
+              <button
+                className={classNames("link-button", {
+                  "icon-button": isActive,
+                })}
+              >
+                <h4>{project.title}</h4>
+                {isActive && <ChevronRight />}
+              </button>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
