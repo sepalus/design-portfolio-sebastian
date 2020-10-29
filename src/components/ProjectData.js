@@ -167,7 +167,6 @@ export const aesthteticsDesignProjects = [
 
 export const industrialProjects = [
   kaarnaDesignProject,
-  lamppuDesignProject,
   tyyniDesignProject,
   pyorreDesignProject,
   kolmioillaDesignProject,
