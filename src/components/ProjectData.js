@@ -7,9 +7,7 @@ const kaarnaDesignProject = {
   displayableCategory: 1,
   image: "./assets/kaarna.jpg",
   styleDarkColor: false,
-  style: {
-    backgroundColor: "black",
-  },
+  backgroundColor: "black",
 };
 
 const lamppuDesignProject = {
@@ -22,9 +20,7 @@ const lamppuDesignProject = {
   displayableCategory: 1,
   image: "./assets/lamp.png",
   styleDarkColor: false,
-  style: {
-    backgroundColor: "black",
-  },
+  backgroundColor: "black",
 };
 
 const tyyniDesignProject = {
@@ -37,9 +33,7 @@ const tyyniDesignProject = {
   displayableCategory: 1,
   image: "./assets/tyyni.png",
   styleDarkColor: false,
-  style: {
-    backgroundColor: "black",
-  },
+  backgroundColor: "black",
 };
 
 const kuutamoDesignProject = {
@@ -51,9 +45,7 @@ const kuutamoDesignProject = {
   displayableCategory: 2,
   image: "./assets/kuu.png",
   styleDarkColor: false,
-  style: {
-    backgroundColor: "black",
-  },
+  backgroundColor: "black",
 };
 
 const kiskoDesignProject = {
@@ -67,9 +59,7 @@ const kiskoDesignProject = {
   image: "./assets/kisko.png",
   classes: "contain",
   styleDarkColor: true,
-  style: {
-    backgroundColor: "white",
-  },
+  backgroundColor: "white",
 };
 
 const kolmioillaDesignProject = {
@@ -81,9 +71,7 @@ const kolmioillaDesignProject = {
   displayableCategory: 2,
   image: "./assets/kolmioilla.png",
   styleDarkColor: false,
-  style: {
-    backgroundColor: "black",
-  },
+  backgroundColor: "black",
 };
 
 const pyorreDesignProject = {
@@ -101,9 +89,8 @@ const pyorreDesignProject = {
   image: "./assets/pyorre.png",
   classes: "contain",
   styleDarkColor: false,
+  backgroundColor: "black",
   style: {
-    backgroundColor: "black",
-    boxSizing: "border-box",
     paddingTop: "80px",
     paddingBottom: "80px",
   },
@@ -120,9 +107,7 @@ const museDesignProject = {
   image: "./assets/muse.png",
   classes: "contain",
   styleDarkColor: true,
-  style: {
-    backgroundColor: "#6bc9b7",
-  },
+  backgroundColor: "#6bc9b7",
 };
 
 const anneliinaDesignProject = {
@@ -136,9 +121,7 @@ const anneliinaDesignProject = {
   image: "./assets/anneliina.png",
   classes: "contain",
   styleDarkColor: true,
-  style: {
-    backgroundColor: "#96c1d9",
-  },
+  backgroundColor: "#96c1d9",
 };
 
 const scootDesignProject = {
@@ -151,9 +134,7 @@ const scootDesignProject = {
   image: "./assets/scoot.png",
   classes: "contain",
   styleDarkColor: true,
-  style: {
-    backgroundColor: "#f8f379",
-  },
+  backgroundColor: "#f8f379",
 };
 
 const axiomDesignProject = {
@@ -167,9 +148,7 @@ const axiomDesignProject = {
   image: "./assets/axiom.png",
   classes: "contain",
   styleDarkColor: true,
-  style: {
-    backgroundColor: "#d2ebf9",
-  },
+  backgroundColor: "#d2ebf9",
 };
 
 export const aesthteticsDesignProjects = [
@@ -182,9 +161,7 @@ export const aesthteticsDesignProjects = [
     displayableCategory: 0,
     image: "",
     styleDarkColor: true,
-    style: {
-      backgroundColor: "black",
-    },
+    backgroundColor: "black",
   },
 ];
 

@@ -13,7 +13,7 @@ function ProjectCard({ projects, activeProjectIndex, animationDirectionIn }) {
         { "animate-card-out": !animationDirectionIn }
       )}
       style={{
-        ...activeProject.style,
+        backgroundColor: activeProject.backgroundColor || "black",
         color: activeProject.styleDarkColor ? "black" : "white",
       }}
     >
@@ -27,6 +27,7 @@ function ProjectCard({ projects, activeProjectIndex, animationDirectionIn }) {
               { "animate-card-fade-in": activeProjectIndex === index },
               { "animate-card-fade-out": activeProjectIndex !== index }
             )}
+            style={project.style}
           />
         ))}
       </div>
