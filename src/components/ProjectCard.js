@@ -41,18 +41,14 @@ function ProjectCard({
         className={classNames(
           "project-card-description-wrapper",
           {
-            "animate-description-text-element-in": descriptionExpanded,
+            "animate-description-in": descriptionExpanded,
           },
           {
-            "animate-description-text-element-out": !descriptionExpanded,
+            "animate-description-out": !descriptionExpanded,
           }
         )}
       >
-        <div
-          className={classNames("vertical-line", {
-            "animate-description-vertical-line": descriptionExpanded,
-          })}
-        ></div>
+        <div className="vertical-line"></div>
         <h3 className="project-card-description-title">
           {activeProject.title}
         </h3>
