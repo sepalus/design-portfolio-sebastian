@@ -2,7 +2,12 @@ import React from "react";
 import classNames from "classnames";
 import "./ProjectCard.scss";
 
-function ProjectCard({ projects, activeProjectIndex, animationDirectionIn }) {
+function ProjectCard({
+  projects,
+  activeProjectIndex,
+  animationDirectionIn,
+  descriptionExpanded,
+}) {
   const activeProject = projects[activeProjectIndex];
 
   return (
@@ -31,7 +36,23 @@ function ProjectCard({ projects, activeProjectIndex, animationDirectionIn }) {
           />
         ))}
       </div>
-      <div className="project-card-description-wrapper">
+
+      <div
+        className={classNames(
+          "project-card-description-wrapper",
+          {
+            "animate-description-text-element-in": descriptionExpanded,
+          },
+          {
+            "animate-description-text-element-out": !descriptionExpanded,
+          }
+        )}
+      >
+        <div
+          className={classNames("vertical-line", {
+            "animate-description-vertical-line": descriptionExpanded,
+          })}
+        ></div>
         <h3 className="project-card-description-title">
           {activeProject.title}
         </h3>

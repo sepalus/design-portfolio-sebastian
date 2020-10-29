@@ -9,6 +9,8 @@ function ProjectCatalog({
   activeProjectIndex,
   setActiveProjectIndex,
   animationDirectionIn,
+  descriptionExpanded,
+  setDescriptionExpanded,
 }) {
   return (
     <div
@@ -31,12 +33,18 @@ function ProjectCatalog({
               className={classNames({
                 "project-catalog-active-project": isActive,
               })}
-              onMouseOver={() => setActiveProjectIndex(index)}
+              onMouseOver={() => {
+                if (!isActive) setDescriptionExpanded(false);
+                setActiveProjectIndex(index);
+              }}
             >
               <button
                 className={classNames("link-button", {
                   "icon-button": isActive,
                 })}
+                onClick={() => {
+                  if (isActive) setDescriptionExpanded(!descriptionExpanded);
+                }}
               >
                 <h4>{project.title}</h4>
                 {isActive && <ChevronRight />}
