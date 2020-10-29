@@ -1,9 +1,10 @@
 const kaarnaDesignProject = {
   title: "Kaarna",
-  description: "An electrical foldable scooter for laid-back cruising",
+  description:
+    "An electrical scooter designed for laid-back cruising, as part of an urban mobility challenge. With new innovation in the rotating folding mechanism and high-quality materials, the vehicle design soluition is made for people who want to cruise the streets in style.",
   year: 2017,
   isTeam: false,
-  categories: ["Product Design", "Vehicle Design", "Urban Mobility Design"],
+  categories: ["Urban Mobility", "Vehicle Design"],
   displayableCategory: 1,
   image: "./assets/kaarna.jpg",
   styleDarkColor: false,

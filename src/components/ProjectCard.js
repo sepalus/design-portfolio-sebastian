@@ -31,12 +31,23 @@ function ProjectCard({ projects, activeProjectIndex, animationDirectionIn }) {
           />
         ))}
       </div>
-      <div className="project-card-text-wrapper" style={{ display: "none" }}>
-        <div className="project-card-description">
-          <h1>{activeProject.title}</h1>
-          <h4>{activeProject.description}</h4>
+      <div className="project-card-description-wrapper">
+        <h3 className="project-card-description-title">
+          {activeProject.title}
+        </h3>
+        <p className="project-card-description-text">
+          {activeProject.description}
+        </p>
+        <div className="project-card-description-tag-wrapper">
+          <div className="project-card-description-tag">
+            <img src="./assets/icons/phone.png" alt="Phone" />
+            <p> {activeProject.year}</p>
+          </div>
+          <div className="project-card-description-tag">
+            <img src="./assets/icons/phone.png" alt="Phone" />
+            <p>{activeProject.isTeam ? "Design Team" : "Sebastian Högnabba"}</p>
+          </div>
         </div>
-        <div className="project-card-footer"></div>
       </div>
     </div>
   );
