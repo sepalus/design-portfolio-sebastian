@@ -88,10 +88,10 @@ const kolmioillaDesignProject = {
   backgroundColor: "black",
 };
 
-const pyorreDesignProject = {
-  title: "Recyclable Toothbrush",
+const kierreDesignProject = {
+  title: "Kierre",
   description:
-    "An electric toothbrush designed for recyclability and the circular economy. The shell of the toothbrush is manufactured from recycled plastic, made out of monomaterial components and designed for easy disassembly. The toothbrush showcases that products designed for recyclability can be beautiful, by turning the recyclable features into the product's own aesthetics.",
+    "An electric toothbrush designed for recyclability and the circular economy. The shell of the toothbrush is manufactured from recycled plastic, made out of monomaterial components and designed for easy disassembly. Kierre showcases that products designed for recyclability can be beautiful, by turning the recyclable features into the product's own aesthetics.",
   year: 2020,
   isTeam: true,
   categories: [
@@ -100,7 +100,7 @@ const pyorreDesignProject = {
     "Design for the Circular Economy",
   ],
   displayableCategory: 2,
-  image: "./assets/pyorre.png",
+  image: "./assets/kierre.png",
   classes: "contain",
   imageStyle: {
     paddingTop: "80px",
@@ -188,7 +188,7 @@ export const aestheticsDesignProjects = [
 export const industrialProjects = [
   kaarnaDesignProject,
   tyyniDesignProject,
-  pyorreDesignProject,
+  kierreDesignProject,
   kolmioillaDesignProject,
 ];
 
