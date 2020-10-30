@@ -1,6 +1,9 @@
 import React from "react";
 import classNames from "classnames";
 import "./ProjectCard.scss";
+import Person from "@material-ui/icons/Person";
+import People from "@material-ui/icons/People";
+import CalendarToday from "@material-ui/icons/CalendarToday";
 
 function ProjectCard({
   projects,
@@ -66,11 +69,15 @@ function ProjectCard({
         </p>
         <div className="project-card-description-tag-wrapper">
           <div className="project-card-description-tag">
-            <img src="./assets/icons/phone.png" alt="Phone" />
+            <CalendarToday className="project-card-description-tag-icon" />
             <p> {activeProject.year}</p>
           </div>
           <div className="project-card-description-tag">
-            <img src="./assets/icons/phone.png" alt="Phone" />
+            {activeProject.isTeam ? (
+              <People className="project-card-description-tag-icon" />
+            ) : (
+              <Person className="project-card-description-tag-icon" />
+            )}
             <p>{activeProject.isTeam ? "Design Team" : "Sebastian Högnabba"}</p>
           </div>
         </div>
