@@ -36,7 +36,7 @@ function ProjectCard({
                 { "animate-card-fade-in": isActive },
                 { "animate-card-fade-out": !isActive }
               )}
-              style={project.style}
+              style={project.imageStyle}
             />
           );
         })}
@@ -55,6 +55,7 @@ function ProjectCard({
             "animate-description-static": !animateOut && !descriptionExpanded,
           }
         )}
+        style={activeProject.descriptionStyle}
       >
         <div className="vertical-line"></div>
         <h3 className="project-card-description-title">

@@ -39,9 +39,9 @@
 
 .project-card-description-wrapper {
   position: absolute;
-  top: 72px;
+  top: 70px;
   right: 80px;
-  width: 300px;
+  max-width: calc(100vw - 480px);
 
   .vertical-line {
     left: -24px;
@@ -50,6 +50,7 @@
 
 .project-card-description-title {
   opacity: 0;
+  margin-top: 8px;
 }
 
 .project-card-description-text {
@@ -61,7 +62,7 @@
 .project-card-description-tag-wrapper {
   opacity: 0;
   display: flex;
-  margin: 16px 0px;
+  margin: 16px 0px 12px;
 }
 
 .project-card-description-tag {

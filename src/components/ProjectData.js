@@ -7,6 +7,11 @@ const kaarnaDesignProject = {
   categories: ["Product Design", "Vehicle Design", "Urban Mobility"],
   displayableCategory: 1,
   image: "./assets/kaarna.jpg",
+  descriptionStyle: {
+    top: "126px",
+    right: "100px",
+    width: "285px",
+  },
   styleDarkColor: false,
   backgroundColor: "black",
 };
@@ -33,6 +38,9 @@ const tyyniDesignProject = {
   categories: ["Product Design", "Acoustic Design", "Wall Panel Design"],
   displayableCategory: 1,
   image: "./assets/tyyni.png",
+  descriptionStyle: {
+    left: "480px",
+  },
   styleDarkColor: false,
   backgroundColor: "black",
 };
@@ -73,6 +81,9 @@ const kolmioillaDesignProject = {
   categories: ["Street Furniture Design", "Chair Design", "Spatial Design"],
   displayableCategory: 2,
   image: "./assets/kolmioilla.png",
+  descriptionStyle: {
+    left: "480px",
+  },
   styleDarkColor: false,
   backgroundColor: "black",
 };
@@ -91,12 +102,18 @@ const pyorreDesignProject = {
   displayableCategory: 2,
   image: "./assets/pyorre.png",
   classes: "contain",
-  styleDarkColor: false,
-  backgroundColor: "black",
-  style: {
+  imageStyle: {
     paddingTop: "80px",
     paddingBottom: "80px",
+    paddingLeft: "150px",
   },
+  descriptionStyle: {
+    width: "235px",
+    top: "50%",
+    transform: "translateY(-50%)",
+  },
+  styleDarkColor: false,
+  backgroundColor: "black",
 };
 
 const museDesignProject = {
