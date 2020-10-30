@@ -51,7 +51,7 @@ function ProjectCatalog({
                 }}
               >
                 <h4>{project.title}</h4>
-                {isActive && <ChevronRight />}
+                {designArea === 1 && isActive && <ChevronRight />}
               </button>
             </li>
           );

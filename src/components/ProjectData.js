@@ -76,7 +76,7 @@ const kolmioillaDesignProject = {
   title: "Kohdataan Kolmioilla",
   description:
     "Three pieces of street furniture that create a space that encourages both planned and incidental encounters. The concept is designed for an unused triangle-shaped cobblestone plaza in front of the Helsinki Design Museum, where three neighborhoods meet. Together the triangular pieces of furniture create a cultural meeting point for city residents.",
-  year: 2019,
+  year: 2020,
   isTeam: true,
   categories: ["Street Furniture Design", "Chair Design", "Spatial Design"],
   displayableCategory: 2,

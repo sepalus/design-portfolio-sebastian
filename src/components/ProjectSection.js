@@ -71,6 +71,7 @@ function ProjectSection({
         <ProjectCard
           projects={projects}
           activeProjectIndex={activeProjectIndex}
+          designArea={designArea}
           animationDirectionIn={currentViewport === 1}
           descriptionExpanded={descriptionExpanded}
           animateOut={animateOut}
