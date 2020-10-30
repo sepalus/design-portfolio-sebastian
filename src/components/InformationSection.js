@@ -103,7 +103,7 @@ function InformationSection({
               </button>
               <button
                 className={classNames(
-                  "information-section-about-introduction-label",
+                  "information-section-about-introduction-label disabled-button",
                   {
                     "animate-title-element-3 link-button link-button-narrow": textExpanded,
                   },
@@ -119,11 +119,11 @@ function InformationSection({
               </button>
               <div
                 className={classNames("vertical-line", {
-                  "animate-vertical-line": textExpanded,
+                  "animate-vertical-line-open": textExpanded,
+                  "animate-vertical-line-close": !textExpanded,
                 })}
               ></div>
               <p
-                style={{ position: "absolute" }}
                 className={classNames(
                   "information-section-about-introduction-text",
                   {
