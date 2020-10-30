@@ -37,6 +37,51 @@
   }
 }
 
+.project-card-description-wrapper {
+  position: absolute;
+  top: 70px;
+  right: 80px;
+  max-width: calc(100vw - 480px);
+
+  .vertical-line {
+    left: -24px;
+  }
+}
+
+.project-card-description-title {
+  opacity: 0;
+  margin-top: 8px;
+}
+
+.project-card-description-text {
+  opacity: 0;
+  line-height: 30px;
+  text-align: justify;
+}
+
+.project-card-description-tag-wrapper {
+  opacity: 0;
+  display: flex;
+  margin: 16px 0px 12px;
+}
+
+.project-card-description-tag {
+  display: flex;
+  p {
+    font-weight: 500;
+    font-size: 15px;
+    margin-left: 6px;
+  }
+}
+.project-card-description-tag-icon {
+  font-size: 19px !important;
+  margin-left: 4px;
+}
+
+.project-card-description-tag:not(:first-of-type) {
+  margin-left: 18px;
+}
+
 /* Animation */
 .animate-card-fade-in {
   animation: fadein 0.8s forwards;
@@ -45,6 +90,44 @@
 
 .animate-card-fade-out {
   animation: fadeout 0.5s forwards;
+}
+
+.animate-description-in {
+  .project-card-description-title {
+    animation: fadein 0.7s forwards;
+  }
+  .project-card-description-text,
+  .project-card-description-tag-wrapper {
+    animation: fadein 1s forwards;
+    animation-delay: 0.6s;
+  }
+
+  .vertical-line {
+    animation: linedowndescription 0.8s forwards;
+    animation-delay: 0.5s;
+  }
+}
+
+.animate-description-out {
+  .project-card-description-title,
+  .project-card-description-text,
+  .project-card-description-tag-wrapper {
+    animation: fadeout 1s forwards;
+  }
+  .vertical-line {
+    animation: lineupdescription 0.8s forwards;
+  }
+}
+
+animate-description-static {
+  .project-card-description-title,
+  .project-card-description-text,
+  .project-card-description-tag-wrapper {
+    opacity: 0;
+  }
+  .vertical-line {
+    height: 0;
+  }
 }
 
 @keyframes fadein {
@@ -62,5 +145,23 @@
   }
   to {
     opacity: 0;
+  }
+}
+
+@keyframes linedowndescription {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+@keyframes lineupdescription {
+  0% {
+    height: 100%;
+  }
+  100% {
+    height: 0;
   }
 }

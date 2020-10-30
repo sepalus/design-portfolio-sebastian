@@ -141,6 +141,13 @@ ul {
   }
 }
 
+.disabled-button {
+  cursor: text;
+}
+.disabled-button:hover {
+  background: none;
+}
+
 /* Elements */
 
 .horizontal-line {

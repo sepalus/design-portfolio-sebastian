@@ -4,7 +4,7 @@ import ProjectCatalog from "./ProjectCatalog";
 import ProjectCard from "./ProjectCard";
 import "./ProjectSection.scss";
 import {
-  aesthteticsDesignProjects,
+  aestheticsDesignProjects,
   industrialProjects,
   digitalProjects,
 } from "./ProjectData";
@@ -20,9 +20,11 @@ function ProjectSection({
   skipProjectSection,
 }) {
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
+  const [descriptionExpanded, setDescriptionExpanded] = useState(false);
+  const [animateOut, setAnimateOut] = useState(false);
   const projects =
     designArea === 3
-      ? aesthteticsDesignProjects
+      ? aestheticsDesignProjects
       : designArea === 2
       ? digitalProjects
       : industrialProjects;
@@ -62,11 +64,16 @@ function ProjectSection({
           activeProjectIndex={activeProjectIndex}
           setActiveProjectIndex={setActiveProjectIndex}
           animationDirectionIn={currentViewport === 1}
+          descriptionExpanded={descriptionExpanded}
+          setDescriptionExpanded={setDescriptionExpanded}
+          setAnimateOut={setAnimateOut}
         />
         <ProjectCard
           projects={projects}
           activeProjectIndex={activeProjectIndex}
           animationDirectionIn={currentViewport === 1}
+          descriptionExpanded={descriptionExpanded}
+          animateOut={animateOut}
         />
       </div>
     </section>
