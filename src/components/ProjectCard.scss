@@ -68,16 +68,18 @@
 .project-card-description-tag {
   display: flex;
   p {
-    margin-left: 8px;
+    font-weight: 500;
+    font-size: 15px;
+    margin-left: 6px;
   }
 }
 .project-card-description-tag-icon {
-  font-size: 18px !important;
+  font-size: 19px !important;
   margin-left: 4px;
 }
 
 .project-card-description-tag:not(:first-of-type) {
-  margin-left: 16px;
+  margin-left: 18px;
 }
 
 /* Animation */
