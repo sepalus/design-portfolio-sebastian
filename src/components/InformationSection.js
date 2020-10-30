@@ -150,7 +150,7 @@ function InformationSection({
                 highlights the significance of aesthetic experiences in our
                 everyday lives and provides tools for measuring them. As a
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                I am a strong advocate for the importance of aesthtetics in all
+                I am a strong advocate for the importance of aesthetics in all
                 designed solutions.
               </p>
             </div>

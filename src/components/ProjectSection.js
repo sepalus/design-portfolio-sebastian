@@ -4,7 +4,7 @@ import ProjectCatalog from "./ProjectCatalog";
 import ProjectCard from "./ProjectCard";
 import "./ProjectSection.scss";
 import {
-  aesthteticsDesignProjects,
+  aestheticsDesignProjects,
   industrialProjects,
   digitalProjects,
 } from "./ProjectData";
@@ -24,7 +24,7 @@ function ProjectSection({
   const [animateOut, setAnimateOut] = useState(false);
   const projects =
     designArea === 3
-      ? aesthteticsDesignProjects
+      ? aestheticsDesignProjects
       : designArea === 2
       ? digitalProjects
       : industrialProjects;
