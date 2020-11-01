@@ -136,7 +136,7 @@ function InformationSection({
                 className={classNames(
                   "information-section-about-introduction-text",
                   {
-                    "animate-text-element": textExpanded,
+                    "animate-text-element-in": textExpanded,
                   },
                   {
                     "animate-text-element-out": !textExpanded,

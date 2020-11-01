@@ -47,6 +47,7 @@ $title-element-3-top-end: 342px;
   width: 488px;
   text-align: justify;
   text-align-last: justify;
+  margin-left: -50px;
 }
 
 .information-section-about-text-wrapper-placeholder {
@@ -134,13 +135,15 @@ $title-element-3-top-end: 342px;
 }
 
 .information-section-animation-enter {
-  .information-section-about-content-wrapper {
+  .information-section-about-content-wrapper,
+  .information-section-about-text-wrapper {
     animation: informationelemententer 0.5s forwards;
   }
 }
 
 .information-section-animation-exit {
-  .information-section-about-content-wrapper {
+  .information-section-about-content-wrapper
+    .information-section-about-text-wrapper {
     animation: informationelementexit 0.5s forwards;
   }
 }
@@ -175,7 +178,7 @@ $title-element-3-top-end: 342px;
   animation-delay: 0s;
 }
 
-.animate-text-element {
+.animate-text-element-in {
   animation: fadeintextelement 1s forwards;
   animation-delay: 0.5s;
 }
