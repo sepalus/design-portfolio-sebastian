@@ -34,10 +34,7 @@ function ProjectCatalog({
               className={classNames({
                 "project-catalog-active-project": isActive,
               })}
-              onMouseOver={() => {
-                if (!isActive) setDescriptionExpanded(false);
-                setActiveProjectIndex(index);
-              }}
+              onMouseOver={() => setActiveProjectIndex(index)}
             >
               <button
                 className={classNames("link-button", {

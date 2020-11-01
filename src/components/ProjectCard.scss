@@ -45,6 +45,7 @@
 
   .vertical-line {
     left: -24px;
+    height: 0px;
   }
 }
 
@@ -89,37 +90,27 @@
 }
 
 .animate-card-fade-out {
-  animation: fadeout 0.5s forwards;
+  opacity: 0;
 }
 
 .animate-description-in {
   .project-card-description-title {
     animation: fadein 0.7s forwards;
+    animation-delay: 0.3s;
   }
   .project-card-description-text,
   .project-card-description-tag-wrapper {
     animation: fadein 1s forwards;
-    animation-delay: 0.6s;
+    animation-delay: 0.8s;
   }
 
   .vertical-line {
     animation: linedowndescription 0.8s forwards;
-    animation-delay: 0.5s;
+    animation-delay: 0.8s;
   }
 }
 
 .animate-description-out {
-  .project-card-description-title,
-  .project-card-description-text,
-  .project-card-description-tag-wrapper {
-    animation: fadeout 1s forwards;
-  }
-  .vertical-line {
-    animation: lineupdescription 0.8s forwards;
-  }
-}
-
-animate-description-static {
   .project-card-description-title,
   .project-card-description-text,
   .project-card-description-tag-wrapper {
@@ -139,29 +130,11 @@ animate-description-static {
   }
 }
 
-@keyframes fadeout {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
 @keyframes linedowndescription {
   0% {
     height: 0;
   }
   100% {
     height: 100%;
-  }
-}
-
-@keyframes lineupdescription {
-  0% {
-    height: 100%;
-  }
-  100% {
-    height: 0;
   }
 }

@@ -4,23 +4,17 @@ import Person from "@material-ui/icons/Person";
 import People from "@material-ui/icons/People";
 import CalendarToday from "@material-ui/icons/CalendarToday";
 
-function ProjectCardDescription({
-  activeProject,
-  descriptionExpanded,
-  animateOut,
-}) {
+function ProjectCardDescription({ project, activeProject }) {
   return (
     <div
       className={classNames(
         "project-card-description-wrapper",
         {
-          "animate-description-in": descriptionExpanded,
+          "animate-description-in": project.title === activeProject.title,
         },
+
         {
-          "animate-description-out": animateOut && !descriptionExpanded,
-        },
-        {
-          "animate-description-static": !animateOut && !descriptionExpanded,
+          "animate-description-out": project.title !== activeProject.title,
         }
       )}
       style={activeProject.descriptionStyle}

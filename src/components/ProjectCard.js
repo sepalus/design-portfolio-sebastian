@@ -33,26 +33,30 @@ function ProjectCard({
             const isActive = activeProjectIndex === index;
 
             return (
-              <img
-                src={`./assets/${project.images[0]}`}
-                alt=""
-                className={classNames(
-                  [project.classes],
-                  { "animate-card-fade-in": isActive },
-                  { "animate-card-fade-out": !isActive }
+              <>
+                <img
+                  src={`./assets/${project.images[0]}`}
+                  alt=""
+                  className={classNames(
+                    [project.classes],
+                    { "animate-card-fade-in": isActive },
+                    { "animate-card-fade-out": !isActive }
+                  )}
+                  style={project.imageStyle}
+                />
+                {designArea === 1 && (
+                  <ProjectCardDescription
+                    project={project}
+                    projectIndex={index}
+                    activeProject={activeProject}
+                    descriptionExpanded={descriptionExpanded}
+                    animateOut={animateOut}
+                  />
                 )}
-                style={project.imageStyle}
-              />
+              </>
             );
           })}
         </div>
-        {designArea === 1 && (
-          <ProjectCardDescription
-            activeProject={activeProject}
-            descriptionExpanded={descriptionExpanded}
-            animateOut={animateOut}
-          />
-        )}
       </div>
 
       <button
