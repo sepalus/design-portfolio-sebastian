@@ -1,13 +1,13 @@
 $title-element-left-start: 4px;
-$title-element-1-left-end: 254px;
-$title-element-1-top-start: 63px;
-$title-element-1-top-end: 154px;
-$title-element-2-left-end: 118px;
-$title-element-2-top-start: 103px;
-$title-element-2-top-end: 274px;
-$title-element-3-left-end: 340px;
-$title-element-3-top-start: 143px;
-$title-element-3-top-end: 334px;
+$title-element-1-left-end: 234px;
+$title-element-1-top-start: 72px;
+$title-element-1-top-end: 162px;
+$title-element-2-left-end: 98px;
+$title-element-2-top-start: 112px;
+$title-element-2-top-end: 282px;
+$title-element-3-left-end: 320px;
+$title-element-3-top-start: 152px;
+$title-element-3-top-end: 342px;
 
 .information-section-content {
   height: 100%;
@@ -16,6 +16,7 @@ $title-element-3-top-end: 334px;
 }
 
 .information-section-about {
+  position: relative;
   flex-grow: 1;
   display: flex;
   align-items: center;
@@ -29,23 +30,28 @@ $title-element-3-top-end: 334px;
 }
 
 .information-section-about-image {
-  width: 170px;
+  height: 180px;
+  width: 180px;
   border: 2px solid white;
-  border-radius: 170px;
+  object-fit: none;
+  object-position: center top;
+  filter: grayscale(100%);
+}
+
+.information-section-about-introduction-title {
+  margin-top: 8px;
 }
 
 .information-section-about-text-wrapper {
-  position: relative;
-  width: 508px;
-  height: 400px;
-  margin-top: 8px;
-  margin-left: 32px;
+  position: absolute;
+  width: 488px;
   text-align: justify;
   text-align-last: justify;
+}
 
-  .vertical-line {
-    margin: 17px 0px 0px 2px;
-  }
+.information-section-about-text-wrapper-placeholder {
+  width: 520px;
+  height: 420px;
 }
 
 .information-section-about-text-wrapper-expanded {
@@ -64,7 +70,7 @@ $title-element-3-top-end: 334px;
 
 .information-section-about-introduction-text {
   position: absolute;
-  left: 24px;
+  margin-left: 4px;
   margin-top: 16px;
   line-height: 30px;
   opacity: 0;
@@ -179,13 +185,14 @@ $title-element-3-top-end: 334px;
   animation-delay: 0;
 }
 
-.animate-vertical-line-open {
-  animation: linedown 0.8s forwards;
-  animation-delay: 0.4s;
+.information-section-about-image-closed {
+  animation: contractimage 1s forwards;
+  animation-delay: 0s;
 }
 
-.animate-vertical-line-close {
-  animation: lineup 0.8s forwards;
+.information-section-about-image-open {
+  animation: expandimage 1s forwards;
+  animation-delay: 0s;
 }
 
 @keyframes informationelemententer {
@@ -316,20 +323,28 @@ $title-element-3-top-end: 334px;
   }
 }
 
-@keyframes linedown {
-  0% {
-    height: 0px;
+@keyframes expandimage {
+  from {
+    height: 180px;
+    width: 180px;
+    filter: grayscale(100%);
   }
-  100% {
-    height: 330px;
+  to {
+    height: 400px;
+    width: 330px;
+    filter: grayscale(0%);
   }
 }
 
-@keyframes lineup {
-  0% {
-    height: 330px;
+@keyframes contractimage {
+  from {
+    height: 400px;
+    width: 330px;
+    filter: grayscale(0%);
   }
-  100% {
-    height: 0px;
+  to {
+    height: 180px;
+    width: 180px;
+    filter: grayscale(100%);
   }
 }

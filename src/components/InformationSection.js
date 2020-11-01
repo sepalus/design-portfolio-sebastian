@@ -15,6 +15,15 @@ function InformationSection({
   const [showPhoneNumber, setShowPhoneNumber] = useState(false);
   const [showEmail, setShowEmail] = useState(false);
 
+  const expandedImageWidth = 334;
+  const textWidth = 488;
+  const marginWidth = 32;
+
+  const leftEdge =
+    (window.innerWidth - expandedImageWidth - textWidth - marginWidth) / 2 +
+    expandedImageWidth +
+    marginWidth;
+
   useEffect(() => {
     setPerformAnimation(!textExpanded);
   }, [currentViewport]);
@@ -46,19 +55,25 @@ function InformationSection({
           }
         )}
       >
-        <div class="information-section-about">
-          <div class="information-section-about-content-wrapper">
+        <div className="information-section-about">
+          <div className="information-section-about-content-wrapper">
             <div>
               <img
-                src="./assets/face.png"
+                src="./assets/face.jpg"
                 alt="Sebastian"
-                class="information-section-about-image"
+                className={classNames(
+                  "information-section-about-image",
+                  { "information-section-about-image-open": textExpanded },
+                  { "information-section-about-image-closed": !textExpanded }
+                )}
               />
             </div>
+            <div className="information-section-about-text-wrapper-placeholder"></div>
             <div
               className={classNames("information-section-about-text-wrapper", {
                 "information-section-about-text-wrapper-expanded": textExpanded,
               })}
+              style={{ left: leftEdge }}
             >
               <button
                 className="information-section-about-introduction-title link-button link-button-narrow icon-button"
@@ -117,12 +132,6 @@ function InformationSection({
               >
                 Genuine Aesthete
               </button>
-              <div
-                className={classNames("vertical-line", {
-                  "animate-vertical-line-open": textExpanded,
-                  "animate-vertical-line-close": !textExpanded,
-                })}
-              ></div>
               <p
                 className={classNames(
                   "information-section-about-introduction-text",
