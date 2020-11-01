@@ -20,8 +20,6 @@ function ProjectSection({
   skipProjectSection,
 }) {
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
-  const [descriptionExpanded, setDescriptionExpanded] = useState(false);
-  const [animateOut, setAnimateOut] = useState(false);
   const projects =
     designArea === 3
       ? aestheticsDesignProjects
@@ -30,7 +28,6 @@ function ProjectSection({
       : industrialProjects;
 
   if (activeProjectIndex >= projects.length) setActiveProjectIndex(0);
-  const activeProject = projects[activeProjectIndex];
 
   useEffect(() => {
     setActiveProjectIndex(0);
@@ -64,17 +61,12 @@ function ProjectSection({
           activeProjectIndex={activeProjectIndex}
           setActiveProjectIndex={setActiveProjectIndex}
           animationDirectionIn={currentViewport === 1}
-          descriptionExpanded={descriptionExpanded}
-          setDescriptionExpanded={setDescriptionExpanded}
-          setAnimateOut={setAnimateOut}
         />
         <ProjectCard
           projects={projects}
           activeProjectIndex={activeProjectIndex}
           designArea={designArea}
           animationDirectionIn={currentViewport === 1}
-          descriptionExpanded={descriptionExpanded}
-          animateOut={animateOut}
         />
       </div>
     </section>

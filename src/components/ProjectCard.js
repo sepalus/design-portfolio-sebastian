@@ -9,8 +9,6 @@ function ProjectCard({
   activeProjectIndex,
   designArea,
   animationDirectionIn,
-  descriptionExpanded,
-  animateOut,
 }) {
   const activeProject = projects[activeProjectIndex];
   const [carouselIsOpen, setCarouselIsOpen] = useState(false);
@@ -47,10 +45,7 @@ function ProjectCard({
                 {designArea === 1 && (
                   <ProjectCardDescription
                     project={project}
-                    projectIndex={index}
                     activeProject={activeProject}
-                    descriptionExpanded={descriptionExpanded}
-                    animateOut={animateOut}
                   />
                 )}
               </>

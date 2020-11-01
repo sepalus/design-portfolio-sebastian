@@ -8,10 +8,6 @@ function ProjectCatalog({
   projects,
   activeProjectIndex,
   setActiveProjectIndex,
-  animationDirectionIn,
-  descriptionExpanded,
-  setDescriptionExpanded,
-  setAnimateOut,
 }) {
   return (
     <div
@@ -40,12 +36,7 @@ function ProjectCatalog({
                 className={classNames("link-button", {
                   "icon-button": isActive,
                 })}
-                onClick={() => {
-                  if (isActive) {
-                    setAnimateOut(descriptionExpanded);
-                    setDescriptionExpanded(!descriptionExpanded);
-                  }
-                }}
+                onClick={() => {}}
               >
                 <h4>{project.title}</h4>
                 {designArea === 1 && isActive && <ChevronRight />}
