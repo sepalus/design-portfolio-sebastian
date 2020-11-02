@@ -20,6 +20,7 @@ function ProjectSection({
   skipProjectSection,
 }) {
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
+  const [carouselIsOpen, setCarouselIsOpen] = useState(false);
   const projects =
     designArea === 3
       ? aestheticsDesignProjects
@@ -60,12 +61,14 @@ function ProjectSection({
           projects={projects}
           activeProjectIndex={activeProjectIndex}
           setActiveProjectIndex={setActiveProjectIndex}
-          animationDirectionIn={currentViewport === 1}
+          setCarouselIsOpen={setCarouselIsOpen}
         />
         <ProjectCard
           projects={projects}
           activeProjectIndex={activeProjectIndex}
           designArea={designArea}
+          carouselIsOpen={carouselIsOpen}
+          setCarouselIsOpen={setCarouselIsOpen}
           animationDirectionIn={currentViewport === 1}
         />
       </div>

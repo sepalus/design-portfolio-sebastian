@@ -1,24 +1,29 @@
 .project-card-carousel {
   position: absolute;
-  top: 0px;
+  display: flex;
+  flex-direction: column;
   width: 100vw;
   height: 100vh;
+  top: 0px;
   background-color: rgba(0, 0, 0, 0.8);
-
   z-index: 1;
 }
 
+.project-card-carousel-margin-area {
+  height: 150px;
+}
+
 .project-card-carousel-image-container {
-  margin-top: 150px;
-  margin-bottom: 150px;
+  height: 0;
+  flex: 1;
   background-color: black;
+  position: relative;
 }
 
 .project-card-carousel-image-wrapper {
   display: none;
-  position: absolute;
   width: 100%;
-  height: calc(100% - 300px);
+  height: 100%;
   img {
     width: 100%;
     height: 100%;
@@ -29,22 +34,48 @@
   display: block;
 }
 
+.project-card-carousel-close-button {
+  position: absolute;
+  top: 30px;
+  right: 60px;
+}
+
 .project-card-carousel-next-buttons {
-  button {
+  > * {
     top: 50%;
+    transform: translateY(-50%);
     position: absolute;
+    font-size: 32px !important;
   }
 
-  button:first-of-type {
-    left: 50px;
+  > :first-of-type {
+    left: 60px;
   }
-  button:nth-of-type(2) {
-    right: 50px;
+  > :nth-of-type(2) {
+    right: 60px;
   }
 }
+
 .project-card-carousel-image-buttons {
   position: absolute;
-  bottom: 170px;
+  bottom: 20px;
   left: 50%;
-  height: 50px;
+  transform: translateX(-50%);
+  display: flex;
+
+  span {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0px 5px;
+    border: 1px solid black;
+    background-color: rgb(120, 120, 120);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.2s ease;
+  }
+
+  span.project-card-carousel-image-active-button {
+    background-color: white;
+  }
 }

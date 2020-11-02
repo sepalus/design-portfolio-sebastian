@@ -8,10 +8,11 @@ function ProjectCard({
   projects,
   activeProjectIndex,
   designArea,
+  carouselIsOpen,
+  setCarouselIsOpen,
   animationDirectionIn,
 }) {
   const activeProject = projects[activeProjectIndex];
-  const [carouselIsOpen, setCarouselIsOpen] = useState(false);
 
   return (
     <>
@@ -54,13 +55,12 @@ function ProjectCard({
         </div>
       </div>
 
-      <button
-        style={{ position: "absolute", top: "50px", left: "50px", zIndex: 4 }}
-        onClick={() => setCarouselIsOpen(!carouselIsOpen)}
-      >
-        Toggle carousel
-      </button>
-      {carouselIsOpen && <ProjectCardCarousel project={activeProject} />}
+      {carouselIsOpen && (
+        <ProjectCardCarousel
+          project={activeProject}
+          setCarouselIsOpen={setCarouselIsOpen}
+        />
+      )}
     </>
   );
 }

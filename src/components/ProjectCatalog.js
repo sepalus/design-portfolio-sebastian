@@ -8,6 +8,7 @@ function ProjectCatalog({
   projects,
   activeProjectIndex,
   setActiveProjectIndex,
+  setCarouselIsOpen,
 }) {
   return (
     <div
@@ -36,7 +37,7 @@ function ProjectCatalog({
                 className={classNames("link-button", {
                   "icon-button": isActive,
                 })}
-                onClick={() => {}}
+                onClick={() => setCarouselIsOpen(true)}
               >
                 <h4>{project.title}</h4>
                 {designArea === 1 && isActive && <ChevronRight />}

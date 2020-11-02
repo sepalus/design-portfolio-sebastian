@@ -141,6 +141,15 @@ ul {
   }
 }
 
+.clickable-element {
+  color: lightgrey;
+}
+
+.clickable-element:hover {
+  cursor: pointer;
+  color: white;
+}
+
 .disabled-button {
   cursor: text;
 }

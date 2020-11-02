@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import classNames from "classnames";
 import "./ProjectCardCarousel.scss";
+import ChevronRight from "@material-ui/icons/ChevronRight";
+import ChevronLeft from "@material-ui/icons/ChevronLeft";
+import Close from "@material-ui/icons/Close";
 
-function ProjectCardCarousel({ project }) {
+function ProjectCardCarousel({ project, setCarouselIsOpen }) {
   const [activeImage, setActiveImage] = useState(1);
 
   useEffect(() => {
@@ -14,6 +17,10 @@ function ProjectCardCarousel({ project }) {
 
   return (
     <div className="project-card-carousel">
+      <div
+        className="project-card-carousel-margin-area"
+        onClick={() => setCarouselIsOpen(false)}
+      />
       <div className="project-card-carousel-image-container">
         <div
           className={classNames("project-card-carousel-image-wrapper", {
@@ -43,17 +50,54 @@ function ProjectCardCarousel({ project }) {
         >
           <img src={`./assets/${project.images[3]}`} alt="" className="" />
         </div>
+        <div className="project-card-carousel-close-button">
+          <Close
+            className="clickable-element"
+            onClick={() => setCarouselIsOpen(false)}
+          />
+        </div>
+
         <div className="project-card-carousel-next-buttons">
-          <button onClick={() => setActiveImage(activeImage - 1)}>prev</button>
-          <button onClick={() => setActiveImage(activeImage + 1)}>next</button>
+          <ChevronLeft
+            className="clickable-element"
+            onClick={() => setActiveImage(activeImage - 1)}
+          ></ChevronLeft>
+          <ChevronRight
+            className="clickable-element"
+            onClick={() => setActiveImage(activeImage + 1)}
+          ></ChevronRight>
         </div>
         <div className="project-card-carousel-image-buttons">
-          <button onClick={() => setActiveImage(0)}>o</button>
-          <button onClick={() => setActiveImage(1)}>o</button>
-          <button onClick={() => setActiveImage(2)}>o</button>
-          <button onClick={() => setActiveImage(3)}>o</button>
+          <span
+            className={
+              activeImage === 0 && "project-card-carousel-image-active-button"
+            }
+            onClick={() => setActiveImage(0)}
+          ></span>
+          <span
+            className={
+              activeImage === 1 && "project-card-carousel-image-active-button"
+            }
+            onClick={() => setActiveImage(1)}
+          ></span>
+          <span
+            className={
+              activeImage === 2 && "project-card-carousel-image-active-button"
+            }
+            onClick={() => setActiveImage(2)}
+          ></span>
+          <span
+            className={
+              activeImage === 3 && "project-card-carousel-image-active-button"
+            }
+            onClick={() => setActiveImage(3)}
+          ></span>
         </div>
       </div>
+      <div
+        className="project-card-carousel-margin-area"
+        onClick={() => setCarouselIsOpen(false)}
+      />
     </div>
   );
 }
