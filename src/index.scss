@@ -141,13 +141,23 @@ ul {
   }
 }
 
-.clickable-element {
+.clickable-text-element {
   color: lightgrey;
 }
 
-.clickable-element:hover {
+.clickable-text-element:hover {
   cursor: pointer;
   color: white;
+}
+
+.clickable-background-element {
+  background-color: rgb(24, 24, 24);
+  opacity: 0.9;
+}
+
+.clickable-background-element:hover {
+  cursor: pointer;
+  opacity: 0.7;
 }
 
 .disabled-button {

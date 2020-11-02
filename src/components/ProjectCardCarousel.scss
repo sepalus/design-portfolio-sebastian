@@ -5,7 +5,6 @@
   width: 100vw;
   height: 100vh;
   top: 0px;
-  background-color: rgba(0, 0, 0, 0.8);
   z-index: 1;
 }
 
@@ -13,7 +12,14 @@
   height: 150px;
 }
 
+.project-card-carousel-main-area-cover {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+}
+
 .project-card-carousel-image-container {
+  margin: 150px 0px;
   height: 0;
   flex: 1;
   background-color: black;
@@ -77,5 +83,9 @@
 
   span.project-card-carousel-image-active-button {
     background-color: white;
+  }
+
+  span:not(.project-card-carousel-image-active-button):hover {
+    background-color: rgb(160, 160, 160);
   }
 }
