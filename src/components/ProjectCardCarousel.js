@@ -13,6 +13,17 @@ function ProjectCardCarousel({ project, setCarouselIsOpen }) {
     setActiveImage(0);
   }, []);
 
+  useEffect(() => {
+    window.addEventListener("keydown", keyPressHandler);
+    return () => {
+      window.removeEventListener("keydown", keyPressHandler);
+    };
+  }, []);
+
+  const keyPressHandler = (event) => {
+    if (event.keyCode === 27) closeCarousel();
+  };
+
   const closeCarousel = () => {
     setActiveImage(0);
     setCarouselIsOpen(false);
