@@ -7,13 +7,14 @@ import Close from "@material-ui/icons/Close";
 
 function ProjectCardCarousel({ project, setCarouselIsOpen }) {
   const [activeImage, setActiveImage] = useState(1);
+  const imageAmount = project.images.length;
 
   useEffect(() => {
     setActiveImage(0);
   }, []);
 
-  if (activeImage < 0) setActiveImage(3);
-  if (activeImage > 3) setActiveImage(0);
+  if (activeImage < 0) setActiveImage(imageAmount - 1);
+  if (activeImage > imageAmount - 1) setActiveImage(0);
 
   return (
     <div className="project-card-carousel">
@@ -22,34 +23,14 @@ function ProjectCardCarousel({ project, setCarouselIsOpen }) {
         onClick={() => setCarouselIsOpen(false)}
       />
       <div className="project-card-carousel-image-container">
-        <div
-          className={classNames("project-card-carousel-image-wrapper", {
-            "project-card-carousel-image-wrapper-active": activeImage === 0,
-          })}
-        >
-          <img src={`./assets/${project.images[0]}`} alt="" className="" />
-        </div>
-        <div
-          className={classNames("project-card-carousel-image-wrapper", {
-            "project-card-carousel-image-wrapper-active": activeImage === 1,
-          })}
-        >
-          <img src={`./assets/${project.images[1]}`} alt="" className="" />
-        </div>
-        <div
-          className={classNames("project-card-carousel-image-wrapper", {
-            "project-card-carousel-image-wrapper-active": activeImage === 2,
-          })}
-        >
-          <img src={`./assets/${project.images[2]}`} alt="" className="" />
-        </div>
-        <div
-          className={classNames("project-card-carousel-image-wrapper", {
-            "project-card-carousel-image-wrapper-active": activeImage === 3,
-          })}
-        >
-          <img src={`./assets/${project.images[3]}`} alt="" className="" />
-        </div>
+        {project.images.map((image, index) => (
+          <CarouselImage
+            activeImage={activeImage}
+            project={project}
+            index={index}
+          />
+        ))}
+
         <div className="project-card-carousel-close-button">
           <Close
             className="clickable-text-element"
@@ -57,45 +38,51 @@ function ProjectCardCarousel({ project, setCarouselIsOpen }) {
           />
         </div>
 
-        <div className="project-card-carousel-next-buttons">
-          <ChevronLeft
-            className="clickable-text-element"
-            onClick={() => setActiveImage(activeImage - 1)}
-          ></ChevronLeft>
-          <ChevronRight
-            className="clickable-text-element"
-            onClick={() => setActiveImage(activeImage + 1)}
-          ></ChevronRight>
-        </div>
-        <div className="project-card-carousel-image-buttons">
-          <span
-            className={classNames({
-              "project-card-carousel-image-active-button": activeImage === 0,
-            })}
-            onClick={() => setActiveImage(0)}
-          ></span>
-          <span
-            className={classNames({
-              "project-card-carousel-image-active-button": activeImage === 1,
-            })}
-            onClick={() => setActiveImage(1)}
-          ></span>
-          <span
-            className={classNames({
-              "project-card-carousel-image-active-button": activeImage === 2,
-            })}
-            onClick={() => setActiveImage(2)}
-          ></span>
-          <span
-            className={classNames({
-              "project-card-carousel-image-active-button": activeImage === 3,
-            })}
-            onClick={() => setActiveImage(3)}
-          ></span>
-        </div>
+        {imageAmount > 1 && (
+          <div className="project-card-carousel-next-buttons">
+            <ChevronLeft
+              className="clickable-text-element"
+              onClick={() => setActiveImage(activeImage - 1)}
+            ></ChevronLeft>
+            <ChevronRight
+              className="clickable-text-element"
+              onClick={() => setActiveImage(activeImage + 1)}
+            ></ChevronRight>
+          </div>
+        )}
+        {imageAmount > 1 && (
+          <div className="project-card-carousel-image-buttons">
+            {project.images.map((image, index) => (
+              <ImageButton
+                activeImage={activeImage}
+                setActiveImage={setActiveImage}
+                index={index}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
 }
+
+const CarouselImage = ({ activeImage, project, index }) => (
+  <div
+    className={classNames("project-card-carousel-image-wrapper", {
+      "project-card-carousel-image-wrapper-active": activeImage === index,
+    })}
+  >
+    <img src={`./assets/${project.images[index]}`} alt="" />
+  </div>
+);
+
+const ImageButton = ({ activeImage, setActiveImage, index }) => (
+  <span
+    className={classNames({
+      "project-card-carousel-image-active-button": activeImage === index,
+    })}
+    onClick={() => setActiveImage(0)}
+  />
+);
 
 export default ProjectCardCarousel;
