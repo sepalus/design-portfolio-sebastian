@@ -13,6 +13,11 @@ function ProjectCardCarousel({ project, setCarouselIsOpen }) {
     setActiveImage(0);
   }, []);
 
+  const closeCarousel = () => {
+    setActiveImage(0);
+    setCarouselIsOpen(false);
+  };
+
   if (activeImage < 0) setActiveImage(imageAmount - 1);
   if (activeImage > imageAmount - 1) setActiveImage(0);
 
@@ -20,7 +25,7 @@ function ProjectCardCarousel({ project, setCarouselIsOpen }) {
     <div className="project-card-carousel">
       <div
         className="project-card-carousel-main-area-cover clickable-background-element"
-        onClick={() => setCarouselIsOpen(false)}
+        onClick={closeCarousel}
       />
       <div className="project-card-carousel-image-container">
         {project.images.map((image, index) => (
@@ -32,10 +37,7 @@ function ProjectCardCarousel({ project, setCarouselIsOpen }) {
         ))}
 
         <div className="project-card-carousel-close-button">
-          <Close
-            className="clickable-text-element"
-            onClick={() => setCarouselIsOpen(false)}
-          />
+          <Close className="clickable-text-element" onClick={closeCarousel} />
         </div>
 
         {imageAmount > 1 && (
@@ -81,7 +83,7 @@ const ImageButton = ({ activeImage, setActiveImage, index }) => (
     className={classNames({
       "project-card-carousel-image-active-button": activeImage === index,
     })}
-    onClick={() => setActiveImage(0)}
+    onClick={() => setActiveImage(index)}
   />
 );
 
