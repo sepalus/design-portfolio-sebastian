@@ -1,7 +1,6 @@
 import React from "react";
 import classNames from "classnames";
 import "./ProjectCatalog.scss";
-import ChevronRight from "@material-ui/icons/ChevronRight";
 
 function ProjectCatalog({
   designArea,
@@ -40,7 +39,6 @@ function ProjectCatalog({
                 onClick={() => setCarouselIsOpen(true)}
               >
                 <h4>{project.title}</h4>
-                {designArea === 1 && isActive && <ChevronRight />}
               </button>
             </li>
           );

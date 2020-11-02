@@ -6,12 +6,8 @@ import ChevronLeft from "@material-ui/icons/ChevronLeft";
 import Close from "@material-ui/icons/Close";
 
 function ProjectCardCarousel({ project, setCarouselIsOpen }) {
-  const [activeImage, setActiveImage] = useState(1);
+  const [activeImage, setActiveImage] = useState(0);
   const imageAmount = project.images.length;
-
-  useEffect(() => {
-    setActiveImage(0);
-  }, []);
 
   useEffect(() => {
     window.addEventListener("keydown", keyPressHandler);
@@ -21,12 +17,7 @@ function ProjectCardCarousel({ project, setCarouselIsOpen }) {
   }, []);
 
   const keyPressHandler = (event) => {
-    if (event.keyCode === 27) closeCarousel();
-  };
-
-  const closeCarousel = () => {
-    setActiveImage(0);
-    setCarouselIsOpen(false);
+    if (event.keyCode === 27) setCarouselIsOpen(false);
   };
 
   if (activeImage < 0) setActiveImage(imageAmount - 1);
@@ -36,7 +27,7 @@ function ProjectCardCarousel({ project, setCarouselIsOpen }) {
     <div className="project-card-carousel">
       <div
         className="project-card-carousel-main-area-cover clickable-background-element"
-        onClick={closeCarousel}
+        onClick={() => setCarouselIsOpen(false)}
       />
       <div className="project-card-carousel-image-container">
         {project.images.map((image, index) => (
@@ -48,7 +39,10 @@ function ProjectCardCarousel({ project, setCarouselIsOpen }) {
         ))}
 
         <div className="project-card-carousel-close-button">
-          <Close className="clickable-text-element" onClick={closeCarousel} />
+          <Close
+            className="clickable-text-element"
+            onClick={() => setCarouselIsOpen(false)}
+          />
         </div>
 
         {imageAmount > 1 && (

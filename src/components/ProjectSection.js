@@ -34,6 +34,10 @@ function ProjectSection({
     setActiveProjectIndex(0);
   }, [designArea]);
 
+  useEffect(() => {
+    if (currentViewport !== 1) setCarouselIsOpen(false);
+  }, [currentViewport]);
+
   if (skipProjectSection)
     return <section ref={projectRef} className="project-section-container" />;
 

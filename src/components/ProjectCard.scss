@@ -83,6 +83,30 @@
   margin-left: 18px;
 }
 
+.project-card-description-tag-designer-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card-description-tag-designer-wrapper-open > p::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 26px;
+  width: 94px;
+  border-bottom: 1px solid white;
+}
+
+.project-card-description-tag-design-team-wrapper {
+  position: absolute;
+  top: 32px;
+  p {
+    white-space: nowrap;
+    font-weight: 100;
+    line-height: 1.5em;
+  }
+}
 /* Animation */
 .animate-card-fade-in {
   animation: fadein 0.8s forwards;

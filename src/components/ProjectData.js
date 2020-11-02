@@ -78,6 +78,7 @@ const kolmioillaDesignProject = {
     "Three pieces of street furniture that create a space that encourages both planned and incidental encounters. The concept is designed for an unused triangle-shaped cobblestone plaza in front of the Helsinki Design Museum, where three neighborhoods meet. Together the triangular pieces of furniture create a cultural meeting point for city residents.",
   year: 2020,
   isTeam: true,
+  designTeam: ["Sebastian Högnabba", "Johanna Kesälä", "Anna Akins"],
   categories: ["Street Furniture Design", "Chair Design", "Spatial Design"],
   displayableCategory: 2,
   images: [
@@ -99,6 +100,12 @@ const kierreDesignProject = {
     "An electric toothbrush designed for recyclability and the circular economy. The shell of the toothbrush is manufactured from recycled plastic, made out of monomaterial components and designed for easy disassembly. Kierre showcases that products designed for recyclability can be beautiful, by turning the recyclable features into the product's own aesthetics.",
   year: 2020,
   isTeam: true,
+  designTeam: [
+    "Sebastian Högnabba",
+    "Mikko Siponen",
+    "Tuomas Jussila",
+    "Aurora Tani",
+  ],
   categories: [
     "Home Appliance Design",
     "Design for Recyclability",
