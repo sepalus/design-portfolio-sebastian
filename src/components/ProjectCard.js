@@ -5,6 +5,7 @@ import ProjectCardDescription from "./ProjectCardDescription";
 import ProjectCardCarousel from "./ProjectCardCarousel";
 
 function ProjectCard({
+  currentViewport,
   projects,
   activeProjectIndex,
   designArea,
@@ -45,6 +46,7 @@ function ProjectCard({
                 />
                 {designArea === 1 && (
                   <ProjectCardDescription
+                    currentViewport={currentViewport}
                     project={project}
                     activeProject={activeProject}
                   />

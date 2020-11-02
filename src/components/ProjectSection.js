@@ -64,6 +64,7 @@ function ProjectSection({
           setCarouselIsOpen={setCarouselIsOpen}
         />
         <ProjectCard
+          currentViewport={currentViewport}
           projects={projects}
           activeProjectIndex={activeProjectIndex}
           designArea={designArea}
