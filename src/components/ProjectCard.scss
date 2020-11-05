@@ -39,8 +39,6 @@
 
 .project-card-description-wrapper {
   position: absolute;
-  top: 70px;
-  right: 80px;
   max-width: calc(100vw - 480px);
 
   .vertical-line {
@@ -95,7 +93,7 @@
   left: 6px;
   top: 26px;
   width: 94px;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid;
 }
 
 .project-card-description-tag-design-team-wrapper {

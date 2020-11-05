@@ -26,6 +26,7 @@ function ProjectCard({
         style={{
           backgroundColor: activeProject.backgroundColor || "black",
           color: activeProject.styleDarkColor ? "black" : "white",
+          borderColor: activeProject.styleDarkColor ? "black" : "white",
         }}
       >
         <div className="project-card-image-wrapper">
@@ -35,7 +36,11 @@ function ProjectCard({
             return (
               <>
                 <img
-                  src={`./assets/${project.images[0]}`}
+                  src={
+                    project.mainImage
+                      ? `./assets/${project.mainImage}`
+                      : `./assets/${project.images[0]}`
+                  }
                   alt=""
                   className={classNames(
                     [project.classes],

@@ -12,7 +12,11 @@ function ProjectCatalog({
   return (
     <div
       className={classNames("project-catalog", {
-        "project-catalog-dark": projects[activeProjectIndex].styleDarkColor,
+        "project-catalog-dark": projects[activeProjectIndex].hasOwnProperty(
+          "styleCatalogDarkColor"
+        )
+          ? projects[activeProjectIndex].styleCatalogDarkColor
+          : projects[activeProjectIndex].styleDarkColor,
       })}
     >
       <h2>

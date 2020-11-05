@@ -6,7 +6,7 @@ const kaarnaDesignProject = {
   isTeam: false,
   categories: ["Product Design", "Vehicle Design", "Urban Mobility"],
   displayableCategory: 1,
-  images: ["kaarna1.jpg", "kaarna2.jpg", "kaarna3.jpg", "kaarna4.jpg"],
+  images: ["kaarna1_hq.jpg", "kaarna2.jpg", "kaarna3.jpg", "kaarna4.jpg"],
   descriptionStyle: {
     top: "126px",
     right: "100px",
@@ -37,12 +37,23 @@ const tyyniDesignProject = {
   isTeam: false,
   categories: ["Product Design", "Acoustic Design", "Wall Panel Design"],
   displayableCategory: 1,
-  images: ["tyyni.png"],
+  mainImage: ["tyyni1_hq.jpg"],
+  images: ["tyyni1.jpg", "tyyni2.jpg"],
   descriptionStyle: {
     left: "480px",
+    right: "80px",
+    bottom: "40px",
   },
-  styleDarkColor: false,
-  backgroundColor: "black",
+  imageStyle: {
+    boxSizing: "border-box",
+    width: "100%",
+    top: "0px",
+    objectPosition: "0 0",
+    paddingLeft: "380px",
+  },
+  styleCatalogDarkColor: false,
+  styleDarkColor: true,
+  backgroundColor: "#333333",
 };
 
 const kuutamoDesignProject = {
@@ -88,7 +99,9 @@ const kolmioillaDesignProject = {
     "kolmioilla4.png",
   ],
   descriptionStyle: {
+    top: "70px",
     left: "480px",
+    right: "80px",
   },
   styleDarkColor: false,
   backgroundColor: "black",
@@ -123,6 +136,7 @@ const kierreDesignProject = {
     width: "235px",
     top: "50%",
     transform: "translateY(-50%)",
+    right: "80px",
   },
   styleDarkColor: false,
   backgroundColor: "black",
