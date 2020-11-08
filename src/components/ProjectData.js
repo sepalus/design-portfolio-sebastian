@@ -138,6 +138,15 @@ const kierreDesignProject = {
     transform: "translateY(-50%)",
     right: "80px",
   },
+  carouselStyle: {
+    common: {
+      padding: "40px 0px 60px",
+      boxSizing: "border-box",
+      maxWidth: "calc(100vh - 340px)",
+      margin: "auto",
+    },
+    individual: [{}, {}, {}, { transform: "translateX(35px)" }],
+  },
   styleDarkColor: false,
   backgroundColor: "black",
 };

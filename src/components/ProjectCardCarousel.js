@@ -73,15 +73,25 @@ function ProjectCardCarousel({ project, setCarouselIsOpen }) {
   );
 }
 
-const CarouselImage = ({ activeImage, project, index }) => (
-  <div
-    className={classNames("project-card-carousel-image-wrapper", {
-      "project-card-carousel-image-wrapper-active": activeImage === index,
-    })}
-  >
-    <img src={`./assets/${project.images[index]}`} alt="" />
-  </div>
-);
+const CarouselImage = ({ activeImage, project, index }) => {
+  return (
+    <div
+      className={classNames("project-card-carousel-image-wrapper", {
+        "project-card-carousel-image-wrapper-active": activeImage === index,
+      })}
+      style={
+        project.carouselStyle
+          ? {
+              ...project.carouselStyle.common,
+              ...project.carouselStyle.individual[index],
+            }
+          : {}
+      }
+    >
+      <img src={`./assets/${project.images[index]}`} alt="" />
+    </div>
+  );
+};
 
 const ImageButton = ({ activeImage, setActiveImage, index }) => (
   <span
