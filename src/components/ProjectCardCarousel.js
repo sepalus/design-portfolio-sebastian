@@ -79,16 +79,21 @@ const CarouselImage = ({ activeImage, project, index }) => {
       className={classNames("project-card-carousel-image-wrapper", {
         "project-card-carousel-image-wrapper-active": activeImage === index,
       })}
-      style={
-        project.carouselStyle
-          ? {
-              ...project.carouselStyle.common,
-              ...project.carouselStyle.individual[index],
-            }
-          : {}
-      }
     >
-      <img src={`./assets/${project.images[index]}`} alt="" />
+      <img
+        src={`./assets/${project.images[index]}`}
+        alt=""
+        style={
+          project.carouselStyle
+            ? project.carouselStyle.individual
+              ? {
+                  ...project.carouselStyle.common,
+                  ...project.carouselStyle.individual[index],
+                }
+              : { ...project.carouselStyle.common }
+            : {}
+        }
+      />
     </div>
   );
 };
