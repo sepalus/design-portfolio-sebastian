@@ -5,7 +5,7 @@ import ChevronRight from "@material-ui/icons/ChevronRight";
 import ChevronLeft from "@material-ui/icons/ChevronLeft";
 import Close from "@material-ui/icons/Close";
 
-function ProjectCardCarousel({ project, setCarouselIsOpen }) {
+function ProjectCardCarousel({ designArea, project, setCarouselIsOpen }) {
   const [activeImage, setActiveImage] = useState(0);
   const imageAmount = project.images.length;
 
@@ -29,7 +29,12 @@ function ProjectCardCarousel({ project, setCarouselIsOpen }) {
         className="project-card-carousel-main-area-cover clickable-background-element"
         onClick={() => setCarouselIsOpen(false)}
       />
-      <div className="project-card-carousel-image-container">
+      <div
+        className="project-card-carousel-image-container"
+        style={
+          designArea === 2 ? { backgroundColor: project.backgroundColor } : {}
+        }
+      >
         {project.images.map((image, index) => (
           <CarouselImage
             activeImage={activeImage}

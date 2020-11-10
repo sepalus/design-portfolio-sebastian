@@ -64,6 +64,7 @@ function ProjectCard({
 
       {carouselIsOpen && (
         <ProjectCardCarousel
+          designArea={designArea}
           project={activeProject}
           setCarouselIsOpen={setCarouselIsOpen}
         />
