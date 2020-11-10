@@ -215,8 +215,33 @@ const anneliinaDesignProject = {
   isTeam: false,
   categories: ["Brand Identity Design", "Web Design", "Graphic Design"],
   displayableCategory: 0,
-  images: ["anneliina.png"],
+  images: [
+    "anneliina1_hq.png",
+    "anneliina2.png",
+    "anneliina3.png",
+    "anneliina4.png",
+    "anneliina5.png",
+  ],
   classes: "contain",
+  carouselStyle: {
+    common: {
+      padding: "40px 0px 60px",
+      height: "calc(100% - 100px)",
+      width: "auto",
+      margin: "auto",
+    },
+    individual: [
+      {},
+      {},
+      {},
+      {},
+      {
+        padding: "15%",
+        height: "100%",
+        boxSizing: "border-box",
+      },
+    ],
+  },
   styleDarkColor: true,
   backgroundColor: "#96c1d9",
 };
