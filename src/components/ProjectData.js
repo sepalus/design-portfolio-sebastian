@@ -253,8 +253,17 @@ const scootDesignProject = {
   isTeam: false,
   categories: ["Web Design", "UX Design", "UI Design"],
   displayableCategory: 0,
-  images: ["scoot.png"],
+  showVideo: true,
+  images: ["scoot1.png", "scoot2.png", "scoot3.png"],
   classes: "contain",
+  carouselStyle: {
+    common: {
+      padding: "40px 0px 60px",
+      height: "calc(100% - 100px)",
+      width: "auto",
+      margin: "auto",
+    },
+  },
   styleDarkColor: true,
   backgroundColor: "#f8f379",
 };
