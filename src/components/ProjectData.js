@@ -135,7 +135,7 @@ const kierreDesignProject = {
   ],
   displayableCategory: 2,
   images: ["kierre1.png", "kierre2.png", "kierre3.png", "kierre4.png"],
-  classes: "contain",
+  classes: "contain contain-center",
   imageStyle: {
     paddingTop: "80px",
     paddingBottom: "80px",
@@ -194,8 +194,7 @@ const museDesignProject = {
   classes: "contain",
   imageStyle: {
     paddingBottom: "250px",
-    left: "0px",
-    transform: "translateY(0px)",
+    left: "80px",
   },
   descriptionStyle: {
     right: "480px",
@@ -231,7 +230,7 @@ const museDesignProject = {
 const anneliinaDesignProject = {
   title: "Anneliina",
   description:
-    "A brand identity, that communicates the caring service's core values",
+    "A new brand identity for Anneliina that communicates the caring service's core values: compassion, respect, trustworthiness and personalized care. The brand update included the launch of a re-designed responsive website and new marketing material, such as flyers and newspaper ads.",
   year: 2016,
   isTeam: false,
   categories: ["Brand Identity Design", "Web Design", "Graphic Design"],
@@ -243,7 +242,15 @@ const anneliinaDesignProject = {
     "anneliina4.png",
     "anneliina5.png",
   ],
-  classes: "contain",
+  classes: "contain contain-center",
+  imageStyle: {
+    paddingTop: "270px",
+  },
+  descriptionStyle: {
+    top: "50px",
+    left: "80px",
+    right: "480px",
+  },
   carouselStyle: {
     common: {
       padding: "40px 0px 60px",
@@ -269,14 +276,23 @@ const anneliinaDesignProject = {
 
 const scootDesignProject = {
   title: "Scoot",
-  description: "A webpage showcasing designs for electrical foldable scooters",
+  description:
+    "A responsive website showcasing designs for electric foldable scooters. The site displays seven scooter designs that were exhibited at Helsinki Design Week. The Scoot website has an impressive video and high quality images of the scooters, details about the exhibition, information about thew design project and a press kit.",
   year: 2017,
   isTeam: false,
   categories: ["Web Design", "UX Design", "UI Design"],
   displayableCategory: 0,
   showVideo: true,
   images: ["scoot1.png", "scoot2.png", "scoot3.png"],
-  classes: "contain",
+  classes: "contain contain-center",
+  imageStyle: {
+    paddingTop: "270px",
+  },
+  descriptionStyle: {
+    top: "50px",
+    left: "80px",
+    right: "480px",
+  },
   carouselStyle: {
     common: {
       padding: "40px 0px 60px",
@@ -292,7 +308,7 @@ const scootDesignProject = {
 const axiomDesignProject = {
   title: "Axiom",
   description:
-    "A network that brings students, university and industry together in doctoral research",
+    "A network that brings students, university and industry together to produce qualitative doctoral research. A service that manifests itself as a network, series of events and co-creation platform. Axiom allwos doctoral candidates, unviersities and companies to conduct more qualitave, compelling and relevant industrial PhD research.",
   year: 2019,
   isTeam: true,
   designTeam: [
@@ -315,6 +331,12 @@ const axiomDesignProject = {
     "axiom8.jpg",
   ],
   classes: "contain",
+  imageStyle: { paddingTop: "250px", left: "0px" },
+  descriptionStyle: {
+    top: "45px",
+    right: "445px",
+    width: "425px",
+  },
   styleDarkColor: true,
   backgroundColor: "#d2ebf9",
 };
