@@ -4,19 +4,34 @@ import Person from "@material-ui/icons/Person";
 import People from "@material-ui/icons/People";
 import CalendarToday from "@material-ui/icons/CalendarToday";
 
-function ProjectCardDescription({ currentViewport, project, activeProject }) {
+function ProjectCardDescription({
+  currentViewport,
+  designArea,
+  project,
+  activeProject,
+}) {
   const [showTeam, setShowTeam] = useState(false);
   const isActive = project.title === activeProject.title;
+
+  const animationDirectionIn = () => {
+    if (
+      !isActive ||
+      currentViewport !== designArea ||
+      (currentViewport !== 1 && currentViewport !== 2)
+    )
+      return false;
+    return true;
+  };
 
   return (
     <div
       className={classNames(
         "project-card-description-wrapper",
         {
-          "animate-description-in": currentViewport === 1 && isActive,
+          "animate-description-in": animationDirectionIn(),
         },
         {
-          "animate-description-out": currentViewport !== 1 || !isActive,
+          "animate-description-out": !animationDirectionIn(),
         }
       )}
       style={{

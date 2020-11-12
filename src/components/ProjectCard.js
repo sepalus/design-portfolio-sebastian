@@ -49,13 +49,12 @@ function ProjectCard({
                   )}
                   style={project.imageStyle}
                 />
-                {designArea === 1 && (
-                  <ProjectCardDescription
-                    currentViewport={currentViewport}
-                    project={project}
-                    activeProject={activeProject}
-                  />
-                )}
+                <ProjectCardDescription
+                  currentViewport={currentViewport}
+                  designArea={designArea}
+                  project={project}
+                  activeProject={activeProject}
+                />
               </>
             );
           })}
