@@ -75,7 +75,15 @@ function ProjectCardDescription({
               {activeProject.isTeam ? "Design Team" : "Sebastian Högnabba"}
             </p>
             {showTeam && (
-              <div className="project-card-description-tag-design-team-wrapper">
+              <div
+                className={classNames(
+                  "project-card-description-tag-design-team-wrapper",
+                  {
+                    "project-card-description-tag-design-team-wrapper-horizontal":
+                      activeProject.displayTeamHorizontal,
+                  }
+                )}
+              >
                 {activeProject.designTeam &&
                   activeProject.designTeam.map((designer) => <p>{designer}</p>)}
               </div>

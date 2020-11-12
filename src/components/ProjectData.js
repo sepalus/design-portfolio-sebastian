@@ -163,9 +163,22 @@ const kierreDesignProject = {
 const museDesignProject = {
   title: "Muse",
   description:
-    "A community connecting UBS bank, millennials and startups through unique experiences",
+    "A community connecting UBS bank, millennials and startups through providing unique experiences to its members. Muse is a value-added service for millenials that helps them form a connection with their bank from an early age. Muse is a service. Muse is a web application. Muse is a brand. Muse is a community.",
   year: 2014,
   isTeam: true,
+  designTeam: [
+    "Sebastian Högnabba",
+    "Tik Ho Lee",
+    "Beatrice Hutzli",
+    "Matthias Wittmann",
+    "Martina Rakaric",
+    "Samuel Huber",
+    "Shanshan Chu",
+    "Yuntao Zhu",
+    "Elena Vimpari",
+    "Issey Ishikura",
+  ],
+  displayTeamHorizontal: "true",
   categories: ["Service Design", "Web Design", "Concept Design"],
   displayableCategory: 0,
   mainImage: ["muse.png"],
@@ -179,6 +192,16 @@ const museDesignProject = {
     "muse7.jpg",
   ],
   classes: "contain",
+  imageStyle: {
+    paddingBottom: "250px",
+    left: "0px",
+    transform: "translateY(0px)",
+  },
+  descriptionStyle: {
+    right: "480px",
+    left: "80px",
+    bottom: "40px",
+  },
   carouselStyle: {
     common: {
       padding: "40px 0px 60px",
@@ -272,6 +295,12 @@ const axiomDesignProject = {
     "A network that brings students, university and industry together in doctoral research",
   year: 2019,
   isTeam: true,
+  designTeam: [
+    "Sebastian Högnabba",
+    "Ira Ottmann",
+    "Suvi Majander",
+    "Yi-tzu Hsiao",
+  ],
   categories: ["Service Design", "Co-Design", "Concept Design"],
   displayableCategory: 0,
   mainImage: ["axiom.png"],
