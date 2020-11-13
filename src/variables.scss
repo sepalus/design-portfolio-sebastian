@@ -1,0 +1,55 @@
+$catalog-width: 380px;
+$catalog-margin: 100px;
+
+/* COLORS  */
+/* -- Background -- */
+$background-color-black: black;
+$background-color-dark: #101010;
+$background-color-light: #101010;
+
+$background-color-light-hover: rgba(
+  $color: white,
+  $alpha: 0.15,
+);
+$background-color-light-selected: rgba(
+  $color: white,
+  $alpha: 0.25,
+);
+
+$background-color-ultralight-hover: rgba(
+  $color: white,
+  $alpha: 0.4,
+);
+$background-color-ultralight-selected: rgba(
+  $color: white,
+  $alpha: 0.65,
+);
+
+$background-color-dark-cover-opaque: rgba(
+  $color: #202020,
+  $alpha: 0.9,
+);
+$background-color-dark-cover-opaque-hover: rgba(
+  $color: #202020,
+  $alpha: 0.6,
+);
+$background-color-dark-cover-transparent: rgba(
+  $color: black,
+  $alpha: 0.3,
+);
+$background-color-light-cover-transparent: rgba(
+  $color: white,
+  $alpha: 0.3,
+);
+
+/* -- Element -- */
+$element-color-light: #d0d0d0;
+$element-color-light-hover: white;
+
+$element-color-mid: #666666;
+$element-color-mid-hover: #999999;
+$element-color-mid-selected: white;
+
+/* -- Text -- */
+$text-color-light: white;
+$text-color-dark: black;

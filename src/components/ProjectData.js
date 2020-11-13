@@ -1,3 +1,7 @@
+import variables from "../variables.js";
+
+const { catalogWidth, catalogMargin } = variables;
+
 const kaarnaDesignProject = {
   title: "Kaarna",
   description:
@@ -40,7 +44,7 @@ const tyyniDesignProject = {
   mainImage: ["tyyni.jpg"],
   images: ["tyyni1.jpg", "tyyni2.jpg"],
   descriptionStyle: {
-    left: "480px",
+    left: catalogWidth + catalogMargin,
     right: "80px",
     bottom: "40px",
   },
@@ -49,7 +53,7 @@ const tyyniDesignProject = {
     width: "100%",
     top: "0px",
     objectPosition: "0 0",
-    paddingLeft: "380px",
+    paddingLeft: catalogWidth,
   },
   styleCatalogDarkColor: false,
   styleDarkColor: true,
@@ -95,7 +99,7 @@ const kolmioillaDesignProject = {
   images: ["kolmiot1.png", "kolmiot2.png", "kolmiot3.png", "kolmiot4.png"],
   descriptionStyle: {
     top: "70px",
-    left: "480px",
+    left: catalogWidth + catalogMargin,
     right: "80px",
   },
   carouselStyle: {
@@ -197,7 +201,7 @@ const museDesignProject = {
     left: "80px",
   },
   descriptionStyle: {
-    right: "480px",
+    right: catalogWidth + catalogMargin,
     left: "80px",
     bottom: "40px",
   },
@@ -249,7 +253,7 @@ const anneliinaDesignProject = {
   descriptionStyle: {
     top: "50px",
     left: "80px",
-    right: "480px",
+    right: catalogWidth + catalogMargin,
   },
   carouselStyle: {
     common: {

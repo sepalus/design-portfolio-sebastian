@@ -1,6 +1,4 @@
-$screen-m: 768px;
-$screen-l: 1024px;
-$screen-xl: 1200px;
+@import "./variables";
 
 body {
   overflow: hidden;
@@ -8,8 +6,8 @@ body {
   font-family: "Avenir", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #181818;
-  color: white;
+  background-color: $background-color-dark;
+  color: $text-color-light;
 }
 
 #root {
@@ -43,47 +41,32 @@ li {
 }
 
 h1 {
-  font-size: 32px;
+  font-size: 36px;
   font-family: "Arvo", serif;
   font-weight: 300;
-  @media only screen and (min-width: $screen-m) {
-    font-size: 36px;
-    margin-bottom: 16px;
-  }
+  margin-bottom: 16px;
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 100;
-  @media only screen and (min-width: $screen-m) {
-    font-size: 28px;
-    margin: 24px 0px 16px;
-  }
+  margin: 24px 0px 16px;
 }
 
 h3 {
-  font-size: 16px;
+  font-size: 22px;
   font-weight: 400;
-  @media only screen and (min-width: $screen-m) {
-    font-size: 22px;
-    margin: 16px 0px 8px;
-  }
+  margin: 16px 0px 8px;
 }
 
 h4 {
   font-weight: normal;
-  font-size: 12px;
-  @media only screen and (min-width: $screen-m) {
-    font-size: 18px;
-  }
+  font-size: 18px;
 }
 
 li,
 p {
-  font-size: 12px;
-  @media only screen and (min-width: $screen-m) {
-    font-size: 14px;
-  }
+  font-size: 14px;
 }
 
 ul {
@@ -104,9 +87,9 @@ ul {
 .link-button {
   cursor: pointer;
   padding: 4px 16px;
-  border: 1px solid white;
+  border: 1px solid $text-color-light;
   background: none;
-  color: white;
+  color: $text-color-light;
   font: inherit;
 }
 
@@ -115,7 +98,7 @@ ul {
 }
 
 .link-button:hover {
-  background-color: rgba($color: #ffffff, $alpha: 0.2);
+  background-color: $background-color-light-hover;
 }
 
 .link-button-narrow {
@@ -123,12 +106,12 @@ ul {
 }
 
 .link-button-dark {
-  color: black;
-  border: 2px solid black;
+  color: $text-color-dark;
+  border: 2px solid $text-color-dark;
 }
 
 .link-button-dark:hover {
-  background-color: rgba($color: #000000, $alpha: 0.1);
+  background-color: $background-color-light-hover;
 }
 
 .icon-button {
@@ -142,22 +125,21 @@ ul {
 }
 
 .clickable-text-element {
-  color: lightgrey;
+  color: $element-color-light;
 }
 
 .clickable-text-element:hover {
   cursor: pointer;
-  color: white;
+  color: $element-color-light-hover;
 }
 
 .clickable-background-element {
-  background-color: rgb(24, 24, 24);
-  opacity: 0.9;
+  background-color: $background-color-dark-cover-opaque;
 }
 
 .clickable-background-element:hover {
   cursor: pointer;
-  opacity: 0.7;
+  background-color: $background-color-dark-cover-opaque-hover;
 }
 
 .disabled-button {
@@ -170,7 +152,7 @@ ul {
 /* Elements */
 
 .horizontal-line {
-  border-top: 1px solid white;
+  border-top: 1px solid $text-color-light;
   margin: 16px 0px;
   width: 100%;
 }

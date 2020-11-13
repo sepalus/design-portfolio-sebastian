@@ -1,3 +1,5 @@
+@import "../variables";
+
 $title-element-left-start: 4px;
 $title-element-1-left-end: 234px;
 $title-element-1-top-start: 72px;
@@ -32,7 +34,7 @@ $title-element-3-top-end: 342px;
 .information-section-about-image {
   height: 180px;
   width: 180px;
-  border: 2px solid white;
+  border: 2px solid $text-color-light;
   object-fit: none;
   object-position: center top;
   filter: grayscale(100%);
@@ -57,7 +59,7 @@ $title-element-3-top-end: 342px;
 
 .information-section-about-text-wrapper-expanded {
   .information-section-about-introduction-title {
-    background-color: rgba($color: white, $alpha: 0.2);
+    background-color: $background-color-light-selected;
   }
 }
 
@@ -83,7 +85,7 @@ $title-element-3-top-end: 342px;
   align-items: center;
   width: 100%;
   height: 140px;
-  border-top: 1px solid white;
+  border-top: 1px solid $text-color-light;
 }
 
 .information-section-contact-content-wrapper {
