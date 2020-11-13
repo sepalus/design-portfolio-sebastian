@@ -34,6 +34,38 @@
   }
 }
 
+.project-card-clickable-area {
+  position: absolute;
+  width: $catalog-remaining-width;
+  height: 100%;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.project-section-industrial {
+  .project-card-clickable-area {
+    left: $catalog-width;
+  }
+}
+
+.project-section-digital {
+  .project-card-clickable-area {
+    left: 0px;
+  }
+}
+
+.project-card-clickable-area:hover {
+  background-color: $background-color-light-hover;
+  opacity: 0.3;
+}
+
+.project-card-dark {
+  .project-card-clickable-area:hover {
+    background-color: $background-color-ultralight-hover;
+    opacity: 0.3;
+  }
+}
+
 .project-section-digital {
   img.contain {
     padding: 70px;

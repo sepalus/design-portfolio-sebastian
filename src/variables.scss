@@ -1,4 +1,5 @@
 $catalog-width: 380px;
+$catalog-remaining-width: calc(100% - 380px);
 $catalog-margin: 100px;
 
 /* COLORS  */
@@ -22,7 +23,12 @@ $background-color-ultralight-hover: rgba(
 );
 $background-color-ultralight-selected: rgba(
   $color: white,
-  $alpha: 0.65,
+  $alpha: 0.6,
+);
+
+$background-color-hyperlight-hover: rgba(
+  $color: white,
+  $alpha: 0.8,
 );
 
 $background-color-dark-cover-opaque: rgba(
@@ -31,7 +37,7 @@ $background-color-dark-cover-opaque: rgba(
 );
 $background-color-dark-cover-opaque-hover: rgba(
   $color: #202020,
-  $alpha: 0.6,
+  $alpha: 0.7,
 );
 $background-color-dark-cover-transparent: rgba(
   $color: black,
@@ -49,6 +55,9 @@ $element-color-light-hover: white;
 $element-color-mid: #666666;
 $element-color-mid-hover: #999999;
 $element-color-mid-selected: white;
+
+$element-color-dark: #101010;
+$element-color-dark-hover: #666666;
 
 /* -- Text -- */
 $text-color-light: white;

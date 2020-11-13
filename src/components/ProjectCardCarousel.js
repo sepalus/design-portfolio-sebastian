@@ -5,20 +5,28 @@ import ChevronRight from "@material-ui/icons/ChevronRight";
 import ChevronLeft from "@material-ui/icons/ChevronLeft";
 import Close from "@material-ui/icons/Close";
 
-function ProjectCardCarousel({ designArea, project, setCarouselIsOpen }) {
+function ProjectCardCarousel({
+  designArea,
+  project,
+  carouselIsOpen,
+  setCarouselIsOpen,
+}) {
   const [activeImage, setActiveImage] = useState(0);
   const imageAmount = project.images.length;
-
+  const keyPressHandler = (event) => {
+    if (carouselIsOpen) {
+      if (event.keyCode === 27) setCarouselIsOpen(false);
+      if (event.keyCode === 32) setActiveImage(activeImage + 1);
+      if (event.keyCode === 37) setActiveImage(activeImage - 1);
+      if (event.keyCode === 39) setActiveImage(activeImage + 1);
+    }
+  };
   useEffect(() => {
     window.addEventListener("keydown", keyPressHandler);
     return () => {
       window.removeEventListener("keydown", keyPressHandler);
     };
-  }, []);
-
-  const keyPressHandler = (event) => {
-    if (event.keyCode === 27) setCarouselIsOpen(false);
-  };
+  }, [keyPressHandler]);
 
   if (activeImage < 0) setActiveImage(imageAmount - 1);
   if (activeImage > imageAmount - 1) setActiveImage(0);
@@ -45,7 +53,11 @@ function ProjectCardCarousel({ designArea, project, setCarouselIsOpen }) {
 
         <div className="project-card-carousel-close-button">
           <Close
-            className="clickable-text-element"
+            className={
+              project.styleDarkColor
+                ? "clickable-text-element-dark"
+                : "clickable-text-element"
+            }
             onClick={() => setCarouselIsOpen(false)}
           />
         </div>
@@ -53,11 +65,19 @@ function ProjectCardCarousel({ designArea, project, setCarouselIsOpen }) {
         {imageAmount > 1 && (
           <div className="project-card-carousel-next-buttons">
             <ChevronLeft
-              className="clickable-text-element"
+              className={
+                project.styleDarkColor
+                  ? "clickable-text-element-dark"
+                  : "clickable-text-element"
+              }
               onClick={() => setActiveImage(activeImage - 1)}
             ></ChevronLeft>
             <ChevronRight
-              className="clickable-text-element"
+              className={
+                project.styleDarkColor
+                  ? "clickable-text-element-dark"
+                  : "clickable-text-element"
+              }
               onClick={() => setActiveImage(activeImage + 1)}
             ></ChevronRight>
           </div>

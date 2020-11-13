@@ -133,6 +133,15 @@ ul {
   color: $element-color-light-hover;
 }
 
+.clickable-text-element-dark {
+  color: $element-color-dark;
+}
+
+.clickable-text-element-dark:hover {
+  color: $element-color-dark-hover;
+  cursor: pointer;
+}
+
 .clickable-background-element {
   background-color: $background-color-dark-cover-opaque;
 }

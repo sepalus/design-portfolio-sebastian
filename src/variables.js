@@ -1,6 +1,6 @@
 const variables = {
   catalogWidth: "380px",
-  catalogMargin: "100px",
+  catalogWidthPlusMargin: "480px",
 };
 
 export default variables;

@@ -1,6 +1,6 @@
 import variables from "../variables.js";
 
-const { catalogWidth, catalogMargin } = variables;
+const { catalogWidth, catalogWidthPlusMargin } = variables;
 
 const kaarnaDesignProject = {
   title: "Kaarna",
@@ -44,7 +44,7 @@ const tyyniDesignProject = {
   mainImage: ["tyyni.jpg"],
   images: ["tyyni1.jpg", "tyyni2.jpg"],
   descriptionStyle: {
-    left: catalogWidth + catalogMargin,
+    left: catalogWidthPlusMargin,
     right: "80px",
     bottom: "40px",
   },
@@ -99,7 +99,7 @@ const kolmioillaDesignProject = {
   images: ["kolmiot1.png", "kolmiot2.png", "kolmiot3.png", "kolmiot4.png"],
   descriptionStyle: {
     top: "70px",
-    left: catalogWidth + catalogMargin,
+    left: catalogWidthPlusMargin,
     right: "80px",
   },
   carouselStyle: {
@@ -201,7 +201,7 @@ const museDesignProject = {
     left: "80px",
   },
   descriptionStyle: {
-    right: catalogWidth + catalogMargin,
+    right: catalogWidthPlusMargin,
     left: "80px",
     bottom: "40px",
   },
@@ -253,7 +253,7 @@ const anneliinaDesignProject = {
   descriptionStyle: {
     top: "50px",
     left: "80px",
-    right: catalogWidth + catalogMargin,
+    right: catalogWidthPlusMargin,
   },
   carouselStyle: {
     common: {

@@ -1,6 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 import "./ProjectCatalog.scss";
+import Fullscreen from "@material-ui/icons/Fullscreen";
 
 function ProjectCatalog({
   designArea,
@@ -34,15 +35,18 @@ function ProjectCatalog({
               className={classNames({
                 "project-catalog-active-project": isActive,
               })}
-              onMouseOver={() => setActiveProjectIndex(index)}
             >
               <button
                 className={classNames("link-button", {
                   "icon-button": isActive,
                 })}
-                onClick={() => setCarouselIsOpen(true)}
+                onClick={() => {
+                  if (activeProjectIndex === index) setCarouselIsOpen(true);
+                  else setActiveProjectIndex(index);
+                }}
               >
                 <h4>{project.title}</h4>
+                {isActive && <Fullscreen />}
               </button>
             </li>
           );

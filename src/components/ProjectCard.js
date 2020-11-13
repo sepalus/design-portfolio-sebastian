@@ -20,6 +20,9 @@ function ProjectCard({
       <div
         className={classNames(
           "project-card",
+          {
+            "project-card-dark": projects[activeProjectIndex].styleDarkColor,
+          },
           { "animate-card-in": animationDirectionIn },
           { "animate-card-out": !animationDirectionIn }
         )}
@@ -58,6 +61,10 @@ function ProjectCard({
               </>
             );
           })}
+          <div
+            className="project-card-clickable-area"
+            onClick={() => setCarouselIsOpen(true)}
+          />
         </div>
       </div>
 
@@ -65,6 +72,7 @@ function ProjectCard({
         <ProjectCardCarousel
           designArea={designArea}
           project={activeProject}
+          carouselIsOpen={carouselIsOpen}
           setCarouselIsOpen={setCarouselIsOpen}
         />
       )}
