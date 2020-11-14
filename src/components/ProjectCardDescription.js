@@ -3,19 +3,16 @@ import classNames from "classnames";
 import Person from "@material-ui/icons/Person";
 import People from "@material-ui/icons/People";
 import CalendarToday from "@material-ui/icons/CalendarToday";
+import "./ProjectCardDescription.scss";
 
 function ProjectCardDescription({
   currentViewport,
   designArea,
-  project,
   activeProject,
 }) {
   const [showTeam, setShowTeam] = useState(false);
-  const isActive = project.title === activeProject.title;
-
   const animationDirectionIn = () => {
     if (
-      !isActive ||
       currentViewport !== designArea ||
       (currentViewport !== 1 && currentViewport !== 2)
     )
@@ -26,7 +23,7 @@ function ProjectCardDescription({
   return (
     <div
       className={classNames(
-        "project-card-description-wrapper",
+        "project-card-description",
         {
           "animate-description-in": animationDirectionIn(),
         },
@@ -36,7 +33,6 @@ function ProjectCardDescription({
       )}
       style={{
         ...activeProject.descriptionStyle,
-        zIndex: isActive ? 1 : 0,
       }}
       onMouseLeave={() => {
         setShowTeam(false);
