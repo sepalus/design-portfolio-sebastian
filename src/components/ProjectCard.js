@@ -14,6 +14,8 @@ function ProjectCard({
   animationDirectionIn,
 }) {
   const activeProject = projects[activeProjectIndex];
+  const project = activeProject;
+  const isActive = true;
 
   return (
     <>
@@ -33,34 +35,27 @@ function ProjectCard({
         }}
       >
         <div className="project-card-image-wrapper">
-          {projects.map((project, index) => {
-            const isActive = activeProjectIndex === index;
-
-            return (
-              <>
-                <img
-                  src={
-                    project.mainImage
-                      ? `./assets/${project.mainImage}`
-                      : `./assets/${project.images[0]}`
-                  }
-                  alt=""
-                  className={classNames(
-                    [project.classes],
-                    { "animate-card-fade-in": isActive },
-                    { "animate-card-fade-out": !isActive }
-                  )}
-                  style={project.imageStyle}
-                />
-                <ProjectCardDescription
-                  currentViewport={currentViewport}
-                  designArea={designArea}
-                  project={project}
-                  activeProject={activeProject}
-                />
-              </>
-            );
-          })}
+          <img
+            src={
+              project.mainImage
+                ? `./assets/${project.mainImage}`
+                : `./assets/${project.images[0]}`
+            }
+            alt=""
+            className={classNames(
+              [project.classes],
+              { "animate-card-fade-in": isActive },
+              { "animate-card-fade-out": !isActive }
+            )}
+            style={project.imageStyle}
+          />
+          <ProjectCardDescription
+            currentViewport={currentViewport}
+            designArea={designArea}
+            project={project}
+            activeProject={activeProject}
+          />
+          );
           <div
             className="project-card-clickable-area"
             onClick={() => setCarouselIsOpen(true)}
