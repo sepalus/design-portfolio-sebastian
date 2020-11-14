@@ -3,6 +3,7 @@ import variables from "../variables.js";
 const { catalogWidth, catalogWidthPlusMargin } = variables;
 
 const kaarnaDesignProject = {
+  id: "kaarna",
   title: "Kaarna",
   description:
     "An electric foldable scooter designed for laid-back cruising. With its innovative rotating folding mechanism, high-quality materials and elegant detailing, Kaarna is designed for people who want to ride the streets in style. An urban mobility solution that matches the character of flourishing cities.",
@@ -21,6 +22,7 @@ const kaarnaDesignProject = {
 };
 
 const lamppuDesignProject = {
+  id: "lamp",
   title: "Pendant Lamp",
   description:
     "A dining room pendant lamp designed for atmospheric dining. The lamp has three lampshades that reflect different intensities of light, giving both a focused and relaxed ambience to the dining experience.",
@@ -34,6 +36,7 @@ const lamppuDesignProject = {
 };
 
 const tyyniDesignProject = {
+  id: "tyyni",
   title: "Tyyni",
   description:
     "A sound diffusing wall element, with oustanding acoustic qualities and beautiful form. The overall shape of Tyyni is based on a tested mathematical equation that ensures a high-quality sonic experinece. The wave-like form gives a visual expression that matches the acoustic qualities - without compromising the sound.",
@@ -61,6 +64,7 @@ const tyyniDesignProject = {
 };
 
 const kuutamoDesignProject = {
+  id: "kuutamo",
   title: "Kuutamo",
   description:
     "A directional night light that provides light to you, without interrupting your partner's sleep. The light is perfect for two people sharing a bed, allowing one to stay awake while the other sleeps. Kuutamo works well aesthetically both as a single piece for one person, or as two lamps side-by-side.",
@@ -74,6 +78,7 @@ const kuutamoDesignProject = {
 };
 
 const kiskoDesignProject = {
+  id: "kisko",
   title: "Kisko",
   description:
     "An elegant industrial furniture series that combines character with comfort. Made out of industrial materials, Kisko furniture gets its identity from the intuitive yet original way of connecting the components.",
@@ -88,6 +93,7 @@ const kiskoDesignProject = {
 };
 
 const kolmioillaDesignProject = {
+  id: "kolmiot",
   title: "Kohdataan Kolmioilla",
   description:
     "Three pieces of street furniture that create a space that encourages both planned and incidental encounters. The concept is designed for an unused triangle-shaped cobblestone plaza in front of the Helsinki Design Museum, where three neighborhoods meet. Together the triangular pieces of furniture create a cultural meeting point for city residents.",
@@ -121,6 +127,7 @@ const kolmioillaDesignProject = {
 };
 
 const kierreDesignProject = {
+  id: "kierre",
   title: "Kierre",
   description:
     "An electric toothbrush designed for recyclability and the circular economy. The shell of the toothbrush is manufactured from recycled plastic, made out of monomaterial components and designed for easy disassembly. Kierre showcases that products designed for recyclability can be beautiful, by turning the recyclable features into the product's own aesthetics.",
@@ -165,6 +172,7 @@ const kierreDesignProject = {
 };
 
 const museDesignProject = {
+  id: "muse",
   title: "Muse",
   description:
     "A community connecting UBS bank, millennials and startups through providing unique experiences to its members. Muse is a value-added service for millenials that helps them form a connection with their bank from an early age. Muse is a service. Muse is a web application. Muse is a brand. Muse is a community.",
@@ -232,6 +240,7 @@ const museDesignProject = {
 };
 
 const anneliinaDesignProject = {
+  id: "anneliina",
   title: "Anneliina",
   description:
     "A new brand identity for Anneliina that communicates the caring service's core values: compassion, respect, trustworthiness and personalized care. The brand update included the launch of a re-designed responsive website and new marketing material, such as flyers and newspaper ads.",
@@ -279,6 +288,7 @@ const anneliinaDesignProject = {
 };
 
 const scootDesignProject = {
+  id: "scoot",
   title: "Scoot",
   description:
     "A responsive website showcasing designs for electric foldable scooters. The site displays seven scooter designs that were exhibited at Helsinki Design Week. The Scoot website has an impressive video and high quality images of the scooters, details about the exhibition, information about thew design project and a press kit.",
@@ -310,6 +320,7 @@ const scootDesignProject = {
 };
 
 const axiomDesignProject = {
+  id: "axiom",
   title: "Axiom",
   description:
     "A network that brings students, university and industry together to produce qualitative doctoral research. A service that manifests itself as a network, series of events and co-creation platform. Axiom allwos doctoral candidates, unviersities and companies to conduct more qualitave, compelling and relevant industrial PhD research.",

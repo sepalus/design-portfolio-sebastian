@@ -5,6 +5,16 @@
   height: 100%;
 }
 
+.project-card-image-container {
+  height: calc(100% - 120px);
+}
+
+.project-card-controls-container {
+  height: 120px;
+  background-color: $background-color-dark;
+  border-top: 1px solid $text-color-light;
+}
+
 .project-card-image-wrapper {
   display: none;
   height: 100%;

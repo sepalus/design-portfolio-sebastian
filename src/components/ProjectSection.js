@@ -20,7 +20,6 @@ function ProjectSection({
   skipProjectSection,
 }) {
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
-  const [carouselIsOpen, setCarouselIsOpen] = useState(false);
   const projects =
     designArea === 3
       ? aestheticsDesignProjects
@@ -33,10 +32,6 @@ function ProjectSection({
   useEffect(() => {
     setActiveProjectIndex(0);
   }, [designArea]);
-
-  useEffect(() => {
-    if (currentViewport !== 1) setCarouselIsOpen(false);
-  }, [currentViewport]);
 
   if (skipProjectSection)
     return <section ref={projectRef} className="project-section-container" />;
@@ -65,15 +60,12 @@ function ProjectSection({
           projects={projects}
           activeProjectIndex={activeProjectIndex}
           setActiveProjectIndex={setActiveProjectIndex}
-          setCarouselIsOpen={setCarouselIsOpen}
         />
         <ProjectCard
           currentViewport={currentViewport}
           projects={projects}
           activeProjectIndex={activeProjectIndex}
           designArea={designArea}
-          carouselIsOpen={carouselIsOpen}
-          setCarouselIsOpen={setCarouselIsOpen}
           animationDirectionIn={currentViewport === 1}
         />
       </div>

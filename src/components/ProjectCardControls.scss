@@ -1,21 +1,18 @@
 @import "../variables";
 
-.project-card-controls-close-button {
-  position: absolute;
-  top: 30px;
-  right: 60px;
+.project-card-controls {
+  z-index: 2;
 }
 
 .project-card-controls-next-buttons {
   > * {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    bottom: 52px;
     font-size: 32px !important;
   }
 
   > :first-of-type {
-    left: $catalog-width + 60px;
+    left: 60px;
   }
   > :nth-of-type(2) {
     right: 60px;
@@ -24,7 +21,7 @@
 
 .project-card-controls-image-buttons {
   position: absolute;
-  bottom: 20px;
+  bottom: 52px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;

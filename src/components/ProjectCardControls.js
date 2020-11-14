@@ -14,7 +14,6 @@ function ProjectCardControls({
 }) {
   const keyPressHandler = (event) => {
     if (currentViewport === 1 || currentViewport === 2) {
-      if (event.keyCode === 27) setCarouselIsOpen(false);
       if (event.keyCode === 32) setActiveImage(activeImage + 1);
       if (event.keyCode === 37) setActiveImage(activeImage - 1);
       if (event.keyCode === 39) setActiveImage(activeImage + 1);
@@ -30,17 +29,6 @@ function ProjectCardControls({
 
   return (
     <div className="project-card-controls">
-      <div className="project-card-controls-close-button">
-        <Close
-          className={
-            activeProject.styleDarkColor
-              ? "clickable-text-element-dark"
-              : "clickable-text-element"
-          }
-          onClick={() => setCarouselIsOpen(false)}
-        />
-      </div>
-
       {imageAmount > 1 && (
         <>
           <div className="project-card-controls-next-buttons">

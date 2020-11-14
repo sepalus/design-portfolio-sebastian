@@ -2,12 +2,11 @@
 
 .project-catalog {
   opacity: 0;
-  height: 100%;
+  height: calc(100% - 120px);
   width: $catalog-width;
   position: absolute;
   box-sizing: border-box;
   padding: 40px 48px;
-  border-right: 1px solid $text-color-light;
   color: $text-color-light;
   z-index: 2;
   background-color: $background-color-dark-cover-transparent;
@@ -31,6 +30,19 @@
 
   .project-catalog-active-project button:hover {
     background-color: $background-color-ultralight-hover;
+  }
+
+  .vertical-line {
+    height: calc(50% - 16px);
+    left: $catalog-width;
+  }
+
+  .vertical-line-top {
+    top: 0px;
+  }
+
+  .vertical-line-bottom {
+    bottom: 0px;
   }
 }
 
@@ -73,9 +85,58 @@
   li {
     margin-bottom: 8px;
   }
+
+  img {
+    max-width: 24px;
+    max-height: 24px;
+  }
+}
+
+.project-catalog-expand-button {
+  position: absolute;
+  top: 50%;
+  left: $catalog-width;
+  transform: translate(-50%, -50%);
+  border: 1px solid;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  svg {
+    height: 24px;
+    width: 24px;
+  }
+}
+
+.project-catalog-compressed {
+  width: $catalog-collapsed-width;
+  padding-left: 30px;
+  padding-right: 30px;
+
+  h2 {
+    height: 38px;
+  }
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .project-catalog-expand-button {
+    position: absolute;
+    left: $catalog-collapsed-width;
+  }
+  .vertical-line {
+    left: $catalog-collapsed-width;
+  }
 }
 
 /* Animation */
+
 .project-section.project-section-animation-enter {
   .project-catalog {
     animation: moveup 0.5s forwards;

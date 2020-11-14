@@ -9,8 +9,6 @@ function ProjectCard({
   projects,
   activeProjectIndex,
   designArea,
-  carouselIsOpen,
-  setCarouselIsOpen,
   animationDirectionIn,
 }) {
   const [activeImage, setActiveImage] = useState(0);
@@ -31,35 +29,37 @@ function ProjectCard({
         borderColor: activeProject.styleDarkColor ? "black" : "white",
       }}
     >
-      {activeProject.images.map((image, index) => (
-        <div
-          className={classNames("project-card-image-wrapper", {
-            "project-card-image-wrapper-active": activeImage === index,
-          })}
-        >
-          <img
-            src={`./assets/${image}`}
-            alt={activeProject.title}
-            className={activeProject.classes}
-            style={activeProject.imageStyle}
-          />
-        </div>
-      ))}
-      <ProjectCardDescription
-        currentViewport={currentViewport}
-        designArea={designArea}
-        project={activeProject}
-        activeProject={activeProject}
-      />
-      <ProjectCardControls
-        currentViewport={currentViewport}
-        activeProject={activeProject}
-        activeImage={activeImage}
-        setActiveImage={setActiveImage}
-        carouselIsOpen={carouselIsOpen}
-        setCarouselIsOpen={setCarouselIsOpen}
-        imageAmount={imageAmount}
-      />
+      <div className="project-card-image-container">
+        {activeProject.images.map((image, index) => (
+          <div
+            className={classNames("project-card-image-wrapper", {
+              "project-card-image-wrapper-active": activeImage === index,
+            })}
+          >
+            <img
+              src={`./assets/${image}`}
+              alt={activeProject.title}
+              className={activeProject.classes}
+              style={activeProject.imageStyle}
+            />
+          </div>
+        ))}
+        <ProjectCardDescription
+          currentViewport={currentViewport}
+          designArea={designArea}
+          project={activeProject}
+          activeProject={activeProject}
+        />
+      </div>
+      <div className="project-card-controls-container">
+        <ProjectCardControls
+          currentViewport={currentViewport}
+          activeProject={activeProject}
+          activeImage={activeImage}
+          setActiveImage={setActiveImage}
+          imageAmount={imageAmount}
+        />
+      </div>
       );
     </div>
   );

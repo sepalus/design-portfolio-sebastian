@@ -1,27 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import classNames from "classnames";
 import "./ProjectCatalog.scss";
-import Fullscreen from "@material-ui/icons/Fullscreen";
+import ChevronRight from "@material-ui/icons/ChevronRight";
+import ChevronLeft from "@material-ui/icons/ChevronLeft";
 
 function ProjectCatalog({
   designArea,
   projects,
   activeProjectIndex,
   setActiveProjectIndex,
-  setCarouselIsOpen,
 }) {
+  const [isCompressed, setIsCompressed] = useState(false);
+
   return (
     <div
-      className={classNames("project-catalog", {
-        "project-catalog-dark": projects[activeProjectIndex].hasOwnProperty(
-          "styleCatalogDarkColor"
-        )
-          ? projects[activeProjectIndex].styleCatalogDarkColor
-          : projects[activeProjectIndex].styleDarkColor,
-      })}
+      className={classNames(
+        "project-catalog",
+        { "project-catalog-compressed": isCompressed },
+        {
+          "project-catalog-dark": projects[activeProjectIndex].hasOwnProperty(
+            "styleCatalogDarkColor"
+          )
+            ? projects[activeProjectIndex].styleCatalogDarkColor
+            : projects[activeProjectIndex].styleDarkColor,
+        }
+      )}
     >
       <h2>
-        {designArea === 3
+        {isCompressed
+          ? ""
+          : designArea === 3
           ? "Aesthetics"
           : designArea === 2
           ? "Digital and Service"
@@ -40,18 +48,27 @@ function ProjectCatalog({
                 className={classNames("link-button", {
                   "icon-button icon-button-space": isActive,
                 })}
-                onClick={() => {
-                  if (activeProjectIndex === index) setCarouselIsOpen(true);
-                  else setActiveProjectIndex(index);
-                }}
+                onClick={() => setActiveProjectIndex(index)}
               >
-                <h4>{project.title}</h4>
-                {isActive && <Fullscreen />}
+                {isCompressed ? (
+                  <img src={`./assets/icons/${project.id}.png`} alt="K" />
+                ) : (
+                  <h4>{project.title}</h4>
+                )}
               </button>
             </li>
           );
         })}
       </ul>
+      <div className="vertical-line vertical-line-top"></div>
+      <div className="vertical-line vertical-line-bottom"></div>
+      <div className="project-catalog-expand-button">
+        {isCompressed ? (
+          <ChevronRight onClick={() => setIsCompressed(!isCompressed)} />
+        ) : (
+          <ChevronLeft onClick={() => setIsCompressed(!isCompressed)} />
+        )}
+      </div>
     </div>
   );
 }
