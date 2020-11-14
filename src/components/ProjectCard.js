@@ -52,7 +52,8 @@ function ProjectCard({
         activeProject={activeProject}
       />
       <ProjectCardCarousel
-        project={activeProject}
+        currentViewport={currentViewport}
+        activeProject={activeProject}
         activeImage={activeImage}
         setActiveImage={setActiveImage}
         carouselIsOpen={carouselIsOpen}

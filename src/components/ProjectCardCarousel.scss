@@ -1,42 +1,28 @@
 @import "../variables";
 
-.project-card-carousel {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  width: 100vw;
-  height: 100vh;
-  top: 0px;
-  z-index: 1;
-}
-
-.project-card-carousel-image-wrapper-active {
-  display: block;
-}
-
-.project-card-carousel-close-button {
+.project-card-controls-close-button {
   position: absolute;
   top: 30px;
   right: 60px;
 }
 
-.project-card-carousel-next-buttons {
+.project-card-controls-next-buttons {
   > * {
+    position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    position: absolute;
     font-size: 32px !important;
   }
 
   > :first-of-type {
-    left: 60px;
+    left: $catalog-width + 60px;
   }
   > :nth-of-type(2) {
     right: 60px;
   }
 }
 
-.project-card-carousel-image-buttons {
+.project-card-controls-image-buttons {
   position: absolute;
   bottom: 20px;
   left: 50%;
@@ -55,11 +41,11 @@
     transition: background-color 0.2s ease;
   }
 
-  span.project-card-carousel-image-active-button {
+  span.project-card-controls-image-active-button {
     background-color: $element-color-mid-selected;
   }
 
-  span:not(.project-card-carousel-image-active-button):hover {
+  span:not(.project-card-controls-image-active-button):hover {
     background-color: $element-color-mid-hover;
   }
 }

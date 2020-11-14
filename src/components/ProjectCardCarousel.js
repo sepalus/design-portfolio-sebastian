@@ -6,21 +6,21 @@ import ChevronLeft from "@material-ui/icons/ChevronLeft";
 import Close from "@material-ui/icons/Close";
 
 function ProjectCardCarousel({
-  project,
-  carouselIsOpen,
-  setCarouselIsOpen,
+  activeProject,
   activeImage,
   setActiveImage,
   imageAmount,
+  currentViewport,
 }) {
   const keyPressHandler = (event) => {
-    if (carouselIsOpen) {
+    if (currentViewport === 1 || currentViewport === 2) {
       if (event.keyCode === 27) setCarouselIsOpen(false);
       if (event.keyCode === 32) setActiveImage(activeImage + 1);
       if (event.keyCode === 37) setActiveImage(activeImage - 1);
       if (event.keyCode === 39) setActiveImage(activeImage + 1);
     }
   };
+
   useEffect(() => {
     window.addEventListener("keydown", keyPressHandler);
     return () => {
@@ -29,11 +29,11 @@ function ProjectCardCarousel({
   }, [keyPressHandler]);
 
   return (
-    <div className="project-card-carousel">
-      <div className="project-card-carousel-close-button">
+    <div className="project-card-controls">
+      <div className="project-card-controls-close-button">
         <Close
           className={
-            project.styleDarkColor
+            activeProject.styleDarkColor
               ? "clickable-text-element-dark"
               : "clickable-text-element"
           }
@@ -42,35 +42,36 @@ function ProjectCardCarousel({
       </div>
 
       {imageAmount > 1 && (
-        <div className="project-card-carousel-next-buttons">
-          <ChevronLeft
-            className={
-              project.styleDarkColor
-                ? "clickable-text-element-dark"
-                : "clickable-text-element"
-            }
-            onClick={() => setActiveImage(activeImage - 1)}
-          ></ChevronLeft>
-          <ChevronRight
-            className={
-              project.styleDarkColor
-                ? "clickable-text-element-dark"
-                : "clickable-text-element"
-            }
-            onClick={() => setActiveImage(activeImage + 1)}
-          ></ChevronRight>
-        </div>
-      )}
-      {imageAmount > 1 && (
-        <div className="project-card-carousel-image-buttons">
-          {project.images.map((image, index) => (
-            <ImageButton
-              activeImage={activeImage}
-              setActiveImage={setActiveImage}
-              index={index}
-            />
-          ))}
-        </div>
+        <>
+          <div className="project-card-controls-next-buttons">
+            <ChevronLeft
+              className={
+                activeProject.styleDarkColor
+                  ? "clickable-text-element-dark"
+                  : "clickable-text-element"
+              }
+              onClick={() => setActiveImage(activeImage - 1)}
+            ></ChevronLeft>
+            <ChevronRight
+              className={
+                activeProject.styleDarkColor
+                  ? "clickable-text-element-dark"
+                  : "clickable-text-element"
+              }
+              onClick={() => setActiveImage(activeImage + 1)}
+            ></ChevronRight>
+          </div>
+
+          <div className="project-card-controls-image-buttons">
+            {activeProject.images.map((image, index) => (
+              <ImageButton
+                activeImage={activeImage}
+                setActiveImage={setActiveImage}
+                index={index}
+              />
+            ))}
+          </div>
+        </>
       )}
     </div>
   );
@@ -79,7 +80,7 @@ function ProjectCardCarousel({
 const ImageButton = ({ activeImage, setActiveImage, index }) => (
   <span
     className={classNames({
-      "project-card-carousel-image-active-button": activeImage === index,
+      "project-card-controls-image-active-button": activeImage === index,
     })}
     onClick={() => setActiveImage(index)}
   />
