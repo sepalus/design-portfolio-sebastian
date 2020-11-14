@@ -14,8 +14,13 @@ function ProjectCard({
   animationDirectionIn,
 }) {
   const activeProject = projects[activeProjectIndex];
+  const [activeImage, setActiveImage] = useState(0);
   const project = activeProject;
+  const imageAmount = project.images.length;
   const isActive = true;
+
+  if (activeImage < 0) setActiveImage(imageAmount - 1);
+  if (activeImage > imageAmount - 1) setActiveImage(0);
 
   return (
     <>
@@ -36,16 +41,23 @@ function ProjectCard({
       >
         <div className="project-card-image-wrapper">
           {project.images.map((image, index) => (
-            <img
-              src={`./assets/${image}`}
-              alt=""
-              className={classNames(
-                [project.classes],
-                { "animate-card-fade-in": false },
-                { "animate-card-fade-out": false }
-              )}
-              style={project.imageStyle}
-            />
+            <div
+              className={classNames("project-card-carousel-image-wrapper", {
+                "project-card-carousel-image-wrapper-active":
+                  activeImage === index,
+              })}
+            >
+              <img
+                src={`./assets/${image}`}
+                alt=""
+                className={classNames(
+                  [project.classes],
+                  { "animate-card-fade-in": false },
+                  { "animate-card-fade-out": false }
+                )}
+                style={project.imageStyle}
+              />
+            </div>
           ))}
           <ProjectCardDescription
             currentViewport={currentViewport}
@@ -53,22 +65,18 @@ function ProjectCard({
             project={project}
             activeProject={activeProject}
           />
-          );
-          <div
-            className="project-card-clickable-area"
-            onClick={() => setCarouselIsOpen(true)}
+          <ProjectCardCarousel
+            designArea={designArea}
+            project={activeProject}
+            activeImage={activeImage}
+            setActiveImage={setActiveImage}
+            carouselIsOpen={carouselIsOpen}
+            setCarouselIsOpen={setCarouselIsOpen}
+            imageAmount={imageAmount}
           />
+          );
         </div>
       </div>
-
-      {carouselIsOpen && (
-        <ProjectCardCarousel
-          designArea={designArea}
-          project={activeProject}
-          carouselIsOpen={carouselIsOpen}
-          setCarouselIsOpen={setCarouselIsOpen}
-        />
-      )}
     </>
   );
 }
