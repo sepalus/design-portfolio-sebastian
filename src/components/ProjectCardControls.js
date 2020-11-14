@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import classNames from "classnames";
-import "./ProjectCardCarousel.scss";
+import "./ProjectCardControls.scss";
 import ChevronRight from "@material-ui/icons/ChevronRight";
 import ChevronLeft from "@material-ui/icons/ChevronLeft";
 import Close from "@material-ui/icons/Close";
 
-function ProjectCardCarousel({
+function ProjectCardControls({
   activeProject,
   activeImage,
   setActiveImage,
@@ -86,4 +86,4 @@ const ImageButton = ({ activeImage, setActiveImage, index }) => (
   />
 );
 
-export default ProjectCardCarousel;
+export default ProjectCardControls;

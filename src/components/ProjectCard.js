@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import classNames from "classnames";
 import "./ProjectCard.scss";
 import ProjectCardDescription from "./ProjectCardDescription";
-import ProjectCardCarousel from "./ProjectCardCarousel";
+import ProjectCardControls from "./ProjectCardControls";
 
 function ProjectCard({
   currentViewport,
@@ -51,7 +51,7 @@ function ProjectCard({
         project={activeProject}
         activeProject={activeProject}
       />
-      <ProjectCardCarousel
+      <ProjectCardControls
         currentViewport={currentViewport}
         activeProject={activeProject}
         activeImage={activeImage}
