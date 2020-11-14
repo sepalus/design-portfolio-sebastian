@@ -18,6 +18,8 @@ $title-element-3-top-end: 342px;
 }
 
 .information-section-about {
+  opacity: 0;
+  margin-bottom: -50px;
   position: relative;
   flex-grow: 1;
   display: flex;
@@ -26,9 +28,7 @@ $title-element-3-top-end: 342px;
 }
 
 .information-section-about-content-wrapper {
-  opacity: 0;
   display: flex;
-  margin-bottom: -50px;
 }
 
 .information-section-about-image {
@@ -50,6 +50,7 @@ $title-element-3-top-end: 342px;
   text-align: justify;
   text-align-last: justify;
   margin-bottom: -50px;
+  margin-left: -75px;
 }
 
 .information-section-about-text-wrapper-placeholder {
@@ -58,6 +59,7 @@ $title-element-3-top-end: 342px;
 }
 
 .information-section-about-text-wrapper-expanded {
+  margin-left: 0px;
   .information-section-about-introduction-title {
     background-color: $background-color-light-selected;
   }
@@ -69,6 +71,16 @@ $title-element-3-top-end: 342px;
   font-size: 14px;
   z-index: 2;
   white-space: nowrap;
+}
+
+.information-section-about-introduction-label:nth-of-type(2) {
+  top: $title-element-1-top-start;
+}
+.information-section-about-introduction-label:nth-of-type(3) {
+  top: $title-element-2-top-start;
+}
+.information-section-about-introduction-label:nth-of-type(4) {
+  top: $title-element-3-top-start;
 }
 
 .information-section-about-introduction-text {
@@ -130,30 +142,36 @@ $title-element-3-top-end: 342px;
 /* Animations */
 
 .information-section-static {
-  .information-section-about-content-wrapper {
+  .information-section-about {
     opacity: 1;
     margin-left: 0px;
   }
 }
 
 .information-section-animation-enter {
-  .information-section-about-content-wrapper,
-  .information-section-about-text-wrapper {
+  .information-section-about {
     animation: informationelemententer 0.4s forwards;
     animation-delay: 0.2s;
   }
 }
 
 .information-section-animation-exit {
-  .information-section-about-content-wrapper
-    .information-section-about-text-wrapper {
+  .information-section-about {
     animation: informationelementexit 0.5s forwards;
   }
 }
 
+.animate-text-wrapper-element {
+  animation: movetextwrapperelement 1s forwards;
+}
+
+.animate-text-wrapper-element-reverse {
+  animation: movetextwrapperelementreverse 1s forwards;
+}
+
 .animate-title-element-1 {
   animation: movetitleelement1 1s forwards;
-  animation-delay: 0s;
+  animation-delay: 1s;
 }
 
 .animate-title-element-1-reverse {
@@ -163,7 +181,7 @@ $title-element-3-top-end: 342px;
 
 .animate-title-element-2 {
   animation: movetitleelement2 1.2s forwards;
-  animation-delay: 0s;
+  animation-delay: 1s;
 }
 
 .animate-title-element-2-reverse {
@@ -173,7 +191,7 @@ $title-element-3-top-end: 342px;
 
 .animate-title-element-3 {
   animation: movetitleelement3 1.5s forwards;
-  animation-delay: 0s;
+  animation-delay: 1s;
 }
 
 .animate-title-element-3-reverse {
@@ -183,7 +201,7 @@ $title-element-3-top-end: 342px;
 
 .animate-text-element-in {
   animation: fadeintextelement 1s forwards;
-  animation-delay: 0.5s;
+  animation-delay: 1.5s;
 }
 
 .animate-text-element-out {
@@ -221,6 +239,23 @@ $title-element-3-top-end: 342px;
   }
 }
 
+@keyframes movetextwrapperelement {
+  from {
+    margin-left: -75px;
+  }
+  to {
+    margin-left: 0px;
+  }
+}
+
+@keyframes movetextwrapperelementreverse {
+  from {
+    margin-left: 0px;
+  }
+  to {
+    margin-left: -75px;
+  }
+}
 @keyframes movetitleelement1 {
   from {
     top: $title-element-1-top-start;

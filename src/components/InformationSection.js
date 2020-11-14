@@ -11,6 +11,7 @@ function InformationSection({
   selectViewport,
 }) {
   const [textExpanded, setTextExpanded] = useState(false);
+  const [textExpandedAnimated, setTextExpandedAnimated] = useState(false);
   const [performAnimation, setPerformAnimation] = useState(false);
   const [showPhoneNumber, setShowPhoneNumber] = useState(false);
   const [showEmail, setShowEmail] = useState(false);
@@ -28,6 +29,13 @@ function InformationSection({
     setPerformAnimation(!textExpanded);
   }, [currentViewport]);
 
+  useEffect(() => {
+    setTimeout(
+      () => setTextExpandedAnimated(textExpanded),
+      textExpanded ? 1100 : 200
+    );
+  }, [textExpanded]);
+
   const toggleTextExpanded = () => {
     setTextExpanded(!textExpanded);
   };
@@ -36,6 +44,12 @@ function InformationSection({
     if (!textExpanded) return;
     selectViewport(viewport);
   };
+
+  const introductionLabelClasses = classNames(
+    "information-section-about-introduction-label",
+    { "link-button link-button-narrow": textExpandedAnimated },
+    { "no-style-button": !textExpandedAnimated }
+  );
 
   return (
     <section ref={informationRef} className="information-section-container">
@@ -70,9 +84,15 @@ function InformationSection({
             </div>
             <div className="information-section-about-text-wrapper-placeholder"></div>
             <div
-              className={classNames("information-section-about-text-wrapper", {
-                "information-section-about-text-wrapper-expanded": textExpanded,
-              })}
+              className={classNames(
+                "information-section-about-text-wrapper",
+                {
+                  "information-section-about-text-wrapper-expanded animate-text-wrapper-element": textExpanded,
+                },
+                {
+                  "animate-text-wrapper-element-reverse": !textExpanded,
+                }
+              )}
               style={{ left: leftEdge }}
             >
               <button
@@ -85,15 +105,14 @@ function InformationSection({
                 {textExpanded ? <ExpandLess /> : <ExpandMore />}
               </button>
               <button
-                className={classNames(
-                  "information-section-about-introduction-label",
+                className={`${introductionLabelClasses} ${classNames(
                   {
-                    "animate-title-element-1 link-button link-button-narrow": textExpanded,
+                    "animate-title-element-1": textExpanded,
                   },
                   {
-                    "animate-title-element-1-reverse no-style-button": !textExpanded,
+                    "animate-title-element-1-reverse": !textExpanded,
                   }
-                )}
+                )}`}
                 onClick={() => {
                   changeViewport(1);
                 }}
@@ -101,15 +120,14 @@ function InformationSection({
                 Industrial Designer
               </button>
               <button
-                className={classNames(
-                  "information-section-about-introduction-label",
+                className={`${introductionLabelClasses} ${classNames(
                   {
-                    "animate-title-element-2 link-button link-button-narrow": textExpanded,
+                    "animate-title-element-2": textExpanded,
                   },
                   {
-                    "animate-title-element-2-reverse no-style-button": !textExpanded,
+                    "animate-title-element-2-reverse": !textExpanded,
                   }
-                )}
+                )}`}
                 onClick={() => {
                   changeViewport(2);
                 }}
@@ -117,15 +135,14 @@ function InformationSection({
                 Digital Creator
               </button>
               <button
-                className={classNames(
-                  "information-section-about-introduction-label disabled-button",
+                className={`disabled-button ${introductionLabelClasses} ${classNames(
                   {
-                    "animate-title-element-3 link-button link-button-narrow": textExpanded,
+                    "animate-title-element-3": textExpanded,
                   },
                   {
-                    "animate-title-element-3-reverse no-style-button": !textExpanded,
+                    "animate-title-element-3-reverse": !textExpanded,
                   }
-                )}
+                )}`}
                 onClick={() => {
                   return;
                 }}
