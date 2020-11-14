@@ -38,7 +38,7 @@ function ProjectCatalog({
             >
               <button
                 className={classNames("link-button", {
-                  "icon-button": isActive,
+                  "icon-button icon-button-space": isActive,
                 })}
                 onClick={() => {
                   if (activeProjectIndex === index) setCarouselIsOpen(true);

@@ -14,7 +14,11 @@ function InformationSection({
   const [textExpandedAnimated, setTextExpandedAnimated] = useState(false);
   const [performAnimation, setPerformAnimation] = useState(false);
   const [showPhoneNumber, setShowPhoneNumber] = useState(false);
-  const [showEmail, setShowEmail] = useState(false);
+  const [showEmailAddress, setShowEmailAddress] = useState(false);
+  const [togglePhoneCopied, setTogglePhoneCopied] = useState(0);
+  const [toggleEmailCopied, setToggleEmailCopied] = useState(0);
+  const phoneNumber = "040 7752722";
+  const emailAddress = "sebastian.hognabba@gmail.com";
 
   const expandedImageWidth = 334;
   const textWidth = 488;
@@ -49,6 +53,30 @@ function InformationSection({
     "information-section-about-introduction-label",
     { "link-button link-button-narrow": textExpandedAnimated },
     { "no-style-button": !textExpandedAnimated }
+  );
+
+  const PhoneIcon = () => (
+    <img
+      src="./assets/icons/phone.png"
+      alt="Phone"
+      onMouseEnter={() => {
+        setShowEmailAddress(false);
+        setToggleEmailCopied(0);
+        setShowPhoneNumber(true);
+      }}
+    />
+  );
+
+  const EmailIcon = () => (
+    <img
+      src="./assets/icons/email.png"
+      alt="email"
+      onMouseEnter={() => {
+        setShowPhoneNumber(false);
+        setTogglePhoneCopied(0);
+        setShowEmailAddress(true);
+      }}
+    />
   );
 
   return (
@@ -183,14 +211,16 @@ function InformationSection({
           </div>
         </div>
         <div
-          class="information-section-contact"
+          className="information-section-contact"
           onMouseLeave={() => {
-            setShowEmail(false);
+            setShowEmailAddress(false);
             setShowPhoneNumber(false);
+            setToggleEmailCopied(0);
+            setTogglePhoneCopied(0);
           }}
         >
-          <div class="information-section-contact-content-wrapper">
-            <div class="information-section-contact-icon-wrapper">
+          <div className="information-section-contact-content-wrapper">
+            <div className="information-section-contact-icon-wrapper">
               <p>Check me out:</p>
               <a
                 href="https://www.linkedin.com/in/sebastian-högnabba-9a45a19b"
@@ -210,37 +240,69 @@ function InformationSection({
                 />
               </a>
             </div>
-            <div class="information-section-contact-icon-wrapper">
+            <div className="information-section-contact-icon-wrapper">
               <p>Hit me up:</p>
               <div>
-                <div class="information-section-contact-icon-expandable-content-wrapper">
-                  <div>
-                    <img
-                      src="./assets/icons/phone.png"
-                      alt="Phone"
-                      onMouseEnter={() => {
-                        setShowEmail(false);
-                        setShowPhoneNumber(true);
-                      }}
-                    />
-                  </div>
+                <div className="information-section-contact-icon-expandable-content-wrapper">
+                  <div>{!showPhoneNumber && <PhoneIcon />}</div>
                   {showPhoneNumber && (
-                    <button className="link-button">040 7752722</button>
+                    <div className="information-section-contact-icon-expandable-button-wrapper">
+                      <span
+                        className={classNames(
+                          {
+                            "animate-copied-text-1": togglePhoneCopied === -1,
+                          },
+                          {
+                            "animate-copied-text-2": togglePhoneCopied === 1,
+                          }
+                        )}
+                      >
+                        Copied
+                      </span>
+                      <button
+                        className="link-button icon-button"
+                        onClick={() => {
+                          navigator.clipboard.writeText(
+                            phoneNumber.replace(/ /g, "")
+                          );
+                          setTogglePhoneCopied(
+                            togglePhoneCopied === 0 ? 1 : -togglePhoneCopied
+                          );
+                        }}
+                      >
+                        <PhoneIcon />
+                        {phoneNumber}
+                      </button>
+                    </div>
                   )}
-                  <div>
-                    <img
-                      src="./assets/icons/email.png"
-                      alt="email"
-                      onMouseEnter={() => {
-                        setShowPhoneNumber(false);
-                        setShowEmail(true);
-                      }}
-                    />
-                  </div>
-                  {showEmail && (
-                    <button className="link-button">
-                      sebastian.hognabba@gmail.com
-                    </button>
+                  <div>{!showEmailAddress && <EmailIcon />}</div>
+                  {showEmailAddress && (
+                    <div className="information-section-contact-icon-expandable-button-wrapper">
+                      <span
+                        className={classNames(
+                          {
+                            "animate-copied-text-1": toggleEmailCopied === -1,
+                          },
+                          {
+                            "animate-copied-text-2": toggleEmailCopied === 1,
+                          }
+                        )}
+                      >
+                        Copied
+                      </span>
+                      <button
+                        className="link-button icon-button"
+                        onClick={() => {
+                          navigator.clipboard.writeText(emailAddress);
+                          setToggleEmailCopied(
+                            toggleEmailCopied === 0 ? 1 : -toggleEmailCopied
+                          );
+                        }}
+                      >
+                        <EmailIcon />
+                        {emailAddress}
+                      </button>
+                    </div>
                   )}
                 </div>
               </div>
