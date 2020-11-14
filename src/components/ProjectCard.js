@@ -35,20 +35,18 @@ function ProjectCard({
         }}
       >
         <div className="project-card-image-wrapper">
-          <img
-            src={
-              project.mainImage
-                ? `./assets/${project.mainImage}`
-                : `./assets/${project.images[0]}`
-            }
-            alt=""
-            className={classNames(
-              [project.classes],
-              { "animate-card-fade-in": isActive },
-              { "animate-card-fade-out": !isActive }
-            )}
-            style={project.imageStyle}
-          />
+          {project.images.map((image, index) => (
+            <img
+              src={`./assets/${image}`}
+              alt=""
+              className={classNames(
+                [project.classes],
+                { "animate-card-fade-in": false },
+                { "animate-card-fade-out": false }
+              )}
+              style={project.imageStyle}
+            />
+          ))}
           <ProjectCardDescription
             currentViewport={currentViewport}
             designArea={designArea}
