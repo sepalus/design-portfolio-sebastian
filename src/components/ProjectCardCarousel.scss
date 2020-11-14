@@ -10,21 +10,6 @@
   z-index: 1;
 }
 
-.project-card-carousel-image-container {
-  position: relative;
-}
-
-.project-card-carousel-image-wrapper {
-  display: none;
-  width: 100%;
-  height: 100%;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-  }
-}
 .project-card-carousel-image-wrapper-active {
   display: block;
 }

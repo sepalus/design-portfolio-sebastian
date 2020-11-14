@@ -6,7 +6,6 @@ import ChevronLeft from "@material-ui/icons/ChevronLeft";
 import Close from "@material-ui/icons/Close";
 
 function ProjectCardCarousel({
-  designArea,
   project,
   carouselIsOpen,
   setCarouselIsOpen,
