@@ -60,7 +60,16 @@ function ProjectCard({
               src={`./assets/${image}`}
               alt={activeProject.title}
               className={activeProject.classes}
-              style={activeProject.imageStyle}
+              style={
+                activeProject.imageStyle
+                  ? activeProject.imageStyle.individual
+                    ? {
+                        ...activeProject.imageStyle.common,
+                        ...activeProject.imageStyle.individual[index],
+                      }
+                    : activeProject.imageStyle.common
+                  : {}
+              }
             />
           </div>
         ))}

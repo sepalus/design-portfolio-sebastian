@@ -16,7 +16,7 @@ function ProjectCardDescription({
   const [toggleDescriptionClass, setToggleDescriptionClass] = useState(0);
 
   useEffect(() => {
-    setToggleDescriptionClass(2);
+    setToggleDescriptionClass(activeImageIndex === 0 ? 2 : 0);
   }, [catalogIsCompressed]);
 
   useEffect(() => {

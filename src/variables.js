@@ -3,6 +3,8 @@ const variables = {
   catalogWidthPlusMargin: "480px",
   catalogCollapsedWidth: "120px",
   catalogCollapsedWidthPlusMargin: "220px",
+  backgroundColorBlack: "black",
+  backgroundColorDark: "#101010",
 };
 
 export default variables;

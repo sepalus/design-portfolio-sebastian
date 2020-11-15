@@ -3,7 +3,10 @@ import variables from "../variables.js";
 const {
   catalogWidth,
   catalogWidthPlusMargin,
+  catalogCollapsedWidth,
   catalogCollapsedWidthPlusMargin,
+  backgroundColorBlack,
+  backgroundColorDark,
 } = variables;
 
 const descriptionPlacementTopRightCorner = {
@@ -44,7 +47,7 @@ const kaarnaDesignProject = {
   descriptionStyle: descriptionPlacementTopRightCorner,
   mainColorDark: false,
   controlColorDark: true,
-  backgroundColor: "black",
+  backgroundColor: backgroundColorBlack,
 };
 
 const lamppuDesignProject = {
@@ -77,17 +80,22 @@ const tyyniDesignProject = (catalogIsCompressed) => {
       left: catalogIsCompressed
         ? catalogCollapsedWidthPlusMargin
         : catalogWidthPlusMargin,
-      transition: "left 0.9s",
-      transitionDelay: "0.1s",
+      transition: "left 1s",
     },
     imageStyle: {
-      objectFit: "contain",
-      marginLeft: "auto",
-      marginRight: "auto",
+      common: {},
+      individual: [
+        {
+          objectFit: "contain",
+          objectPosition: "0 0",
+          left: catalogIsCompressed ? catalogCollapsedWidth : catalogWidth,
+          transition: "left 1s",
+        },
+      ],
     },
     mainColorDark: true,
     catalogColorDark: false,
-    backgroundColor: "black",
+    backgroundColor: backgroundColorDark,
   };
 };
 
@@ -142,19 +150,14 @@ const kierreDesignProject = {
   images: ["kierre1.png", "kierre2.png", "kierre3.png", "kierre4.png"],
   classes: "contain contain-center",
   imageStyle: {
-    paddingTop: "80px",
-    paddingBottom: "80px",
+    common: {
+      paddingTop: "100px",
+      paddingBottom: "120px",
+      maxWidth: "calc(100vh - 340px)",
+    },
+    individual: [{}, {}, {}, { transform: "translateX(70%)" }],
   },
   descriptionStyle: descriptionPlacementRightCenter,
-  carouselStyle: {
-    common: {
-      padding: "40px 0px 60px",
-      boxSizing: "border-box",
-      maxWidth: "calc(100vh - 340px)",
-      margin: "auto",
-    },
-    individual: [{}, {}, {}, { transform: "translateX(40px)" }],
-  },
   mainColorDark: false,
   backgroundColor: "black",
 };
@@ -175,20 +178,18 @@ const kolmioillaDesignProject = (catalogIsCompressed) => ({
     left: catalogIsCompressed
       ? catalogCollapsedWidthPlusMargin
       : catalogWidthPlusMargin,
-    transition: "left 0.9s",
-    transitionDelay: "0.1s",
+    transition: "left 1s",
   },
-  carouselStyle: {
+  imageStyle: {
     individual: [
       {},
       {},
       {},
       {
-        height: "100%",
+        height: "calc(100% - 240px)",
         objectFit: "cover",
-        marginLeft: "120px",
-        marginRight: "120px",
-        width: "calc(100% - 240px)",
+        marginTop: "120px",
+        marginBottom: "120px",
       },
     ],
   },
@@ -230,8 +231,10 @@ const museDesignProject = {
   ],
   classes: "contain",
   imageStyle: {
-    paddingBottom: "250px",
-    left: "80px",
+    common: {
+      paddingBottom: "250px",
+      left: "80px",
+    },
   },
   descriptionStyle: {
     right: catalogWidthPlusMargin,
@@ -282,7 +285,9 @@ const anneliinaDesignProject = {
   ],
   classes: "contain contain-center",
   imageStyle: {
-    paddingTop: "270px",
+    common: {
+      paddingTop: "270px",
+    },
   },
   descriptionStyle: {
     top: "50px",
@@ -325,7 +330,9 @@ const scootDesignProject = {
   images: ["scoot1.png", "scoot2.png", "scoot3.png"],
   classes: "contain contain-center",
   imageStyle: {
-    paddingTop: "270px",
+    common: {
+      paddingTop: "270px",
+    },
   },
   descriptionStyle: {
     top: "50px",
@@ -371,7 +378,7 @@ const axiomDesignProject = {
     "axiom8.jpg",
   ],
   classes: "contain",
-  imageStyle: { paddingTop: "250px", left: "0px" },
+  imageStyle: { common: { paddingTop: "250px", left: "0px" } },
   descriptionStyle: {
     top: "45px",
     right: "445px",

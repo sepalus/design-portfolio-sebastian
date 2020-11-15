@@ -98,6 +98,11 @@
   left: $catalog-width;
   transition: left 1s;
   transform: translate(-50%, -50%);
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 50%,
+    $background-color-dark-cover-transparent 50%
+  );
   border: 1px solid;
   border-radius: 50%;
   width: 32px;
@@ -112,7 +117,12 @@
   }
 }
 .project-catalog-expand-button:hover {
-  background-color: $background-color-light-hover;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 100%,
+    $background-color-dark-cover-transparent 0%
+  );
+  background-color: $background-color-light-hover-no-alpha;
 }
 
 .project-catalog-compressed {
