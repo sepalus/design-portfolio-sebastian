@@ -3,8 +3,10 @@ import variables from "../variables.js";
 const {
   catalogWidth,
   catalogWidthPlusMargin,
+  catalogRemainingWidth,
   catalogCollapsedWidth,
   catalogCollapsedWidthPlusMargin,
+  catalogCollapsedRemainingWidth,
   backgroundColorBlack,
   backgroundColorDark,
 } = variables;
@@ -32,6 +34,12 @@ const descriptionPlacementTopCentered = {
   top: "70px",
   left: catalogWidthPlusMargin,
   width: "520px",
+};
+
+const imageStyleWide = {
+  height: "calc(100% - 240px)",
+  marginTop: "120px",
+  marginBottom: "120px",
 };
 
 const kaarnaDesignProject = {
@@ -181,23 +189,13 @@ const kolmioillaDesignProject = (catalogIsCompressed) => ({
     transition: "left 1s",
   },
   imageStyle: {
-    individual: [
-      {},
-      {},
-      {},
-      {
-        height: "calc(100% - 240px)",
-        objectFit: "cover",
-        marginTop: "120px",
-        marginBottom: "120px",
-      },
-    ],
+    individual: [{}, {}, {}, { ...imageStyleWide, objectFit: "cover" }],
   },
   mainColorDark: false,
   backgroundColor: "black",
 });
 
-const museDesignProject = {
+const museDesignProject = (catalogIsCompressed) => ({
   id: "muse",
   title: "Muse",
   description:
@@ -219,8 +217,8 @@ const museDesignProject = {
   displayTeamHorizontal: "true",
   categories: ["Service Design", "Web Design", "Concept Design"],
   displayableCategory: 0,
-  mainImage: ["muse.png"],
   images: [
+    "muse.png",
     "muse1.jpg",
     "muse2.jpg",
     "muse3.png",
@@ -232,14 +230,35 @@ const museDesignProject = {
   classes: "contain",
   imageStyle: {
     common: {
-      paddingBottom: "250px",
-      left: "80px",
+      ...imageStyleWide,
+      right: catalogIsCompressed ? catalogCollapsedWidth : catalogWidth,
+      left: 0,
+      width: catalogIsCompressed
+        ? catalogCollapsedRemainingWidth
+        : catalogRemainingWidth,
+      transition: "width 1s",
     },
+    individual: [
+      {
+        marginTop: "70px",
+        marginBottom: "280px",
+        left: "80px",
+        width: "auto",
+        height: "calc(100% - 350px)",
+      },
+      { backgroundColor: "white", paddingTop: "20px", paddingBottom: "20px" },
+      { backgroundColor: "white", paddingTop: "40px", paddingBottom: "40px" },
+      { paddingLeft: "60px", paddingRight: "60px" },
+      { paddingLeft: "60px", paddingRight: "60px" },
+      { paddingLeft: "40px", paddingRight: "40px" },
+      { paddingLeft: "40px", paddingRight: "40px" },
+      { backgroundColor: "white", paddingTop: "100px", paddingBottom: "100px" },
+    ],
   },
   descriptionStyle: {
     right: catalogWidthPlusMargin,
     left: "80px",
-    bottom: "40px",
+    bottom: "90px",
   },
   carouselStyle: {
     common: {
@@ -265,7 +284,7 @@ const museDesignProject = {
   },
   mainColorDark: true,
   backgroundColor: "#6bc9b7",
-};
+});
 
 const anneliinaDesignProject = {
   id: "anneliina",
@@ -410,7 +429,7 @@ export const industrialProjects = (catalogIsCompressed) => [
 ];
 
 export const digitalProjects = (catalogIsCompressed) => [
-  museDesignProject,
+  museDesignProject(catalogIsCompressed),
   anneliinaDesignProject,
   scootDesignProject,
   axiomDesignProject,

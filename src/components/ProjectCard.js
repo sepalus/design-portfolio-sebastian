@@ -87,6 +87,7 @@ function ProjectCard({
         activeImageIndex={activeImageIndex}
         setActiveImageIndex={setActiveImageIndex}
         imageAmount={imageAmount}
+        catalogIsCompressed={catalogIsCompressed}
       />
     </div>
   );

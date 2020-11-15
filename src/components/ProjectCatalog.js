@@ -67,8 +67,16 @@ function ProjectCatalog({
           );
         })}
       </ul>
-      <div className="vertical-line vertical-line-top"></div>
-      <div className="vertical-line vertical-line-bottom"></div>
+      <div
+        className={classNames("vertical-line vertical-line-top", {
+          "vertical-line-right": isDigital,
+        })}
+      ></div>
+      <div
+        className={classNames("vertical-line vertical-line-bottom", {
+          "vertical-line-right": isDigital,
+        })}
+      ></div>
       <div className="project-catalog-expand-button">
         {(catalogIsCompressed && !isDigital) ||
         (!catalogIsCompressed && isDigital) ? (

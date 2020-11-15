@@ -11,6 +11,7 @@ function ProjectCardControls({
   setActiveImageIndex,
   imageAmount,
   currentViewport,
+  catalogIsCompressed,
 }) {
   const keyPressHandler = (event) => {
     if (currentViewport === 1 || currentViewport === 2) {
@@ -33,9 +34,15 @@ function ProjectCardControls({
 
   return (
     <div
-      className={classNames("project-card-controls", {
-        "project-card-controls-dark": controlIsDark,
-      })}
+      className={classNames(
+        "project-card-controls",
+        {
+          "project-card-controls-dark": controlIsDark,
+        },
+        {
+          "project-card-controls-compressed": catalogIsCompressed,
+        }
+      )}
     >
       {imageAmount > 1 && (
         <>

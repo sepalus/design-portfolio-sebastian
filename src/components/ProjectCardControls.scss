@@ -51,6 +51,20 @@
   }
 }
 
+.project-section-digital {
+  .project-card-controls {
+    width: $catalog-remaining-width;
+    transition: width 1s;
+  }
+  .project-card-controls-compressed {
+    width: $catalog-collapsed-remaining-width;
+    transition: width 1s;
+  }
+  .project-card-control-buttons-container {
+    width: 350px;
+  }
+}
+
 /* Animation */
 
 .project-section.project-section-animation-enter {

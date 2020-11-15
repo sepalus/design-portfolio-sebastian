@@ -168,6 +168,11 @@ ul {
   border-left: 1px solid;
 }
 
+.vertical-line-right {
+  border-left: 0px;
+  border-right: 1px solid;
+}
+
 .hide-element {
   display: none !important;
 }
