@@ -1,39 +1,41 @@
 @import "../variables";
 
 .project-card-controls {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  height: 120px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
   z-index: 2;
+  color: $text-color-light;
 }
 
-.project-card-controls-next-buttons {
-  > * {
-    position: absolute;
-    bottom: 52px;
-    font-size: 32px !important;
-  }
+.project-card-controls-dark {
+  color: $text-color-dark;
+}
 
-  > :first-of-type {
-    left: 50%;
-    transform: translate(-150px, 6px);
-  }
-  > :nth-of-type(2) {
-    right: 50%;
-    transform: translate(150px, 6px);
+.project-card-control-buttons-container {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  svg {
+    font-size: 32px;
   }
 }
 
 .project-card-controls-image-buttons {
-  position: absolute;
-  bottom: 52px;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
 
   span {
     cursor: pointer;
-    height: 15px;
-    width: 15px;
+    height: 16px;
+    width: 16px;
     margin: 0px 5px;
-    border: 1px solid $text-color-dark;
+    border: 1.5px solid $text-color-dark;
     background-color: $element-color-mid;
     border-radius: 50%;
     display: inline-block;

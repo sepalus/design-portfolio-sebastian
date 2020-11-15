@@ -57,7 +57,7 @@ function ProjectCatalog({
                 }
               >
                 {isCompressed ? (
-                  <img src={`./assets/icons/${project.id}.png`} alt="K" />
+                  <img src={`./assets/icons/${project.id}.png`} alt="" />
                 ) : (
                   <h4>{project.title}</h4>
                 )}

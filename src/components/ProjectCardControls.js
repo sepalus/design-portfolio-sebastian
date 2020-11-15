@@ -32,10 +32,14 @@ function ProjectCardControls({
   }, [keyPressHandler]);
 
   return (
-    <div className="project-card-controls">
+    <div
+      className={classNames("project-card-controls", {
+        "project-card-controls-dark": controlIsDark,
+      })}
+    >
       {imageAmount > 1 && (
         <>
-          <div className="project-card-controls-next-buttons">
+          <div className="project-card-control-buttons-container">
             <ChevronLeft
               className={
                 controlIsDark
@@ -43,7 +47,16 @@ function ProjectCardControls({
                   : "clickable-text-element"
               }
               onClick={() => setActiveImageIndex(activeImageIndex - 1)}
-            ></ChevronLeft>
+            />
+            <div className="project-card-controls-image-buttons">
+              {activeProject.images.map((image, index) => (
+                <ImageButton
+                  activeImageIndex={activeImageIndex}
+                  setActiveImageIndex={setActiveImageIndex}
+                  index={index}
+                />
+              ))}
+            </div>
             <ChevronRight
               className={
                 controlIsDark
@@ -51,17 +64,7 @@ function ProjectCardControls({
                   : "clickable-text-element"
               }
               onClick={() => setActiveImageIndex(activeImageIndex + 1)}
-            ></ChevronRight>
-          </div>
-
-          <div className="project-card-controls-image-buttons">
-            {activeProject.images.map((image, index) => (
-              <ImageButton
-                activeImageIndex={activeImageIndex}
-                setActiveImageIndex={setActiveImageIndex}
-                index={index}
-              />
-            ))}
+            />
           </div>
         </>
       )}

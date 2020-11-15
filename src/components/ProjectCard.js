@@ -50,15 +50,13 @@ function ProjectCard({
           activeImageIndex={activeImageIndex}
         />
       </div>
-      <div className="project-card-controls-container">
-        <ProjectCardControls
-          currentViewport={currentViewport}
-          activeProject={activeProject}
-          activeImageIndex={activeImageIndex}
-          setActiveImageIndex={setActiveImageIndex}
-          imageAmount={imageAmount}
-        />
-      </div>
+      <ProjectCardControls
+        currentViewport={currentViewport}
+        activeProject={activeProject}
+        activeImageIndex={activeImageIndex}
+        setActiveImageIndex={setActiveImageIndex}
+        imageAmount={imageAmount}
+      />
     </div>
   );
 }
