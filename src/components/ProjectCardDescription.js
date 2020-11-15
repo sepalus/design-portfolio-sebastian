@@ -30,7 +30,7 @@ function ProjectCardDescription({
   }, [activeProject.id, designArea, currentViewport]);
 
   const descriptionIsDark = activeProject.hasOwnProperty("descriptionColorDark")
-    ? activeProject.catalogColorDark
+    ? activeProject.descriptionColorDark
     : activeProject.mainColorDark || false;
 
   return (

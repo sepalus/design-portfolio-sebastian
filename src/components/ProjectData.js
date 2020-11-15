@@ -33,7 +33,7 @@ const descriptionPlacementBottomCentered = {
 const descriptionPlacementTopCenteredLeft = {
   top: "70px",
   left: catalogWidthPlusMargin,
-  width: "520px",
+  right: "80px",
 };
 
 const descriptionPlacementTopCenteredRight = {
@@ -110,32 +110,20 @@ const lamppuDesignProject = {
   backgroundColor: "black",
 };
 
-const tyyniDesignProject = (catalogIsCompressed) => {
-  return {
-    id: "tyyni",
-    title: "Tyyni",
-    description:
-      "A sound diffusing wall element, with oustanding acoustic qualities and beautiful form. The overall shape of Tyyni is based on a tested mathematical equation that ensures a high-quality sonic experinece. The wave-like form gives a visual expression that matches the acoustic qualities - without compromising the sound.",
-    year: 2017,
-    isTeam: false,
-    categories: ["Product Design", "Acoustic Design", "Wall Panel Design"],
-    displayableCategory: 1,
-    images: ["tyyni1.jpg", "tyyni2.jpg", "tyyni3.jpg"],
-    descriptionStyle: { ...descriptionPlacementTopRightCorner, right: "140px" },
-    imageStyle: {
-      common: {},
-      individual: [
-        {
-          objectFit: "contain",
-          left: "0px",
-          width: "auto",
-        },
-      ],
-    },
-    mainColorDark: false,
-    catalogColorDark: false,
-    backgroundColor: backgroundColorDark,
-  };
+const tyyniDesignProject = {
+  id: "tyyni",
+  title: "Tyyni",
+  description:
+    "A sound diffusing wall element, with oustanding acoustic qualities and beautiful form. The overall shape of Tyyni is based on a tested mathematical equation that ensures a high-quality sonic experinece. The wave-like form gives a visual expression that matches the acoustic qualities - without compromising the sound.",
+  year: 2017,
+  isTeam: false,
+  categories: ["Product Design", "Acoustic Design", "Wall Panel Design"],
+  displayableCategory: 1,
+  images: ["tyyni1.jpg", "tyyni2.jpg"],
+  descriptionStyle: { ...descriptionPlacementTopRightCorner, width: "256px" },
+  mainColorDark: false,
+  descriptionColorDark: true,
+  backgroundColor: backgroundColorDark,
 };
 
 const kuutamoDesignProject = {
@@ -201,7 +189,7 @@ const kierreDesignProject = {
   backgroundColor: "black",
 };
 
-const kolmioillaDesignProject = (catalogIsCompressed) => ({
+const kolmioillaDesignProject = {
   id: "kolmiot",
   title: "Kohdataan Kolmioilla",
   description:
@@ -212,19 +200,13 @@ const kolmioillaDesignProject = (catalogIsCompressed) => ({
   categories: ["Street Furniture Design", "Chair Design", "Spatial Design"],
   displayableCategory: 2,
   images: ["kolmiot1.png", "kolmiot2.png", "kolmiot3.png", "kolmiot4.png"],
-  descriptionStyle: {
-    ...descriptionPlacementTopCenteredLeft,
-    left: catalogIsCompressed
-      ? catalogCollapsedWidthPlusMargin
-      : catalogWidthPlusMargin,
-    transition: "left 1s",
-  },
+  descriptionStyle: descriptionPlacementTopCenteredLeft,
   imageStyle: {
     individual: [{}, {}, {}, { ...imageStyleWide, objectFit: "cover" }],
   },
   mainColorDark: false,
   backgroundColor: "black",
-});
+};
 
 const museDesignProject = (catalogIsCompressed) => ({
   id: "muse",
@@ -406,9 +388,9 @@ export const aestheticsDesignProjects = [
 
 export const industrialProjects = (catalogIsCompressed) => [
   kaarnaDesignProject,
-  tyyniDesignProject(catalogIsCompressed),
+  tyyniDesignProject,
   kierreDesignProject,
-  kolmioillaDesignProject(catalogIsCompressed),
+  kolmioillaDesignProject,
 ];
 
 export const digitalProjects = (catalogIsCompressed) => [
