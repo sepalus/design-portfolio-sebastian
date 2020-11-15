@@ -42,24 +42,11 @@ const descriptionPlacementTopCenteredRight = {
   right: catalogWidthPlusMargin,
 };
 
-const descriptionPlacementTopCenteredRightExpandable = (
-  catalogIsCompressed
-) => ({
-  ...descriptionPlacementTopCenteredRight,
-  right: catalogIsCompressed
-    ? catalogCollapsedWidthPlusMargin
-    : catalogWidthPlusMargin,
-  transition: "right 1s",
-});
-
-const descriptionPlacementBottomCenteredRightExpandable = (
-  catalogIsCompressed
-) => ({
+const descriptionPlacementCenteredRightExpandable = (catalogIsCompressed) => ({
   ...moveImageOnExpand(catalogIsCompressed),
   right: catalogIsCompressed
     ? catalogCollapsedWidthPlusMargin
     : catalogWidthPlusMargin,
-  bottom: "90px",
   transition: "left 1s, right 1s",
 });
 
@@ -69,16 +56,7 @@ const imageStyleWide = {
   marginBottom: "120px",
 };
 
-const imageStyleWeb = {
-  common: {
-    ...imageStyleWide,
-    padding: `0px ${catalogCollapsedWidthPlusMargin}`,
-    marginRight: "60px",
-  },
-  individual: [{ paddingTop: "180px" }],
-};
-
-const imageStyleService = (catalogIsCompressed) => ({
+const imageStyleDigital = (catalogIsCompressed) => ({
   ...imageStyleWide,
   right: catalogIsCompressed ? catalogCollapsedWidth : catalogWidth,
   left: 0,
@@ -86,6 +64,15 @@ const imageStyleService = (catalogIsCompressed) => ({
     ? catalogCollapsedRemainingWidth
     : catalogRemainingWidth,
   transition: "width 1s",
+  padding: "0px 60px",
+});
+
+const imageStyleWebMain = (catalogIsCompressed) => ({
+  ...moveImageOnExpand(catalogIsCompressed),
+  margin: "300px 0px 100px -20px",
+  padding: "0px",
+  height: "calc(100% - 400px)",
+  width: "auto",
 });
 
 const moveImageOnExpand = (catalogIsCompressed) => ({
@@ -269,18 +256,18 @@ const museDesignProject = (catalogIsCompressed) => ({
   categories: ["Service Design", "Web Design", "Concept Design"],
   displayableCategory: 0,
   images: [
-    "muse.png",
-    "muse1.jpg",
+    "muse1.png",
     "muse2.jpg",
-    "muse3.png",
+    "muse3.jpg",
     "muse4.png",
-    "muse5.jpg",
+    "muse5.png",
     "muse6.jpg",
     "muse7.jpg",
+    "muse8.jpg",
   ],
   classes: "contain",
   imageStyle: {
-    common: imageStyleService(catalogIsCompressed),
+    common: imageStyleDigital(catalogIsCompressed),
     individual: [
       {
         ...moveImageOnExpand(catalogIsCompressed),
@@ -289,23 +276,12 @@ const museDesignProject = (catalogIsCompressed) => ({
         width: "auto",
         height: "calc(100% - 350px)",
       },
-      { paddingTop: "20px", paddingBottom: "20px" },
-      { paddingTop: "40px", paddingBottom: "40px" },
-      { paddingLeft: "60px", paddingRight: "60px" },
-      { paddingLeft: "60px", paddingRight: "60px" },
-      { paddingLeft: "40px", paddingRight: "40px" },
-      { paddingLeft: "40px", paddingRight: "40px" },
-      {
-        paddingTop: "100px",
-        paddingBottom: "100px",
-        paddingLeft: "60px",
-        paddingRight: "60px",
-      },
     ],
   },
-  descriptionStyle: descriptionPlacementBottomCenteredRightExpandable(
-    catalogIsCompressed
-  ),
+  descriptionStyle: {
+    ...descriptionPlacementCenteredRightExpandable(catalogIsCompressed),
+    bottom: "90px",
+  },
   mainColorDark: true,
   backgroundColor: "#6bc9b7",
 });
@@ -321,17 +297,28 @@ const anneliinaDesignProject = (catalogIsCompressed) => ({
   displayableCategory: 0,
   images: [
     "anneliina1.png",
+    "anneliina1.png",
     "anneliina2.png",
     "anneliina3.png",
     "anneliina4.png",
     "anneliina5.png",
   ],
-  classes: "contain contain-center",
-  imageStyle: imageStyleWeb,
-  descriptionStyle: descriptionPlacementTopCenteredRightExpandable(
-    catalogIsCompressed
-  ),
-  individual: [moveImageOnExpand(catalogIsCompressed)],
+  classes: "contain",
+  imageStyle: {
+    common: imageStyleDigital(catalogIsCompressed),
+    individual: [
+      imageStyleWebMain(catalogIsCompressed),
+      {},
+      {},
+      {},
+      { padding: "0px 100px" },
+      { padding: "0px 100px" },
+    ],
+  },
+  descriptionStyle: {
+    ...descriptionPlacementCenteredRightExpandable(catalogIsCompressed),
+    top: "70px",
+  },
   mainColorDark: true,
   backgroundColor: "#96c1d9",
 });
@@ -346,12 +333,16 @@ const scootDesignProject = (catalogIsCompressed) => ({
   categories: ["Web Design", "UX Design", "UI Design"],
   displayableCategory: 0,
   showVideo: true,
-  images: ["scoot1.png", "scoot2.png", "scoot3.png"],
-  classes: "contain contain-center",
-  imageStyle: imageStyleWeb,
-  descriptionStyle: descriptionPlacementTopCenteredRightExpandable(
-    catalogIsCompressed
-  ),
+  images: ["scoot1.png", "scoot1.png", "scoot2.png", "scoot3.png"],
+  classes: "contain",
+  imageStyle: {
+    common: imageStyleDigital(catalogIsCompressed),
+    individual: [imageStyleWebMain(catalogIsCompressed)],
+  },
+  descriptionStyle: {
+    ...descriptionPlacementCenteredRightExpandable(catalogIsCompressed),
+    top: "70px",
+  },
   individual: [moveImageOnExpand(catalogIsCompressed)],
   mainColorDark: true,
   backgroundColor: "#f8f379",
@@ -375,8 +366,7 @@ const axiomDesignProject = (catalogIsCompressed) => ({
   categories: ["Service Design", "Co-Design", "Concept Design"],
   displayableCategory: 0,
   images: [
-    "axiom.png",
-    "axiom1.jpg",
+    "axiom1.png",
     "axiom2.jpg",
     "axiom3.jpg",
     "axiom4.jpg",
@@ -384,10 +374,11 @@ const axiomDesignProject = (catalogIsCompressed) => ({
     "axiom6.jpg",
     "axiom7.jpg",
     "axiom8.jpg",
+    "axiom9.jpg",
   ],
   classes: "contain",
   imageStyle: {
-    common: imageStyleService(catalogIsCompressed),
+    common: imageStyleDigital(catalogIsCompressed),
     individual: [
       {
         ...moveImageOnExpand(catalogIsCompressed),
@@ -398,9 +389,10 @@ const axiomDesignProject = (catalogIsCompressed) => ({
       },
     ],
   },
-  descriptionStyle: descriptionPlacementBottomCenteredRightExpandable(
-    catalogIsCompressed
-  ),
+  descriptionStyle: {
+    ...descriptionPlacementCenteredRightExpandable(catalogIsCompressed),
+    bottom: "90px",
+  },
   mainColorDark: true,
   backgroundColor: "#d2ebf9",
 });

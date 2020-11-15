@@ -46,7 +46,11 @@ function ProjectCardControls({
     >
       {imageAmount > 1 && (
         <>
-          <div className="project-card-control-buttons-container">
+          <div
+            className={classNames("project-card-control-buttons-container", {
+              "project-card-control-buttons-container-wide": imageAmount > 6,
+            })}
+          >
             <ChevronLeft
               className={
                 controlIsDark
