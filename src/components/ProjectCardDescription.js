@@ -5,29 +5,8 @@ import People from "@material-ui/icons/People";
 import CalendarToday from "@material-ui/icons/CalendarToday";
 import "./ProjectCardDescription.scss";
 
-function ProjectCardDescription({
-  currentViewport,
-  designArea,
-  activeProject,
-  activeImageIndex,
-  catalogIsCompressed,
-}) {
+function ProjectCardDescription({ activeProject, toggleDescriptionClass }) {
   const [showTeam, setShowTeam] = useState(false);
-  const [toggleDescriptionClass, setToggleDescriptionClass] = useState(0);
-
-  useEffect(() => {
-    setToggleDescriptionClass(activeImageIndex === 0 ? 2 : 0);
-  }, [catalogIsCompressed]);
-
-  useEffect(() => {
-    setToggleDescriptionClass(activeImageIndex === 0 ? 2 : 0);
-  }, [activeImageIndex]);
-
-  useEffect(() => {
-    if (activeImageIndex !== 0) setToggleDescriptionClass(0);
-    else if (currentViewport !== designArea) setToggleDescriptionClass(0);
-    else setToggleDescriptionClass(toggleDescriptionClass === 1 ? -1 : 1);
-  }, [activeProject.id, designArea, currentViewport]);
 
   const descriptionIsDark = activeProject.hasOwnProperty("descriptionColorDark")
     ? activeProject.descriptionColorDark

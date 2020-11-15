@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import classNames from "classnames";
 import "./ProjectCard.scss";
 import ProjectCardDescription from "./ProjectCardDescription";
@@ -6,28 +6,14 @@ import ProjectCardControls from "./ProjectCardControls";
 
 function ProjectCard({
   currentViewport,
-  projects,
-  activeProjectIndex,
+  activeProject,
   activeImageIndex,
-  setActiveImageIndex,
-  designArea,
+  imageAmount,
   catalogIsCompressed,
+  toggleCardClass,
+  toggleDescriptionClass,
+  selectImage,
 }) {
-  const [toggleCardClass, setToggleCardClass] = useState(0);
-  const activeProject = projects[activeProjectIndex];
-  const imageAmount = activeProject.images.length;
-
-  if (activeImageIndex < 0) setActiveImageIndex(imageAmount - 1);
-  if (activeImageIndex > imageAmount - 1) setActiveImageIndex(0);
-
-  useEffect(() => {
-    setToggleCardClass(currentViewport === designArea ? 1 : 0);
-  }, [currentViewport]);
-
-  useEffect(() => {
-    setToggleCardClass(-toggleCardClass);
-  }, [activeImageIndex, activeProjectIndex]);
-
   return (
     <div
       className="project-card"
@@ -74,20 +60,17 @@ function ProjectCard({
           </div>
         ))}
         <ProjectCardDescription
-          currentViewport={currentViewport}
-          designArea={designArea}
           activeProject={activeProject}
-          activeImageIndex={activeImageIndex}
-          catalogIsCompressed={catalogIsCompressed}
+          toggleDescriptionClass={toggleDescriptionClass}
         />
       </div>
       <ProjectCardControls
         currentViewport={currentViewport}
         activeProject={activeProject}
         activeImageIndex={activeImageIndex}
-        setActiveImageIndex={setActiveImageIndex}
         imageAmount={imageAmount}
         catalogIsCompressed={catalogIsCompressed}
+        selectImage={selectImage}
       />
     </div>
   );

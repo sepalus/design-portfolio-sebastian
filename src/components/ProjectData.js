@@ -122,6 +122,7 @@ const tyyniDesignProject = {
   images: ["tyyni1.jpg", "tyyni2.jpg"],
   descriptionStyle: { ...descriptionPlacementTopRightCorner, width: "256px" },
   mainColorDark: false,
+  controlColorDark: true,
   descriptionColorDark: true,
   backgroundColor: backgroundColorDark,
 };
@@ -250,6 +251,7 @@ const museDesignProject = (catalogIsCompressed) => ({
         marginBottom: "280px",
         width: "auto",
         height: "calc(100% - 350px)",
+        padding: "0px",
       },
     ],
   },
@@ -361,6 +363,7 @@ const axiomDesignProject = (catalogIsCompressed) => ({
         marginBottom: "320px",
         width: "auto",
         height: "calc(100% - 390px)",
+        padding: "0px",
       },
     ],
   },

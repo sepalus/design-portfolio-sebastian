@@ -22,6 +22,15 @@ function ProjectSection({
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [catalogIsCompressed, setCatalogIsCompressed] = useState(false);
+  const [toggleCardClass, setToggleCardClass] = useState(0);
+  const [toggleDescriptionClass, setToggleDescriptionClass] = useState(0);
+
+  useEffect(() => {
+    setToggleCardClass(currentViewport === designArea ? 1 : 0);
+    setToggleDescriptionClass(
+      currentViewport === designArea && activeImageIndex === 0 ? 1 : 0
+    );
+  }, [currentViewport]);
 
   const projects =
     designArea === 3
@@ -30,11 +39,30 @@ function ProjectSection({
       ? digitalProjects(catalogIsCompressed)
       : industrialProjects(catalogIsCompressed);
 
+  const activeProject = projects[activeProjectIndex];
+  const imageAmount = activeProject.images.length;
+
   if (activeProjectIndex >= projects.length) setActiveProjectIndex(0);
 
-  useEffect(() => {
-    setActiveProjectIndex(0);
-  }, [designArea]);
+  const updateImageIndex = (imageIndex) => {
+    if (imageIndex < 0) return imageAmount - 1;
+    if (imageIndex > imageAmount - 1) return 0;
+    return imageIndex;
+  };
+
+  const selectProject = (projectIndex) => {
+    setActiveImageIndex(0);
+    setActiveProjectIndex(projectIndex);
+    setToggleCardClass(-toggleCardClass);
+    setToggleDescriptionClass(toggleDescriptionClass === 1 ? -1 : 1);
+  };
+
+  const selectImage = (imageIndex) => {
+    const updatedImageIndex = updateImageIndex(imageIndex);
+    setActiveImageIndex(updatedImageIndex);
+    setToggleCardClass(-toggleCardClass);
+    setToggleDescriptionClass(updatedImageIndex === 0 ? 2 : 0);
+  };
 
   if (skipProjectSection)
     return <section ref={projectRef} className="project-section-container" />;
@@ -62,19 +90,21 @@ function ProjectSection({
           designArea={designArea}
           projects={projects}
           activeProjectIndex={activeProjectIndex}
-          setActiveImageIndex={setActiveImageIndex}
-          setActiveProjectIndex={setActiveProjectIndex}
           catalogIsCompressed={catalogIsCompressed}
           setCatalogIsCompressed={setCatalogIsCompressed}
+          selectProject={selectProject}
         />
         <ProjectCard
           currentViewport={currentViewport}
-          projects={projects}
-          activeProjectIndex={activeProjectIndex}
+          activeProject={activeProject}
           activeImageIndex={activeImageIndex}
-          setActiveImageIndex={setActiveImageIndex}
+          imageAmount={imageAmount}
           designArea={designArea}
           catalogIsCompressed={catalogIsCompressed}
+          toggleCardClass={toggleCardClass}
+          toggleDescriptionClass={toggleDescriptionClass}
+          setToggleDescriptionClass={setToggleDescriptionClass}
+          selectImage={selectImage}
         />
       </div>
     </section>

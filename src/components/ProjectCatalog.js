@@ -8,10 +8,9 @@ function ProjectCatalog({
   designArea,
   projects,
   activeProjectIndex,
-  setActiveImageIndex,
-  setActiveProjectIndex,
   catalogIsCompressed,
   setCatalogIsCompressed,
+  selectProject,
 }) {
   const isDigital = designArea === 2;
 
@@ -52,10 +51,7 @@ function ProjectCatalog({
                 className={classNames("link-button", {
                   "icon-button icon-button-space": isActive,
                 })}
-                onClick={() => {
-                  setActiveImageIndex(0);
-                  setActiveProjectIndex(index);
-                }}
+                onClick={() => selectProject(index)}
               >
                 {catalogIsCompressed ? (
                   <img src={`./assets/icons/${project.id}.png`} alt="" />

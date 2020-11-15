@@ -8,16 +8,16 @@ import Close from "@material-ui/icons/Close";
 function ProjectCardControls({
   activeProject,
   activeImageIndex,
-  setActiveImageIndex,
   imageAmount,
   currentViewport,
   catalogIsCompressed,
+  selectImage,
 }) {
   const keyPressHandler = (event) => {
     if (currentViewport === 1 || currentViewport === 2) {
-      if (event.keyCode === 32) setActiveImageIndex(activeImageIndex + 1);
-      if (event.keyCode === 37) setActiveImageIndex(activeImageIndex - 1);
-      if (event.keyCode === 39) setActiveImageIndex(activeImageIndex + 1);
+      if (event.keyCode === 32) selectImage(activeImageIndex + 1);
+      if (event.keyCode === 37) selectImage(activeImageIndex - 1);
+      if (event.keyCode === 39) selectImage(activeImageIndex + 1);
     }
   };
 
@@ -57,13 +57,13 @@ function ProjectCardControls({
                   ? "clickable-text-element-dark"
                   : "clickable-text-element"
               }
-              onClick={() => setActiveImageIndex(activeImageIndex - 1)}
+              onClick={() => selectImage(activeImageIndex - 1)}
             />
             <div className="project-card-controls-image-buttons">
               {activeProject.images.map((image, index) => (
                 <ImageButton
                   activeImageIndex={activeImageIndex}
-                  setActiveImageIndex={setActiveImageIndex}
+                  selectImage={selectImage}
                   index={index}
                 />
               ))}
@@ -74,7 +74,7 @@ function ProjectCardControls({
                   ? "clickable-text-element-dark"
                   : "clickable-text-element"
               }
-              onClick={() => setActiveImageIndex(activeImageIndex + 1)}
+              onClick={() => selectImage(activeImageIndex + 1)}
             />
           </div>
         </>
@@ -83,12 +83,12 @@ function ProjectCardControls({
   );
 }
 
-const ImageButton = ({ activeImageIndex, setActiveImageIndex, index }) => (
+const ImageButton = ({ activeImageIndex, selectImage, index }) => (
   <span
     className={classNames({
       "project-card-controls-image-active-button": activeImageIndex === index,
     })}
-    onClick={() => setActiveImageIndex(index)}
+    onClick={() => selectImage(index)}
   />
 );
 
