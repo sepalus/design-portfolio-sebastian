@@ -121,25 +121,18 @@ const tyyniDesignProject = (catalogIsCompressed) => {
     categories: ["Product Design", "Acoustic Design", "Wall Panel Design"],
     displayableCategory: 1,
     images: ["tyyni1.jpg", "tyyni2.jpg", "tyyni3.jpg"],
-    descriptionStyle: {
-      ...descriptionPlacementBottomCentered,
-      left: catalogIsCompressed
-        ? catalogCollapsedWidthPlusMargin
-        : catalogWidthPlusMargin,
-      transition: "left 1s",
-    },
+    descriptionStyle: { ...descriptionPlacementTopRightCorner, right: "140px" },
     imageStyle: {
       common: {},
       individual: [
         {
           objectFit: "contain",
-          objectPosition: "0 0",
-          left: catalogIsCompressed ? catalogCollapsedWidth : catalogWidth,
-          transition: "left 1s",
+          left: "0px",
+          width: "auto",
         },
       ],
     },
-    mainColorDark: true,
+    mainColorDark: false,
     catalogColorDark: false,
     backgroundColor: backgroundColorDark,
   };
