@@ -1,6 +1,7 @@
 @import "../variables";
 
 .project-card-controls {
+  opacity: 0;
   position: absolute;
   bottom: 0px;
   left: 0px;
@@ -47,5 +48,28 @@
 
   span:not(.project-card-controls-image-active-button):hover {
     background-color: $element-color-mid-hover;
+  }
+}
+
+/* Animation */
+
+.project-section.project-section-animation-enter {
+  .project-card-controls {
+    animation: fadein1 0.8s forwards;
+  }
+}
+
+.project-section.project-section-animation-exit {
+  .project-card-controls {
+    opacity: 0;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
