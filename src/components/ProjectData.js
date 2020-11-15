@@ -1,6 +1,35 @@
 import variables from "../variables.js";
 
-const { catalogWidth, catalogWidthPlusMargin } = variables;
+const {
+  catalogWidth,
+  catalogWidthPlusMargin,
+  catalogCollapsedWidthPlusMargin,
+} = variables;
+
+const descriptionPlacementTopRightCorner = {
+  top: "126px",
+  right: "100px",
+  width: "285px",
+};
+
+const descriptionPlacementRightCenter = {
+  width: "256px",
+  top: "50%",
+  transform: "translateY(-50%)",
+  right: "100px",
+};
+
+const descriptionPlacementBottomCentered = {
+  width: "520px",
+  bottom: "90px",
+  left: catalogWidthPlusMargin,
+};
+
+const descriptionPlacementTopCentered = {
+  top: "70px",
+  left: catalogWidthPlusMargin,
+  width: "520px",
+};
 
 const kaarnaDesignProject = {
   id: "kaarna",
@@ -12,11 +41,7 @@ const kaarnaDesignProject = {
   categories: ["Product Design", "Vehicle Design", "Urban Mobility"],
   displayableCategory: 1,
   images: ["kaarna1.jpg", "kaarna2.jpg", "kaarna3.jpg", "kaarna4.jpg"],
-  descriptionStyle: {
-    top: "126px",
-    right: "100px",
-    width: "285px",
-  },
+  descriptionStyle: descriptionPlacementTopRightCorner,
   mainColorDark: false,
   controlColorDark: true,
   backgroundColor: "black",
@@ -36,34 +61,34 @@ const lamppuDesignProject = {
   backgroundColor: "black",
 };
 
-const tyyniDesignProject = {
-  id: "tyyni",
-  title: "Tyyni",
-  description:
-    "A sound diffusing wall element, with oustanding acoustic qualities and beautiful form. The overall shape of Tyyni is based on a tested mathematical equation that ensures a high-quality sonic experinece. The wave-like form gives a visual expression that matches the acoustic qualities - without compromising the sound.",
-  year: 2017,
-  isTeam: false,
-  categories: ["Product Design", "Acoustic Design", "Wall Panel Design"],
-  displayableCategory: 1,
-  mainImage: [],
-  images: ["tyyni.jpg", "tyyni1.jpg", "tyyni2.jpg"],
-  classes: "contain",
-  descriptionStyle: {
-    left: catalogWidthPlusMargin,
-    right: "80px",
-    bottom: "40px",
-  },
-  imageStyle: {
-    boxSizing: "border-box",
-    height: "100%",
-    top: "0px",
-    objectPosition: "0 0",
-    paddingLeft: "auto",
-    paddingRight: "auto",
-  },
-  mainColorDark: true,
-  catalogColorDark: false,
-  backgroundColor: "#666666",
+const tyyniDesignProject = (catalogIsCompressed) => {
+  return {
+    id: "tyyni",
+    title: "Tyyni",
+    description:
+      "A sound diffusing wall element, with oustanding acoustic qualities and beautiful form. The overall shape of Tyyni is based on a tested mathematical equation that ensures a high-quality sonic experinece. The wave-like form gives a visual expression that matches the acoustic qualities - without compromising the sound.",
+    year: 2017,
+    isTeam: false,
+    categories: ["Product Design", "Acoustic Design", "Wall Panel Design"],
+    displayableCategory: 1,
+    images: ["tyyni1.jpg", "tyyni2.jpg", "tyyni3.jpg"],
+    descriptionStyle: {
+      ...descriptionPlacementBottomCentered,
+      left: catalogIsCompressed
+        ? catalogCollapsedWidthPlusMargin
+        : catalogWidthPlusMargin,
+      transition: "left 0.9s",
+      transitionDelay: "0.1s",
+    },
+    imageStyle: {
+      objectFit: "contain",
+      marginLeft: "auto",
+      marginRight: "auto",
+    },
+    mainColorDark: true,
+    catalogColorDark: false,
+    backgroundColor: "black",
+  };
 };
 
 const kuutamoDesignProject = {
@@ -95,40 +120,6 @@ const kiskoDesignProject = {
   backgroundColor: "white",
 };
 
-const kolmioillaDesignProject = {
-  id: "kolmiot",
-  title: "Kohdataan Kolmioilla",
-  description:
-    "Three pieces of street furniture that create a space that encourages both planned and incidental encounters. The concept is designed for an unused triangle-shaped cobblestone plaza in front of the Helsinki Design Museum, where three neighborhoods meet. Together the triangular pieces of furniture create a cultural meeting point for city residents.",
-  year: 2020,
-  isTeam: true,
-  designTeam: ["Sebastian Högnabba", "Johanna Kesälä", "Anna Akins"],
-  categories: ["Street Furniture Design", "Chair Design", "Spatial Design"],
-  displayableCategory: 2,
-  images: ["kolmiot1.png", "kolmiot2.png", "kolmiot3.png", "kolmiot4.png"],
-  descriptionStyle: {
-    top: "70px",
-    left: catalogWidthPlusMargin,
-    right: "80px",
-  },
-  carouselStyle: {
-    individual: [
-      {},
-      {},
-      {},
-      {
-        height: "100%",
-        objectFit: "cover",
-        marginLeft: "120px",
-        marginRight: "120px",
-        width: "calc(100% - 240px)",
-      },
-    ],
-  },
-  mainColorDark: false,
-  backgroundColor: "black",
-};
-
 const kierreDesignProject = {
   id: "kierre",
   title: "Kierre",
@@ -153,14 +144,8 @@ const kierreDesignProject = {
   imageStyle: {
     paddingTop: "80px",
     paddingBottom: "80px",
-    paddingLeft: "150px",
   },
-  descriptionStyle: {
-    width: "235px",
-    top: "50%",
-    transform: "translateY(-50%)",
-    right: "80px",
-  },
+  descriptionStyle: descriptionPlacementRightCenter,
   carouselStyle: {
     common: {
       padding: "40px 0px 60px",
@@ -173,6 +158,43 @@ const kierreDesignProject = {
   mainColorDark: false,
   backgroundColor: "black",
 };
+
+const kolmioillaDesignProject = (catalogIsCompressed) => ({
+  id: "kolmiot",
+  title: "Kohdataan Kolmioilla",
+  description:
+    "Three pieces of street furniture that create a space that encourages both planned and incidental encounters. The concept is designed for an unused triangle-shaped cobblestone plaza in front of the Helsinki Design Museum, where three neighborhoods meet. Together the triangular pieces of furniture create a cultural meeting point for city residents.",
+  year: 2020,
+  isTeam: true,
+  designTeam: ["Sebastian Högnabba", "Johanna Kesälä", "Anna Akins"],
+  categories: ["Street Furniture Design", "Chair Design", "Spatial Design"],
+  displayableCategory: 2,
+  images: ["kolmiot1.png", "kolmiot2.png", "kolmiot3.png", "kolmiot4.png"],
+  descriptionStyle: {
+    ...descriptionPlacementTopCentered,
+    left: catalogIsCompressed
+      ? catalogCollapsedWidthPlusMargin
+      : catalogWidthPlusMargin,
+    transition: "left 0.9s",
+    transitionDelay: "0.1s",
+  },
+  carouselStyle: {
+    individual: [
+      {},
+      {},
+      {},
+      {
+        height: "100%",
+        objectFit: "cover",
+        marginLeft: "120px",
+        marginRight: "120px",
+        width: "calc(100% - 240px)",
+      },
+    ],
+  },
+  mainColorDark: false,
+  backgroundColor: "black",
+});
 
 const museDesignProject = {
   id: "muse",
@@ -373,14 +395,14 @@ export const aestheticsDesignProjects = [
   },
 ];
 
-export const industrialProjects = [
+export const industrialProjects = (catalogIsCompressed) => [
   kaarnaDesignProject,
-  tyyniDesignProject,
+  tyyniDesignProject(catalogIsCompressed),
   kierreDesignProject,
-  kolmioillaDesignProject,
+  kolmioillaDesignProject(catalogIsCompressed),
 ];
 
-export const digitalProjects = [
+export const digitalProjects = (catalogIsCompressed) => [
   museDesignProject,
   anneliinaDesignProject,
   scootDesignProject,

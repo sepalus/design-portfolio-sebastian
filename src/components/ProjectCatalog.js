@@ -9,10 +9,10 @@ function ProjectCatalog({
   projects,
   activeProjectIndex,
   setActiveImageIndex,
-
   setActiveProjectIndex,
+  catalogIsCompressed,
+  setCatalogIsCompressed,
 }) {
-  const [isCompressed, setIsCompressed] = useState(false);
   const isDigital = designArea === 2;
 
   const catalogIsDark = projects[activeProjectIndex].hasOwnProperty(
@@ -25,13 +25,15 @@ function ProjectCatalog({
     <div
       className={classNames(
         "project-catalog",
-        { "project-catalog-compressed animate-catalog-compress": isCompressed },
-        { "animate-catalog-expand": !isCompressed },
+        {
+          "project-catalog-compressed animate-catalog-compress": catalogIsCompressed,
+        },
+        { "animate-catalog-expand": !catalogIsCompressed },
         { "project-catalog-dark": catalogIsDark }
       )}
     >
       <h2>
-        {isCompressed
+        {catalogIsCompressed
           ? ""
           : isDigital
           ? "Digital and Service"
@@ -55,7 +57,7 @@ function ProjectCatalog({
                   setActiveProjectIndex(index);
                 }}
               >
-                {isCompressed ? (
+                {catalogIsCompressed ? (
                   <img src={`./assets/icons/${project.id}.png`} alt="" />
                 ) : (
                   <h4>{project.title}</h4>
@@ -68,10 +70,15 @@ function ProjectCatalog({
       <div className="vertical-line vertical-line-top"></div>
       <div className="vertical-line vertical-line-bottom"></div>
       <div className="project-catalog-expand-button">
-        {(isCompressed && !isDigital) || (!isCompressed && isDigital) ? (
-          <ChevronRight onClick={() => setIsCompressed(!isCompressed)} />
+        {(catalogIsCompressed && !isDigital) ||
+        (!catalogIsCompressed && isDigital) ? (
+          <ChevronRight
+            onClick={() => setCatalogIsCompressed(!catalogIsCompressed)}
+          />
         ) : (
-          <ChevronLeft onClick={() => setIsCompressed(!isCompressed)} />
+          <ChevronLeft
+            onClick={() => setCatalogIsCompressed(!catalogIsCompressed)}
+          />
         )}
       </div>
     </div>

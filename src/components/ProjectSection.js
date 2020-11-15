@@ -21,13 +21,14 @@ function ProjectSection({
 }) {
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const [catalogIsCompressed, setCatalogIsCompressed] = useState(false);
 
   const projects =
     designArea === 3
       ? aestheticsDesignProjects
       : designArea === 2
-      ? digitalProjects
-      : industrialProjects;
+      ? digitalProjects(catalogIsCompressed)
+      : industrialProjects(catalogIsCompressed);
 
   if (activeProjectIndex >= projects.length) setActiveProjectIndex(0);
 
@@ -63,6 +64,8 @@ function ProjectSection({
           activeProjectIndex={activeProjectIndex}
           setActiveImageIndex={setActiveImageIndex}
           setActiveProjectIndex={setActiveProjectIndex}
+          catalogIsCompressed={catalogIsCompressed}
+          setCatalogIsCompressed={setCatalogIsCompressed}
         />
         <ProjectCard
           currentViewport={currentViewport}
@@ -71,6 +74,7 @@ function ProjectSection({
           activeImageIndex={activeImageIndex}
           setActiveImageIndex={setActiveImageIndex}
           designArea={designArea}
+          catalogIsCompressed={catalogIsCompressed}
         />
       </div>
     </section>

@@ -10,9 +10,14 @@ function ProjectCardDescription({
   designArea,
   activeProject,
   activeImageIndex,
+  catalogIsCompressed,
 }) {
   const [showTeam, setShowTeam] = useState(false);
   const [toggleDescriptionClass, setToggleDescriptionClass] = useState(0);
+
+  useEffect(() => {
+    setToggleDescriptionClass(2);
+  }, [catalogIsCompressed]);
 
   useEffect(() => {
     setToggleDescriptionClass(activeImageIndex === 0 ? 2 : 0);
@@ -22,7 +27,7 @@ function ProjectCardDescription({
     if (activeImageIndex !== 0) setToggleDescriptionClass(0);
     else if (currentViewport !== designArea) setToggleDescriptionClass(0);
     else setToggleDescriptionClass(toggleDescriptionClass === 1 ? -1 : 1);
-  }, [activeProject, designArea, currentViewport]);
+  }, [activeProject.id, designArea, currentViewport]);
 
   const descriptionIsDark = activeProject.hasOwnProperty("descriptionColorDark")
     ? activeProject.catalogColorDark

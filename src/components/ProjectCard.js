@@ -11,6 +11,7 @@ function ProjectCard({
   activeImageIndex,
   setActiveImageIndex,
   designArea,
+  catalogIsCompressed,
 }) {
   const [toggleCardClass, setToggleCardClass] = useState(0);
   const activeProject = projects[activeProjectIndex];
@@ -68,6 +69,7 @@ function ProjectCard({
           designArea={designArea}
           activeProject={activeProject}
           activeImageIndex={activeImageIndex}
+          catalogIsCompressed={catalogIsCompressed}
         />
       </div>
       <ProjectCardControls
