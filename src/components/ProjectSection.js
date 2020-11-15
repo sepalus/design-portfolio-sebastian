@@ -71,7 +71,6 @@ function ProjectSection({
           activeImageIndex={activeImageIndex}
           setActiveImageIndex={setActiveImageIndex}
           designArea={designArea}
-          animationDirectionIn={currentViewport === 1}
         />
       </div>
     </section>

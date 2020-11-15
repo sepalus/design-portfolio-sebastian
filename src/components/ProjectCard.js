@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import classNames from "classnames";
 import "./ProjectCard.scss";
 import ProjectCardDescription from "./ProjectCardDescription";
@@ -11,13 +11,21 @@ function ProjectCard({
   activeImageIndex,
   setActiveImageIndex,
   designArea,
-  animationDirectionIn,
 }) {
+  const [toggleCardClass, setToggleCardClass] = useState(0);
   const activeProject = projects[activeProjectIndex];
   const imageAmount = activeProject.images.length;
 
   if (activeImageIndex < 0) setActiveImageIndex(imageAmount - 1);
   if (activeImageIndex > imageAmount - 1) setActiveImageIndex(0);
+
+  useEffect(() => {
+    setToggleCardClass(currentViewport === designArea ? 1 : 0);
+  }, [currentViewport]);
+
+  useEffect(() => {
+    setToggleCardClass(-toggleCardClass);
+  }, [activeImageIndex, activeProjectIndex]);
 
   return (
     <div
@@ -31,9 +39,21 @@ function ProjectCard({
       <div className="project-card-image-container">
         {activeProject.images.map((image, index) => (
           <div
-            className={classNames("project-card-image-wrapper", {
-              "project-card-image-wrapper-active": activeImageIndex === index,
-            })}
+            className={classNames(
+              "project-card-image-wrapper",
+              {
+                "project-card-image-wrapper-active": index === activeImageIndex,
+              },
+              {
+                "animate-card-fade-in-1": toggleCardClass === 1,
+              },
+              {
+                "animate-card-fade-in-2": toggleCardClass === -1,
+              },
+              {
+                "animate-card-fade-out": toggleCardClass === 0,
+              }
+            )}
           >
             <img
               src={`./assets/${image}`}
