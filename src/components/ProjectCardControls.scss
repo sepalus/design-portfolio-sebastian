@@ -12,10 +12,12 @@
   }
 
   > :first-of-type {
-    left: 60px;
+    left: 50%;
+    transform: translate(-150px, 6px);
   }
   > :nth-of-type(2) {
-    right: 60px;
+    right: 50%;
+    transform: translate(150px, 6px);
   }
 }
 

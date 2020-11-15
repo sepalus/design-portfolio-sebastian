@@ -20,6 +20,8 @@ function ProjectSection({
   skipProjectSection,
 }) {
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+
   const projects =
     designArea === 3
       ? aestheticsDesignProjects
@@ -59,12 +61,15 @@ function ProjectSection({
           designArea={designArea}
           projects={projects}
           activeProjectIndex={activeProjectIndex}
+          setActiveImageIndex={setActiveImageIndex}
           setActiveProjectIndex={setActiveProjectIndex}
         />
         <ProjectCard
           currentViewport={currentViewport}
           projects={projects}
           activeProjectIndex={activeProjectIndex}
+          activeImageIndex={activeImageIndex}
+          setActiveImageIndex={setActiveImageIndex}
           designArea={designArea}
           animationDirectionIn={currentViewport === 1}
         />

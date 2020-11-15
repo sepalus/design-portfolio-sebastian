@@ -8,30 +8,32 @@ function ProjectCatalog({
   designArea,
   projects,
   activeProjectIndex,
+  setActiveImageIndex,
+
   setActiveProjectIndex,
 }) {
   const [isCompressed, setIsCompressed] = useState(false);
+  const isDigital = designArea === 2;
+
+  const catalogIsDark = projects[activeProjectIndex].hasOwnProperty(
+    "catalogColorDark"
+  )
+    ? projects[activeProjectIndex].catalogColorDark
+    : projects[activeProjectIndex].mainColorDark || false;
 
   return (
     <div
       className={classNames(
         "project-catalog",
-        { "project-catalog-compressed": isCompressed },
-        {
-          "project-catalog-dark": projects[activeProjectIndex].hasOwnProperty(
-            "styleCatalogDarkColor"
-          )
-            ? projects[activeProjectIndex].styleCatalogDarkColor
-            : projects[activeProjectIndex].styleDarkColor,
-        }
+        { "project-catalog-compressed animate-catalog-compress": isCompressed },
+        { "animate-catalog-expand": !isCompressed },
+        { "project-catalog-dark": catalogIsDark }
       )}
     >
       <h2>
         {isCompressed
           ? ""
-          : designArea === 3
-          ? "Aesthetics"
-          : designArea === 2
+          : isDigital
           ? "Digital and Service"
           : "Products and Furniture"}
       </h2>
@@ -48,7 +50,11 @@ function ProjectCatalog({
                 className={classNames("link-button", {
                   "icon-button icon-button-space": isActive,
                 })}
-                onClick={() => setActiveProjectIndex(index)}
+                onClick={() =>
+                  isActive
+                    ? setActiveImageIndex(0)
+                    : setActiveProjectIndex(index)
+                }
               >
                 {isCompressed ? (
                   <img src={`./assets/icons/${project.id}.png`} alt="K" />
@@ -63,7 +69,7 @@ function ProjectCatalog({
       <div className="vertical-line vertical-line-top"></div>
       <div className="vertical-line vertical-line-bottom"></div>
       <div className="project-catalog-expand-button">
-        {isCompressed ? (
+        {(isCompressed && !isDigital) || (!isCompressed && isDigital) ? (
           <ChevronRight onClick={() => setIsCompressed(!isCompressed)} />
         ) : (
           <ChevronLeft onClick={() => setIsCompressed(!isCompressed)} />

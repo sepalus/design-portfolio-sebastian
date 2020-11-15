@@ -6,10 +6,13 @@
 }
 
 .project-card-image-container {
-  height: calc(100% - 120px);
+  height: 100%;
 }
 
 .project-card-controls-container {
+  position: absolute;
+  bottom: 0px;
+  left: 200px;
   height: 120px;
   background-color: $background-color-dark;
   border-top: 1px solid $text-color-light;
@@ -43,19 +46,6 @@
 
 .project-card-image-wrapper-active {
   display: block;
-}
-
-.project-section-industrial {
-  img.contain {
-    padding-left: 300px;
-  }
-}
-
-.project-section-digital {
-  img.contain {
-    padding: 70px;
-    padding-right: 400px;
-  }
 }
 
 /* Animation */

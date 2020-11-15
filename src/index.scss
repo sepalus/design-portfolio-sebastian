@@ -146,15 +146,6 @@ ul {
   cursor: pointer;
 }
 
-.clickable-background-element {
-  background-color: $background-color-dark-cover-opaque;
-}
-
-.clickable-background-element:hover {
-  cursor: pointer;
-  background-color: $background-color-dark-cover-opaque-hover;
-}
-
 .disabled-button {
   cursor: text;
 }

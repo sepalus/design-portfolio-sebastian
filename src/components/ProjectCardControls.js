@@ -7,18 +7,22 @@ import Close from "@material-ui/icons/Close";
 
 function ProjectCardControls({
   activeProject,
-  activeImage,
-  setActiveImage,
+  activeImageIndex,
+  setActiveImageIndex,
   imageAmount,
   currentViewport,
 }) {
   const keyPressHandler = (event) => {
     if (currentViewport === 1 || currentViewport === 2) {
-      if (event.keyCode === 32) setActiveImage(activeImage + 1);
-      if (event.keyCode === 37) setActiveImage(activeImage - 1);
-      if (event.keyCode === 39) setActiveImage(activeImage + 1);
+      if (event.keyCode === 32) setActiveImageIndex(activeImageIndex + 1);
+      if (event.keyCode === 37) setActiveImageIndex(activeImageIndex - 1);
+      if (event.keyCode === 39) setActiveImageIndex(activeImageIndex + 1);
     }
   };
+
+  const controlIsDark = activeProject.hasOwnProperty("controlColorDark")
+    ? activeProject.controlColorDark
+    : activeProject.mainColorDark || false;
 
   useEffect(() => {
     window.addEventListener("keydown", keyPressHandler);
@@ -34,27 +38,27 @@ function ProjectCardControls({
           <div className="project-card-controls-next-buttons">
             <ChevronLeft
               className={
-                activeProject.styleDarkColor
+                controlIsDark
                   ? "clickable-text-element-dark"
                   : "clickable-text-element"
               }
-              onClick={() => setActiveImage(activeImage - 1)}
+              onClick={() => setActiveImageIndex(activeImageIndex - 1)}
             ></ChevronLeft>
             <ChevronRight
               className={
-                activeProject.styleDarkColor
+                controlIsDark
                   ? "clickable-text-element-dark"
                   : "clickable-text-element"
               }
-              onClick={() => setActiveImage(activeImage + 1)}
+              onClick={() => setActiveImageIndex(activeImageIndex + 1)}
             ></ChevronRight>
           </div>
 
           <div className="project-card-controls-image-buttons">
             {activeProject.images.map((image, index) => (
               <ImageButton
-                activeImage={activeImage}
-                setActiveImage={setActiveImage}
+                activeImageIndex={activeImageIndex}
+                setActiveImageIndex={setActiveImageIndex}
                 index={index}
               />
             ))}
@@ -65,12 +69,12 @@ function ProjectCardControls({
   );
 }
 
-const ImageButton = ({ activeImage, setActiveImage, index }) => (
+const ImageButton = ({ activeImageIndex, setActiveImageIndex, index }) => (
   <span
     className={classNames({
-      "project-card-controls-image-active-button": activeImage === index,
+      "project-card-controls-image-active-button": activeImageIndex === index,
     })}
-    onClick={() => setActiveImage(index)}
+    onClick={() => setActiveImageIndex(index)}
   />
 );
 

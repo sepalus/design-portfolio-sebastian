@@ -9,10 +9,17 @@ function ProjectCardDescription({
   currentViewport,
   designArea,
   activeProject,
+  activeImageIndex,
 }) {
   const [showTeam, setShowTeam] = useState(false);
+
+  const descriptionIsDark = activeProject.hasOwnProperty("descriptionColorDark")
+    ? activeProject.catalogColorDark
+    : activeProject.mainColorDark || false;
+
   const animationDirectionIn = () => {
     if (
+      activeImageIndex !== 0 ||
       currentViewport !== designArea ||
       (currentViewport !== 1 && currentViewport !== 2)
     )
@@ -24,6 +31,9 @@ function ProjectCardDescription({
     <div
       className={classNames(
         "project-card-description",
+        {
+          "project-card-description-dark": descriptionIsDark,
+        },
         {
           "animate-description-in": animationDirectionIn(),
         },

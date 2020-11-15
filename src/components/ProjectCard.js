@@ -8,32 +8,31 @@ function ProjectCard({
   currentViewport,
   projects,
   activeProjectIndex,
+  activeImageIndex,
+  setActiveImageIndex,
   designArea,
   animationDirectionIn,
 }) {
-  const [activeImage, setActiveImage] = useState(0);
   const activeProject = projects[activeProjectIndex];
   const imageAmount = activeProject.images.length;
 
-  if (activeImage < 0) setActiveImage(imageAmount - 1);
-  if (activeImage > imageAmount - 1) setActiveImage(0);
+  if (activeImageIndex < 0) setActiveImageIndex(imageAmount - 1);
+  if (activeImageIndex > imageAmount - 1) setActiveImageIndex(0);
 
   return (
     <div
-      className={classNames("project-card", {
-        "project-card-dark": activeProject.styleDarkColor,
-      })}
+      className="project-card"
       style={{
         backgroundColor: activeProject.backgroundColor || "black",
-        color: activeProject.styleDarkColor ? "black" : "white",
-        borderColor: activeProject.styleDarkColor ? "black" : "white",
+        color: activeProject.mainColorDark ? "black" : "white",
+        borderColor: activeProject.mainColorDark ? "black" : "white",
       }}
     >
       <div className="project-card-image-container">
         {activeProject.images.map((image, index) => (
           <div
             className={classNames("project-card-image-wrapper", {
-              "project-card-image-wrapper-active": activeImage === index,
+              "project-card-image-wrapper-active": activeImageIndex === index,
             })}
           >
             <img
@@ -47,20 +46,19 @@ function ProjectCard({
         <ProjectCardDescription
           currentViewport={currentViewport}
           designArea={designArea}
-          project={activeProject}
           activeProject={activeProject}
+          activeImageIndex={activeImageIndex}
         />
       </div>
       <div className="project-card-controls-container">
         <ProjectCardControls
           currentViewport={currentViewport}
           activeProject={activeProject}
-          activeImage={activeImage}
-          setActiveImage={setActiveImage}
+          activeImageIndex={activeImageIndex}
+          setActiveImageIndex={setActiveImageIndex}
           imageAmount={imageAmount}
         />
       </div>
-      );
     </div>
   );
 }

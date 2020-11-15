@@ -17,7 +17,8 @@ const kaarnaDesignProject = {
     right: "100px",
     width: "285px",
   },
-  styleDarkColor: false,
+  mainColorDark: false,
+  controlColorDark: true,
   backgroundColor: "black",
 };
 
@@ -31,7 +32,7 @@ const lamppuDesignProject = {
   categories: ["Furniture Design", "Lamp Design", "Lighting Design"],
   displayableCategory: 1,
   images: ["lamp.png"],
-  styleDarkColor: false,
+  mainColorDark: false,
   backgroundColor: "black",
 };
 
@@ -44,8 +45,9 @@ const tyyniDesignProject = {
   isTeam: false,
   categories: ["Product Design", "Acoustic Design", "Wall Panel Design"],
   displayableCategory: 1,
-  mainImage: ["tyyni.jpg"],
-  images: ["tyyni1.jpg", "tyyni2.jpg"],
+  mainImage: [],
+  images: ["tyyni.jpg", "tyyni1.jpg", "tyyni2.jpg"],
+  classes: "contain",
   descriptionStyle: {
     left: catalogWidthPlusMargin,
     right: "80px",
@@ -53,14 +55,15 @@ const tyyniDesignProject = {
   },
   imageStyle: {
     boxSizing: "border-box",
-    width: "100%",
+    height: "100%",
     top: "0px",
     objectPosition: "0 0",
-    paddingLeft: catalogWidth,
+    paddingLeft: "auto",
+    paddingRight: "auto",
   },
-  styleCatalogDarkColor: false,
-  styleDarkColor: true,
-  backgroundColor: "#333333",
+  mainColorDark: true,
+  catalogColorDark: false,
+  backgroundColor: "#666666",
 };
 
 const kuutamoDesignProject = {
@@ -73,7 +76,7 @@ const kuutamoDesignProject = {
   categories: ["Product Design", "Furniture Design", "Lamp Design"],
   displayableCategory: 2,
   images: ["kuu.png"],
-  styleDarkColor: false,
+  mainColorDark: false,
   backgroundColor: "black",
 };
 
@@ -88,7 +91,7 @@ const kiskoDesignProject = {
   displayableCategory: 2,
   images: ["kisko.png"],
   classes: "contain",
-  styleDarkColor: true,
+  mainColorDark: true,
   backgroundColor: "white",
 };
 
@@ -122,7 +125,7 @@ const kolmioillaDesignProject = {
       },
     ],
   },
-  styleDarkColor: false,
+  mainColorDark: false,
   backgroundColor: "black",
 };
 
@@ -167,7 +170,7 @@ const kierreDesignProject = {
     },
     individual: [{}, {}, {}, { transform: "translateX(40px)" }],
   },
-  styleDarkColor: false,
+  mainColorDark: false,
   backgroundColor: "black",
 };
 
@@ -235,7 +238,7 @@ const museDesignProject = {
       },
     ],
   },
-  styleDarkColor: true,
+  mainColorDark: true,
   backgroundColor: "#6bc9b7",
 };
 
@@ -283,7 +286,7 @@ const anneliinaDesignProject = {
       },
     ],
   },
-  styleDarkColor: true,
+  mainColorDark: true,
   backgroundColor: "#96c1d9",
 };
 
@@ -315,7 +318,7 @@ const scootDesignProject = {
       margin: "auto",
     },
   },
-  styleDarkColor: true,
+  mainColorDark: true,
   backgroundColor: "#f8f379",
 };
 
@@ -352,7 +355,7 @@ const axiomDesignProject = {
     right: "445px",
     width: "425px",
   },
-  styleDarkColor: true,
+  mainColorDark: true,
   backgroundColor: "#d2ebf9",
 };
 
@@ -365,7 +368,7 @@ export const aestheticsDesignProjects = [
     categories: ["Beauty", "Cuteness", "Hotness"],
     displayableCategory: 0,
     images: [""],
-    styleDarkColor: true,
+    mainColorDark: true,
     backgroundColor: "black",
   },
 ];
