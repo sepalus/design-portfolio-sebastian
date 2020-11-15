@@ -242,9 +242,10 @@ const museDesignProject = (catalogIsCompressed) => ({
       {
         marginTop: "70px",
         marginBottom: "280px",
-        left: "80px",
+        left: catalogIsCompressed ? "150px" : "80px",
         width: "auto",
         height: "calc(100% - 350px)",
+        transition: "left 1s",
       },
       { backgroundColor: "white", paddingTop: "20px", paddingBottom: "20px" },
       { backgroundColor: "white", paddingTop: "40px", paddingBottom: "40px" },
@@ -256,9 +257,12 @@ const museDesignProject = (catalogIsCompressed) => ({
     ],
   },
   descriptionStyle: {
-    right: catalogWidthPlusMargin,
-    left: "80px",
+    right: catalogIsCompressed
+      ? catalogCollapsedWidthPlusMargin
+      : catalogWidthPlusMargin,
+    left: catalogIsCompressed ? "150px" : "80px",
     bottom: "90px",
+    transition: "left 1s, right 1s",
   },
   carouselStyle: {
     common: {
