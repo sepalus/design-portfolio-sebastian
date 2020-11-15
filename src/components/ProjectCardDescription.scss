@@ -129,6 +129,18 @@
   }
 }
 
+.animate-description-static {
+  .project-card-description-title,
+  .project-card-description-text,
+  .project-card-description-tag-wrapper {
+    opacity: 1;
+  }
+
+  .vertical-line {
+    height: 100%;
+  }
+}
+
 @keyframes fadein1 {
   from {
     opacity: 0;

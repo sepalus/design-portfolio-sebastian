@@ -15,13 +15,14 @@ function ProjectCardDescription({
   const [toggleDescriptionClass, setToggleDescriptionClass] = useState(0);
 
   useEffect(() => {
-    if (activeImageIndex !== 0 || currentViewport !== designArea)
-      setToggleDescriptionClass(0);
-    else
-      setToggleDescriptionClass(
-        toggleDescriptionClass === 0 ? 1 : -toggleDescriptionClass
-      );
-  }, [activeProject, activeImageIndex, currentViewport]);
+    setToggleDescriptionClass(activeImageIndex === 0 ? 2 : 0);
+  }, [activeImageIndex]);
+
+  useEffect(() => {
+    if (activeImageIndex !== 0) setToggleDescriptionClass(0);
+    else if (currentViewport !== designArea) setToggleDescriptionClass(0);
+    else setToggleDescriptionClass(toggleDescriptionClass === 1 ? -1 : 1);
+  }, [activeProject, designArea, currentViewport]);
 
   const descriptionIsDark = activeProject.hasOwnProperty("descriptionColorDark")
     ? activeProject.catalogColorDark
@@ -42,6 +43,9 @@ function ProjectCardDescription({
         },
         {
           "animate-description-out": toggleDescriptionClass === 0,
+        },
+        {
+          "animate-description-static": toggleDescriptionClass === 2,
         }
       )}
       style={{
