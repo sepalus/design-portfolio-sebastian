@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import classNames from "classnames";
 import Person from "@material-ui/icons/Person";
 import People from "@material-ui/icons/People";
@@ -12,20 +12,20 @@ function ProjectCardDescription({
   activeImageIndex,
 }) {
   const [showTeam, setShowTeam] = useState(false);
+  const [toggleDescriptionClass, setToggleDescriptionClass] = useState(0);
+
+  useEffect(() => {
+    if (activeImageIndex !== 0 || currentViewport !== designArea)
+      setToggleDescriptionClass(0);
+    else
+      setToggleDescriptionClass(
+        toggleDescriptionClass === 0 ? 1 : -toggleDescriptionClass
+      );
+  }, [activeProject, activeImageIndex, currentViewport]);
 
   const descriptionIsDark = activeProject.hasOwnProperty("descriptionColorDark")
     ? activeProject.catalogColorDark
     : activeProject.mainColorDark || false;
-
-  const animationDirectionIn = () => {
-    if (
-      activeImageIndex !== 0 ||
-      currentViewport !== designArea ||
-      (currentViewport !== 1 && currentViewport !== 2)
-    )
-      return false;
-    return true;
-  };
 
   return (
     <div
@@ -35,10 +35,13 @@ function ProjectCardDescription({
           "project-card-description-dark": descriptionIsDark,
         },
         {
-          "animate-description-in": animationDirectionIn(),
+          "animate-description-in-1": toggleDescriptionClass === 1,
         },
         {
-          "animate-description-out": !animationDirectionIn(),
+          "animate-description-in-2": toggleDescriptionClass === -1,
+        },
+        {
+          "animate-description-out": toggleDescriptionClass === 0,
         }
       )}
       style={{

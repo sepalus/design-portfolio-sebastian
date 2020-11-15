@@ -50,11 +50,10 @@ function ProjectCatalog({
                 className={classNames("link-button", {
                   "icon-button icon-button-space": isActive,
                 })}
-                onClick={() =>
-                  isActive
-                    ? setActiveImageIndex(0)
-                    : setActiveProjectIndex(index)
-                }
+                onClick={() => {
+                  setActiveImageIndex(0);
+                  setActiveProjectIndex(index);
+                }}
               >
                 {isCompressed ? (
                   <img src={`./assets/icons/${project.id}.png`} alt="" />

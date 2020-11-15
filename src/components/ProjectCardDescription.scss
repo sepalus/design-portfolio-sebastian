@@ -83,19 +83,36 @@
 
 /* Animation */
 
-.animate-description-in {
+.animate-description-in-1 {
   .project-card-description-title {
-    animation: fadein 0.7s forwards;
+    animation: fadein1 0.7s forwards;
     animation-delay: 0.3s;
   }
   .project-card-description-text,
   .project-card-description-tag-wrapper {
-    animation: fadein 1s forwards;
+    animation: fadein1 1s forwards;
     animation-delay: 0.8s;
   }
 
   .vertical-line {
-    animation: linedowndescription 0.8s forwards;
+    animation: linedowndescription1 0.8s forwards;
+    animation-delay: 0.8s;
+  }
+}
+
+.animate-description-in-2 {
+  .project-card-description-title {
+    animation: fadein2 0.7s forwards;
+    animation-delay: 0.3s;
+  }
+  .project-card-description-text,
+  .project-card-description-tag-wrapper {
+    animation: fadein2 1s forwards;
+    animation-delay: 0.8s;
+  }
+
+  .vertical-line {
+    animation: linedowndescription2 0.8s forwards;
     animation-delay: 0.8s;
   }
 }
@@ -106,12 +123,13 @@
   .project-card-description-tag-wrapper {
     opacity: 0;
   }
+
   .vertical-line {
-    height: 0;
+    height: 0px;
   }
 }
 
-@keyframes fadein {
+@keyframes fadein1 {
   from {
     opacity: 0;
   }
@@ -120,11 +138,29 @@
   }
 }
 
-@keyframes linedowndescription {
-  0% {
-    height: 0;
+@keyframes linedowndescription1 {
+  from {
+    height: 0px;
   }
-  100% {
+  to {
+    height: 100%;
+  }
+}
+
+@keyframes fadein2 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes linedowndescription2 {
+  from {
+    height: 0px;
+  }
+  to {
     height: 100%;
   }
 }
