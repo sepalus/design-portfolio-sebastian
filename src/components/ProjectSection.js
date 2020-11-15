@@ -51,6 +51,7 @@ function ProjectSection({
   };
 
   const selectProject = (projectIndex) => {
+    if (projectIndex === activeProjectIndex && activeImageIndex === 0) return;
     setActiveImageIndex(0);
     setActiveProjectIndex(projectIndex);
     setToggleCardClass(-toggleCardClass);
