@@ -176,14 +176,13 @@
 .project-section.project-section-animation-enter {
   .project-catalog {
     animation: moveup 0.5s forwards;
-    animation-delay: 0s;
+    animation-delay: 0.2s;
   }
 }
 
 .project-section.project-section-animation-exit {
   .project-catalog {
-    animation: fadeout 0.5s forwards;
-    animation-delay: 0;
+    opacity: 0;
   }
 }
 
@@ -229,14 +228,5 @@
   }
   to {
     opacity: 1;
-  }
-}
-
-@keyframes fadeout {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
   }
 }
