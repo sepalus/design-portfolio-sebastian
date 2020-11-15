@@ -165,7 +165,21 @@
     transition: right 1s;
     left: auto;
     transform: translate(50%, -50%);
+    background: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0) 50%,
+      $background-color-light-cover-transparent 50%
+    );
   }
+  .project-catalog-expand-button:hover {
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0) 100%,
+      $background-color-dark-cover-transparent 0%
+    );
+    background-color: $background-color-ultralight-hover-no-alpha;
+  }
+
   .vertical-line {
     right: $catalog-width;
     transition: right 1s;
