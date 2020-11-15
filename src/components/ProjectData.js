@@ -30,16 +30,41 @@ const descriptionPlacementBottomCentered = {
   left: catalogWidthPlusMargin,
 };
 
-const descriptionPlacementTopCentered = {
+const descriptionPlacementTopCenteredLeft = {
   top: "70px",
   left: catalogWidthPlusMargin,
   width: "520px",
 };
 
+const descriptionPlacementTopCenteredRight = {
+  top: "70px",
+  left: "80px",
+  right: catalogWidthPlusMargin,
+};
+
+const descriptionPlacementTopCenteredRightExpandable = (
+  catalogIsCompressed
+) => ({
+  ...descriptionPlacementTopCenteredRight,
+  right: catalogIsCompressed
+    ? catalogCollapsedWidthPlusMargin
+    : catalogWidthPlusMargin,
+  transition: "right 1s",
+});
+
 const imageStyleWide = {
   height: "calc(100% - 240px)",
   marginTop: "120px",
   marginBottom: "120px",
+};
+
+const imageStyleWeb = {
+  common: {
+    ...imageStyleWide,
+    padding: `0px ${catalogCollapsedWidthPlusMargin}`,
+    marginRight: "60px",
+  },
+  individual: [{ paddingTop: "180px" }],
 };
 
 const kaarnaDesignProject = {
@@ -182,7 +207,7 @@ const kolmioillaDesignProject = (catalogIsCompressed) => ({
   displayableCategory: 2,
   images: ["kolmiot1.png", "kolmiot2.png", "kolmiot3.png", "kolmiot4.png"],
   descriptionStyle: {
-    ...descriptionPlacementTopCentered,
+    ...descriptionPlacementTopCenteredLeft,
     left: catalogIsCompressed
       ? catalogCollapsedWidthPlusMargin
       : catalogWidthPlusMargin,
@@ -290,7 +315,7 @@ const museDesignProject = (catalogIsCompressed) => ({
   backgroundColor: "#6bc9b7",
 });
 
-const anneliinaDesignProject = {
+const anneliinaDesignProject = (catalogIsCompressed) => ({
   id: "anneliina",
   title: "Anneliina",
   description:
@@ -307,40 +332,15 @@ const anneliinaDesignProject = {
     "anneliina5.png",
   ],
   classes: "contain contain-center",
-  imageStyle: {
-    common: {
-      paddingTop: "270px",
-    },
-  },
-  descriptionStyle: {
-    top: "50px",
-    left: "80px",
-    right: catalogWidthPlusMargin,
-  },
-  carouselStyle: {
-    common: {
-      padding: "40px 0px 60px",
-      height: "calc(100% - 100px)",
-      width: "auto",
-      margin: "auto",
-    },
-    individual: [
-      {},
-      {},
-      {},
-      {},
-      {
-        padding: "15%",
-        height: "100%",
-        boxSizing: "border-box",
-      },
-    ],
-  },
+  imageStyle: imageStyleWeb,
+  descriptionStyle: descriptionPlacementTopCenteredRightExpandable(
+    catalogIsCompressed
+  ),
   mainColorDark: true,
   backgroundColor: "#96c1d9",
-};
+});
 
-const scootDesignProject = {
+const scootDesignProject = (catalogIsCompressed) => ({
   id: "scoot",
   title: "Scoot",
   description:
@@ -352,16 +352,10 @@ const scootDesignProject = {
   showVideo: true,
   images: ["scoot1.png", "scoot2.png", "scoot3.png"],
   classes: "contain contain-center",
-  imageStyle: {
-    common: {
-      paddingTop: "270px",
-    },
-  },
-  descriptionStyle: {
-    top: "50px",
-    left: "80px",
-    right: "480px",
-  },
+  imageStyle: imageStyleWeb,
+  descriptionStyle: descriptionPlacementTopCenteredRightExpandable(
+    catalogIsCompressed
+  ),
   carouselStyle: {
     common: {
       padding: "40px 0px 60px",
@@ -372,7 +366,7 @@ const scootDesignProject = {
   },
   mainColorDark: true,
   backgroundColor: "#f8f379",
-};
+});
 
 const axiomDesignProject = {
   id: "axiom",
@@ -434,7 +428,7 @@ export const industrialProjects = (catalogIsCompressed) => [
 
 export const digitalProjects = (catalogIsCompressed) => [
   museDesignProject(catalogIsCompressed),
-  anneliinaDesignProject,
-  scootDesignProject,
+  anneliinaDesignProject(catalogIsCompressed),
+  scootDesignProject(catalogIsCompressed),
   axiomDesignProject,
 ];

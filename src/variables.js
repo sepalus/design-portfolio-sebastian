@@ -1,9 +1,9 @@
 const variables = {
   catalogWidth: "380px",
-  catalogWidthPlusMargin: "480px",
+  catalogWidthPlusMargin: "460px",
   catalogRemainingWidth: "calc(100% - 380px)",
   catalogCollapsedWidth: "120px",
-  catalogCollapsedWidthPlusMargin: "220px",
+  catalogCollapsedWidthPlusMargin: "200px",
   catalogCollapsedRemainingWidth: "calc(100% - 120px)",
   backgroundColorBlack: "black",
   backgroundColorDark: "#101010",
