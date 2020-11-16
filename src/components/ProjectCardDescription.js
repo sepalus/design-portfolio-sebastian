@@ -47,7 +47,7 @@ function ProjectCardDescription({ activeProject, toggleDescriptionClass }) {
       <div className="project-card-description-tag-wrapper">
         <div className="project-card-description-tag">
           <CalendarToday className="project-card-description-tag-icon" />
-          <p> {activeProject.year}</p>
+          <p className="text-emphasized"> {activeProject.year}</p>
         </div>
         <div className="project-card-description-tag">
           {activeProject.isTeam ? (
@@ -65,6 +65,7 @@ function ProjectCardDescription({ activeProject, toggleDescriptionClass }) {
             )}
           >
             <p
+              className="text-emphasized"
               onMouseEnter={() => {
                 setShowTeam(true);
               }}

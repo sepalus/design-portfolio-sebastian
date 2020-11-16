@@ -145,7 +145,7 @@ function InformationSection({
                   changeViewport(1);
                 }}
               >
-                Industrial Designer
+                <p>Industrial Designer</p>
               </button>
               <button
                 className={`${introductionLabelClasses} ${classNames(
@@ -160,7 +160,7 @@ function InformationSection({
                   changeViewport(2);
                 }}
               >
-                Digital Creator
+                <p>Digital Creator</p>
               </button>
               <button
                 className={`disabled-button ${introductionLabelClasses} ${classNames(
@@ -175,7 +175,7 @@ function InformationSection({
                   return;
                 }}
               >
-                Genuine Aesthete
+                <p>Genuine Aesthete</p>
               </button>
               <p
                 className={classNames(
@@ -221,7 +221,7 @@ function InformationSection({
         >
           <div className="information-section-contact-content-wrapper">
             <div className="information-section-contact-icon-wrapper">
-              <p>Check me out:</p>
+              <p className="text-large">Check me out:</p>
               <a
                 href="https://www.linkedin.com/in/sebastian-högnabba-9a45a19b"
                 target="_blank"
@@ -241,7 +241,7 @@ function InformationSection({
               </a>
             </div>
             <div className="information-section-contact-icon-wrapper">
-              <p>Hit me up:</p>
+              <p className="text-large">Hit me up:</p>
               <div>
                 <div className="information-section-contact-icon-expandable-content-wrapper">
                   <div>{!showPhoneNumber && <PhoneIcon />}</div>
@@ -249,6 +249,7 @@ function InformationSection({
                     <div className="information-section-contact-icon-expandable-button-wrapper">
                       <span
                         className={classNames(
+                          "text-small",
                           {
                             "animate-copied-text-1": togglePhoneCopied === -1,
                           },
@@ -271,7 +272,7 @@ function InformationSection({
                         }}
                       >
                         <PhoneIcon />
-                        {phoneNumber}
+                        <p className="text-large"> {phoneNumber}</p>
                       </button>
                     </div>
                   )}
@@ -280,6 +281,7 @@ function InformationSection({
                     <div className="information-section-contact-icon-expandable-button-wrapper">
                       <span
                         className={classNames(
+                          "text-small",
                           {
                             "animate-copied-text-1": toggleEmailCopied === -1,
                           },
@@ -300,7 +302,7 @@ function InformationSection({
                         }}
                       >
                         <EmailIcon />
-                        {emailAddress}
+                        <p className="text-large"> {emailAddress}</p>
                       </button>
                     </div>
                   )}
