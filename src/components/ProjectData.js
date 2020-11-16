@@ -80,6 +80,12 @@ const imageStyleWebMain = (catalogIsCompressed) => ({
   width: "auto",
 });
 
+const imageStyleWebTablet = (catalogIsCompressed) => ({
+  left: catalogIsCompressed ? "118px" : "68px",
+  margin: "350px 0px 100px -20px",
+  height: "calc(100% - 450px)",
+});
+
 const imageStyleServiceTablet = (catalogIsCompressed) => ({
   left: catalogIsCompressed ? "122px" : "80px",
 });
@@ -93,6 +99,17 @@ const descriptionStyleServiceTablet = (catalogIsCompressed) =>
     : {
         left: "80px",
         right: "260px",
+      };
+
+const descriptionStyleWebTablet = (catalogIsCompressed) =>
+  catalogIsCompressed
+    ? {
+        left: "114px",
+        right: "210px",
+      }
+    : {
+        left: "64px",
+        right: "412px",
       };
 
 const moveImageOnExpand = (catalogIsCompressed) => ({
@@ -339,10 +356,14 @@ const anneliinaDesignProject = (catalogIsCompressed) => ({
       { padding: "0px 100px" },
     ],
   },
+  imageStyleTablet: {
+    individual: [imageStyleWebTablet(catalogIsCompressed)],
+  },
   descriptionStyle: {
     ...descriptionPlacementCenteredRightExpandable(catalogIsCompressed),
     top: marginTopMin,
   },
+  descriptionStyleTablet: descriptionStyleWebTablet(catalogIsCompressed),
   mainColorDark: true,
   backgroundColor: "#96c1d9",
 });
@@ -351,7 +372,7 @@ const scootDesignProject = (catalogIsCompressed) => ({
   id: "scoot",
   title: "Scoot",
   description:
-    "A responsive website showcasing designs for electric foldable scooters. The site displays seven scooter designs that were exhibited at Helsinki Design Week. The Scoot website has an impressive video and high quality images of the scooters, details about the exhibition, information about thew design project and a press kit.",
+    "A responsive website showcasing designs for electric foldable scooters. The site displays seven scooter designs that were exhibited at Helsinki Design Week. The Scoot website has a high quality video and images of the scooters, project and exhibition information and a press kit.",
   year: 2017,
   isTeam: false,
   categories: ["Web Design", "UX Design", "UI Design"],
@@ -363,10 +384,14 @@ const scootDesignProject = (catalogIsCompressed) => ({
     common: imageStyleDigital(catalogIsCompressed),
     individual: [imageStyleWebMain(catalogIsCompressed)],
   },
+  imageStyleTablet: {
+    individual: [imageStyleWebTablet(catalogIsCompressed)],
+  },
   descriptionStyle: {
     ...descriptionPlacementCenteredRightExpandable(catalogIsCompressed),
     top: marginTopMin,
   },
+  descriptionStyleTablet: descriptionStyleWebTablet(catalogIsCompressed),
   individual: [moveImageOnExpand(catalogIsCompressed)],
   mainColorDark: true,
   backgroundColor: "#f8f379",
