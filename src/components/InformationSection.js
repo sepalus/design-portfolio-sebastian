@@ -81,7 +81,7 @@ function InformationSection({
   useEffect(() => {
     setTimeout(
       () => setTextExpandedAnimated(textExpanded),
-      isTablet ? 200 : textExpanded ? 1100 : 200
+      isTablet ? 200 : textExpanded ? 500 : 200
     );
   }, [textExpanded]);
 

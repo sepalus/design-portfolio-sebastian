@@ -179,8 +179,8 @@ $text-wrapper-width-tablet-plus-margin: 422px;
 }
 
 .animate-title-element-1 {
-  animation: movetitleelement1 1s forwards;
-  animation-delay: 1s;
+  animation: movetitleelement1 1.7s forwards;
+  animation-delay: 0.4s;
   @media screen and (max-width: $tablet-max) {
     animation: movetitleelement1tablet 1s forwards;
     animation-delay: 0.1s;
@@ -188,7 +188,7 @@ $text-wrapper-width-tablet-plus-margin: 422px;
 }
 
 .animate-title-element-1-reverse {
-  animation: movetitleelement1reverse 1s forwards;
+  animation: movetitleelement1reverse 1.2s forwards;
   animation-delay: 0s;
   @media screen and (max-width: $tablet-max) {
     animation: movetitleelement1tabletreverse 1s forwards;
@@ -197,8 +197,8 @@ $text-wrapper-width-tablet-plus-margin: 422px;
 }
 
 .animate-title-element-2 {
-  animation: movetitleelement2 1.2s forwards;
-  animation-delay: 1s;
+  animation: movetitleelement2 1.5s forwards;
+  animation-delay: 0.4s;
   @media screen and (max-width: $tablet-max) {
     animation: movetitleelement2tablet 1.2s forwards;
     animation-delay: 0.1s;
@@ -206,7 +206,7 @@ $text-wrapper-width-tablet-plus-margin: 422px;
 }
 
 .animate-title-element-2-reverse {
-  animation: movetitleelement2reverse 1.2s forwards;
+  animation: movetitleelement2reverse 1s forwards;
   animation-delay: 0s;
   @media screen and (max-width: $tablet-max) {
     animation: movetitleelement2tabletreverse 1.2s forwards;
@@ -215,8 +215,8 @@ $text-wrapper-width-tablet-plus-margin: 422px;
 }
 
 .animate-title-element-3 {
-  animation: movetitleelement3 1.5s forwards;
-  animation-delay: 1s;
+  animation: movetitleelement3 2s forwards;
+  animation-delay: 0.4s;
   @media screen and (max-width: $tablet-max) {
     animation: movetitleelement3tablet 1.5s forwards;
     animation-delay: 0.1s;
@@ -422,8 +422,8 @@ $text-wrapper-width-tablet-plus-margin: 422px;
     left: $title-element-left-start;
   }
   50% {
-    top: $title-element-3-top-end + 20px;
-    left: $title-element-left-start + 100px;
+    top: $title-element-3-top-end - 20px;
+    left: $title-element-left-start + 30px;
   }
   to {
     top: $title-element-3-top-end;
@@ -437,8 +437,8 @@ $text-wrapper-width-tablet-plus-margin: 422px;
     left: $title-element-3-left-end;
   }
   50% {
-    top: $title-element-3-top-end + 20px;
-    left: $title-element-left-start + 100px;
+    top: $title-element-3-top-end - 20px;
+    left: $title-element-left-start + 30px;
   }
   to {
     top: $title-element-3-top-start;
@@ -452,8 +452,8 @@ $text-wrapper-width-tablet-plus-margin: 422px;
     left: $title-element-tablet-left-start;
   }
   50% {
-    top: $title-element-3-tablet-top-end + 40px;
-    left: $title-element-left-start + 100px;
+    top: $title-element-3-tablet-top-end - 20px;
+    left: $title-element-left-start + 30px;
   }
   to {
     top: $title-element-3-tablet-top-end;
@@ -467,8 +467,8 @@ $text-wrapper-width-tablet-plus-margin: 422px;
     left: $title-element-3-tablet-left-end;
   }
   50% {
-    top: $title-element-3-tablet-top-end + 40px;
-    left: $title-element-left-start + 100px;
+    top: $title-element-3-tablet-top-end - 20px;
+    left: $title-element-left-start + 30px;
   }
   to {
     top: $title-element-3-tablet-top-start;
