@@ -15,12 +15,19 @@ function ProjectCardDescription({
 
   useEffect(() => {
     window.addEventListener("click", () => {
+      const descriptionTagElement = document.getElementById(
+        "project-card-description-tag"
+      );
+      if (!descriptionTagElement) return;
+      const descriptionTagElementBorderStyle = window
+        .getComputedStyle(descriptionTagElement)
+        .getPropertyValue("border-style");
+
+      if (descriptionTagElementBorderStyle === "hidden") return;
       setShowTeam(false);
     });
     return () => {
-      window.removeEventListener("click", () => {
-        setShowTeam(false);
-      });
+      window.removeEventListener("click", () => {});
     };
   }, [setShowTeam]);
 
@@ -74,6 +81,7 @@ function ProjectCardDescription({
           <p className="text-emphasized"> {activeProject.year}</p>
         </div>
         <div
+          id="project-card-description-tag"
           className={classNames(
             "project-card-description-tag",
             {
