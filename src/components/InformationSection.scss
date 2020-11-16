@@ -11,6 +11,22 @@ $title-element-3-left-end: 320px;
 $title-element-3-top-start: 152px;
 $title-element-3-top-end: 342px;
 
+$title-element-tablet-left-start: 4px;
+$title-element-1-tablet-left-end: 234px;
+$title-element-1-tablet-top-start: 72px;
+$title-element-1-tablet-top-end: 162px;
+$title-element-2-tablet-left-end: 98px;
+$title-element-2-tablet-top-start: 112px;
+$title-element-2-tablet-top-end: 282px;
+$title-element-3-tablet-left-end: 320px;
+$title-element-3-tablet-top-start: 152px;
+$title-element-3-tablet-top-end: 342px;
+
+$text-wrapper-width: 488px;
+$text-wrapper-width-plus-margin: 520px;
+$text-wrapper-width-tablet: 400px;
+$text-wrapper-width-tablet-plus-margin: 432px;
+
 .information-section-content {
   height: 100%;
   display: flex;
@@ -46,7 +62,7 @@ $title-element-3-top-end: 342px;
 
 .information-section-about-text-wrapper {
   position: absolute;
-  width: 488px;
+  width: $text-wrapper-width;
   text-align: justify;
   text-align-last: justify;
   margin-bottom: -50px;
@@ -54,12 +70,22 @@ $title-element-3-top-end: 342px;
 }
 
 .information-section-about-text-wrapper-placeholder {
-  width: 520px;
+  width: $text-wrapper-width-plus-margin;
   height: 420px;
 }
 
+@media screen and (max-width: $tablet-max) {
+  .information-section-about-text-wrapper {
+    width: $text-wrapper-width-tablet;
+    margin-left: 0px;
+  }
+
+  .information-section-about-text-wrapper-placeholder {
+    width: $text-wrapper-width-tablet-plus-margin;
+  }
+}
+
 .information-section-about-text-wrapper-expanded {
-  margin-left: 0px;
   .information-section-about-introduction-title {
     background-color: $background-color-light-selected;
   }
@@ -177,11 +203,15 @@ $title-element-3-top-end: 342px;
 }
 
 .animate-text-wrapper-element {
-  animation: movetextwrapperelement 1s forwards;
+  @media screen and (min-width: $desktop-min) {
+    animation: movetextwrapperelement 1s forwards;
+  }
 }
 
 .animate-text-wrapper-element-reverse {
-  animation: movetextwrapperelementreverse 1s forwards;
+  @media screen and (min-width: $desktop-min) {
+    animation: movetextwrapperelementreverse 1s forwards;
+  }
 }
 
 .animate-title-element-1 {
@@ -225,13 +255,17 @@ $title-element-3-top-end: 342px;
 }
 
 .information-section-about-image-closed {
-  animation: contractimage 1s forwards;
-  animation-delay: 0s;
+  @media screen and (min-width: $desktop-min) {
+    animation: contractimage 1s forwards;
+    animation-delay: 0s;
+  }
 }
 
 .information-section-about-image-open {
-  animation: expandimage 1s forwards;
-  animation-delay: 0s;
+  @media screen and (min-width: $desktop-min) {
+    animation: expandimage 1s forwards;
+    animation-delay: 0s;
+  }
 }
 
 .animate-copied-text-1 {

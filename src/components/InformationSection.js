@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import classNames from "classnames";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import ExpandLess from "@material-ui/icons/ExpandLess";
+import variables from "../variables.js";
+
+const tabletMaxBreakpoint = variables.tabletMaxBreakpoint;
 
 import "./InformationSection.scss";
 
@@ -20,14 +23,34 @@ function InformationSection({
   const phoneNumber = "040 7752722";
   const emailAddress = "sebastian.hognabba@gmail.com";
 
+  const windowWidth = window.innerWidth;
   const expandedImageWidth = 334;
   const textWidth = 488;
   const marginWidth = 32;
 
+  const imageWidthTablet = 184;
+  const textWidthTablet = 400;
+  const marginWidthTablet = 32;
+
   const leftEdge =
-    (window.innerWidth - expandedImageWidth - textWidth - marginWidth) / 2 +
+    (windowWidth - expandedImageWidth - textWidth - marginWidth) / 2 +
     expandedImageWidth +
     marginWidth;
+
+  const leftEdgeTablet =
+    (windowWidth - imageWidthTablet - textWidthTablet - marginWidthTablet) / 2 +
+    imageWidthTablet +
+    marginWidthTablet;
+
+  const informationText = () => ({
+    __html:
+      " With the problem-solving skills of an engineer and visual eye of an artist, equipped with Master’s Degrees in both UX Design (M.Sc.) and Industrial Design (M.A.), I design functional, aesthetically pleasing solutions that are delightful to use. I am a passionate &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; who believes that beauty and the capability to produce aesthetic pleasure are immensely important qualities of successful products and pieces of furniture. With a background in programming and UX design, I have produced elegant digital solutions as a &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; in various industries. My research in design aesthetics highlights the significance of aesthetic experiences in our everyday lives and provides tools for measuring them. As a &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I am a strong advocate for the importance of aesthetics in all designed solutions.",
+  });
+
+  const informationTextTablet = () => ({
+    __html:
+      " With the problem-solving skills of an engineer and visual eye of an artist, equipped with Master’s Degrees in both UX Design (M.Sc.) and Industrial Design (M.A.), I design functional, aesthetically pleasing solutions that are delightful to use. I am a passionate &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; who believes that beauty and the capability to produce aesthetic pleasure are immensely important qualities of successful products and pieces of furniture. With a background in programming and UX design, I have produced elegant digital solutions as a &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; in various industries. My research in design aesthetics highlights the significance of aesthetic experiences in our everyday lives and provides tools for measuring them. As a &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I am a strong advocate for the importance of aesthetics in all designed solutions.",
+  });
 
   useEffect(() => {
     setPerformAnimation(!textExpanded);
@@ -121,7 +144,12 @@ function InformationSection({
                   "animate-text-wrapper-element-reverse": !textExpanded,
                 }
               )}
-              style={{ left: leftEdge }}
+              style={{
+                left:
+                  windowWidth <= tabletMaxBreakpoint
+                    ? leftEdgeTablet
+                    : leftEdge,
+              }}
             >
               <button
                 className="information-section-about-introduction-title link-button link-button-narrow icon-button"
@@ -187,26 +215,12 @@ function InformationSection({
                     "animate-text-element-out": !textExpanded,
                   }
                 )}
-              >
-                With the problem-solving skills of an engineer and visual eye of
-                an artist, equipped with Master’s Degrees in both UX Design
-                (M.Sc.) and Industrial Design (M.A.), I design functional,
-                aesthetically pleasing solutions that are delightful to use. I
-                am a passionate
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                who believes that beauty and the capability to produce aesthetic
-                pleasure are immensely important qualities of successful
-                products and pieces of furniture. With a background in
-                programming and UX design, I have produced elegant digital
-                solutions as a
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                in various industries. My research in design aesthetics
-                highlights the significance of aesthetic experiences in our
-                everyday lives and provides tools for measuring them. As a
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                I am a strong advocate for the importance of aesthetics in all
-                designed solutions.
-              </p>
+                dangerouslySetInnerHTML={
+                  windowWidth <= tabletMaxBreakpoint
+                    ? informationTextTablet()
+                    : informationText()
+                }
+              ></p>
             </div>
           </div>
         </div>
