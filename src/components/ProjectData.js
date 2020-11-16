@@ -17,6 +17,7 @@ const marginSideMin = "80px";
 const marginSideMinTablet = "60px";
 const marginTopMin = "70px";
 const marginBottomMin = "90px";
+const topAlignWithTitle = "126px";
 
 const alignVerticalCenter = {
   top: "50%",
@@ -24,9 +25,9 @@ const alignVerticalCenter = {
 };
 
 const descriptionPlacementTopRightCorner = {
-  top: "126px",
+  top: topAlignWithTitle,
   right: marginSideMin,
-  width: "285px",
+  width: minWidth,
 };
 
 const descriptionPlacementRightVerticalCenter = {
@@ -127,7 +128,7 @@ const kaarnaDesignProject = {
   categories: ["Product Design", "Vehicle Design", "Urban Mobility"],
   displayableCategory: 1,
   images: ["kaarna1.jpg", "kaarna2.jpg", "kaarna3.jpg", "kaarna4.jpg"],
-  descriptionStyle: descriptionPlacementTopRightCorner,
+  descriptionStyle: { ...descriptionPlacementTopRightCorner, width: "285px" },
   descriptionStyleTablet: {
     ...alignVerticalCenter,
     width: "244px",
@@ -162,11 +163,16 @@ const tyyniDesignProject = {
   categories: ["Product Design", "Acoustic Design", "Wall Panel Design"],
   displayableCategory: 1,
   images: ["tyyni1.jpg", "tyyni2.jpg"],
-  descriptionStyle: { ...descriptionPlacementTopRightCorner, width: minWidth },
+  descriptionStyle: {
+    ...descriptionPlacementRightVerticalCenter,
+    transform: "translateY(-70%)",
+    width: minWidth,
+  },
   descriptionStyleTablet: {
     top: "200px",
     width: "180px",
     right: "40px",
+    transform: "translateY(0)",
   },
   mainColorDark: false,
   controlColorDark: true,
@@ -308,9 +314,9 @@ const museDesignProject = (catalogIsCompressed) => ({
       {
         ...moveImageOnExpand(catalogIsCompressed),
         marginTop: marginTopMin,
-        marginBottom: "280px",
+        marginBottom: "300px",
         width: "auto",
-        height: "calc(100% - 350px)",
+        height: "calc(100% - 370px)",
         padding: "0px",
       },
     ],
@@ -320,7 +326,7 @@ const museDesignProject = (catalogIsCompressed) => ({
   },
   descriptionStyle: {
     ...descriptionPlacementCenteredRightExpandable(catalogIsCompressed),
-    bottom: marginBottomMin,
+    bottom: "110px",
   },
   descriptionStyleTablet: descriptionStyleServiceTablet(catalogIsCompressed),
   mainColorDark: true,

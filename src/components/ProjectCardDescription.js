@@ -6,11 +6,27 @@ import CalendarToday from "@material-ui/icons/CalendarToday";
 import "./ProjectCardDescription.scss";
 
 function ProjectCardDescription({
+  currentViewport,
   activeProject,
   toggleDescriptionClass,
   isTablet,
 }) {
   const [showTeam, setShowTeam] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("click", () => {
+      setShowTeam(false);
+    });
+    return () => {
+      window.removeEventListener("click", () => {
+        setShowTeam(false);
+      });
+    };
+  }, [setShowTeam]);
+
+  useEffect(() => {
+    setShowTeam(false);
+  }, [currentViewport]);
 
   const descriptionIsDark = activeProject.hasOwnProperty("descriptionColorDark")
     ? activeProject.descriptionColorDark
@@ -46,9 +62,6 @@ function ProjectCardDescription({
               ...activeProject.descriptionStyle,
             }
       }
-      onMouseLeave={() => {
-        setShowTeam(false);
-      }}
     >
       <div className="vertical-line"></div>
       <h3 className="project-card-description-title">{activeProject.title}</h3>

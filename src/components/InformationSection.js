@@ -19,6 +19,30 @@ function InformationSection({
   const [showEmailAddress, setShowEmailAddress] = useState(false);
   const [togglePhoneCopied, setTogglePhoneCopied] = useState(0);
   const [toggleEmailCopied, setToggleEmailCopied] = useState(0);
+
+  const hideContactDetails = () => {
+    setShowPhoneNumber(false);
+    setShowEmailAddress(false);
+    setTogglePhoneCopied(0);
+    setToggleEmailCopied(0);
+  };
+
+  const mouseClickedInformation = (event) => {
+    if (event.clientY > window.innerHeight - 140) return;
+    hideContactDetails();
+  };
+
+  useEffect(() => {
+    hideContactDetails();
+  }, [currentViewport]);
+
+  useEffect(() => {
+    window.addEventListener("click", mouseClickedInformation);
+    return () => {
+      window.removeEventListener("click", mouseClickedInformation);
+    };
+  }, [mouseClickedInformation]);
+
   const phoneNumber = "040 7752722";
   const emailAddress = "sebastian.hognabba@gmail.com";
 
@@ -217,15 +241,7 @@ function InformationSection({
             </div>
           </div>
         </div>
-        <div
-          className="information-section-contact"
-          onMouseLeave={() => {
-            setShowEmailAddress(false);
-            setShowPhoneNumber(false);
-            setToggleEmailCopied(0);
-            setTogglePhoneCopied(0);
-          }}
-        >
+        <div className="information-section-contact">
           <div className="information-section-contact-content-wrapper">
             <div className="information-section-contact-icon-wrapper">
               <p className="text-large">Check me out:</p>

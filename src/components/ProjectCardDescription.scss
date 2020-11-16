@@ -66,8 +66,11 @@
   position: absolute;
   left: 6px;
   top: 26px;
-  width: 90px;
+  width: 92px;
   border-bottom: 1px solid;
+  @media screen and (max-width: $tablet-max) {
+    width: 80px;
+  }
 }
 
 .project-card-description-tag-design-team-wrapper {
@@ -76,14 +79,20 @@
   p {
     white-space: nowrap;
     font-weight: 100;
-    line-height: 1.5em;
+    line-height: 1.8em;
   }
 }
 
 .project-card-description-tag-design-team-wrapper-horizontal {
-  width: calc(100vw - 320px);
-  top: -1px;
-  left: 105px;
+  width: calc(100vw - 465px);
+  top: -2px;
+  left: 100px;
+
+  @media screen and (max-width: $tablet-max) {
+    width: calc(100vw - 430px);
+    top: -1px;
+    left: 88px;
+  }
   p {
     float: left;
   }

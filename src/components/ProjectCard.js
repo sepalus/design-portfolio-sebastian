@@ -72,6 +72,7 @@ function ProjectCard({
           );
         })}
         <ProjectCardDescription
+          currentViewport={currentViewport}
           activeProject={activeProject}
           toggleDescriptionClass={toggleDescriptionClass}
           isTablet={isTablet}
