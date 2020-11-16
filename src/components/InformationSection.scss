@@ -144,88 +144,6 @@ $text-wrapper-width-tablet-plus-margin: 422px;
   opacity: 0;
 }
 
-.information-section-contact {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 140px;
-  border-top: 1px solid $text-color-light;
-}
-
-.information-section-contact-content-wrapper {
-  display: flex;
-  padding-right: 55px;
-}
-
-.information-section-contact-icon-wrapper {
-  display: flex;
-
-  img {
-    align-self: center;
-    opacity: 0.7;
-    padding-top: 6px;
-    padding-left: 10px;
-    width: 18px;
-
-    @media screen and (max-width: $tablet-max) {
-      padding-top: 5px;
-    }
-  }
-
-  img:hover {
-    opacity: 1;
-  }
-
-  button {
-    margin-left: 12px;
-    margin-right: 8px;
-    padding: 6px 12px;
-    transform: translateY(-7px);
-  }
-
-  button img {
-    padding: 0px 10px 1px 0px;
-  }
-
-  span {
-    opacity: 0;
-    position: absolute;
-    bottom: 50px;
-    left: 12px;
-    border: 1px solid $text-color-light;
-    padding: 4px 6px;
-  }
-
-  @media screen and (max-width: $tablet-max) {
-    button {
-      margin-left: 10px;
-      padding: 6px 10px;
-
-      img {
-        padding: 0px 8px 1px 0px;
-      }
-    }
-  }
-}
-
-.information-section-contact-icon-expandable-content-wrapper {
-  position: absolute;
-  display: flex;
-  white-space: nowrap;
-}
-
-.information-section-contact-icon-expandable-button-wrapper {
-  position: relative;
-}
-
-.information-section-contact-icon-wrapper:not(:first-of-type) {
-  padding-left: 48px;
-  @media screen and (max-width: $tablet-max) {
-    padding-left: 40px;
-  }
-}
-
 /* Animations */
 
 .information-section-static {
@@ -339,16 +257,6 @@ $text-wrapper-width-tablet-plus-margin: 422px;
     animation: expandimage 1s forwards;
     animation-delay: 0s;
   }
-}
-
-.animate-copied-text-1 {
-  animation: copiedtextshow1 1.5s forwards;
-  animation-delay: 0s;
-}
-
-.animate-copied-text-2 {
-  animation: copiedtextshow2 1.5s forwards;
-  animation-delay: 0s;
 }
 
 @keyframes informationelemententer {
@@ -609,6 +517,156 @@ $text-wrapper-width-tablet-plus-margin: 422px;
     height: 180px;
     width: 180px;
     filter: grayscale(100%);
+  }
+}
+
+/* CONTACT ELEMENT */
+
+.information-section-contact {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 140px;
+  border-top: 1px solid $text-color-light;
+}
+
+.information-section-contact-content-wrapper {
+  display: flex;
+  padding-right: 55px;
+}
+
+.information-section-contact-icon-wrapper {
+  display: flex;
+
+  img {
+    align-self: center;
+    opacity: 0.7;
+    padding-top: 6px;
+    padding-left: 10px;
+    width: 18px;
+
+    @media screen and (max-width: $tablet-max) {
+      padding-top: 5px;
+    }
+  }
+
+  img:hover {
+    opacity: 1;
+  }
+
+  span {
+    opacity: 0;
+    position: absolute;
+    bottom: 50px;
+    left: 12px;
+    border: 1px solid $text-color-light;
+    padding: 4px 6px;
+  }
+
+  @media screen and (max-width: $tablet-max) {
+    button {
+      margin-left: 10px;
+      padding: 6px 10px;
+
+      img {
+        padding: 0px 8px 1px 0px;
+      }
+    }
+  }
+}
+
+.information-section-contact-icon-expandable-content-container {
+  position: relative;
+}
+
+.information-section-contact-icon-expandable-icon-wrapper {
+  position: absolute;
+}
+
+.information-section-contact-icon-expandable-button-wrapper {
+  position: absolute;
+  left: -3px;
+  top: -7px;
+  white-space: nowrap;
+
+  button {
+    opacity: 0;
+    padding: 6px 12px;
+  }
+
+  button img {
+    padding: 0px 10px 1px 0px;
+  }
+}
+
+.information-section-contact-icon-expandable-icon-wrapper-email {
+  left: 28px;
+}
+
+.information-section-contact-icon-expandable-button-wrapper-email {
+  left: 25px;
+}
+
+.information-section-contact-icon-wrapper:not(:first-of-type) {
+  padding-left: 48px;
+  @media screen and (max-width: $tablet-max) {
+    padding-left: 40px;
+  }
+}
+
+/* Animations */
+
+.animate-copied-text-1 {
+  animation: copiedtextshow1 1.5s forwards;
+  animation-delay: 0s;
+}
+
+.animate-copied-text-2 {
+  animation: copiedtextshow2 1.5s forwards;
+  animation-delay: 0s;
+}
+
+.animate-phone-button-in {
+  animation: iconelementin 1s forwards;
+}
+
+.animate-phone-button-out {
+  opacity: 0;
+  margin-left: 0px;
+}
+
+.animate-email-icon-move-right {
+  left: 146px;
+  animation: iconelementin 1s forwards;
+}
+
+.animate-email-icon-move-left {
+  left: 28px;
+}
+
+.animate-email-button-move-right {
+  left: 158px;
+}
+.animate-email-button-move-left {
+  left: 25px;
+}
+
+.animate-email-button-in {
+  animation: iconelementin 1s forwards;
+}
+
+.animate-email-button-out {
+  opacity: 0;
+  margin-left: 0px;
+}
+
+@keyframes iconelementin {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateX(12px);
   }
 }
 
