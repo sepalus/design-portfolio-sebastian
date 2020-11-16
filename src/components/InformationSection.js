@@ -104,7 +104,7 @@ function InformationSection({
     <img
       src="./assets/icons/phone.png"
       alt="Phone"
-      onMouseEnter={() => {
+      onClick={() => {
         setShowEmailAddress(false);
         setToggleEmailCopied(0);
         setShowPhoneNumber(true);
@@ -116,7 +116,7 @@ function InformationSection({
     <img
       src="./assets/icons/email.png"
       alt="email"
-      onMouseEnter={() => {
+      onClick={() => {
         setShowPhoneNumber(false);
         setTogglePhoneCopied(0);
         setShowEmailAddress(true);
@@ -266,14 +266,7 @@ function InformationSection({
             <div className="information-section-contact-icon-wrapper">
               <p className="text-large">Hit me up:</p>
               <div className="information-section-contact-icon-expandable-content-container">
-                <div
-                  className="information-section-contact-icon-expandable-icon-wrapper"
-                  onMouseEnter={() => {
-                    setShowEmailAddress(false);
-                    setToggleEmailCopied(false);
-                    setShowPhoneNumber(true);
-                  }}
-                >
+                <div className="information-section-contact-icon-expandable-icon-wrapper">
                   {!showPhoneNumber && <PhoneIcon />}
                 </div>
                 <div
@@ -300,6 +293,7 @@ function InformationSection({
                       { "animate-phone-button-in": showPhoneNumber },
                       { "animate-phone-button-out": !showPhoneNumber }
                     )}
+                    disabled={!showPhoneNumber}
                     onClick={() => {
                       navigator.clipboard.writeText(
                         phoneNumber.replace(/ /g, "")
@@ -319,11 +313,6 @@ function InformationSection({
                     { "animate-email-icon-move-right": showPhoneNumber },
                     { "animate-email-icon-move-left": !showPhoneNumber }
                   )}
-                  onMouseEnter={() => {
-                    setShowEmailAddress(true);
-                    setShowPhoneNumber(false);
-                    setTogglePhoneCopied(0);
-                  }}
                 >
                   {!showEmailAddress && <EmailIcon />}
                 </div>
@@ -353,6 +342,7 @@ function InformationSection({
                       { "animate-email-button-in": showEmailAddress },
                       { "animate-email-button-out": !showEmailAddress }
                     )}
+                    disabled={!showEmailAddress}
                     onClick={() => {
                       navigator.clipboard.writeText(emailAddress);
                       setToggleEmailCopied(

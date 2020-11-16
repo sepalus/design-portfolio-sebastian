@@ -73,7 +73,18 @@ function ProjectCardDescription({
           <CalendarToday className="project-card-description-tag-icon" />
           <p className="text-emphasized"> {activeProject.year}</p>
         </div>
-        <div className="project-card-description-tag">
+        <div
+          className={classNames(
+            "project-card-description-tag",
+            {
+              "project-card-description-tag-design-team": activeProject.isTeam,
+            },
+            {
+              "project-card-description-tag-design-team-open":
+                activeProject.isTeam && showTeam,
+            }
+          )}
+        >
           {activeProject.isTeam ? (
             <People className="project-card-description-tag-icon" />
           ) : (
@@ -90,7 +101,7 @@ function ProjectCardDescription({
           >
             <p
               className="text-emphasized"
-              onMouseEnter={() => {
+              onClick={() => {
                 setShowTeam(true);
               }}
             >

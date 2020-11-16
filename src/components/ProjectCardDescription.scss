@@ -39,6 +39,26 @@
   }
 }
 
+.project-card-description-tag-design-team {
+  cursor: pointer;
+
+  .project-card-description-tag-designer-wrapper {
+    opacity: 0.7;
+  }
+}
+
+.project-card-description-tag-design-team:hover {
+  .project-card-description-tag-designer-wrapper {
+    opacity: 1;
+  }
+}
+
+.project-card-description-tag-design-team-open {
+  .project-card-description-tag-designer-wrapper {
+    opacity: 1;
+  }
+}
+
 .project-card-description-tag-icon {
   font-size: 1.2rem !important;
   margin-left: 4px;

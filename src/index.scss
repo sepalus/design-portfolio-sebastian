@@ -160,6 +160,10 @@ ul {
   cursor: pointer;
 }
 
+button:disabled {
+  cursor: default;
+}
+
 .disabled-button {
   cursor: text;
 }

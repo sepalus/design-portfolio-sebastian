@@ -142,6 +142,7 @@ $text-wrapper-width-tablet-plus-margin: 422px;
   margin-left: 4px;
   margin-top: 16px;
   opacity: 0;
+  cursor: default;
 }
 
 /* Animations */
@@ -233,6 +234,7 @@ $text-wrapper-width-tablet-plus-margin: 422px;
 }
 
 .animate-text-element-in {
+  cursor: auto;
   animation: fadeintextelement 1s forwards;
   animation-delay: 1.5s;
   @media screen and (max-width: $tablet-max) {
@@ -545,6 +547,7 @@ $text-wrapper-width-tablet-plus-margin: 422px;
     padding-top: 6px;
     padding-left: 10px;
     width: 18px;
+    cursor: pointer;
   }
 
   img:hover {
