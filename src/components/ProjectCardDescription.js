@@ -16,7 +16,7 @@ function ProjectCardDescription({
   useEffect(() => {
     window.addEventListener("click", () => {
       const descriptionTagElement = document.getElementById(
-        "project-card-description-tag"
+        `project-card-description-tag-${activeProject.id}`
       );
       if (!descriptionTagElement) return;
       const descriptionTagElementBorderStyle = window
@@ -29,7 +29,7 @@ function ProjectCardDescription({
     return () => {
       window.removeEventListener("click", () => {});
     };
-  }, [setShowTeam]);
+  }, [activeProject]);
 
   useEffect(() => {
     setShowTeam(false);
@@ -81,7 +81,7 @@ function ProjectCardDescription({
           <p className="text-emphasized"> {activeProject.year}</p>
         </div>
         <div
-          id="project-card-description-tag"
+          id={`project-card-description-tag-${activeProject.id}`}
           className={classNames(
             "project-card-description-tag",
             {
