@@ -19,22 +19,25 @@
 }
 
 .project-card-control-buttons-container {
-  width: 300px;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 
   svg {
-    font-size: 32px;
+    font-size: 36px;
   }
-}
-
-.project-card-control-buttons-container-wide {
-  width: 380px;
+  @media screen and (max-width: $tablet-max) {
+    svg {
+      font-size: 32px;
+    }
+  }
 }
 
 .project-card-controls-image-buttons {
   display: flex;
+  margin-left: 45px;
+  margin-right: 45px;
 
   span {
     cursor: pointer;
@@ -45,6 +48,17 @@
     background-color: $element-color-mid;
     border-radius: 50%;
     display: inline-block;
+  }
+
+  @media screen and (max-width: $tablet-max) {
+    margin-left: 30px;
+    margin-right: 30px;
+    span {
+      height: 14px;
+      width: 14px;
+      margin: 0px 4px;
+      border: 1px solid;
+    }
   }
 
   span.project-card-controls-image-active-button {
