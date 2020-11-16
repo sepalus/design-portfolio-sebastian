@@ -80,6 +80,21 @@ const imageStyleWebMain = (catalogIsCompressed) => ({
   width: "auto",
 });
 
+const imageStyleServiceTablet = (catalogIsCompressed) => ({
+  left: catalogIsCompressed ? "122px" : "80px",
+});
+
+const descriptionStyleServiceTablet = (catalogIsCompressed) =>
+  catalogIsCompressed
+    ? {
+        left: "122px",
+        right: "218px",
+      }
+    : {
+        left: "80px",
+        right: "260px",
+      };
+
 const moveImageOnExpand = (catalogIsCompressed) => ({
   left: catalogIsCompressed ? "140px" : marginSideMin,
   transition: "left 1s",
@@ -283,10 +298,14 @@ const museDesignProject = (catalogIsCompressed) => ({
       },
     ],
   },
+  imageStyleTablet: {
+    individual: [imageStyleServiceTablet(catalogIsCompressed)],
+  },
   descriptionStyle: {
     ...descriptionPlacementCenteredRightExpandable(catalogIsCompressed),
     bottom: marginBottomMin,
   },
+  descriptionStyleTablet: descriptionStyleServiceTablet(catalogIsCompressed),
   mainColorDark: true,
   backgroundColor: "#6bc9b7",
 });
@@ -395,10 +414,20 @@ const axiomDesignProject = (catalogIsCompressed) => ({
       },
     ],
   },
+  imageStyleTablet: {
+    individual: [
+      {
+        ...imageStyleServiceTablet(catalogIsCompressed),
+        marginBottom: "340px",
+        height: "calc(100% - 410px)",
+      },
+    ],
+  },
   descriptionStyle: {
     ...descriptionPlacementCenteredRightExpandable(catalogIsCompressed),
     bottom: "90px",
   },
+  descriptionStyleTablet: descriptionStyleServiceTablet(catalogIsCompressed),
   mainColorDark: true,
   backgroundColor: "#d2ebf9",
 });
