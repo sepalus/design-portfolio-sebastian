@@ -2,30 +2,30 @@
 
 $title-element-left-start: 4px;
 $title-element-1-left-end: 234px;
-$title-element-1-top-start: 72px;
-$title-element-1-top-end: 162px;
+$title-element-1-top-start: 78px;
+$title-element-1-top-end: 164px;
 $title-element-2-left-end: 98px;
-$title-element-2-top-start: 112px;
-$title-element-2-top-end: 282px;
+$title-element-2-top-start: 118px;
+$title-element-2-top-end: 284px;
 $title-element-3-left-end: 320px;
-$title-element-3-top-start: 152px;
-$title-element-3-top-end: 342px;
+$title-element-3-top-start: 158px;
+$title-element-3-top-end: 344px;
 
 $title-element-tablet-left-start: 4px;
 $title-element-1-tablet-left-end: 230px;
-$title-element-1-tablet-top-start: 72px;
-$title-element-1-tablet-top-end: 153px;
+$title-element-1-tablet-top-start: 78px;
+$title-element-1-tablet-top-end: 159px;
 $title-element-2-tablet-left-end: 228px;
-$title-element-2-tablet-top-start: 112px;
-$title-element-2-tablet-top-end: 265px;
-$title-element-3-tablet-left-end: 135px;
-$title-element-3-tablet-top-start: 152px;
-$title-element-3-tablet-top-end: 349px;
+$title-element-2-tablet-top-start: 116px;
+$title-element-2-tablet-top-end: 271px;
+$title-element-3-tablet-left-end: 133px;
+$title-element-3-tablet-top-start: 154px;
+$title-element-3-tablet-top-end: 355px;
 
 $text-wrapper-width: 488px;
 $text-wrapper-width-plus-margin: 520px;
 $text-wrapper-width-tablet: 394px;
-$text-wrapper-width-tablet-plus-margin: 432px;
+$text-wrapper-width-tablet-plus-margin: 422px;
 
 .information-section-content {
   height: 100%;
@@ -57,7 +57,10 @@ $text-wrapper-width-tablet-plus-margin: 432px;
 }
 
 .information-section-about-introduction-title {
-  margin-top: 8px;
+  margin-top: 10px;
+  @media screen and (max-width: $tablet-max) {
+    margin-top: 14px;
+  }
 }
 
 .information-section-about-text-wrapper {
@@ -109,6 +112,18 @@ $text-wrapper-width-tablet-plus-margin: 432px;
 }
 .information-section-about-introduction-label:nth-of-type(4) {
   top: $title-element-3-top-start;
+}
+
+@media screen and (max-width: $tablet-max) {
+  .information-section-about-introduction-label:nth-of-type(2) {
+    top: $title-element-1-tablet-top-start;
+  }
+  .information-section-about-introduction-label:nth-of-type(3) {
+    top: $title-element-2-tablet-top-start;
+  }
+  .information-section-about-introduction-label:nth-of-type(4) {
+    top: $title-element-3-tablet-top-start;
+  }
 }
 
 .information-section-about-introduction-text {

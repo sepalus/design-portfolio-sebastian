@@ -30,7 +30,7 @@ function InformationSection({
 
   const imageWidthTablet = 184;
   const textWidthTablet = 394;
-  const marginWidthTablet = 32;
+  const marginWidthTablet = 28;
 
   const leftEdge =
     (windowWidth - expandedImageWidth - textWidth - marginWidth) / 2 +
