@@ -24,10 +24,12 @@ function ProjectSection({
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [catalogIsCompressed, setCatalogIsCompressed] = useState(false);
   const [toggleCardClass, setToggleCardClass] = useState(0);
+  const [toggleCardImageClass, setToggleCardImageClass] = useState(0);
   const [toggleDescriptionClass, setToggleDescriptionClass] = useState(0);
 
   useEffect(() => {
     setToggleCardClass(currentViewport === designArea ? 1 : 0);
+    setToggleCardImageClass(0);
     setToggleDescriptionClass(
       currentViewport === designArea && activeImageIndex === 0 ? 1 : 0
     );
@@ -53,6 +55,7 @@ function ProjectSection({
 
   const selectProject = (projectIndex) => {
     if (projectIndex === activeProjectIndex && activeImageIndex === 0) return;
+    setToggleCardImageClass(0);
     setActiveImageIndex(0);
     setActiveProjectIndex(projectIndex);
     setToggleCardClass(-toggleCardClass);
@@ -61,6 +64,7 @@ function ProjectSection({
 
   const selectImage = (imageIndex) => {
     const updatedImageIndex = updateImageIndex(imageIndex);
+    setToggleCardImageClass(0);
     setActiveImageIndex(updatedImageIndex);
     setToggleCardClass(-toggleCardClass);
     setToggleDescriptionClass(updatedImageIndex === 0 ? 2 : 0);
@@ -94,6 +98,7 @@ function ProjectSection({
           activeProjectIndex={activeProjectIndex}
           catalogIsCompressed={catalogIsCompressed}
           setCatalogIsCompressed={setCatalogIsCompressed}
+          setToggleCardImageClass={setToggleCardImageClass}
           selectProject={selectProject}
         />
         <ProjectCard
@@ -104,6 +109,7 @@ function ProjectSection({
           designArea={designArea}
           catalogIsCompressed={catalogIsCompressed}
           toggleCardClass={toggleCardClass}
+          toggleCardImageClass={toggleCardImageClass}
           toggleDescriptionClass={toggleDescriptionClass}
           setToggleDescriptionClass={setToggleDescriptionClass}
           selectImage={selectImage}

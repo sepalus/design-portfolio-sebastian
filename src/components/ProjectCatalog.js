@@ -10,6 +10,7 @@ function ProjectCatalog({
   activeProjectIndex,
   catalogIsCompressed,
   setCatalogIsCompressed,
+  setToggleCardImageClass,
   selectProject,
 }) {
   const isDigital = designArea === 2;
@@ -77,11 +78,17 @@ function ProjectCatalog({
         {(catalogIsCompressed && !isDigital) ||
         (!catalogIsCompressed && isDigital) ? (
           <ChevronRight
-            onClick={() => setCatalogIsCompressed(!catalogIsCompressed)}
+            onClick={() => {
+              setToggleCardImageClass(1);
+              setCatalogIsCompressed(!catalogIsCompressed);
+            }}
           />
         ) : (
           <ChevronLeft
-            onClick={() => setCatalogIsCompressed(!catalogIsCompressed)}
+            onClick={() => {
+              setToggleCardImageClass(1);
+              setCatalogIsCompressed(!catalogIsCompressed);
+            }}
           />
         )}
       </div>

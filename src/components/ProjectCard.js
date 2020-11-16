@@ -11,6 +11,7 @@ function ProjectCard({
   imageAmount,
   catalogIsCompressed,
   toggleCardClass,
+  toggleCardImageClass,
   toggleDescriptionClass,
   selectImage,
   isTablet,
@@ -65,7 +66,9 @@ function ProjectCard({
               <img
                 src={`./assets/${image}`}
                 alt={activeProject.title}
-                className={activeProject.classes}
+                className={classNames(activeProject.classes, {
+                  "project-card-image-static": toggleCardImageClass === 0,
+                })}
                 style={{ ...imageStyle, ...imageStyleTablet }}
               />
             </div>
