@@ -29,7 +29,7 @@ function InformationSection({
   const marginWidth = 32;
 
   const imageWidthTablet = 184;
-  const textWidthTablet = 400;
+  const textWidthTablet = 394;
   const marginWidthTablet = 32;
 
   const leftEdge =
@@ -41,6 +41,8 @@ function InformationSection({
     (windowWidth - imageWidthTablet - textWidthTablet - marginWidthTablet) / 2 +
     imageWidthTablet +
     marginWidthTablet;
+
+  const isTablet = windowWidth <= tabletMaxBreakpoint;
 
   const informationText = () => ({
     __html:
@@ -59,7 +61,7 @@ function InformationSection({
   useEffect(() => {
     setTimeout(
       () => setTextExpandedAnimated(textExpanded),
-      textExpanded ? 1100 : 200
+      isTablet ? 200 : textExpanded ? 1100 : 200
     );
   }, [textExpanded]);
 
@@ -145,10 +147,7 @@ function InformationSection({
                 }
               )}
               style={{
-                left:
-                  windowWidth <= tabletMaxBreakpoint
-                    ? leftEdgeTablet
-                    : leftEdge,
+                left: isTablet ? leftEdgeTablet : leftEdge,
               }}
             >
               <button
@@ -216,9 +215,7 @@ function InformationSection({
                   }
                 )}
                 dangerouslySetInnerHTML={
-                  windowWidth <= tabletMaxBreakpoint
-                    ? informationTextTablet()
-                    : informationText()
+                  isTablet ? informationTextTablet() : informationText()
                 }
               ></p>
             </div>

@@ -12,19 +12,19 @@ $title-element-3-top-start: 152px;
 $title-element-3-top-end: 342px;
 
 $title-element-tablet-left-start: 4px;
-$title-element-1-tablet-left-end: 234px;
+$title-element-1-tablet-left-end: 230px;
 $title-element-1-tablet-top-start: 72px;
-$title-element-1-tablet-top-end: 162px;
-$title-element-2-tablet-left-end: 98px;
+$title-element-1-tablet-top-end: 153px;
+$title-element-2-tablet-left-end: 228px;
 $title-element-2-tablet-top-start: 112px;
-$title-element-2-tablet-top-end: 282px;
-$title-element-3-tablet-left-end: 320px;
+$title-element-2-tablet-top-end: 265px;
+$title-element-3-tablet-left-end: 135px;
 $title-element-3-tablet-top-start: 152px;
-$title-element-3-tablet-top-end: 342px;
+$title-element-3-tablet-top-end: 349px;
 
 $text-wrapper-width: 488px;
 $text-wrapper-width-plus-margin: 520px;
-$text-wrapper-width-tablet: 400px;
+$text-wrapper-width-tablet: 394px;
 $text-wrapper-width-tablet-plus-margin: 432px;
 
 .information-section-content {
@@ -96,6 +96,9 @@ $text-wrapper-width-tablet-plus-margin: 432px;
   left: $title-element-left-start;
   z-index: 2;
   white-space: nowrap;
+  @media screen and (max-width: $tablet-max) {
+    padding: 4px 12px;
+  }
 }
 
 .information-section-about-introduction-label:nth-of-type(2) {
@@ -114,6 +117,9 @@ $text-wrapper-width-tablet-plus-margin: 432px;
   margin-top: 16px;
   line-height: 30px;
   opacity: 0;
+  @media screen and (max-width: $tablet-max) {
+    line-height: 28px;
+  }
 }
 
 .information-section-contact {
@@ -217,36 +223,63 @@ $text-wrapper-width-tablet-plus-margin: 432px;
 .animate-title-element-1 {
   animation: movetitleelement1 1s forwards;
   animation-delay: 1s;
+  @media screen and (max-width: $tablet-max) {
+    animation: movetitleelement1tablet 1s forwards;
+    animation-delay: 0.1s;
+  }
 }
 
 .animate-title-element-1-reverse {
   animation: movetitleelement1reverse 1s forwards;
   animation-delay: 0s;
+  @media screen and (max-width: $tablet-max) {
+    animation: movetitleelement1tabletreverse 1s forwards;
+    animation-delay: 0s;
+  }
 }
 
 .animate-title-element-2 {
   animation: movetitleelement2 1.2s forwards;
   animation-delay: 1s;
+  @media screen and (max-width: $tablet-max) {
+    animation: movetitleelement2tablet 1.2s forwards;
+    animation-delay: 0.1s;
+  }
 }
 
 .animate-title-element-2-reverse {
   animation: movetitleelement2reverse 1.2s forwards;
   animation-delay: 0s;
+  @media screen and (max-width: $tablet-max) {
+    animation: movetitleelement2tabletreverse 1.2s forwards;
+    animation-delay: 0s;
+  }
 }
 
 .animate-title-element-3 {
   animation: movetitleelement3 1.5s forwards;
   animation-delay: 1s;
+  @media screen and (max-width: $tablet-max) {
+    animation: movetitleelement3tablet 1.5s forwards;
+    animation-delay: 0.1s;
+  }
 }
 
 .animate-title-element-3-reverse {
   animation: movetitleelement3reverse 1.5s forwards;
   animation-delay: 0s;
+  @media screen and (max-width: $tablet-max) {
+    animation: movetitleelement3tabletreverse 1.5s forwards;
+    animation-delay: 0s;
+  }
 }
 
 .animate-text-element-in {
   animation: fadeintextelement 1s forwards;
   animation-delay: 1.5s;
+  @media screen and (max-width: $tablet-max) {
+    animation-delay: 0.6s;
+  }
 }
 
 .animate-text-element-out {
@@ -345,6 +378,36 @@ $text-wrapper-width-tablet-plus-margin: 432px;
   }
 }
 
+@keyframes movetitleelement1tablet {
+  from {
+    top: $title-element-1-tablet-top-start;
+    left: $title-element-tablet-left-start;
+  }
+  50% {
+    top: $title-element-1-tablet-top-start;
+    left: $title-element-1-tablet-left-end + 50px;
+  }
+  to {
+    top: $title-element-1-tablet-top-end;
+    left: $title-element-1-tablet-left-end;
+  }
+}
+
+@keyframes movetitleelement1tabletreverse {
+  from {
+    top: $title-element-1-tablet-top-end;
+    left: $title-element-1-tablet-left-end;
+  }
+  50% {
+    top: $title-element-1-tablet-top-start;
+    left: $title-element-1-tablet-left-end + 50px;
+  }
+  to {
+    top: $title-element-1-tablet-top-start;
+    left: $title-element-tablet-left-start;
+  }
+}
+
 @keyframes movetitleelement2 {
   from {
     top: $title-element-2-top-start;
@@ -375,6 +438,36 @@ $text-wrapper-width-tablet-plus-margin: 432px;
   }
 }
 
+@keyframes movetitleelement2tablet {
+  from {
+    top: $title-element-2-tablet-top-start;
+    left: $title-element-tablet-left-start;
+  }
+  50% {
+    top: $title-element-2-tablet-top-start + 70px;
+    left: $title-element-2-tablet-left-end + 150px;
+  }
+  to {
+    top: $title-element-2-tablet-top-end;
+    left: $title-element-2-tablet-left-end;
+  }
+}
+
+@keyframes movetitleelement2tabletreverse {
+  from {
+    top: $title-element-2-tablet-top-end;
+    left: $title-element-2-tablet-left-end;
+  }
+  50% {
+    top: $title-element-2-tablet-top-start + 70px;
+    left: $title-element-2-tablet-left-end + 150px;
+  }
+  to {
+    top: $title-element-2-tablet-top-start;
+    left: $title-element-tablet-left-start;
+  }
+}
+
 @keyframes movetitleelement3 {
   from {
     top: $title-element-3-top-start;
@@ -402,6 +495,36 @@ $text-wrapper-width-tablet-plus-margin: 432px;
   to {
     top: $title-element-3-top-start;
     left: $title-element-left-start;
+  }
+}
+
+@keyframes movetitleelement3tablet {
+  from {
+    top: $title-element-3-tablet-top-start;
+    left: $title-element-tablet-left-start;
+  }
+  50% {
+    top: $title-element-3-tablet-top-end + 40px;
+    left: $title-element-left-start + 100px;
+  }
+  to {
+    top: $title-element-3-tablet-top-end;
+    left: $title-element-3-tablet-left-end;
+  }
+}
+
+@keyframes movetitleelement3tabletreverse {
+  from {
+    top: $title-element-3-tablet-top-end;
+    left: $title-element-3-tablet-left-end;
+  }
+  50% {
+    top: $title-element-3-tablet-top-end + 40px;
+    left: $title-element-left-start + 100px;
+  }
+  to {
+    top: $title-element-3-tablet-top-start;
+    left: $title-element-tablet-left-start;
   }
 }
 
