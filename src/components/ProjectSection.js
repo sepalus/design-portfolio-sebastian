@@ -18,6 +18,7 @@ function ProjectSection({
   firstAreaEntry,
   setFirstAreaEntry,
   skipProjectSection,
+  isTablet,
 }) {
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
@@ -106,6 +107,7 @@ function ProjectSection({
           toggleDescriptionClass={toggleDescriptionClass}
           setToggleDescriptionClass={setToggleDescriptionClass}
           selectImage={selectImage}
+          isTablet={isTablet}
         />
       </div>
     </section>

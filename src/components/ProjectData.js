@@ -11,35 +11,46 @@ const {
   backgroundColorDark,
 } = variables;
 
+const minWidth = "258px";
+const minWidthTablet = "235px";
+const marginSideMin = "80px";
+const marginSideMinTablet = "60px";
+const marginTopMin = "70px";
+const marginBottomMin = "90px";
+
+const alignVerticalCenter = {
+  top: "50%",
+  transform: "translateY(-50%)",
+};
+
 const descriptionPlacementTopRightCorner = {
   top: "126px",
-  right: "100px",
+  right: marginSideMin,
   width: "285px",
 };
 
-const descriptionPlacementRightCenter = {
-  width: "256px",
-  top: "50%",
-  transform: "translateY(-50%)",
-  right: "100px",
+const descriptionPlacementRightVerticalCenter = {
+  ...alignVerticalCenter,
+  width: minWidth,
+  right: marginSideMin,
 };
 
-const descriptionPlacementBottomCentered = {
-  width: "520px",
-  bottom: "90px",
+const descriptionPlacementTopLeftCatalog = {
+  top: marginTopMin,
+  right: marginSideMin,
   left: catalogWidthPlusMargin,
 };
 
-const descriptionPlacementTopCenteredLeft = {
-  top: "70px",
-  left: catalogWidthPlusMargin,
-  right: "80px",
+const descriptionPlacementTabletRightVerticalCenter = {
+  ...alignVerticalCenter,
+  right: marginSideMinTablet,
+  width: minWidthTablet,
 };
 
-const descriptionPlacementTopCenteredRight = {
-  top: "70px",
-  left: "80px",
-  right: catalogWidthPlusMargin,
+const imageStyleWide = {
+  height: "calc(100% - 240px)",
+  marginTop: "120px",
+  marginBottom: "120px",
 };
 
 const descriptionPlacementCenteredRightExpandable = (catalogIsCompressed) => ({
@@ -49,12 +60,6 @@ const descriptionPlacementCenteredRightExpandable = (catalogIsCompressed) => ({
     : catalogWidthPlusMargin,
   transition: "left 1s, right 1s",
 });
-
-const imageStyleWide = {
-  height: "calc(100% - 240px)",
-  marginTop: "120px",
-  marginBottom: "120px",
-};
 
 const imageStyleDigital = (catalogIsCompressed) => ({
   ...imageStyleWide,
@@ -76,7 +81,7 @@ const imageStyleWebMain = (catalogIsCompressed) => ({
 });
 
 const moveImageOnExpand = (catalogIsCompressed) => ({
-  left: catalogIsCompressed ? "140px" : "80px",
+  left: catalogIsCompressed ? "140px" : marginSideMin,
   transition: "left 1s",
 });
 
@@ -91,6 +96,11 @@ const kaarnaDesignProject = {
   displayableCategory: 1,
   images: ["kaarna1.jpg", "kaarna2.jpg", "kaarna3.jpg", "kaarna4.jpg"],
   descriptionStyle: descriptionPlacementTopRightCorner,
+  descriptionStyleTablet: {
+    ...alignVerticalCenter,
+    width: "244px",
+    right: marginSideMin,
+  },
   mainColorDark: false,
   controlColorDark: true,
   backgroundColor: backgroundColorBlack,
@@ -120,7 +130,12 @@ const tyyniDesignProject = {
   categories: ["Product Design", "Acoustic Design", "Wall Panel Design"],
   displayableCategory: 1,
   images: ["tyyni1.jpg", "tyyni2.jpg"],
-  descriptionStyle: { ...descriptionPlacementTopRightCorner, width: "256px" },
+  descriptionStyle: { ...descriptionPlacementTopRightCorner, width: minWidth },
+  descriptionStyleTablet: {
+    top: "200px",
+    width: "180px",
+    right: "40px",
+  },
   mainColorDark: false,
   controlColorDark: true,
   descriptionColorDark: true,
@@ -185,7 +200,14 @@ const kierreDesignProject = {
     },
     individual: [{}, {}, {}, { transform: "translateX(70%)" }],
   },
-  descriptionStyle: descriptionPlacementRightCenter,
+  descriptionStyle: {
+    ...descriptionPlacementRightVerticalCenter,
+    right: "100px",
+  },
+  descriptionStyleTablet: {
+    ...descriptionPlacementTabletRightVerticalCenter,
+    width: "230px",
+  },
   mainColorDark: false,
   backgroundColor: "black",
 };
@@ -201,10 +223,16 @@ const kolmioillaDesignProject = {
   categories: ["Street Furniture Design", "Chair Design", "Spatial Design"],
   displayableCategory: 2,
   images: ["kolmiot1.png", "kolmiot2.png", "kolmiot3.png", "kolmiot4.png"],
-  descriptionStyle: descriptionPlacementTopCenteredLeft,
+  descriptionStyle: descriptionPlacementTopLeftCatalog,
+  descriptionStyleTablet: { left: "440px", right: "40px" },
   imageStyle: {
     individual: [{}, {}, {}, { ...imageStyleWide, objectFit: "cover" }],
   },
+  imageStyleTablet: {
+    common: imageStyleWide,
+    individual: [{}, {}, {}, {}],
+  },
+
   mainColorDark: false,
   backgroundColor: "black",
 };
@@ -247,7 +275,7 @@ const museDesignProject = (catalogIsCompressed) => ({
     individual: [
       {
         ...moveImageOnExpand(catalogIsCompressed),
-        marginTop: "70px",
+        marginTop: marginTopMin,
         marginBottom: "280px",
         width: "auto",
         height: "calc(100% - 350px)",
@@ -257,7 +285,7 @@ const museDesignProject = (catalogIsCompressed) => ({
   },
   descriptionStyle: {
     ...descriptionPlacementCenteredRightExpandable(catalogIsCompressed),
-    bottom: "90px",
+    bottom: marginBottomMin,
   },
   mainColorDark: true,
   backgroundColor: "#6bc9b7",
@@ -294,7 +322,7 @@ const anneliinaDesignProject = (catalogIsCompressed) => ({
   },
   descriptionStyle: {
     ...descriptionPlacementCenteredRightExpandable(catalogIsCompressed),
-    top: "70px",
+    top: marginTopMin,
   },
   mainColorDark: true,
   backgroundColor: "#96c1d9",
@@ -318,7 +346,7 @@ const scootDesignProject = (catalogIsCompressed) => ({
   },
   descriptionStyle: {
     ...descriptionPlacementCenteredRightExpandable(catalogIsCompressed),
-    top: "70px",
+    top: marginTopMin,
   },
   individual: [moveImageOnExpand(catalogIsCompressed)],
   mainColorDark: true,
@@ -359,7 +387,7 @@ const axiomDesignProject = (catalogIsCompressed) => ({
     individual: [
       {
         ...moveImageOnExpand(catalogIsCompressed),
-        marginTop: "70px",
+        marginTop: marginTopMin,
         marginBottom: "320px",
         width: "auto",
         height: "calc(100% - 390px)",

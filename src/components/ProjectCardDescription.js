@@ -5,7 +5,11 @@ import People from "@material-ui/icons/People";
 import CalendarToday from "@material-ui/icons/CalendarToday";
 import "./ProjectCardDescription.scss";
 
-function ProjectCardDescription({ activeProject, toggleDescriptionClass }) {
+function ProjectCardDescription({
+  activeProject,
+  toggleDescriptionClass,
+  isTablet,
+}) {
   const [showTeam, setShowTeam] = useState(false);
 
   const descriptionIsDark = activeProject.hasOwnProperty("descriptionColorDark")
@@ -32,9 +36,16 @@ function ProjectCardDescription({ activeProject, toggleDescriptionClass }) {
           "animate-description-static": toggleDescriptionClass === 2,
         }
       )}
-      style={{
-        ...activeProject.descriptionStyle,
-      }}
+      style={
+        isTablet
+          ? {
+              ...activeProject.descriptionStyle,
+              ...activeProject.descriptionStyleTablet,
+            }
+          : {
+              ...activeProject.descriptionStyle,
+            }
+      }
       onMouseLeave={() => {
         setShowTeam(false);
       }}

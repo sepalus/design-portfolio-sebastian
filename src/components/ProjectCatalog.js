@@ -33,7 +33,7 @@ function ProjectCatalog({
     >
       <h2>
         {catalogIsCompressed
-          ? ""
+          ? "."
           : isDigital
           ? "Digital and Service"
           : "Products and Furniture"}

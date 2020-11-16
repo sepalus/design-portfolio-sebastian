@@ -2,9 +2,6 @@ import React, { useState, useEffect } from "react";
 import classNames from "classnames";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import ExpandLess from "@material-ui/icons/ExpandLess";
-import variables from "../variables.js";
-
-const tabletMaxBreakpoint = variables.tabletMaxBreakpoint;
 
 import "./InformationSection.scss";
 
@@ -12,6 +9,8 @@ function InformationSection({
   informationRef,
   currentViewport,
   selectViewport,
+  isTablet,
+  windowWidth,
 }) {
   const [textExpanded, setTextExpanded] = useState(false);
   const [textExpandedAnimated, setTextExpandedAnimated] = useState(false);
@@ -23,7 +22,6 @@ function InformationSection({
   const phoneNumber = "040 7752722";
   const emailAddress = "sebastian.hognabba@gmail.com";
 
-  const windowWidth = window.innerWidth;
   const expandedImageWidth = 334;
   const textWidth = 488;
   const marginWidth = 32;
@@ -41,8 +39,6 @@ function InformationSection({
     (windowWidth - imageWidthTablet - textWidthTablet - marginWidthTablet) / 2 +
     imageWidthTablet +
     marginWidthTablet;
-
-  const isTablet = windowWidth <= tabletMaxBreakpoint;
 
   const informationText = () => ({
     __html:

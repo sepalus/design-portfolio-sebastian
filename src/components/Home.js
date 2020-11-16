@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import DesignerSection from "./DesignerSection";
 import ProjectSection from "./ProjectSection";
 import InformationSection from "./InformationSection";
+import variables from "../variables.js";
 
 export default function Home() {
   const [previousYOffset, setPreviousYOffset] = useState(0);
@@ -15,6 +16,10 @@ export default function Home() {
   const serviceRef = useRef(null);
   const informationRef = useRef(null);
   const rootElement = document.getElementById("root");
+
+  const tabletMaxBreakpoint = variables.tabletMaxBreakpoint;
+  const windowWidth = window.innerWidth;
+  const isTablet = windowWidth <= tabletMaxBreakpoint;
 
   useEffect(() => {
     setFirstAreaEntry(true);
@@ -98,6 +103,7 @@ export default function Home() {
         firstAreaEntry={firstAreaEntry}
         setFirstAreaEntry={setFirstAreaEntry}
         skipProjectSection={skipProjectSection}
+        isTablet={isTablet}
       />
       <ProjectSection
         projectRef={serviceRef}
@@ -108,11 +114,14 @@ export default function Home() {
         firstAreaEntry={firstAreaEntry}
         setFirstAreaEntry={setFirstAreaEntry}
         skipProjectSection={skipProjectSection}
+        isTablet={isTablet}
       />
       <InformationSection
         informationRef={informationRef}
         currentViewport={currentViewport}
         selectViewport={selectViewport}
+        windowWidth={windowWidth}
+        isTablet={isTablet}
       />
     </>
   );
