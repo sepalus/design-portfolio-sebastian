@@ -184,6 +184,17 @@ $text-wrapper-width-tablet-plus-margin: 422px;
     border: 1px solid $text-color-light;
     padding: 4px 6px;
   }
+
+  @media screen and (max-width: $tablet-max) {
+    button {
+      margin-left: 10px;
+      padding: 6px 10px;
+
+      img {
+        padding: 0px 8px 0px 0px;
+      }
+    }
+  }
 }
 
 .information-section-contact-icon-expandable-content-wrapper {
@@ -198,6 +209,9 @@ $text-wrapper-width-tablet-plus-margin: 422px;
 
 .information-section-contact-icon-wrapper:not(:first-of-type) {
   padding-left: 48px;
+  @media screen and (max-width: $tablet-max) {
+    padding-left: 40px;
+  }
   padding-right: 26px;
 }
 
