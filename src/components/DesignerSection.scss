@@ -1,5 +1,9 @@
+@import "../variables";
+
 $typist-width: 693px;
+$typist-width-tablet: 601px;
 $typist-height: 108px;
+$typist-height-tablet: 96px;
 
 .designer-section-content {
   height: 100%;
@@ -16,6 +20,14 @@ $typist-height: 108px;
 
   h3:not(:first-child) {
     margin-top: 24px;
+  }
+
+  @media screen and (max-width: $tablet-max) {
+    width: $typist-width-tablet;
+    height: $typist-height-tablet;
+    h3:not(:first-child) {
+      margin-top: 20px;
+    }
   }
 }
 

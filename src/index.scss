@@ -190,3 +190,38 @@ ul {
 .hide-element {
   display: none !important;
 }
+
+@media screen and (max-width: $tablet-max) {
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 19px;
+  }
+
+  h4 {
+    font-size: 16px;
+  }
+
+  li,
+  p {
+    font-size: 12px;
+  }
+
+  .text-small {
+    font-size: 10px;
+  }
+
+  .text-emphasized {
+    font-size: 13px;
+  }
+
+  .text-large {
+    font-size: 14px;
+  }
+}
