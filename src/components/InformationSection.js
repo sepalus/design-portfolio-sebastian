@@ -28,7 +28,7 @@ function InformationSection({
   const textWidth = 488;
   const marginWidth = 32;
 
-  const imageWidthTablet = 184;
+  const imageWidthTablet = 174;
   const textWidthTablet = 394;
   const marginWidthTablet = 28;
 

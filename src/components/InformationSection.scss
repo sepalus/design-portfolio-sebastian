@@ -13,14 +13,14 @@ $title-element-3-top-end: 344px;
 
 $title-element-tablet-left-start: 4px;
 $title-element-1-tablet-left-end: 230px;
-$title-element-1-tablet-top-start: 78px;
-$title-element-1-tablet-top-end: 159px;
+$title-element-1-tablet-top-start: 66px;
+$title-element-1-tablet-top-end: 149px;
 $title-element-2-tablet-left-end: 228px;
-$title-element-2-tablet-top-start: 116px;
-$title-element-2-tablet-top-end: 271px;
+$title-element-2-tablet-top-start: 106px;
+$title-element-2-tablet-top-end: 261px;
 $title-element-3-tablet-left-end: 133px;
-$title-element-3-tablet-top-start: 154px;
-$title-element-3-tablet-top-end: 355px;
+$title-element-3-tablet-top-start: 146px;
+$title-element-3-tablet-top-end: 345px;
 
 $text-wrapper-width: 488px;
 $text-wrapper-width-plus-margin: 520px;
@@ -54,12 +54,18 @@ $text-wrapper-width-tablet-plus-margin: 422px;
   object-fit: none;
   object-position: center top;
   filter: grayscale(100%);
+  @media screen and (max-width: $tablet-max) {
+    height: 170px;
+    width: 170px;
+    border-radius: 50%;
+    object-position: center -6px;
+  }
 }
 
 .information-section-about-introduction-title {
   margin-top: 10px;
   @media screen and (max-width: $tablet-max) {
-    margin-top: 14px;
+    margin-top: 4px;
   }
 }
 
@@ -99,6 +105,11 @@ $text-wrapper-width-tablet-plus-margin: 422px;
   left: $title-element-left-start;
   z-index: 2;
   white-space: nowrap;
+
+  p {
+    line-height: normal;
+  }
+
   @media screen and (max-width: $tablet-max) {
     padding: 4px 12px;
   }
@@ -130,11 +141,7 @@ $text-wrapper-width-tablet-plus-margin: 422px;
   position: absolute;
   margin-left: 4px;
   margin-top: 16px;
-  line-height: 30px;
   opacity: 0;
-  @media screen and (max-width: $tablet-max) {
-    line-height: 28px;
-  }
 }
 
 .information-section-contact {
