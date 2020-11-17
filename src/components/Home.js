@@ -124,6 +124,7 @@ export default function Home() {
         selectViewport={selectViewport}
         windowWidth={windowWidth}
         isTablet={isTablet}
+        isMobile={isMobile}
       />
     </>
   );

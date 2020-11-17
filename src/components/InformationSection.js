@@ -10,6 +10,7 @@ function InformationSection({
   currentViewport,
   selectViewport,
   isTablet,
+  isMobile,
   windowWidth,
 }) {
   const [textExpanded, setTextExpanded] = useState(false);
@@ -66,12 +67,17 @@ function InformationSection({
 
   const informationText = () => ({
     __html:
-      " With the problem-solving skills of an engineer and visual eye of an artist, equipped with Master’s Degrees in both UX Design (M.Sc.) and Industrial Design (M.A.), I design functional, aesthetically pleasing solutions that are delightful to use. I am a passionate &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; who believes that beauty and the capability to produce aesthetic pleasure are immensely important qualities of successful products and pieces of furniture. With a background in programming and UX design, I have produced elegant digital solutions as a &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; in various industries. My research in design aesthetics highlights the significance of aesthetic experiences in our everyday lives and provides tools for measuring them. As a &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I am a strong advocate for the importance of aesthetics in all designed solutions.",
+      "With the problem-solving skills of an engineer and visual eye of an artist, equipped with Master’s Degrees in both UX Design (M.Sc.) and Industrial Design (M.A.), I design functional, aesthetically pleasing solutions that are delightful to use. I am a passionate &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; who believes that beauty and the capability to produce aesthetic pleasure are immensely important qualities of successful products and pieces of furniture. With a background in programming and UX design, I have produced elegant digital solutions as a &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; in various industries. My research in design aesthetics highlights the significance of aesthetic experiences in our everyday lives and provides tools for measuring them. As a &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I am a strong advocate for the importance of aesthetics in all designed solutions.",
   });
 
   const informationTextTablet = () => ({
     __html:
-      " With the problem-solving skills of an engineer and visual eye of an artist, equipped with Master’s Degrees in both UX Design (M.Sc.) and Industrial Design (M.A.), I design functional, aesthetically pleasing solutions that are delightful to use. I am a passionate &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; who believes that beauty and the capability to produce aesthetic pleasure are immensely important qualities of successful products and pieces of furniture. With a background in programming and UX design, I have produced elegant digital solutions as a &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; in various industries. My research in design aesthetics highlights the significance of aesthetic experiences in our everyday lives and provides tools for measuring them. As a &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I am a strong advocate for the importance of aesthetics in all designed solutions.",
+      "With the problem-solving skills of an engineer and visual eye of an artist, equipped with Master’s Degrees in both UX Design (M.Sc.) and Industrial Design (M.A.), I design functional, aesthetically pleasing solutions that are delightful to use. I am a passionate &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; who believes that beauty and the capability to produce aesthetic pleasure are immensely important qualities of successful products and pieces of furniture. With a background in programming and UX design, I have produced elegant digital solutions as a &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; in various industries. My research in design aesthetics highlights the significance of aesthetic experiences in our everyday lives and provides tools for measuring them. As a &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I am a strong advocate for the importance of aesthetics in all designed solutions.",
+  });
+
+  const informationTextMobile = () => ({
+    __html:
+      "With the problem-solving skills of an engineer and visual eye of an artist, equipped with Master’s Degrees in both UX Design (M.Sc.) and Industrial Design (M.A.), I design functional, aesthetically pleasing solutions that are delightful to use. I am a passionate <button class='information-section-about-introduction-label-mobile link-button link-button-narrow'>Industrial Designer</button> who believes that beauty and the capability to produce aesthetic pleasure are immensely important qualities of successful products and pieces of furniture. With a background in programming and UX design, I have produced elegant digital solutions as a <button class='information-section-about-introduction-label-mobile link-button link-button-narrow'>Digital Creator</button> in various industries. My research in design aesthetics highlights the significance of aesthetic experiences in our everyday lives and provides tools for measuring them. As a <button class='information-section-about-introduction-label-mobile disabled-button link-button link-button-narrow'>Genuine Aetshete</button> I am a strong advocate for the importance of aesthetics in all designed solutions.",
   });
 
   useEffect(() => {
@@ -235,7 +241,11 @@ function InformationSection({
                   }
                 )}
                 dangerouslySetInnerHTML={
-                  isTablet ? informationTextTablet() : informationText()
+                  isMobile
+                    ? informationTextMobile()
+                    : isTablet
+                    ? informationTextTablet()
+                    : informationText()
                 }
               ></p>
             </div>
