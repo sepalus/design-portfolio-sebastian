@@ -43,7 +43,7 @@ $text-wrapper-width-tablet-plus-margin: 422px;
   justify-content: center;
   @media screen and (max-width: $mobile-max) {
     flex-grow: unset;
-    height: calc(100% - 100px);
+    height: calc(100% - 140px);
   }
 }
 
@@ -173,7 +173,7 @@ $text-wrapper-width-tablet-plus-margin: 422px;
 }
 
 .information-section-about-introduction-text-wrapper {
-  height: calc(100vh - 424px);
+  height: calc(100vh - 464px);
   margin-top: 20px;
   margin-bottom: 20px;
 
@@ -587,7 +587,6 @@ $text-wrapper-width-tablet-plus-margin: 422px;
   @media screen and (max-width: $mobile-max) {
     position: absolute;
     background-color: $background-color-dark;
-    height: 100px;
     bottom: 0px;
   }
 }
@@ -595,6 +594,9 @@ $text-wrapper-width-tablet-plus-margin: 422px;
 .information-section-contact-content-wrapper {
   display: flex;
   padding-right: 55px;
+  @media screen and (max-width: $mobile-max) {
+    padding-bottom: 18px;
+  }
 }
 
 .information-section-contact-icon-wrapper {
@@ -681,6 +683,22 @@ $text-wrapper-width-tablet-plus-margin: 422px;
       }
     }
   }
+  @media screen and (max-width: $mobile-max) {
+    right: -40px;
+    left: auto;
+    top: 36px;
+
+    button {
+      padding: 8px;
+
+      img {
+        width: 14px;
+      }
+      p {
+        line-height: 1em;
+      }
+    }
+  }
 }
 
 .information-section-contact-icon-wrapper:not(:first-of-type) {
@@ -707,32 +725,52 @@ $text-wrapper-width-tablet-plus-margin: 422px;
 }
 
 .animate-phone-button-out {
-  opacity: 0;
-  margin-left: 0px;
+  @media screen and (min-width: $tablet-min) {
+    opacity: 0;
+    margin-left: 0px;
+  }
 }
 
 .animate-email-icon-move-right {
-  left: 146px;
-  animation: iconelementin 1s forwards;
-  @media screen and (max-width: $tablet-max) {
-    left: 132px;
+  @media screen and (min-width: $tablet-min) {
+    left: 146px;
+    animation: iconelementin 1s forwards;
+
+    @media screen and (max-width: $tablet-max) {
+      left: 132px;
+    }
   }
 }
 
 .animate-email-icon-move-left {
-  left: 28px;
+  @media screen and (min-width: $tablet-min) {
+    left: 28px;
+  }
 }
 
 .animate-email-button-move-right {
-  left: 158px;
-  @media screen and (max-width: $tablet-max) {
-    left: 133px;
+  @media screen and (min-width: $tablet-min) {
+    left: 158px;
+    @media screen and (max-width: $tablet-max) {
+      left: 133px;
+    }
   }
 }
+
 .animate-email-button-move-left {
   left: 25px;
   @media screen and (max-width: $tablet-max) {
     left: 17px;
+  }
+
+  @media screen and (max-width: $mobile-max) {
+    right: -40px;
+    left: auto;
+    top: 36px;
+  }
+
+  @media screen and (min-width: 500px) and (max-width: $mobile-max) {
+    right: -136px;
   }
 }
 
@@ -741,8 +779,10 @@ $text-wrapper-width-tablet-plus-margin: 422px;
 }
 
 .animate-email-button-out {
-  opacity: 0;
-  margin-left: 0px;
+  @media screen and (min-width: $tablet-min) {
+    opacity: 0;
+    margin-left: 0px;
+  }
 }
 
 @keyframes iconelementin {

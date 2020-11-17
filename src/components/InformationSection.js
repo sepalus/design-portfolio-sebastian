@@ -286,7 +286,7 @@ function InformationSection({
               <p className="text-large">Hit me up:</p>
               <div className="information-section-contact-icon-expandable-content-container">
                 <div className="information-section-contact-icon-expandable-icon-wrapper">
-                  {!showPhoneNumber && <PhoneIcon />}
+                  {(!showPhoneNumber || isMobile) && <PhoneIcon />}
                 </div>
                 <div
                   className={classNames(
@@ -323,7 +323,9 @@ function InformationSection({
                     }}
                   >
                     <PhoneIcon />
-                    <p className="text-large"> {phoneNumber}</p>
+                    <p className={isMobile ? "" : "text-large"}>
+                      {phoneNumber}
+                    </p>
                   </button>
                 </div>
                 <div
@@ -333,7 +335,7 @@ function InformationSection({
                     { "animate-email-icon-move-left": !showPhoneNumber }
                   )}
                 >
-                  {!showEmailAddress && <EmailIcon />}
+                  {(!showEmailAddress || isMobile) && <EmailIcon />}
                 </div>
                 <div
                   className={classNames(
@@ -370,7 +372,9 @@ function InformationSection({
                     }}
                   >
                     <EmailIcon />
-                    <p className="text-large"> {emailAddress}</p>
+                    <p className={isMobile ? "" : "text-large"}>
+                      {emailAddress}
+                    </p>
                   </button>
                 </div>
               </div>
