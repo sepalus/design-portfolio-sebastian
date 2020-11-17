@@ -45,7 +45,7 @@ function DesignerSection({
                 >
                   Sebastian
                 </span>
-                &nbsp;a designer{isMobile && <br />}
+                &nbsp;a designer {isMobile && <br />}
                 in both the physical and digital world
                 {isMobile && <span>.</span>}
               </Typist>
@@ -62,7 +62,7 @@ function DesignerSection({
               >
                 Sebastian
               </span>
-              &nbsp;a designer{isMobile && <br />}
+              &nbsp;a designer {isMobile && <br />}
               in both the physical and digital world
               {isMobile && <span>.</span>}
             </h3>
@@ -86,7 +86,8 @@ function DesignerSection({
                     setTimeout(() => setWorkTypistDone(true), 500)
                   }
                 >
-                  If you’re interested in what I’ve done,{isMobile && <br />}
+                  {!isMobile && <span>&nbsp;</span>}If you’re interested in what
+                  I’ve done,{isMobile && <br />}
                   {isMobile && <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>}please take
                   a look at my&nbsp;
                   <span
@@ -100,7 +101,8 @@ function DesignerSection({
             )
           ) : (
             <h3>
-              If you’re interested in what I’ve done,{isMobile && <br />}
+              {!isMobile && <span>&nbsp;</span>} If you’re interested in what
+              I’ve done,{isMobile && <br />}
               {isMobile && <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>}please take a
               look at my&nbsp;
               <span
