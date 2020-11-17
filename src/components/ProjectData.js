@@ -24,6 +24,11 @@ const alignVerticalCenter = {
   transform: "translateY(-50%)",
 };
 
+const alignHorizontalCenter = {
+  right: "50%",
+  transform: "translateX(50%)",
+};
+
 const descriptionPlacementTopRightCorner = {
   top: topAlignWithTitle,
   right: marginSideMin,
@@ -46,6 +51,15 @@ const descriptionPlacementTabletRightVerticalCenter = {
   ...alignVerticalCenter,
   right: marginSideMinTablet,
   width: minWidthTablet,
+};
+
+const imageStyleMobilePaddingVertical = {
+  paddingTop: "30px",
+  paddingBottom: "30px",
+};
+
+const imageStyleMobilePadding = {
+  padding: "30px",
 };
 
 const imageStyleWide = {
@@ -229,14 +243,27 @@ const kierreDesignProject = {
   ],
   displayableCategory: 2,
   images: ["kierre1.png", "kierre2.png", "kierre3.png", "kierre4.png"],
-  classes: "contain contain-center",
+  classes: "contain",
   imageStyle: {
     common: {
+      ...alignHorizontalCenter,
       paddingTop: "100px",
       paddingBottom: "120px",
       maxWidth: "calc(100vh - 340px)",
     },
-    individual: [{}, {}, {}, { transform: "translateX(70%)" }],
+    individual: [{}, {}, {}, { transform: "translateX(60%)" }],
+  },
+  imageStyleMobile: {
+    common: {
+      ...imageStyleMobilePaddingVertical,
+      maxWidth: "calc(100vh - 340px)",
+    },
+    individual: [
+      {},
+      { paddingTop: "60px", paddingBottom: "60px" },
+      { paddingTop: "60px", paddingBottom: "60px" },
+      { transform: "translateX(10%)" },
+    ],
   },
   descriptionStyle: {
     ...descriptionPlacementRightVerticalCenter,
@@ -269,6 +296,9 @@ const kolmioillaDesignProject = {
   imageStyleTablet: {
     common: imageStyleWide,
     individual: [{}, {}, {}, {}],
+  },
+  imageStyleMobile: {
+    individual: [{}, {}, {}, { objectFit: "cover", minHeight: "250px" }],
   },
   mainColorDark: false,
   backgroundColor: "black",
@@ -324,10 +354,7 @@ const museDesignProject = (catalogIsCompressed) => ({
     individual: [imageStyleServiceTablet(catalogIsCompressed)],
   },
   imageStyleMobile: {
-    common: {
-      paddingLeft: "30px",
-      paddingRight: "30px",
-    },
+    common: { ...imageStyleMobilePadding },
   },
   descriptionStyle: {
     ...descriptionPlacementCenteredRightExpandable(catalogIsCompressed),
@@ -355,6 +382,7 @@ const anneliinaDesignProject = (catalogIsCompressed) => ({
     "anneliina4.png",
     "anneliina5.png",
   ],
+  firstImageIsDuplicate: true,
   classes: "contain",
   imageStyle: {
     common: imageStyleDigital(catalogIsCompressed),
@@ -369,6 +397,9 @@ const anneliinaDesignProject = (catalogIsCompressed) => ({
   },
   imageStyleTablet: {
     individual: [imageStyleWebTablet(catalogIsCompressed)],
+  },
+  imageStyleMobile: {
+    common: { ...imageStyleMobilePadding },
   },
   descriptionStyle: {
     ...descriptionPlacementCenteredRightExpandable(catalogIsCompressed),
@@ -390,6 +421,7 @@ const scootDesignProject = (catalogIsCompressed) => ({
   displayableCategory: 0,
   showVideo: true,
   images: ["scoot1.png", "scoot1.png", "scoot2.png", "scoot3.png"],
+  firstImageIsDuplicate: true,
   classes: "contain",
   imageStyle: {
     common: imageStyleDigital(catalogIsCompressed),
@@ -397,6 +429,9 @@ const scootDesignProject = (catalogIsCompressed) => ({
   },
   imageStyleTablet: {
     individual: [imageStyleWebTablet(catalogIsCompressed)],
+  },
+  imageStyleMobile: {
+    common: { ...imageStyleMobilePadding },
   },
   descriptionStyle: {
     ...descriptionPlacementCenteredRightExpandable(catalogIsCompressed),
@@ -458,6 +493,9 @@ const axiomDesignProject = (catalogIsCompressed) => ({
         height: "calc(100% - 410px)",
       },
     ],
+  },
+  imageStyleMobile: {
+    common: { ...imageStyleMobilePadding },
   },
   descriptionStyle: {
     ...descriptionPlacementCenteredRightExpandable(catalogIsCompressed),

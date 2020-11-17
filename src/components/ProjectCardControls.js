@@ -9,6 +9,7 @@ function ProjectCardControls({
   activeProject,
   activeImageIndex,
   imageAmount,
+  filteredImages,
   currentViewport,
   catalogIsCompressed,
   selectImage,
@@ -63,7 +64,7 @@ function ProjectCardControls({
               onClick={() => selectImage(activeImageIndex - 1)}
             />
             <div className="project-card-controls-image-buttons">
-              {activeProject.images.map((image, index) => (
+              {filteredImages.map((image, index) => (
                 <ImageButton
                   activeImageIndex={activeImageIndex}
                   selectImage={selectImage}

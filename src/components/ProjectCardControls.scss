@@ -38,6 +38,10 @@
   }
   @media screen and (max-width: $mobile-max) {
     height: 80px;
+
+    > * {
+      transform: translateY(-8px);
+    }
   }
 }
 

@@ -30,6 +30,27 @@ function ProjectSection({
   const [toggleCardImageClass, setToggleCardImageClass] = useState(0);
   const [toggleDescriptionClass, setToggleDescriptionClass] = useState(0);
 
+  const projects =
+    designArea === 3
+      ? aestheticsDesignProjects
+      : designArea === 2
+      ? digitalProjects(catalogIsCompressed)
+      : industrialProjects(catalogIsCompressed);
+
+  const activeProject = projects[activeProjectIndex];
+
+  const filteredImages =
+    isMobile && activeProject.firstImageIsDuplicate
+      ? activeProject.images.slice(1)
+      : activeProject.images;
+
+  const filteredImageStyleIndividualMobile =
+    activeProject.imageStyleMobile && activeProject.imageStyleMobile.individual
+      ? isMobile && activeProject.firstImageIsDuplicate
+        ? activeProject.imageStyleMobile.individual.slice(1)
+        : activeProject.imageStyleMobile.individual
+      : undefined;
+
   useEffect(() => {
     setToggleCardClass(currentViewport === designArea ? 1 : 0);
     setToggleCardImageClass(0);
@@ -41,15 +62,7 @@ function ProjectSection({
     setCatalogIsOpenMobile(false);
   }, [currentViewport]);
 
-  const projects =
-    designArea === 3
-      ? aestheticsDesignProjects
-      : designArea === 2
-      ? digitalProjects(catalogIsCompressed)
-      : industrialProjects(catalogIsCompressed);
-
-  const activeProject = projects[activeProjectIndex];
-  const imageAmount = activeProject.images.length;
+  const imageAmount = filteredImages.length;
 
   if (activeProjectIndex >= projects.length) setActiveProjectIndex(0);
 
@@ -115,6 +128,10 @@ function ProjectSection({
           currentViewport={currentViewport}
           activeProject={activeProject}
           activeImageIndex={activeImageIndex}
+          filteredImages={filteredImages}
+          filteredImageStyleIndividualMobile={
+            filteredImageStyleIndividualMobile
+          }
           imageAmount={imageAmount}
           designArea={designArea}
           catalogIsCompressed={catalogIsCompressed}

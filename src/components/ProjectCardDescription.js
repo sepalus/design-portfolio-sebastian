@@ -38,7 +38,9 @@ function ProjectCardDescription({
     setShowTeam(false);
   }, [currentViewport]);
 
-  const descriptionIsDark = activeProject.hasOwnProperty("descriptionColorDark")
+  const descriptionIsDark = isMobile
+    ? activeProject.mainColorDark
+    : activeProject.hasOwnProperty("descriptionColorDark")
     ? activeProject.descriptionColorDark
     : activeProject.mainColorDark || false;
 

@@ -10,6 +10,8 @@ function ProjectCard({
   designArea,
   activeProject,
   activeImageIndex,
+  filteredImages,
+  filteredImageStyleIndividualMobile,
   imageAmount,
   catalogIsCompressed,
   toggleCardClass,
@@ -45,7 +47,7 @@ function ProjectCard({
         </div>
       )}
       <div className="project-card-image-container">
-        {activeProject.images.map((image, index) => {
+        {filteredImages.map((image, index) => {
           const imageStyle = activeProject.imageStyle
             ? activeProject.imageStyle.individual
               ? {
@@ -64,9 +66,14 @@ function ProjectCard({
               : activeProject.imageStyleTablet.common
             : {};
 
-          const imageStyleMobile =
-            activeProject.imageStyleMobile &&
-            activeProject.imageStyleMobile.common;
+          const imageStyleMobile = activeProject.imageStyleMobile
+            ? filteredImageStyleIndividualMobile
+              ? {
+                  ...activeProject.imageStyleMobile.common,
+                  ...filteredImageStyleIndividualMobile[index],
+                }
+              : activeProject.imageStyleMobile.common
+            : {};
 
           return (
             <div
@@ -116,6 +123,7 @@ function ProjectCard({
         activeProject={activeProject}
         activeImageIndex={activeImageIndex}
         imageAmount={imageAmount}
+        filteredImages={filteredImages}
         catalogIsCompressed={catalogIsCompressed}
         selectImage={selectImage}
         isMobile={isMobile}
