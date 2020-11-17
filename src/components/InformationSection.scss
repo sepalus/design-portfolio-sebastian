@@ -594,13 +594,18 @@ $text-wrapper-width-tablet-plus-margin: 422px;
 .information-section-contact-content-wrapper {
   display: flex;
   padding-right: 55px;
+  @media screen and (max-width: $tablet-max) {
+    padding-right: 53px;
+  }
   @media screen and (max-width: $mobile-max) {
+    padding-right: 51px;
     padding-bottom: 18px;
   }
 }
 
 .information-section-contact-icon-wrapper {
   display: flex;
+  position: relative;
 
   img {
     align-self: center;
@@ -641,94 +646,105 @@ $text-wrapper-width-tablet-plus-margin: 422px;
 .information-section-contact-icon-expandable-icon-wrapper {
   position: absolute;
   z-index: 1;
-}
-
-.information-section-contact-icon-expandable-icon-wrapper-email {
-  left: 28px;
-}
-
-.information-section-contact-icon-expandable-button-wrapper-email {
-  left: 25px;
 
   @media screen and (max-width: $tablet-max) {
-    left: 17px;
+    img {
+      padding-top: 4px;
+    }
+  }
+  @media screen and (max-width: $mobile-max) {
+    img {
+      width: 16px;
+    }
+  }
+}
+.information-section-contact-icon-expandable-icon-wrapper {
+  position: absolute;
+  z-index: 1;
+}
+
+.information-section-contact-icon-expandable-icon-wrapper:first-of-type {
+  left: 74px;
+  @media screen and (max-width: $tablet-max) {
+    left: 65px;
+  }
+}
+.information-section-contact-icon-expandable-icon-wrapper:nth-of-type(2) {
+  left: 102px;
+  @media screen and (max-width: $tablet-max) {
+    left: 90px;
+  }
+}
+
+.information-section-contact-icon-expandable-icon-wrapper-hide {
+  > img {
+    display: none;
   }
 }
 
 .information-section-contact-icon-expandable-button-wrapper {
   position: absolute;
   left: -3px;
-  top: -7px;
+  top: -6px;
   white-space: nowrap;
 
   button {
-    opacity: 0;
     padding: 6px 12px;
-  }
-
-  button img {
-    padding: 0px 10px 1px 0px;
+    img {
+      padding: 0px 10px 1px 0px;
+    }
   }
 
   @media screen and (max-width: $tablet-max) {
-    left: -11px;
-    top: -6px;
+    left: -1px;
 
     button {
-      margin-left: 10px;
-      padding: 6px 10px;
+      padding: 5px 10px;
 
       img {
         padding: 0px 8px 1px 0px;
       }
     }
   }
-  @media screen and (max-width: $mobile-max) {
-    right: -40px;
-    left: auto;
-    top: 36px;
 
+  @media screen and (max-width: $mobile-max) {
+    left: -66px;
+    top: 34px;
     button {
       padding: 8px;
 
-      img {
-        width: 14px;
-      }
       p {
         line-height: 1em;
       }
     }
   }
+
+  &.information-section-contact-icon-expandable-button-wrapper-email {
+    @media screen and (max-width: $mobile-max) {
+      left: -93px;
+    }
+
+    @media screen and (max-width: 499px) {
+      left: -168px;
+    }
+  }
 }
 
 .information-section-contact-icon-wrapper:not(:first-of-type) {
-  padding-left: 48px;
+  margin-left: 48px;
   @media screen and (max-width: $tablet-max) {
-    padding-left: 40px;
+    margin-left: 40px;
   }
 }
 
 /* Animations */
 
-.animate-copied-text-1 {
-  animation: copiedtextshow1 1.5s forwards;
-  animation-delay: 0s;
-}
-
-.animate-copied-text-2 {
-  animation: copiedtextshow2 1.5s forwards;
-  animation-delay: 0s;
-}
-
-.animate-phone-button-in {
+.animate-button-enter {
   animation: iconelementin 1s forwards;
 }
 
-.animate-phone-button-out {
-  @media screen and (min-width: $tablet-min) {
-    opacity: 0;
-    margin-left: 0px;
-  }
+.animate-button-exit {
+  opacity: 0;
 }
 
 .animate-email-icon-move-right {
@@ -742,47 +758,14 @@ $text-wrapper-width-tablet-plus-margin: 422px;
   }
 }
 
-.animate-email-icon-move-left {
-  @media screen and (min-width: $tablet-min) {
-    left: 28px;
-  }
+.animate-copied-text-1 {
+  animation: copiedtextshow1 1.5s forwards;
+  animation-delay: 0s;
 }
 
-.animate-email-button-move-right {
-  @media screen and (min-width: $tablet-min) {
-    left: 158px;
-    @media screen and (max-width: $tablet-max) {
-      left: 133px;
-    }
-  }
-}
-
-.animate-email-button-move-left {
-  left: 25px;
-  @media screen and (max-width: $tablet-max) {
-    left: 17px;
-  }
-
-  @media screen and (max-width: $mobile-max) {
-    right: -40px;
-    left: auto;
-    top: 36px;
-  }
-
-  @media screen and (min-width: 500px) and (max-width: $mobile-max) {
-    right: -136px;
-  }
-}
-
-.animate-email-button-in {
-  animation: iconelementin 1s forwards;
-}
-
-.animate-email-button-out {
-  @media screen and (min-width: $tablet-min) {
-    opacity: 0;
-    margin-left: 0px;
-  }
+.animate-copied-text-2 {
+  animation: copiedtextshow2 1.5s forwards;
+  animation-delay: 0s;
 }
 
 @keyframes iconelementin {

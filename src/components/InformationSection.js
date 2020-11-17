@@ -106,27 +106,27 @@ function InformationSection({
     { "no-style-button": !textExpandedAnimated }
   );
 
+  const hidePhoneNumber = () => {
+    setShowEmailAddress(false);
+    setToggleEmailCopied(0);
+    setShowPhoneNumber(true);
+  };
+
+  const hideEmailAddress = () => {
+    setShowPhoneNumber(false);
+    setTogglePhoneCopied(0);
+    setShowEmailAddress(true);
+  };
+
   const PhoneIcon = () => (
-    <img
-      src="./assets/icons/phone.png"
-      alt="Phone"
-      onClick={() => {
-        setShowEmailAddress(false);
-        setToggleEmailCopied(0);
-        setShowPhoneNumber(true);
-      }}
-    />
+    <img src="./assets/icons/phone.png" alt="Phone" onClick={hidePhoneNumber} />
   );
 
   const EmailIcon = () => (
     <img
       src="./assets/icons/email.png"
-      alt="email"
-      onClick={() => {
-        setShowPhoneNumber(false);
-        setTogglePhoneCopied(0);
-        setShowEmailAddress(true);
-      }}
+      alt="Email"
+      onClick={hideEmailAddress}
     />
   );
 
@@ -284,42 +284,30 @@ function InformationSection({
             </div>
             <div className="information-section-contact-icon-wrapper">
               <p className="text-large">Hit me up:</p>
-              <div className="information-section-contact-icon-expandable-content-container">
-                <div className="information-section-contact-icon-expandable-icon-wrapper">
-                  {(!showPhoneNumber || isMobile) && <PhoneIcon />}
-                </div>
-                <div
-                  className={classNames(
-                    "information-section-contact-icon-expandable-button-wrapper"
-                  )}
-                >
-                  <span
-                    className={classNames(
-                      "text-small",
-                      {
-                        "animate-copied-text-1": togglePhoneCopied === -1,
-                      },
-                      {
-                        "animate-copied-text-2": togglePhoneCopied === 1,
-                      }
-                    )}
-                  >
-                    Copied
-                  </span>
+              <div
+                className={classNames(
+                  "information-section-contact-icon-expandable-icon-wrapper",
+                  {
+                    "information-section-contact-icon-expandable-icon-wrapper-hide":
+                      showPhoneNumber && !isMobile,
+                  }
+                )}
+              >
+                <PhoneIcon />
+                <div className="information-section-contact-icon-expandable-button-wrapper">
                   <button
                     className={classNames(
                       "link-button icon-button",
-                      { "animate-phone-button-in": showPhoneNumber },
-                      { "animate-phone-button-out": !showPhoneNumber }
+                      {
+                        "animate-button-enter": showPhoneNumber,
+                      },
+                      {
+                        "animate-button-exit": !showPhoneNumber,
+                      }
                     )}
                     disabled={!showPhoneNumber}
                     onClick={() => {
-                      navigator.clipboard.writeText(
-                        phoneNumber.replace(/ /g, "")
-                      );
-                      setTogglePhoneCopied(
-                        togglePhoneCopied === 0 ? 1 : -togglePhoneCopied
-                      );
+                      navigator.clipboard.writeText(phoneNumber);
                     }}
                   >
                     <PhoneIcon />
@@ -328,47 +316,31 @@ function InformationSection({
                     </p>
                   </button>
                 </div>
-                <div
-                  className={classNames(
-                    "information-section-contact-icon-expandable-icon-wrapper information-section-contact-icon-expandable-icon-wrapper-email",
-                    { "animate-email-icon-move-right": showPhoneNumber },
-                    { "animate-email-icon-move-left": !showPhoneNumber }
-                  )}
-                >
-                  {(!showEmailAddress || isMobile) && <EmailIcon />}
-                </div>
-                <div
-                  className={classNames(
-                    "information-section-contact-icon-expandable-button-wrapper information-section-contact-icon-expandable-button-wrapper-email",
-                    { "animate-email-button-move-right": showPhoneNumber },
-                    { "animate-email-button-move-left": !showPhoneNumber }
-                  )}
-                >
-                  <span
-                    className={classNames(
-                      "text-small",
-                      {
-                        "animate-copied-text-1": toggleEmailCopied === -1,
-                      },
-                      {
-                        "animate-copied-text-2": toggleEmailCopied === 1,
-                      }
-                    )}
-                  >
-                    Copied
-                  </span>
+              </div>
+              <div
+                className={classNames(
+                  "information-section-contact-icon-expandable-icon-wrapper",
+                  {
+                    "information-section-contact-icon-expandable-icon-wrapper-hide":
+                      showEmailAddress && !isMobile,
+                  }
+                )}
+              >
+                <EmailIcon />
+                <div className="information-section-contact-icon-expandable-button-wrapper information-section-contact-icon-expandable-button-wrapper-email">
                   <button
                     className={classNames(
                       "link-button icon-button",
-                      { "animate-email-button-in": showEmailAddress },
-                      { "animate-email-button-out": !showEmailAddress }
+                      {
+                        "animate-button-enter": showEmailAddress,
+                      },
+                      {
+                        "animate-button-exit": !showEmailAddress,
+                      }
                     )}
                     disabled={!showEmailAddress}
                     onClick={() => {
                       navigator.clipboard.writeText(emailAddress);
-                      setToggleEmailCopied(
-                        toggleEmailCopied === 0 ? 1 : -toggleEmailCopied
-                      );
                     }}
                   >
                     <EmailIcon />
