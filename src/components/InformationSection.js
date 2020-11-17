@@ -18,6 +18,7 @@ function InformationSection({
   const [performAnimation, setPerformAnimation] = useState(false);
   const [showPhoneNumber, setShowPhoneNumber] = useState(false);
   const [showEmailAddress, setShowEmailAddress] = useState(false);
+  const [emailElementIsRight, setEmailElementIsRight] = useState(false);
   const [togglePhoneCopied, setTogglePhoneCopied] = useState(0);
   const [toggleEmailCopied, setToggleEmailCopied] = useState(0);
 
@@ -26,6 +27,7 @@ function InformationSection({
     setShowEmailAddress(false);
     setTogglePhoneCopied(0);
     setToggleEmailCopied(0);
+    setEmailElementIsRight(false);
   };
 
   const mouseClickedInformation = (event) => {
@@ -110,6 +112,7 @@ function InformationSection({
     setShowEmailAddress(false);
     setToggleEmailCopied(0);
     setShowPhoneNumber(true);
+    setEmailElementIsRight(true);
   };
 
   const hideEmailAddress = () => {
@@ -335,7 +338,12 @@ function InformationSection({
                     className={classNames(
                       "link-button icon-button",
                       {
-                        "animate-button-enter": showEmailAddress,
+                        "animate-button-enter":
+                          showEmailAddress && !emailElementIsRight,
+                      },
+                      {
+                        "animate-button-enter-left":
+                          showEmailAddress && emailElementIsRight,
                       },
                       {
                         "animate-button-exit": !showEmailAddress,
