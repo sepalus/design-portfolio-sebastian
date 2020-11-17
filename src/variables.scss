@@ -4,6 +4,7 @@ $tablet-max: 1023px;
 $desktop-min: 1024px;
 
 $catalog-width: 380px;
+$catalog-width-mobile: 300px;
 $catalog-remaining-width: calc(100% - 380px);
 $catalog-collapsed-width: 120px;
 $catalog-collapsed-remaining-width: calc(100% - 120px);
@@ -14,7 +15,7 @@ $catalog-double-margin-remaining-width: calc(100% - 580px);
 /* -- Background -- */
 $background-color-black: black;
 $background-color-dark: #101010;
-$background-color-light: #101010;
+$background-color-light: #f0f0f0;
 
 $background-color-light-hover: rgba(
   $color: white,

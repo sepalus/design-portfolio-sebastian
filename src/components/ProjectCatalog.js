@@ -3,6 +3,7 @@ import classNames from "classnames";
 import "./ProjectCatalog.scss";
 import ChevronRight from "@material-ui/icons/ChevronRight";
 import ChevronLeft from "@material-ui/icons/ChevronLeft";
+import Close from "@material-ui/icons/Close";
 
 function ProjectCatalog({
   designArea,
@@ -12,6 +13,9 @@ function ProjectCatalog({
   setCatalogIsCompressed,
   setToggleCardImageClass,
   selectProject,
+  setCatalogIsOpenMobile,
+  catalogIsOpenMobile,
+  isMobile,
 }) {
   const isDigital = designArea === 2;
 
@@ -21,25 +25,33 @@ function ProjectCatalog({
     ? projects[activeProjectIndex].catalogColorDark
     : projects[activeProjectIndex].mainColorDark || false;
 
+  if (isMobile) setCatalogIsCompressed(false);
+
   return (
     <div
-      style={{ display: "none" }}
       className={classNames(
         "project-catalog",
         {
           "project-catalog-compressed animate-catalog-compress": catalogIsCompressed,
         },
         { "animate-catalog-expand": !catalogIsCompressed },
-        { "project-catalog-dark": catalogIsDark }
+        { "project-catalog-dark": catalogIsDark },
+        { "project-catalog-closed": isMobile && !catalogIsOpenMobile }
       )}
     >
-      <h2>
-        {catalogIsCompressed
-          ? "."
-          : isDigital
-          ? "Digital and Service"
-          : "Products and Furniture"}
-      </h2>
+      {isMobile ? (
+        <div className="project-catalog-mobile-close-button-wrapper">
+          <Close onClick={() => setCatalogIsOpenMobile(false)} />
+        </div>
+      ) : (
+        <h2>
+          {catalogIsCompressed
+            ? "."
+            : isDigital
+            ? "Digital and Service"
+            : "Products and Furniture"}
+        </h2>
+      )}
       <ul className="project-catalog-projects">
         {projects.map((project, index) => {
           const isActive = index === activeProjectIndex;
@@ -66,33 +78,45 @@ function ProjectCatalog({
         })}
       </ul>
       <div
-        className={classNames("vertical-line vertical-line-top", {
-          "vertical-line-right": isDigital,
-        })}
+        className={classNames(
+          "vertical-line vertical-line-top",
+          {
+            "vertical-line-right": isDigital,
+          },
+          {
+            " vertical-line-mobile": isMobile,
+          }
+        )}
       ></div>
       <div
-        className={classNames("vertical-line vertical-line-bottom", {
-          "vertical-line-right": isDigital,
-        })}
-      ></div>
-      <div className="project-catalog-expand-button">
-        {(catalogIsCompressed && !isDigital) ||
-        (!catalogIsCompressed && isDigital) ? (
-          <ChevronRight
-            onClick={() => {
-              setToggleCardImageClass(1);
-              setCatalogIsCompressed(!catalogIsCompressed);
-            }}
-          />
-        ) : (
-          <ChevronLeft
-            onClick={() => {
-              setToggleCardImageClass(1);
-              setCatalogIsCompressed(!catalogIsCompressed);
-            }}
-          />
+        className={classNames(
+          "vertical-line vertical-line-bottom",
+          {
+            "vertical-line-right": isDigital,
+          },
+          { "hide-element": isMobile }
         )}
-      </div>
+      ></div>
+      {!isMobile && (
+        <div className="project-catalog-expand-button">
+          {(catalogIsCompressed && !isDigital) ||
+          (!catalogIsCompressed && isDigital) ? (
+            <ChevronRight
+              onClick={() => {
+                setToggleCardImageClass(1);
+                setCatalogIsCompressed(!catalogIsCompressed);
+              }}
+            />
+          ) : (
+            <ChevronLeft
+              onClick={() => {
+                setToggleCardImageClass(1);
+                setCatalogIsCompressed(!catalogIsCompressed);
+              }}
+            />
+          )}
+        </div>
+      )}
     </div>
   );
 }

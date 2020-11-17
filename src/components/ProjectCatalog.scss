@@ -37,6 +37,9 @@
     background-color: $background-color-light-selected;
     border: 1px solid $text-color-light;
     padding-left: 20px;
+    @media screen and (max-width: $mobile-max) {
+      background-color: $background-color-light-selected;
+    }
   }
 
   .project-catalog-active-project button:hover {
@@ -56,6 +59,41 @@
   .vertical-line-bottom {
     bottom: 0px;
   }
+
+  .vertical-line-mobile {
+    top: 0px;
+    height: 100%;
+    left: $catalog-width-mobile;
+  }
+
+  @media screen and (max-width: $mobile-max) {
+    width: $catalog-width-mobile;
+    padding: 0px 30px;
+    background-color: $background-color-dark;
+    ul {
+      margin-top: 0px;
+    }
+
+    button {
+      height: 45px;
+    }
+
+    .project-catalog-active-project button {
+      padding-left: 16px;
+    }
+  }
+}
+.project-catalog-mobile-close-button-wrapper {
+  height: 90px;
+  display: flex;
+  align-items: center;
+  svg {
+    font-size: 20px;
+  }
+}
+
+.project-catalog-closed {
+  display: none;
 }
 
 .project-catalog-dark {
@@ -80,6 +118,9 @@
   .project-catalog-active-project button:hover {
     background-color: $background-color-hyperlight-hover;
   }
+  @media screen and (max-width: $mobile-max) {
+    background-color: $background-color-light;
+  }
 }
 
 .project-catalog-projects {
@@ -89,6 +130,9 @@
   img {
     max-width: 24px;
     max-height: 24px;
+  }
+  @media screen and (max-width: $mobile-max) {
+    margin-top: 0px;
   }
 }
 
@@ -198,6 +242,10 @@
   .project-catalog {
     animation: moveup 0.5s forwards;
     animation-delay: 0.2s;
+
+    @media screen and (max-width: $mobile-max) {
+      animation: fadein 0.5s forwards;
+    }
   }
 }
 

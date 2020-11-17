@@ -83,7 +83,7 @@ function ProjectCardDescription({
           "project-card-description-content-container-small-height": isSmallHeight,
         })}
       >
-        <div className="vertical-line"></div>
+        {!isMobile && <div className="vertical-line"></div>}
         <h3 className="project-card-description-title">
           {activeProject.title}
         </h3>

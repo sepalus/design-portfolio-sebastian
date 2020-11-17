@@ -3,6 +3,7 @@ import classNames from "classnames";
 import "./ProjectCard.scss";
 import ProjectCardDescription from "./ProjectCardDescription";
 import ProjectCardControls from "./ProjectCardControls";
+import Menu from "@material-ui/icons/Menu";
 
 function ProjectCard({
   currentViewport,
@@ -14,6 +15,7 @@ function ProjectCard({
   toggleCardClass,
   toggleCardImageClass,
   toggleDescriptionClass,
+  setCatalogIsOpenMobile,
   selectImage,
   windowHeight,
   isMobile,
@@ -31,7 +33,12 @@ function ProjectCard({
       }}
     >
       {isMobile && (
-        <div className="project-card-title-element-mobile">
+        <div
+          className={classNames("project-card-title-element-mobile", {
+            "project-card-title-element-mobile-digital": isDigital,
+          })}
+        >
+          <Menu onClick={() => setCatalogIsOpenMobile(true)} />
           <h2>
             {isDigital ? "Digital and Service" : "Products and Furniture"}
           </h2>

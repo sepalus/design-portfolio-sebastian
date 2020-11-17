@@ -25,6 +25,7 @@ function ProjectSection({
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [catalogIsCompressed, setCatalogIsCompressed] = useState(false);
+  const [catalogIsOpenMobile, setCatalogIsOpenMobile] = useState(false);
   const [toggleCardClass, setToggleCardClass] = useState(0);
   const [toggleCardImageClass, setToggleCardImageClass] = useState(0);
   const [toggleDescriptionClass, setToggleDescriptionClass] = useState(0);
@@ -33,8 +34,11 @@ function ProjectSection({
     setToggleCardClass(currentViewport === designArea ? 1 : 0);
     setToggleCardImageClass(0);
     setToggleDescriptionClass(
-      currentViewport === designArea && activeImageIndex === 0 ? 1 : 0
+      currentViewport === designArea && (activeImageIndex === 0 || isMobile)
+        ? 1
+        : 0
     );
+    setCatalogIsOpenMobile(false);
   }, [currentViewport]);
 
   const projects =
@@ -56,6 +60,7 @@ function ProjectSection({
   };
 
   const selectProject = (projectIndex) => {
+    setCatalogIsOpenMobile(false);
     if (projectIndex === activeProjectIndex && activeImageIndex === 0) return;
     setToggleCardImageClass(0);
     setActiveImageIndex(0);
@@ -69,7 +74,7 @@ function ProjectSection({
     setToggleCardImageClass(0);
     setActiveImageIndex(updatedImageIndex);
     setToggleCardClass(-toggleCardClass);
-    setToggleDescriptionClass(updatedImageIndex === 0 ? 2 : 0);
+    setToggleDescriptionClass(updatedImageIndex === 0 || isMobile ? 2 : 0);
   };
 
   if (skipProjectSection)
@@ -102,6 +107,9 @@ function ProjectSection({
           setCatalogIsCompressed={setCatalogIsCompressed}
           setToggleCardImageClass={setToggleCardImageClass}
           selectProject={selectProject}
+          catalogIsOpenMobile={catalogIsOpenMobile}
+          setCatalogIsOpenMobile={setCatalogIsOpenMobile}
+          isMobile={isMobile}
         />
         <ProjectCard
           currentViewport={currentViewport}
@@ -114,6 +122,7 @@ function ProjectSection({
           toggleCardImageClass={toggleCardImageClass}
           toggleDescriptionClass={toggleDescriptionClass}
           setToggleDescriptionClass={setToggleDescriptionClass}
+          setCatalogIsOpenMobile={setCatalogIsOpenMobile}
           selectImage={selectImage}
           windowHeight={windowHeight}
           isMobile={isMobile}
