@@ -230,24 +230,33 @@ function InformationSection({
               >
                 <p>Genuine Aesthete</p>
               </button>
-              <p
+              <div
                 className={classNames(
-                  "information-section-about-introduction-text",
+                  "information-section-about-introduction-text-wrapper",
                   {
-                    "animate-text-element-in": textExpanded,
-                  },
-                  {
-                    "animate-text-element-out": !textExpanded,
+                    "scrollable-element": isMobile && textExpanded,
                   }
                 )}
-                dangerouslySetInnerHTML={
-                  isMobile
-                    ? informationTextMobile()
-                    : isTablet
-                    ? informationTextTablet()
-                    : informationText()
-                }
-              ></p>
+              >
+                <p
+                  className={classNames(
+                    "information-section-about-introduction-text",
+                    {
+                      "animate-text-element-in": textExpanded,
+                    },
+                    {
+                      "animate-text-element-out": !textExpanded,
+                    }
+                  )}
+                  dangerouslySetInnerHTML={
+                    isMobile
+                      ? informationTextMobile()
+                      : isTablet
+                      ? informationTextTablet()
+                      : informationText()
+                  }
+                ></p>
+              </div>
             </div>
           </div>
         </div>

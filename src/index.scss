@@ -195,6 +195,10 @@ button:disabled {
   display: none !important;
 }
 
+.scrollable-element {
+  overflow: scroll;
+}
+
 @media screen and (max-width: $tablet-max) {
   h1 {
     font-size: 32px;
