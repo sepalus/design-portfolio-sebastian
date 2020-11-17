@@ -745,6 +745,7 @@ $text-wrapper-width-tablet-plus-margin: 422px;
 /* Animations */
 
 .animate-button-enter {
+  display: flex;
   animation: iconelementin 1s forwards;
 }
 
@@ -761,6 +762,7 @@ $text-wrapper-width-tablet-plus-margin: 422px;
 
 .animate-button-exit {
   opacity: 0;
+  display: none;
 }
 
 .animate-move-element-right {
