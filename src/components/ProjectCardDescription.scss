@@ -19,6 +19,13 @@
     }
   }
 }
+.project-card-description-content-container {
+  @media screen and (max-width: $mobile-max) {
+    max-width: 490px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 
 .project-card-description-content-container-small-height {
   display: flex;
