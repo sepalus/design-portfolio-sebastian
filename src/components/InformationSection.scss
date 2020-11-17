@@ -652,15 +652,16 @@ $text-wrapper-width-tablet-plus-margin: 422px;
   position: absolute;
   z-index: 1;
 
+  > img {
+    position: absolute;
+    z-index: 1;
+  }
+
   @media screen and (max-width: $tablet-max) {
     img {
       padding-top: 4px;
     }
   }
-}
-.information-section-contact-icon-expandable-icon-wrapper {
-  position: absolute;
-  z-index: 1;
 }
 
 .information-section-contact-icon-expandable-icon-wrapper:first-of-type {
@@ -693,6 +694,10 @@ $text-wrapper-width-tablet-plus-margin: 422px;
     img {
       padding: 0px 10px 1px 0px;
     }
+  }
+
+  img:hover {
+    opacity: 0.7;
   }
 
   @media screen and (max-width: $tablet-max) {

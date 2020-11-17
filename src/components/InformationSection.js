@@ -298,6 +298,19 @@ function InformationSection({
               >
                 <PhoneIcon />
                 <div className="information-section-contact-icon-expandable-button-wrapper">
+                  <span
+                    className={classNames(
+                      "text-small",
+                      {
+                        "animate-copied-text-1": togglePhoneCopied === -1,
+                      },
+                      {
+                        "animate-copied-text-2": togglePhoneCopied === 1,
+                      }
+                    )}
+                  >
+                    Copied
+                  </span>
                   <button
                     className={classNames(
                       "link-button icon-button",
@@ -310,7 +323,12 @@ function InformationSection({
                     )}
                     disabled={!showPhoneNumber}
                     onClick={() => {
-                      navigator.clipboard.writeText(phoneNumber);
+                      navigator.clipboard.writeText(
+                        phoneNumber.replace(/ /g, "")
+                      );
+                      setTogglePhoneCopied(
+                        togglePhoneCopied === 0 ? 1 : -togglePhoneCopied
+                      );
                     }}
                   >
                     <PhoneIcon />
@@ -334,6 +352,19 @@ function InformationSection({
               >
                 <EmailIcon />
                 <div className="information-section-contact-icon-expandable-button-wrapper information-section-contact-icon-expandable-button-wrapper-email">
+                  <span
+                    className={classNames(
+                      "text-small",
+                      {
+                        "animate-copied-text-1": toggleEmailCopied === -1,
+                      },
+                      {
+                        "animate-copied-text-2": toggleEmailCopied === 1,
+                      }
+                    )}
+                  >
+                    Copied
+                  </span>
                   <button
                     className={classNames(
                       "link-button icon-button",
@@ -352,6 +383,9 @@ function InformationSection({
                     disabled={!showEmailAddress}
                     onClick={() => {
                       navigator.clipboard.writeText(emailAddress);
+                      setToggleEmailCopied(
+                        toggleEmailCopied === 0 ? 1 : -toggleEmailCopied
+                      );
                     }}
                   >
                     <EmailIcon />
