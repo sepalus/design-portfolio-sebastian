@@ -230,3 +230,38 @@ button:disabled {
     font-size: 14px;
   }
 }
+@media screen and (max-width: $mobile-max) {
+  h1 {
+    font-size: 26px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  h4 {
+    font-size: 14px;
+  }
+
+  li,
+  p {
+    font-size: 12px;
+    line-height: 28px;
+  }
+
+  .text-small {
+    font-size: 10px;
+  }
+
+  .text-emphasized {
+    font-size: 13px;
+  }
+
+  .text-large {
+    font-size: 14px;
+  }
+}
