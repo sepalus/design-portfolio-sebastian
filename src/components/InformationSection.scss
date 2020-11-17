@@ -27,13 +27,8 @@ $text-wrapper-width-plus-margin: 520px;
 $text-wrapper-width-tablet: 394px;
 $text-wrapper-width-tablet-plus-margin: 422px;
 
-.information-section-container {
-  width: calc(100vw + 200px);
-}
-
 .information-section-content {
   height: 100%;
-  width: 100vw;
   display: flex;
   flex-direction: column;
 }
@@ -586,7 +581,7 @@ $text-wrapper-width-tablet-plus-margin: 422px;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  width: 100vw;
+  width: 100%;
   height: 140px;
   border-top: 1px solid $text-color-light;
   @media screen and (max-width: $mobile-max) {
