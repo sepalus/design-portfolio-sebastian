@@ -630,11 +630,16 @@ $text-wrapper-width-tablet-plus-margin: 422px;
   }
   @media screen and (max-width: $tablet-max) {
     img {
-      padding-top: 5px;
+      padding-top: 4px;
     }
 
     span {
       left: 22px;
+    }
+  }
+  @media screen and (max-width: $mobile-max) {
+    img {
+      width: 16px;
     }
   }
 }
@@ -650,11 +655,6 @@ $text-wrapper-width-tablet-plus-margin: 422px;
   @media screen and (max-width: $tablet-max) {
     img {
       padding-top: 4px;
-    }
-  }
-  @media screen and (max-width: $mobile-max) {
-    img {
-      width: 16px;
     }
   }
 }
@@ -747,13 +747,12 @@ $text-wrapper-width-tablet-plus-margin: 422px;
   opacity: 0;
 }
 
-.animate-email-icon-move-right {
+.animate-move-element-right {
   @media screen and (min-width: $tablet-min) {
-    left: 146px;
-    animation: iconelementin 1s forwards;
+    animation: iconelementright 1s forwards;
 
     @media screen and (max-width: $tablet-max) {
-      left: 132px;
+      animation: iconelementrighttablet 1.1s forwards;
     }
   }
 }
@@ -775,6 +774,28 @@ $text-wrapper-width-tablet-plus-margin: 422px;
   to {
     opacity: 1;
     transform: translateX(12px);
+  }
+}
+
+@keyframes iconelementright {
+  from {
+    opacity: 0;
+    transform: translateX(119px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(131px);
+  }
+}
+
+@keyframes iconelementrighttablet {
+  from {
+    opacity: 0;
+    transform: translateX(105px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(117px);
   }
 }
 

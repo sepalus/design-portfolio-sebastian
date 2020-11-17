@@ -323,6 +323,9 @@ function InformationSection({
                   {
                     "information-section-contact-icon-expandable-icon-wrapper-hide":
                       showEmailAddress && !isMobile,
+                  },
+                  {
+                    "animate-move-element-right": showPhoneNumber,
                   }
                 )}
               >
