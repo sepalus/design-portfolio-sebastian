@@ -4,6 +4,8 @@ $typist-width: 693px;
 $typist-width-tablet: 601px;
 $typist-height: 108px;
 $typist-height-tablet: 96px;
+$typist-width-mobile: 270px;
+$typist-height-mobile: 144px;
 
 .designer-section-content {
   height: 100%;
@@ -27,6 +29,21 @@ $typist-height-tablet: 96px;
     height: $typist-height-tablet;
     h3:not(:first-child) {
       margin-top: 20px;
+    }
+  }
+
+  @media screen and (max-width: $mobile-max) {
+    width: $typist-width-mobile;
+    height: $typist-height-mobile;
+    white-space: normal;
+
+    h3 {
+      margin: 0px;
+      line-height: 2em;
+    }
+
+    h3:not(:first-child) {
+      margin-top: 0px;
     }
   }
 }

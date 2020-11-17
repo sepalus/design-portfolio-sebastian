@@ -17,9 +17,10 @@ export default function Home() {
   const informationRef = useRef(null);
   const rootElement = document.getElementById("root");
 
-  const tabletMaxBreakpoint = variables.tabletMaxBreakpoint;
+  const { mobileMaxBreakpoint, tabletMaxBreakpoint } = variables;
   const windowWidth = window.innerWidth;
   const isTablet = windowWidth <= tabletMaxBreakpoint;
+  const isMobile = windowWidth <= mobileMaxBreakpoint;
 
   useEffect(() => {
     setFirstAreaEntry(true);
@@ -93,6 +94,7 @@ export default function Home() {
         selectViewport={selectViewport}
         showTypist={showFirstTimeViewport0.current}
         setSkipProjectSection={setSkipProjectSection}
+        isMobile={isMobile}
       />
       <ProjectSection
         projectRef={productRef}

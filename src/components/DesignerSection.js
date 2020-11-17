@@ -5,6 +5,7 @@ import "./DesignerSection.scss";
 
 function DesignerSection({
   designerRef,
+  isMobile,
   showTypist,
   selectViewport,
   setSkipProjectSection,
@@ -34,7 +35,7 @@ function DesignerSection({
                   setTimeout(() => setAboutTypistDone(true), 500)
                 }
               >
-                Hello, I'm&nbsp;
+                {isMobile && <span>&nbsp;&nbsp;&nbsp;</span>}Hello, I'm&nbsp;
                 <span
                   className="link-button link-button-narrow"
                   onClick={() => {
@@ -44,19 +45,26 @@ function DesignerSection({
                 >
                   Sebastian
                 </span>
-                &nbsp;a designer in both the physical and digital world
+                &nbsp;a designer{isMobile && <br />}
+                in both the physical and digital world
+                {isMobile && <span>.</span>}
               </Typist>
             </h3>
           ) : (
             <h3>
-              Hello, I'm&nbsp;
+              {isMobile && <span>&nbsp;&nbsp;&nbsp;</span>}Hello, I'm&nbsp;
               <span
                 className="link-button link-button-narrow"
-                onClick={() => selectViewport(3)}
+                onClick={() => {
+                  setSkipProjectSection(true);
+                  selectViewport(3);
+                }}
               >
                 Sebastian
               </span>
-              &nbsp;a designer in both the physical and digital world
+              &nbsp;a designer{isMobile && <br />}
+              in both the physical and digital world
+              {isMobile && <span>.</span>}
             </h3>
           )}
           {showTypist ? (
@@ -78,8 +86,9 @@ function DesignerSection({
                     setTimeout(() => setWorkTypistDone(true), 500)
                   }
                 >
-                  If you’re interested in what I’ve done, please take a look at
-                  my&nbsp;
+                  If you’re interested in what I’ve done,{isMobile && <br />}
+                  {isMobile && <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>}please take
+                  a look at my&nbsp;
                   <span
                     className="link-button link-button-narrow"
                     onClick={() => selectViewport(1)}
@@ -91,8 +100,9 @@ function DesignerSection({
             )
           ) : (
             <h3>
-              If you’re interested in what I’ve done, please take a look at
-              my&nbsp;
+              If you’re interested in what I’ve done,{isMobile && <br />}
+              {isMobile && <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>}please take a
+              look at my&nbsp;
               <span
                 className="link-button link-button-narrow"
                 onClick={() => selectViewport(1)}
