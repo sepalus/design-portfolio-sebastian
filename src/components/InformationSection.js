@@ -299,7 +299,7 @@ function InformationSection({
                     </>
                   ) : (
                     <>
-                      "With the problem-solving skills of an engineer and visual
+                      With the problem-solving skills of an engineer and visual
                       eye of an artist, equipped with Master’s Degrees in both
                       UX Design (M.Sc.) and Industrial Design (M.A.), I design
                       functional, aesthetically pleasing solutions that are
