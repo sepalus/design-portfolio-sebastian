@@ -12,6 +12,7 @@ function ProjectCardControls({
   currentViewport,
   catalogIsCompressed,
   selectImage,
+  isMobile,
 }) {
   const keyPressHandler = (event) => {
     if (currentViewport === 1 || currentViewport === 2) {
@@ -21,7 +22,9 @@ function ProjectCardControls({
     }
   };
 
-  const controlIsDark = activeProject.hasOwnProperty("controlColorDark")
+  const controlIsDark = isMobile
+    ? activeProject.mainColorDark
+    : activeProject.hasOwnProperty("controlColorDark")
     ? activeProject.controlColorDark
     : activeProject.mainColorDark || false;
 

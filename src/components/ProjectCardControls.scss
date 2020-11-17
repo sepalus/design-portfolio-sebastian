@@ -12,6 +12,10 @@
   justify-content: center;
   z-index: 2;
   color: $text-color-light;
+
+  @media screen and (max-width: $mobile-max) {
+    position: static;
+  }
 }
 
 .project-card-controls-dark {
@@ -31,6 +35,9 @@
     svg {
       font-size: 32px;
     }
+  }
+  @media screen and (max-width: $mobile-max) {
+    height: 80px;
   }
 }
 
@@ -71,13 +78,15 @@
 }
 
 .project-section-digital {
-  .project-card-controls {
-    width: $catalog-remaining-width;
-    transition: width 1s;
-  }
-  .project-card-controls-compressed {
-    width: $catalog-collapsed-remaining-width;
-    transition: width 1s;
+  @media screen and (min-width: $tablet-min) {
+    .project-card-controls {
+      width: $catalog-remaining-width;
+      transition: width 1s;
+    }
+    .project-card-controls-compressed {
+      width: $catalog-collapsed-remaining-width;
+      transition: width 1s;
+    }
   }
 }
 

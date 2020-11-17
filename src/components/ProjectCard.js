@@ -6,6 +6,7 @@ import ProjectCardControls from "./ProjectCardControls";
 
 function ProjectCard({
   currentViewport,
+  designArea,
   activeProject,
   activeImageIndex,
   imageAmount,
@@ -14,8 +15,12 @@ function ProjectCard({
   toggleCardImageClass,
   toggleDescriptionClass,
   selectImage,
+  windowHeight,
+  isMobile,
   isTablet,
 }) {
+  const isDigital = designArea === 2;
+
   return (
     <div
       className="project-card"
@@ -25,6 +30,13 @@ function ProjectCard({
         borderColor: activeProject.mainColorDark ? "black" : "white",
       }}
     >
+      {isMobile && (
+        <div className="project-card-title-element-mobile">
+          <h2>
+            {isDigital ? "Digital and Service" : "Products and Furniture"}
+          </h2>
+        </div>
+      )}
       <div className="project-card-image-container">
         {activeProject.images.map((image, index) => {
           const imageStyle = activeProject.imageStyle
@@ -44,6 +56,11 @@ function ProjectCard({
                 }
               : activeProject.imageStyleTablet.common
             : {};
+
+          const imageStyleMobile =
+            activeProject.imageStyleMobile &&
+            activeProject.imageStyleMobile.common;
+
           return (
             <div
               className={classNames(
@@ -69,18 +86,24 @@ function ProjectCard({
                 className={classNames(activeProject.classes, {
                   "project-card-image-static": toggleCardImageClass === 0,
                 })}
-                style={{ ...imageStyle, ...imageStyleTablet }}
+                style={
+                  isMobile
+                    ? imageStyleMobile
+                    : { ...imageStyle, ...imageStyleTablet }
+                }
               />
             </div>
           );
         })}
-        <ProjectCardDescription
-          currentViewport={currentViewport}
-          activeProject={activeProject}
-          toggleDescriptionClass={toggleDescriptionClass}
-          isTablet={isTablet}
-        />
       </div>
+      <ProjectCardDescription
+        currentViewport={currentViewport}
+        activeProject={activeProject}
+        toggleDescriptionClass={toggleDescriptionClass}
+        windowHeight={windowHeight}
+        isMobile={isMobile}
+        isTablet={isTablet}
+      />
       <ProjectCardControls
         currentViewport={currentViewport}
         activeProject={activeProject}
@@ -88,6 +111,7 @@ function ProjectCard({
         imageAmount={imageAmount}
         catalogIsCompressed={catalogIsCompressed}
         selectImage={selectImage}
+        isMobile={isMobile}
       />
     </div>
   );

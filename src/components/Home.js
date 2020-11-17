@@ -19,6 +19,7 @@ export default function Home() {
 
   const { mobileMaxBreakpoint, tabletMaxBreakpoint } = variables;
   const windowWidth = window.innerWidth;
+  const windowHeight = window.innerHeight;
   const isTablet = windowWidth <= tabletMaxBreakpoint;
   const isMobile = windowWidth <= mobileMaxBreakpoint;
 
@@ -105,7 +106,9 @@ export default function Home() {
         firstAreaEntry={firstAreaEntry}
         setFirstAreaEntry={setFirstAreaEntry}
         skipProjectSection={skipProjectSection}
+        windowHeight={windowHeight}
         isTablet={isTablet}
+        isMobile={isMobile}
       />
       <ProjectSection
         projectRef={serviceRef}
@@ -116,7 +119,9 @@ export default function Home() {
         firstAreaEntry={firstAreaEntry}
         setFirstAreaEntry={setFirstAreaEntry}
         skipProjectSection={skipProjectSection}
+        windowHeight={windowHeight}
         isTablet={isTablet}
+        isMobile={isMobile}
       />
       <InformationSection
         informationRef={informationRef}

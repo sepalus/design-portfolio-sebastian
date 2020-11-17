@@ -9,9 +9,12 @@ function ProjectCardDescription({
   currentViewport,
   activeProject,
   toggleDescriptionClass,
+  windowHeight,
+  isMobile,
   isTablet,
 }) {
   const [showTeam, setShowTeam] = useState(false);
+  const isSmallHeight = windowHeight < 600;
 
   useEffect(() => {
     window.addEventListener("click", () => {
@@ -57,10 +60,15 @@ function ProjectCardDescription({
         },
         {
           "animate-description-static": toggleDescriptionClass === 2,
+        },
+        {
+          "scrollable-element": isMobile,
         }
       )}
       style={
-        isTablet
+        isMobile
+          ? {}
+          : isTablet
           ? {
               ...activeProject.descriptionStyle,
               ...activeProject.descriptionStyleTablet,
@@ -70,65 +78,81 @@ function ProjectCardDescription({
             }
       }
     >
-      <div className="vertical-line"></div>
-      <h3 className="project-card-description-title">{activeProject.title}</h3>
-      <p className="project-card-description-text">
-        {activeProject.description}
-      </p>
-      <div className="project-card-description-tag-wrapper">
-        <div className="project-card-description-tag">
-          <CalendarToday className="project-card-description-tag-icon" />
-          <p className="text-emphasized"> {activeProject.year}</p>
-        </div>
-        <div
-          id={`project-card-description-tag-${activeProject.id}`}
-          className={classNames(
-            "project-card-description-tag",
-            {
-              "project-card-description-tag-design-team": activeProject.isTeam,
-            },
-            {
-              "project-card-description-tag-design-team-open":
-                activeProject.isTeam && showTeam,
-            }
-          )}
-        >
-          {activeProject.isTeam ? (
-            <People className="project-card-description-tag-icon" />
-          ) : (
-            <Person className="project-card-description-tag-icon" />
-          )}
+      <div
+        className={classNames("project-card-description-content-container", {
+          "project-card-description-content-container-small-height": isSmallHeight,
+        })}
+      >
+        <div className="vertical-line"></div>
+        <h3 className="project-card-description-title">
+          {activeProject.title}
+        </h3>
+        {!isSmallHeight && (
+          <p className="project-card-description-text">
+            {activeProject.description}
+          </p>
+        )}
+        <div className="project-card-description-tag-wrapper">
+          <div className="project-card-description-tag">
+            <CalendarToday className="project-card-description-tag-icon" />
+            <p className="text-emphasized"> {activeProject.year}</p>
+          </div>
           <div
+            id={`project-card-description-tag-${activeProject.id}`}
             className={classNames(
-              "project-card-description-tag-designer-wrapper",
+              "project-card-description-tag",
               {
-                "project-card-description-tag-designer-wrapper-open":
-                  activeProject.isTeam && showTeam,
+                "project-card-description-tag-design-team":
+                  !isMobile && activeProject.isTeam,
+              },
+              {
+                "project-card-description-tag-design-team-open":
+                  !isMobile && showTeam,
               }
             )}
           >
-            <p
-              className="text-emphasized"
-              onClick={() => {
-                setShowTeam(true);
-              }}
-            >
-              {activeProject.isTeam ? "Design Team" : "Sebastian Högnabba"}
-            </p>
+            {activeProject.isTeam ? (
+              <People className="project-card-description-tag-icon" />
+            ) : (
+              <Person className="project-card-description-tag-icon" />
+            )}
             <div
               className={classNames(
-                "project-card-description-tag-design-team-wrapper",
+                "project-card-description-tag-designer-wrapper",
                 {
-                  "project-card-description-tag-design-team-wrapper-show": showTeam,
-                },
-                {
-                  "project-card-description-tag-design-team-wrapper-horizontal":
-                    activeProject.displayTeamHorizontal,
+                  "project-card-description-tag-designer-wrapper-open":
+                    activeProject.isTeam && showTeam,
                 }
               )}
             >
-              {activeProject.designTeam &&
-                activeProject.designTeam.map((designer) => <p>{designer}</p>)}
+              <p
+                className="text-emphasized"
+                onClick={() => {
+                  if (isMobile) return;
+                  setShowTeam(true);
+                }}
+              >
+                {activeProject.isTeam ? "Design Team" : "Sebastian Högnabba"}
+              </p>
+              {!isMobile && (
+                <div
+                  className={classNames(
+                    "project-card-description-tag-design-team-wrapper",
+                    {
+                      "project-card-description-tag-design-team-wrapper-show": showTeam,
+                    },
+                    {
+                      "project-card-description-tag-design-team-wrapper-horizontal":
+                        activeProject.displayTeamHorizontal,
+                    }
+                  )}
+                >
+                  {activeProject.designTeam &&
+                    activeProject.designTeam.map((designer) => (
+                      <p>{designer}</p>
+                    ))}
+                </div>
+              )}
             </div>
           </div>
         </div>

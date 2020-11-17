@@ -270,7 +270,6 @@ const kolmioillaDesignProject = {
     common: imageStyleWide,
     individual: [{}, {}, {}, {}],
   },
-
   mainColorDark: false,
   backgroundColor: "black",
 };
@@ -323,6 +322,12 @@ const museDesignProject = (catalogIsCompressed) => ({
   },
   imageStyleTablet: {
     individual: [imageStyleServiceTablet(catalogIsCompressed)],
+  },
+  imageStyleMobile: {
+    common: {
+      paddingLeft: "30px",
+      paddingRight: "30px",
+    },
   },
   descriptionStyle: {
     ...descriptionPlacementCenteredRightExpandable(catalogIsCompressed),

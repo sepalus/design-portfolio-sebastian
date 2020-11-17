@@ -8,6 +8,32 @@
     left: -24px;
     height: 0px;
   }
+
+  @media screen and (max-width: $mobile-max) {
+    position: static;
+    margin: 24px 30px 12px;
+
+    h3 {
+      margin-top: 0px;
+      font-size: 17px;
+    }
+  }
+}
+
+.project-card-description-content-container-small-height {
+  display: flex;
+  justify-content: center;
+
+  p {
+    font-weight: 400;
+  }
+  .project-card-description-tag-wrapper {
+    margin-top: 4px;
+    margin-left: 30px;
+  }
+  .project-card-description-tag:not(:first-of-type) {
+    margin-left: 8px;
+  }
 }
 
 .project-card-description-dark {

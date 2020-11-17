@@ -18,6 +18,8 @@ function ProjectSection({
   firstAreaEntry,
   setFirstAreaEntry,
   skipProjectSection,
+  windowHeight,
+  isMobile,
   isTablet,
 }) {
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
@@ -113,6 +115,8 @@ function ProjectSection({
           toggleDescriptionClass={toggleDescriptionClass}
           setToggleDescriptionClass={setToggleDescriptionClass}
           selectImage={selectImage}
+          windowHeight={windowHeight}
+          isMobile={isMobile}
           isTablet={isTablet}
         />
       </div>

@@ -23,6 +23,7 @@ function ProjectCatalog({
 
   return (
     <div
+      style={{ display: "none" }}
       className={classNames(
         "project-catalog",
         {
