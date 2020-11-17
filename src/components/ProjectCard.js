@@ -75,6 +75,8 @@ function ProjectCard({
               : activeProject.imageStyleMobile.common
             : {};
 
+          const imageMaxSizeMobile = Math.max(310, windowHeight - 360);
+
           return (
             <div
               className={classNames(
@@ -102,7 +104,10 @@ function ProjectCard({
                 })}
                 style={
                   isMobile
-                    ? imageStyleMobile
+                    ? {
+                        ...imageStyleMobile,
+                        maxHeight: `${imageMaxSizeMobile}px`,
+                      }
                     : { ...imageStyle, ...imageStyleTablet }
                 }
               />
