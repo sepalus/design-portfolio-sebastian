@@ -87,7 +87,7 @@ function DesignerSection({
                   }
                 >
                   {!isMobile && <span>&nbsp;</span>}If you’re interested in what
-                  I’ve done,{isMobile && <br />}
+                  I’ve done, {isMobile && <br />}
                   {isMobile && <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>}please take
                   a look at my&nbsp;
                   <span
@@ -102,7 +102,7 @@ function DesignerSection({
           ) : (
             <h3>
               {!isMobile && <span>&nbsp;</span>} If you’re interested in what
-              I’ve done,{isMobile && <br />}
+              I’ve done, {isMobile && <br />}
               {isMobile && <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>}please take a
               look at my&nbsp;
               <span
