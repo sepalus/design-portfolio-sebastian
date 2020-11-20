@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Helmet } from "react-helmet";
 import classNames from "classnames";
 import ProjectCatalog from "./ProjectCatalog";
 import ProjectCard from "./ProjectCard";
@@ -96,21 +95,6 @@ function ProjectSection({
 
   return (
     <section ref={projectRef} className="project-section-container">
-      {designArea === 1 && (
-        <Helmet>
-          <link rel="preload" as="image" href="assets/tyyni1.jpg" />
-          <link rel="preload" as="image" href="assets/kierre1.png" />
-          <link rel="preload" as="image" href="assets/kolmiot1.jpg" />
-        </Helmet>
-      )}
-      {designArea === 2 && (
-        <Helmet>
-          <link rel="preload" as="image" href="assets/anneliina1.png" />
-          <link rel="preload" as="image" href="assets/scoot1.png" />
-          <link rel="preload" as="image" href="assets/axiom1.png" />
-        </Helmet>
-      )}
-
       <div
         className={classNames(
           "project-section",
