@@ -136,6 +136,15 @@
   }
 }
 
+.project-section-digital {
+  .project-catalog-projects {
+    img {
+      max-width: 32px;
+      max-height: 32px;
+    }
+  }
+}
+
 .project-catalog-expand-button {
   position: absolute;
   top: 50%;
