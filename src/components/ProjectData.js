@@ -243,6 +243,7 @@ const kierreDesignProject = {
   ],
   displayableCategory: 2,
   images: ["kierre1.png", "kierre2.png", "kierre3.png", "kierre4.png"],
+  iconSize: "26px",
   classes: "contain",
   imageStyle: {
     common: {
@@ -288,6 +289,7 @@ const kolmioillaDesignProject = {
   categories: ["Street Furniture Design", "Chair Design", "Spatial Design"],
   displayableCategory: 2,
   images: ["kolmiot1.png", "kolmiot2.png", "kolmiot3.png", "kolmiot4.png"],
+  iconSize: "28px",
   descriptionStyle: descriptionPlacementTopLeftCatalog,
   descriptionStyleTablet: { left: "440px", right: "40px" },
   imageStyle: {

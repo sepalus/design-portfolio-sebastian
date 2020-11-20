@@ -68,7 +68,12 @@ function ProjectCatalog({
                 onClick={() => selectProject(index)}
               >
                 {catalogIsCompressed ? (
-                  <img src={`./assets/icons/${project.id}.png`} alt="" />
+                  <img
+                    width={project.iconSize || "24px"}
+                    height={project.iconSize || "24px"}
+                    src={`./assets/icons/${project.id}.png`}
+                    alt=""
+                  />
                 ) : (
                   <h4>{project.title}</h4>
                 )}

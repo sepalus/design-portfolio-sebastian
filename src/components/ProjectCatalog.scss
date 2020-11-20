@@ -128,20 +128,10 @@
     margin-bottom: 8px;
   }
   img {
-    max-width: 24px;
-    max-height: 24px;
+    object-fit: contain;
   }
   @media screen and (max-width: $mobile-max) {
     margin-top: 0px;
-  }
-}
-
-.project-section-digital {
-  .project-catalog-projects {
-    img {
-      max-width: 32px;
-      max-height: 32px;
-    }
   }
 }
 
