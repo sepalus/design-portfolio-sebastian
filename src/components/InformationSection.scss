@@ -105,7 +105,7 @@ $text-wrapper-width-tablet-plus-margin: 422px;
     margin-top: 4px;
   }
   @media screen and (max-width: $mobile-max) {
-    margin: 24px auto 0px;
+    margin: 12px auto 0px;
   }
 }
 
@@ -231,6 +231,12 @@ $text-wrapper-width-tablet-plus-margin: 422px;
   @media screen and (min-width: $desktop-min) {
     animation: movetextwrapperelementreverse 1s forwards;
   }
+}
+
+.animate-element-static {
+  top: 0px;
+  left: 0px;
+  opacity: 1;
 }
 
 .animate-title-element-1 {

@@ -162,33 +162,44 @@ function InformationSection({
             <div
               className={classNames(
                 "information-section-about-text-wrapper",
+
                 {
-                  "information-section-about-text-wrapper-expanded animate-text-wrapper-element": textExpanded,
+                  "information-section-about-text-wrapper-expanded animate-text-wrapper-element":
+                    !isMobile && textExpanded,
                 },
                 {
-                  "animate-text-wrapper-element-reverse": !textExpanded,
+                  "animate-text-wrapper-element-reverse":
+                    !isMobile && !textExpanded,
                 }
               )}
               style={{
                 left: isTablet ? leftEdgeTablet : leftEdge,
               }}
             >
-              <button
-                className="information-section-about-introduction-title link-button link-button-narrow icon-button"
-                onClick={() => {
-                  toggleTextExpanded();
-                }}
-              >
-                <h3> Sebastian Högnabba</h3>
-                {textExpanded ? <ExpandLess /> : <ExpandMore />}
-              </button>
+              {isMobile ? (
+                <h3 className="information-section-about-introduction-title">
+                  Sebastian Högnabba
+                </h3>
+              ) : (
+                <button
+                  className="information-section-about-introduction-title link-button link-button-narrow icon-button"
+                  onClick={() => {
+                    toggleTextExpanded();
+                  }}
+                >
+                  <h3> Sebastian Högnabba</h3>
+                  {textExpanded ? <ExpandLess /> : <ExpandMore />}
+                </button>
+              )}
               <button
                 className={`${introductionLabelClasses} ${classNames(
+                  { "animate-element-static": isMobile },
                   {
-                    "animate-title-element-1": textExpanded,
+                    "animate-title-element-1": !isMobile && textExpanded,
                   },
                   {
-                    "animate-title-element-1-reverse": !textExpanded,
+                    "animate-title-element-1-reverse":
+                      !isMobile && !textExpanded,
                   }
                 )}`}
                 onClick={() => {
@@ -199,11 +210,13 @@ function InformationSection({
               </button>
               <button
                 className={`${introductionLabelClasses} ${classNames(
+                  { "animate-element-static": isMobile },
                   {
-                    "animate-title-element-2": textExpanded,
+                    "animate-title-element-2": !isMobile && textExpanded,
                   },
                   {
-                    "animate-title-element-2-reverse": !textExpanded,
+                    "animate-title-element-2-reverse":
+                      !isMobile && !textExpanded,
                   }
                 )}`}
                 onClick={() => {
@@ -214,11 +227,13 @@ function InformationSection({
               </button>
               <button
                 className={`disabled-button ${introductionLabelClasses} ${classNames(
+                  { "animate-element-static": isMobile },
                   {
-                    "animate-title-element-3": textExpanded,
+                    "animate-title-element-3": !isMobile && textExpanded,
                   },
                   {
-                    "animate-title-element-3-reverse": !textExpanded,
+                    "animate-title-element-3-reverse":
+                      !isMobile && !textExpanded,
                   }
                 )}`}
                 onClick={() => {
@@ -231,18 +246,19 @@ function InformationSection({
                 className={classNames(
                   "information-section-about-introduction-text-wrapper",
                   {
-                    "scrollable-element": isMobile && textExpanded,
+                    "scrollable-element": isMobile,
                   }
                 )}
               >
                 <p
                   className={classNames(
                     "information-section-about-introduction-text",
+                    { "animate-element-static": isMobile },
                     {
-                      "animate-text-element-in": textExpanded,
+                      "animate-text-element-in": !isMobile && textExpanded,
                     },
                     {
-                      "animate-text-element-out": !textExpanded,
+                      "animate-text-element-out": !isMobile && !textExpanded,
                     }
                   )}
                 >
