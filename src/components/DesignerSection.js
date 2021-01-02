@@ -12,7 +12,6 @@ function DesignerSection({
   selectViewport,
   sections,
   isScrollSnapped,
-  setSkipProjectSection,
 }) {
   const [aboutTypistDone, setAboutTypistDone] = useState(false);
   const [workTypistDone, setWorkTypistDone] = useState(false);
@@ -49,10 +48,7 @@ function DesignerSection({
                 {isMobile && <span>&nbsp;&nbsp;&nbsp;</span>}Hello, I'm&nbsp;
                 <span
                   className="link-button link-button-narrow"
-                  onClick={() => {
-                    setSkipProjectSection(true);
-                    selectViewport(3);
-                  }}
+                  onClick={() => selectViewport(3)}
                 >
                   Sebastian
                 </span>
@@ -66,10 +62,7 @@ function DesignerSection({
               {isMobile && <span>&nbsp;&nbsp;&nbsp;</span>}Hello, I'm&nbsp;
               <span
                 className="link-button link-button-narrow"
-                onClick={() => {
-                  setSkipProjectSection(true);
-                  selectViewport(3);
-                }}
+                onClick={() => selectViewport(3)}
               >
                 Sebastian
               </span>

@@ -17,7 +17,6 @@ function ProjectSection({
   selectViewport,
   sections,
   isScrollSnapped,
-  skipProjectSection,
   windowHeight,
   isMobile,
   isTablet,
@@ -89,9 +88,6 @@ function ProjectSection({
     setToggleCardClass(-toggleCardClass);
     setToggleDescriptionClass(updatedImageIndex === 0 || isMobile ? 2 : 0);
   };
-
-  if (skipProjectSection)
-    return <section ref={projectRef} className="project-section-container" />;
 
   return (
     <section ref={projectRef} className="project-section-container">

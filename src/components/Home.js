@@ -7,9 +7,7 @@ import variables from "../variables.js";
 export default function Home() {
   const [previousYOffset, setPreviousYOffset] = useState(0);
   const [currentViewport, setCurrentViewport] = useState(0); // 0 === 'designer', 1 === 'product', 2 === 'service', 3 === 'aesthetics', 4 === 'information'
-  const [skipProjectSection, setSkipProjectSection] = useState(false);
   const showFirstTimeViewport0 = useRef(true);
-  const showFirstTimeViewport1 = useRef(true);
   const sections = ["Home", "Products", "Digital", "About"];
   const designerRef = useRef(null);
   const productRef = useRef(null);
@@ -59,10 +57,7 @@ export default function Home() {
 
       if (nextViewport !== currentViewport) {
         if (currentViewport === 0) showFirstTimeViewport0.current = false;
-        if (currentViewport === 1 && !skipProjectSection)
-          showFirstTimeViewport1.current = false;
         setCurrentViewport(nextViewport);
-        if (nextViewport === 3) setSkipProjectSection(false);
       }
     };
     rootElement.addEventListener("scroll", detectViewportOnScroll);
@@ -96,7 +91,6 @@ export default function Home() {
         sections={sections}
         isScrollSnapped={isScrollSnapped}
         showTypist={showFirstTimeViewport0.current}
-        setSkipProjectSection={setSkipProjectSection}
         isMobile={isMobile}
       />
       <ProjectSection
@@ -106,7 +100,6 @@ export default function Home() {
         selectViewport={selectViewport}
         sections={sections}
         isScrollSnapped={isScrollSnapped}
-        skipProjectSection={skipProjectSection}
         windowHeight={windowHeight}
         isTablet={isTablet}
         isMobile={isMobile}
@@ -118,7 +111,6 @@ export default function Home() {
         selectViewport={selectViewport}
         sections={sections}
         isScrollSnapped={isScrollSnapped}
-        skipProjectSection={skipProjectSection}
         windowHeight={windowHeight}
         isTablet={isTablet}
         isMobile={isMobile}
