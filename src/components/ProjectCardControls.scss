@@ -14,7 +14,8 @@
   color: $text-color-light;
 
   @media screen and (max-width: $mobile-max) {
-    position: static;
+    top: 0px;
+    height: 100%;
   }
 }
 
@@ -37,11 +38,10 @@
     }
   }
   @media screen and (max-width: $mobile-max) {
-    height: 80px;
-
-    > * {
-      transform: translateY(-8px);
-    }
+    height: 100%;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 20px;
   }
 }
 
@@ -70,6 +70,11 @@
       margin: 0px 4px;
       border: 1px solid;
     }
+  }
+
+  @media screen and (max-width: $mobile-max) {
+    height: 100%;
+    align-items: flex-end;
   }
 
   span.project-card-controls-image-active-button {

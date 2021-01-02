@@ -114,6 +114,16 @@ function ProjectCard({
             </div>
           );
         })}
+        <ProjectCardControls
+          currentViewport={currentViewport}
+          activeProject={activeProject}
+          activeImageIndex={activeImageIndex}
+          imageAmount={imageAmount}
+          filteredImages={filteredImages}
+          catalogIsCompressed={catalogIsCompressed}
+          selectImage={selectImage}
+          isMobile={isMobile}
+        />
       </div>
       <ProjectCardDescription
         currentViewport={currentViewport}
@@ -122,16 +132,6 @@ function ProjectCard({
         windowHeight={windowHeight}
         isMobile={isMobile}
         isTablet={isTablet}
-      />
-      <ProjectCardControls
-        currentViewport={currentViewport}
-        activeProject={activeProject}
-        activeImageIndex={activeImageIndex}
-        imageAmount={imageAmount}
-        filteredImages={filteredImages}
-        catalogIsCompressed={catalogIsCompressed}
-        selectImage={selectImage}
-        isMobile={isMobile}
       />
     </div>
   );
