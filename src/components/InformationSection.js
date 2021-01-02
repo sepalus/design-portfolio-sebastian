@@ -147,7 +147,7 @@ function InformationSection({
       >
         <div className="information-section-about">
           <div className="information-section-about-content-wrapper">
-            <div>
+            <div className="information-section-about-header-wrapper">
               <img
                 src="./assets/face.jpg"
                 alt="Sebastian"
@@ -157,6 +157,16 @@ function InformationSection({
                   { "information-section-about-image-closed": !textExpanded }
                 )}
               />
+              {isMobile && (
+                <div className="information-section-about-header-mobile-wrapper">
+                  <h3>Sebastian Högnabba</h3>
+                  <div className="information-section-about-header-mobile-title-wrapper">
+                    <p>Industrial Designer</p>
+                    <p>Digital Creator</p>
+                    <p>Genuine Aesthete</p>
+                  </div>
+                </div>
+              )}
             </div>
             <div className="information-section-about-text-wrapper-placeholder"></div>
             <div
@@ -176,11 +186,7 @@ function InformationSection({
                 left: isTablet ? leftEdgeTablet : leftEdge,
               }}
             >
-              {isMobile ? (
-                <h3 className="information-section-about-introduction-title">
-                  Sebastian Högnabba
-                </h3>
-              ) : (
+              {!isMobile && (
                 <button
                   className="information-section-about-introduction-title link-button link-button-narrow icon-button"
                   onClick={() => {
