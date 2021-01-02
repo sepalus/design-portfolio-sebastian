@@ -11,6 +11,8 @@ function Navigator({
   return (
     <div
       className={classNames("navigator", {
+        "navigator-dark ": navigatorViewport === 2,
+        "navigator-right ": navigatorViewport === 2 || navigatorViewport === 3,
         "animate-navigator-in":
           navigatorViewport === currentViewport && isScrollSnapped,
         "animate-navigator-out":

@@ -1,7 +1,10 @@
+@import "../variables";
+
 .navigator {
   position: absolute;
   z-index: 3;
-  left: 20px;
+  left: 30px;
+  width: 60px;
   top: 50%;
   transform: translateY(-50%);
 
@@ -19,7 +22,7 @@
 
 .navigator-item-text {
   display: none;
-  margin-left: 10px;
+  margin-left: 12px;
 }
 
 .navigator-item-active {
@@ -35,6 +38,22 @@
 .navigator-item:not(.navigator-item-active):hover {
   .navigator-item-text {
     display: block;
+  }
+}
+
+.navigator-dark {
+  color: $text-color-dark;
+}
+
+.navigator-right {
+  right: 30px;
+  left: initial;
+  .navigator-item {
+    flex-direction: row-reverse;
+  }
+  .navigator-item-text {
+    margin-left: 0px;
+    margin-right: 12px;
   }
 }
 
