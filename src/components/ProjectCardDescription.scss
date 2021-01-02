@@ -171,7 +171,13 @@
 }
 
 /* Animation */
-
+.animate-description-static {
+  .project-card-description-title,
+  .project-card-description-text,
+  .project-card-description-tag-wrapper {
+    opacity: 1;
+  }
+}
 .animate-description-in-1 {
   .project-card-description-title {
     animation: fadein1 0.7s forwards;

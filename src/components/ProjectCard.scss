@@ -105,6 +105,9 @@
 }
 
 /* Animation */
+.animate-card-static {
+  opacity: 1;
+}
 
 .animate-card-fade-in-1 {
   animation: fadein1 0.8s forwards;

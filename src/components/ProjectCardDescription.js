@@ -51,17 +51,20 @@ function ProjectCardDescription({
         {
           "project-card-description-dark": descriptionIsDark,
         },
+        { "animate-description-static": isMobile },
         {
-          "animate-description-in-1": toggleDescriptionClass === 1,
+          "animate-description-in-1": !isMobile && toggleDescriptionClass === 1,
         },
         {
-          "animate-description-in-2": toggleDescriptionClass === -1,
+          "animate-description-in-2":
+            !isMobile && toggleDescriptionClass === -1,
         },
         {
-          "animate-description-out": toggleDescriptionClass === 0,
+          "animate-description-out": !isMobile && toggleDescriptionClass === 0,
         },
         {
-          "animate-description-static": toggleDescriptionClass === 2,
+          "animate-description-static":
+            !isMobile && toggleDescriptionClass === 2,
         },
         {
           "scrollable-element": isMobile,

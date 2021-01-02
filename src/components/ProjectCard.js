@@ -91,14 +91,15 @@ function ProjectCard({
                   "project-card-image-wrapper-active":
                     index === activeImageIndex,
                 },
+                { "animate-card-static": isMobile },
                 {
-                  "animate-card-fade-in-1": toggleCardClass === 1,
+                  "animate-card-fade-in-1": !isMobile && toggleCardClass === 1,
                 },
                 {
-                  "animate-card-fade-in-2": toggleCardClass === -1,
+                  "animate-card-fade-in-2": !isMobile && toggleCardClass === -1,
                 },
                 {
-                  "animate-card-fade-out": toggleCardClass === 0,
+                  "animate-card-fade-out": !isMobile && toggleCardClass === 0,
                 }
               )}
             >

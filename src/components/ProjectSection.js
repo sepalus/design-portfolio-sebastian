@@ -112,10 +112,15 @@ function ProjectSection({
             "project-section-industrial": designArea === 1,
           },
           {
-            "project-section-animation-enter": currentViewport === designArea,
+            "project-section-animation-static": isMobile,
           },
           {
-            "project-section-animation-exit": currentViewport !== designArea,
+            "project-section-animation-enter":
+              !isMobile && currentViewport === designArea,
+          },
+          {
+            "project-section-animation-exit":
+              !isMobile && currentViewport !== designArea,
           }
         )}
       >

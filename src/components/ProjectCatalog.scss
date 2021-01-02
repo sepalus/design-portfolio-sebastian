@@ -237,14 +237,17 @@
 
 /* Animation */
 
+.project-section-animation-static {
+  .project-catalog {
+    top: 0px;
+    opacity: 1;
+  }
+}
+
 .project-section.project-section-animation-enter {
   .project-catalog {
     animation: moveup 0.5s forwards;
     animation-delay: 0.2s;
-
-    @media screen and (max-width: $mobile-max) {
-      animation: fadein 0.5s forwards;
-    }
   }
 }
 

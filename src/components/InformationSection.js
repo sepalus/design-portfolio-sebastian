@@ -133,15 +133,15 @@ function InformationSection({
         className={classNames(
           "information-section-content",
           {
-            "information-section-static": !performAnimation,
+            "information-section-static": isMobile || !performAnimation,
           },
           {
             "information-section-animation-enter":
-              currentViewport === 3 && performAnimation,
+              !isMobile && currentViewport === 3 && performAnimation,
           },
           {
             "information-section-animation-exit":
-              currentViewport !== 3 && performAnimation,
+              !isMobile && currentViewport !== 3 && performAnimation,
           }
         )}
       >
