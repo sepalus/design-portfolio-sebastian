@@ -2,13 +2,15 @@ import React, { useState, useEffect } from "react";
 import classNames from "classnames";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import ExpandLess from "@material-ui/icons/ExpandLess";
-
+import Navigator from "./Navigator.js";
 import "./InformationSection.scss";
 
 function InformationSection({
   informationRef,
   currentViewport,
   selectViewport,
+  sections,
+  isScrollSnapped,
   isTablet,
   isMobile,
   windowWidth,
@@ -120,6 +122,13 @@ function InformationSection({
 
   return (
     <section ref={informationRef} className="information-section-container">
+      <Navigator
+        navigatorViewport={3}
+        currentViewport={currentViewport}
+        selectViewport={selectViewport}
+        sections={sections}
+        isScrollSnapped={isScrollSnapped}
+      />
       <div
         className={classNames(
           "information-section-content",

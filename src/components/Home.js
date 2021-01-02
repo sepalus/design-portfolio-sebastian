@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 import DesignerSection from "./DesignerSection";
 import ProjectSection from "./ProjectSection";
 import InformationSection from "./InformationSection";
-import Navigator from "./Navigator.js";
 import variables from "../variables.js";
 
 export default function Home() {
@@ -17,6 +16,7 @@ export default function Home() {
   const serviceRef = useRef(null);
   const informationRef = useRef(null);
   const rootElement = document.getElementById("root");
+  const [isScrollSnapped, setIsScrollSnapped] = useState(true);
 
   const { mobileMaxBreakpoint, tabletMaxBreakpoint } = variables;
   const windowWidth = window.innerWidth;
@@ -26,6 +26,7 @@ export default function Home() {
 
   useEffect(() => {
     const detectViewportOnScroll = () => {
+      setIsScrollSnapped(false);
       const currentYOffset = rootElement.scrollTop;
       const designerRefOffset = designerRef.current.offsetTop;
       const projductRefOffset = productRef.current.offsetTop;
@@ -38,6 +39,7 @@ export default function Home() {
         informationRefOffset,
       ];
 
+      if (offsetBreakpoints.includes(currentYOffset)) setIsScrollSnapped(true);
       setPreviousYOffset(currentYOffset);
 
       const nextViewport =
@@ -87,14 +89,12 @@ export default function Home() {
 
   return (
     <>
-      <Navigator
+      <DesignerSection
+        designerRef={designerRef}
         currentViewport={currentViewport}
         selectViewport={selectViewport}
         sections={sections}
-      />
-      <DesignerSection
-        designerRef={designerRef}
-        selectViewport={selectViewport}
+        isScrollSnapped={isScrollSnapped}
         showTypist={showFirstTimeViewport0.current}
         setSkipProjectSection={setSkipProjectSection}
         isMobile={isMobile}
@@ -103,6 +103,9 @@ export default function Home() {
         projectRef={productRef}
         designArea={1}
         currentViewport={currentViewport}
+        selectViewport={selectViewport}
+        sections={sections}
+        isScrollSnapped={isScrollSnapped}
         skipProjectSection={skipProjectSection}
         windowHeight={windowHeight}
         isTablet={isTablet}
@@ -112,6 +115,9 @@ export default function Home() {
         projectRef={serviceRef}
         designArea={2}
         currentViewport={currentViewport}
+        selectViewport={selectViewport}
+        sections={sections}
+        isScrollSnapped={isScrollSnapped}
         skipProjectSection={skipProjectSection}
         windowHeight={windowHeight}
         isTablet={isTablet}
@@ -121,6 +127,8 @@ export default function Home() {
         informationRef={informationRef}
         currentViewport={currentViewport}
         selectViewport={selectViewport}
+        sections={sections}
+        isScrollSnapped={isScrollSnapped}
         windowWidth={windowWidth}
         isTablet={isTablet}
         isMobile={isMobile}

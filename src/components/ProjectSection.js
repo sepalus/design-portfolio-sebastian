@@ -3,6 +3,7 @@ import classNames from "classnames";
 import ProjectCatalog from "./ProjectCatalog";
 import ProjectCard from "./ProjectCard";
 import "./ProjectSection.scss";
+import Navigator from "./Navigator.js";
 import {
   aestheticsDesignProjects,
   industrialProjects,
@@ -13,6 +14,9 @@ function ProjectSection({
   projectRef,
   designArea,
   currentViewport,
+  selectViewport,
+  sections,
+  isScrollSnapped,
   skipProjectSection,
   windowHeight,
   isMobile,
@@ -91,6 +95,13 @@ function ProjectSection({
 
   return (
     <section ref={projectRef} className="project-section-container">
+      <Navigator
+        navigatorViewport={designArea}
+        currentViewport={currentViewport}
+        selectViewport={selectViewport}
+        sections={sections}
+        isScrollSnapped={isScrollSnapped}
+      />
       <div
         className={classNames(
           "project-section",

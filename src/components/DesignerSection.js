@@ -2,12 +2,16 @@ import React, { useState } from "react";
 import classNames from "classnames";
 import Typist from "react-typist";
 import "./DesignerSection.scss";
+import Navigator from "./Navigator.js";
 
 function DesignerSection({
   designerRef,
   isMobile,
   showTypist,
+  currentViewport,
   selectViewport,
+  sections,
+  isScrollSnapped,
   setSkipProjectSection,
 }) {
   const [aboutTypistDone, setAboutTypistDone] = useState(false);
@@ -15,6 +19,13 @@ function DesignerSection({
 
   return (
     <section ref={designerRef} className="designer-section-container">
+      <Navigator
+        navigatorViewport={0}
+        currentViewport={currentViewport}
+        selectViewport={selectViewport}
+        sections={sections}
+        isScrollSnapped={isScrollSnapped}
+      />
       <div className="designer-section-content">
         <div className="designer-section-typist-wrapper">
           {showTypist ? (

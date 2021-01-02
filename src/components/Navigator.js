@@ -1,9 +1,22 @@
 import classNames from "classnames";
 import "./Navigator.scss";
 
-function Navigator({ currentViewport, selectViewport, sections }) {
+function Navigator({
+  navigatorViewport,
+  currentViewport,
+  selectViewport,
+  sections,
+  isScrollSnapped,
+}) {
   return (
-    <div className="navigator">
+    <div
+      className={classNames("navigator", {
+        "animate-navigator-in":
+          navigatorViewport === currentViewport && isScrollSnapped,
+        "animate-navigator-out":
+          navigatorViewport !== currentViewport || !isScrollSnapped,
+      })}
+    >
       <ul>
         {sections.map((section, index) => (
           <li
