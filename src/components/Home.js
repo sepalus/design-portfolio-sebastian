@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import DesignerSection from "./DesignerSection";
 import ProjectSection from "./ProjectSection";
 import InformationSection from "./InformationSection";
+import Navigator from "./Navigator.js";
 import variables from "../variables.js";
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
   const [skipProjectSection, setSkipProjectSection] = useState(false);
   const showFirstTimeViewport0 = useRef(true);
   const showFirstTimeViewport1 = useRef(true);
+  const sections = ["Home", "Products", "Digital", "About"];
   const designerRef = useRef(null);
   const productRef = useRef(null);
   const serviceRef = useRef(null);
@@ -85,6 +87,11 @@ export default function Home() {
 
   return (
     <>
+      <Navigator
+        currentViewport={currentViewport}
+        selectViewport={selectViewport}
+        sections={sections}
+      />
       <DesignerSection
         designerRef={designerRef}
         selectViewport={selectViewport}

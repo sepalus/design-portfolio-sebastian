@@ -1,0 +1,39 @@
+.navigator {
+  position: absolute;
+  z-index: 3;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  .vertical-line {
+    height: 24px;
+  }
+}
+
+.navigator-item {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navigator-item-text {
+  display: none;
+  margin-left: 10px;
+}
+
+.navigator-item-active {
+  .navigator-item-text {
+    display: block;
+    font-weight: 600;
+  }
+  .vertical-line {
+    border-width: 3px;
+  }
+}
+
+.navigator-item:not(.navigator-item-active):hover {
+  .navigator-item-text {
+    display: block;
+  }
+}
