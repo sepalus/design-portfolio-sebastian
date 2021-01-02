@@ -8,7 +8,6 @@ export default function Home() {
   const [previousYOffset, setPreviousYOffset] = useState(0);
   const [currentViewport, setCurrentViewport] = useState(0); // 0 === 'designer', 1 === 'product', 2 === 'service', 3 === 'aesthetics', 4 === 'information'
   const [skipProjectSection, setSkipProjectSection] = useState(false);
-  const [firstAreaEntry, setFirstAreaEntry] = useState(true);
   const showFirstTimeViewport0 = useRef(true);
   const showFirstTimeViewport1 = useRef(true);
   const designerRef = useRef(null);
@@ -22,10 +21,6 @@ export default function Home() {
   const windowHeight = window.innerHeight;
   const isTablet = windowWidth <= tabletMaxBreakpoint;
   const isMobile = windowWidth <= mobileMaxBreakpoint;
-
-  useEffect(() => {
-    setFirstAreaEntry(true);
-  }, [currentViewport]);
 
   useEffect(() => {
     const detectViewportOnScroll = () => {
@@ -101,10 +96,6 @@ export default function Home() {
         projectRef={productRef}
         designArea={1}
         currentViewport={currentViewport}
-        selectViewport={selectViewport}
-        firstSectionEntry={showFirstTimeViewport1.current}
-        firstAreaEntry={firstAreaEntry}
-        setFirstAreaEntry={setFirstAreaEntry}
         skipProjectSection={skipProjectSection}
         windowHeight={windowHeight}
         isTablet={isTablet}
@@ -114,10 +105,6 @@ export default function Home() {
         projectRef={serviceRef}
         designArea={2}
         currentViewport={currentViewport}
-        selectViewport={selectViewport}
-        firstSectionEntry={showFirstTimeViewport1.current}
-        firstAreaEntry={firstAreaEntry}
-        setFirstAreaEntry={setFirstAreaEntry}
         skipProjectSection={skipProjectSection}
         windowHeight={windowHeight}
         isTablet={isTablet}
