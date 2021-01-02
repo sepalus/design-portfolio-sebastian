@@ -1,5 +1,7 @@
 import React from "react";
 import classNames from "classnames";
+import { useSwipeable } from "react-swipeable";
+
 import "./ProjectCard.scss";
 import ProjectCardDescription from "./ProjectCardDescription";
 import ProjectCardControls from "./ProjectCardControls";
@@ -24,6 +26,10 @@ function ProjectCard({
   isTablet,
 }) {
   const isDigital = designArea === 2;
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: () => selectImage(activeImageIndex + 1),
+    onSwipedRight: () => selectImage(activeImageIndex - 1),
+  });
 
   return (
     <div
@@ -46,7 +52,7 @@ function ProjectCard({
           </h2>
         </div>
       )}
-      <div className="project-card-image-container">
+      <div className="project-card-image-container" {...swipeHandlers}>
         {filteredImages.map((image, index) => {
           const imageStyle = activeProject.imageStyle
             ? activeProject.imageStyle.individual
