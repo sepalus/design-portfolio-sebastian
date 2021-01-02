@@ -54,12 +54,12 @@ const descriptionPlacementTabletRightVerticalCenter = {
 };
 
 const imageStyleMobilePaddingVertical = {
-  paddingTop: "30px",
-  paddingBottom: "30px",
+  paddingTop: "50px",
+  paddingBottom: "50px",
 };
 
 const imageStyleMobilePadding = {
-  padding: "30px 50px",
+  padding: "50px",
 };
 
 const imageStyleWide = {
