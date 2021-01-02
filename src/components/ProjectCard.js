@@ -81,7 +81,7 @@ function ProjectCard({
               : activeProject.imageStyleMobile.common
             : {};
 
-          const imageMaxSizeMobile = Math.max(360, windowHeight - 280);
+          const imageMaxSizeMobile = Math.max(360, windowHeight - 320);
 
           return (
             <div
