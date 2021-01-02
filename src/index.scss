@@ -136,6 +136,11 @@ ul {
   padding: 4px 8px;
 }
 
+.link-button-underline {
+  border: none;
+  border-bottom: 1px solid;
+}
+
 .link-button-dark {
   color: $text-color-dark;
   border: 2px solid $text-color-dark;

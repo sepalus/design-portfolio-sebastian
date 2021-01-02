@@ -276,7 +276,7 @@ function InformationSection({
                       functional, aesthetically pleasing solutions that are
                       delightful to use. I am a passionate &nbsp;
                       <button
-                        className="information-section-about-introduction-label-mobile link-button link-button-narrow"
+                        className="information-section-about-introduction-label-mobile link-button link-button-underline"
                         onClick={() => {
                           changeViewport(1);
                         }}
@@ -289,7 +289,7 @@ function InformationSection({
                       With a background in programming and UX design, I have
                       produced elegant digital solutions as a &nbsp;
                       <button
-                        className="information-section-about-introduction-label-mobile link-button link-button-narrow"
+                        className="information-section-about-introduction-label-mobile link-button link-button-underline"
                         onClick={() => {
                           changeViewport(1);
                         }}
@@ -300,7 +300,7 @@ function InformationSection({
                       aesthetics highlights the significance of aesthetic
                       experiences in our everyday lives and provides tools for
                       measuring them. As a &nbsp;
-                      <button className="information-section-about-introduction-label-mobile disabled-button link-button link-button-narrow">
+                      <button className="information-section-about-introduction-label-mobile disabled-button link-button link-button-underline">
                         Genuine Aetshete
                       </button>
                       &nbsp; I am a strong advocate for the importance of
