@@ -91,8 +91,8 @@ function InformationSection({
 
   const introductionLabelClasses = classNames(
     "information-section-about-introduction-label",
-    { "link-button link-button-narrow": textExpandedAnimated },
-    { "no-style-button": !textExpandedAnimated }
+    { "link-button link-button-narrow": textExpandedAnimated || isMobile },
+    { "no-style-button": !textExpandedAnimated && !isMobile }
   );
 
   const hidePhoneNumber = () => {
@@ -157,16 +157,6 @@ function InformationSection({
                   { "information-section-about-image-closed": !textExpanded }
                 )}
               />
-              {isMobile && (
-                <div className="information-section-about-header-mobile-wrapper">
-                  <h3>Sebastian Högnabba</h3>
-                  <div className="information-section-about-header-mobile-title-wrapper">
-                    <p>Industrial Designer</p>
-                    <p>Digital Creator</p>
-                    <p>Genuine Aesthete</p>
-                  </div>
-                </div>
-              )}
             </div>
             <div className="information-section-about-text-wrapper-placeholder"></div>
             <div
@@ -186,20 +176,23 @@ function InformationSection({
                 left: isTablet ? leftEdgeTablet : leftEdge,
               }}
             >
-              {!isMobile && (
-                <button
-                  className="information-section-about-introduction-title link-button link-button-narrow icon-button"
-                  onClick={() => {
-                    toggleTextExpanded();
-                  }}
-                >
-                  <h3> Sebastian Högnabba</h3>
-                  {textExpanded ? <ExpandLess /> : <ExpandMore />}
-                </button>
-              )}
+              <button
+                className={classNames(
+                  "information-section-about-introduction-title link-button link-button-narrow icon-button",
+                  {
+                    "no-style-button": isMobile,
+                  }
+                )}
+                onClick={() => {
+                  toggleTextExpanded();
+                }}
+                disabled={isMobile}
+              >
+                <h3> Sebastian Högnabba</h3>
+                {!isMobile && (textExpanded ? <ExpandLess /> : <ExpandMore />)}
+              </button>
               <button
                 className={`${introductionLabelClasses} ${classNames(
-                  { "animate-element-static": isMobile },
                   {
                     "animate-title-element-1": !isMobile && textExpanded,
                   },
@@ -216,7 +209,6 @@ function InformationSection({
               </button>
               <button
                 className={`${introductionLabelClasses} ${classNames(
-                  { "animate-element-static": isMobile },
                   {
                     "animate-title-element-2": !isMobile && textExpanded,
                   },
@@ -233,7 +225,6 @@ function InformationSection({
               </button>
               <button
                 className={`disabled-button ${introductionLabelClasses} ${classNames(
-                  { "animate-element-static": isMobile },
                   {
                     "animate-title-element-3": !isMobile && textExpanded,
                   },
@@ -274,36 +265,16 @@ function InformationSection({
                       eye of an artist, equipped with Master’s Degrees in both
                       UX Design (M.Sc.) and Industrial Design (M.A.), I design
                       functional, aesthetically pleasing solutions that are
-                      delightful to use. I am a passionate &nbsp;
-                      <button
-                        className="information-section-about-introduction-label-mobile link-button link-button-underline"
-                        onClick={() => {
-                          changeViewport(1);
-                        }}
-                      >
-                        Industrial Designer
-                      </button>
-                      &nbsp; who believes that beauty and the capability to
-                      produce aesthetic pleasure are immensely important
-                      qualities of successful products and pieces of furniture.
-                      With a background in programming and UX design, I have
-                      produced elegant digital solutions as a &nbsp;
-                      <button
-                        className="information-section-about-introduction-label-mobile link-button link-button-underline"
-                        onClick={() => {
-                          changeViewport(1);
-                        }}
-                      >
-                        Digital Creator
-                      </button>
-                      &nbsp; in various industries. My research in design
-                      aesthetics highlights the significance of aesthetic
-                      experiences in our everyday lives and provides tools for
-                      measuring them. As a &nbsp;
-                      <button className="information-section-about-introduction-label-mobile disabled-button link-button link-button-underline">
-                        Genuine Aetshete
-                      </button>
-                      &nbsp; I am a strong advocate for the importance of
+                      delightful to use. I am a passionate Industrial Designer,
+                      who believes that beauty and the capability to produce
+                      aesthetic pleasure are immensely important qualities of
+                      successful products and pieces of furniture. With a
+                      background in programming and UX design, I have produced
+                      elegant digital solutions as a Digital Creator in various
+                      industries. My research in design aesthetics highlights
+                      the significance of aesthetic experiences in our everyday
+                      lives and provides tools for measuring them. As a Genuine
+                      Aetshete I am a strong advocate for the importance of
                       aesthetics in all designed solutions.
                     </>
                   ) : isTablet ? (

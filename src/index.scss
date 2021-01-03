@@ -106,15 +106,6 @@ ul {
 
 /* Buttons */
 
-.no-style-button {
-  font: inherit;
-  color: inherit;
-  background: inherit;
-  border: none;
-  outline: none;
-  cursor: text;
-}
-
 .link-button {
   cursor: pointer;
   padding: 4px 12px;
@@ -122,6 +113,15 @@ ul {
   background: none;
   color: $text-color-light;
   font: inherit;
+}
+
+.no-style-button {
+  font: inherit;
+  color: inherit;
+  background: inherit;
+  border: none;
+  outline: none;
+  cursor: text;
 }
 
 .link-button:focus {
