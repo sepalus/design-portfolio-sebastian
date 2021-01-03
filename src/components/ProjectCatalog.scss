@@ -7,7 +7,7 @@
   transition: width 1s, padding 1s;
   position: absolute;
   box-sizing: border-box;
-  padding: 40px 48px;
+  padding: 40px 70px;
   color: $text-color-light;
   z-index: 3;
   background-color: $background-color-dark-cover-transparent;
@@ -28,7 +28,7 @@
 
   button {
     width: 100%;
-    height: 50px;
+    height: 45px;
     text-align: left;
     border: none;
   }
@@ -36,7 +36,8 @@
   .project-catalog-active-project button {
     background-color: $background-color-light-selected;
     border: 1px solid $text-color-light;
-    padding-left: 20px;
+    padding-left: 16px;
+    padding-right: 16px;
     @media screen and (max-width: $mobile-max) {
       background-color: $background-color-light-selected;
     }
@@ -80,6 +81,7 @@
 
     .project-catalog-active-project button {
       padding-left: 16px;
+      padding-right: 16px;
     }
   }
 }
@@ -124,6 +126,8 @@
 }
 
 .project-catalog-projects {
+  margin-left: 6px;
+  margin-right: 6px;
   li {
     margin-bottom: 8px;
   }

@@ -7,16 +7,20 @@ function Navigator({
   selectViewport,
   sections,
   isScrollSnapped,
+  catalogIsCompressed,
 }) {
   return (
     <div
       className={classNames("navigator", {
         "navigator-dark ": navigatorViewport === 2,
-        "navigator-right ": navigatorViewport === 2 || navigatorViewport === 3,
         "animate-navigator-in":
           navigatorViewport === currentViewport && isScrollSnapped,
+        "animate-navigator-in-slow":
+          navigatorViewport === 1 && !catalogIsCompressed,
         "animate-navigator-out":
-          navigatorViewport !== currentViewport || !isScrollSnapped,
+          navigatorViewport !== currentViewport ||
+          !isScrollSnapped ||
+          (navigatorViewport === 1 && catalogIsCompressed),
       })}
     >
       <ul>

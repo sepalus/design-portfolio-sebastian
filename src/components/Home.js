@@ -8,7 +8,7 @@ export default function Home() {
   const [previousYOffset, setPreviousYOffset] = useState(0);
   const [currentViewport, setCurrentViewport] = useState(0); // 0 === 'designer', 1 === 'product', 2 === 'service', 3 === 'aesthetics', 4 === 'information'
   const showFirstTimeViewport0 = useRef(true);
-  const sections = ["Home", "Products", "Digital", "About"];
+  const sections = ["Home", "Product", "Digital", "About"];
   const designerRef = useRef(null);
   const productRef = useRef(null);
   const serviceRef = useRef(null);

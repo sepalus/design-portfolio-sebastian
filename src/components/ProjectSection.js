@@ -97,6 +97,7 @@ function ProjectSection({
         selectViewport={selectViewport}
         sections={sections}
         isScrollSnapped={isScrollSnapped}
+        catalogIsCompressed={catalogIsCompressed}
       />
       <div
         className={classNames(

@@ -84,7 +84,7 @@ const imageStyleDigital = (catalogIsCompressed) => ({
     ? catalogCollapsedRemainingWidth
     : catalogRemainingWidth,
   transition: "width 1s",
-  padding: "0px 60px",
+  padding: "0px 72px",
 });
 
 const imageStyleWebMain = (catalogIsCompressed) => ({
@@ -96,7 +96,7 @@ const imageStyleWebMain = (catalogIsCompressed) => ({
 });
 
 const imageStyleWebTablet = (catalogIsCompressed) => ({
-  left: catalogIsCompressed ? "118px" : "68px",
+  left: catalogIsCompressed ? "118px" : "90px",
   margin: "350px 0px 100px -20px",
   height: "calc(100% - 450px)",
 });

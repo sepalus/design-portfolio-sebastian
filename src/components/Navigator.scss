@@ -3,8 +3,8 @@
 .navigator {
   position: absolute;
   z-index: 4;
-  left: 30px;
-  width: 60px;
+  left: 20px;
+  width: 50px;
   top: 50%;
   transform: translateY(-50%);
 
@@ -25,7 +25,7 @@
 
 .navigator-item-text {
   display: none;
-  margin-left: 12px;
+  margin-left: 9px;
 }
 
 .navigator-item-active {
@@ -48,20 +48,13 @@
   color: $text-color-dark;
 }
 
-.navigator-right {
-  right: 30px;
-  left: initial;
-  .navigator-item {
-    flex-direction: row-reverse;
-  }
-  .navigator-item-text {
-    margin-left: 0px;
-    margin-right: 12px;
-  }
-}
-
 .animate-navigator-in {
   animation: fadein 0.5s forwards;
+}
+
+.animate-navigator-in-slow {
+  animation-delay: 0.5s;
+  animation: fadein 1s forwards;
 }
 
 .animate-navigator-out {
