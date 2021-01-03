@@ -85,7 +85,7 @@ function InformationSection({
   };
 
   const changeViewport = (viewport) => {
-    if (!textExpanded) return;
+    if (!isMobile && !textExpanded) return;
     selectViewport(viewport);
   };
 
@@ -201,9 +201,7 @@ function InformationSection({
                       !isMobile && !textExpanded,
                   }
                 )}`}
-                onClick={() => {
-                  changeViewport(1);
-                }}
+                onClick={() => changeViewport(1)}
               >
                 <p>Industrial Designer</p>
               </button>
@@ -217,9 +215,7 @@ function InformationSection({
                       !isMobile && !textExpanded,
                   }
                 )}`}
-                onClick={() => {
-                  changeViewport(2);
-                }}
+                onClick={() => changeViewport(2)}
               >
                 <p>Digital Creator</p>
               </button>
