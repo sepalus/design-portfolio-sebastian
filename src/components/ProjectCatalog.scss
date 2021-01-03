@@ -174,8 +174,8 @@
 
 .project-catalog-compressed {
   width: $catalog-collapsed-width;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 30px !important;
+  padding-right: 30px !important;
   transition: width 1s, padding 1s;
 
   button {
@@ -200,6 +200,7 @@
 .project-section-digital {
   .project-catalog {
     right: 0px;
+    padding: 40px 48px;
   }
   .project-catalog-dark {
     border-color: $text-color-dark;

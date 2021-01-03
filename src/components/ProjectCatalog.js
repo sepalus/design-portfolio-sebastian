@@ -69,8 +69,8 @@ function ProjectCatalog({
               >
                 {catalogIsCompressed ? (
                   <img
-                    width={project.iconSize || "24px"}
-                    height={project.iconSize || "24px"}
+                    width={project.iconSize || "22px"}
+                    height={project.iconSize || "22px"}
                     src={`./assets/icons/${project.id}.png`}
                     alt=""
                   />
