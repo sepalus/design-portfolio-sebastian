@@ -16,6 +16,11 @@
   }
 }
 
+.navigator-hidden {
+  cursor: auto;
+  z-index: 0;
+}
+
 .navigator-item {
   height: 36px;
   display: flex;

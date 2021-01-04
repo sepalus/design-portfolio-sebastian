@@ -14,6 +14,7 @@ function Navigator({
     <div
       className={classNames("navigator", {
         "navigator-dark ": navigatorViewport === 2,
+        "navigator-hidden": hideButton,
         "animate-navigator-in":
           navigatorViewport === currentViewport && isScrollSnapped,
         "animate-navigator-in-slow":
@@ -29,7 +30,6 @@ function Navigator({
           <li
             className={classNames("navigator-item", {
               "navigator-item-active": index === currentViewport,
-              "cursor-auto": hideButton,
             })}
             onClick={() => {
               if (hideButton) return;
