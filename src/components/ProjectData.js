@@ -18,6 +18,7 @@ const marginSideMinTablet = "60px";
 const marginTopMin = "70px";
 const marginBottomMin = "90px";
 const topAlignWithTitle = "126px";
+const bottomAlign = "60px";
 
 const alignVerticalCenter = {
   top: "50%",
@@ -31,6 +32,12 @@ const alignHorizontalCenter = {
 
 const descriptionPlacementTopRightCorner = {
   top: topAlignWithTitle,
+  right: marginSideMin,
+  width: minWidth,
+};
+
+const descriptionPlacementBottomRightCorner = {
+  bottom: bottomAlign,
   right: marginSideMin,
   width: minWidth,
 };
@@ -155,16 +162,26 @@ const kaarnaDesignProject = {
   backgroundColor: backgroundColorBlack,
 };
 
-const lamppuDesignProject = {
-  id: "lamp",
-  title: "Pendant Lamp",
+const kajoDesignProject = {
+  id: "kajo",
+  title: "Kajo",
   description:
     "A dining room pendant lamp designed for atmospheric dining. The lamp has three lampshades that reflect different intensities of light, giving both a focused and relaxed ambience to the dining experience.",
   year: 2020,
   isTeam: false,
   categories: ["Furniture Design", "Lamp Design", "Lighting Design"],
   displayableCategory: 1,
-  images: ["lamp.png"],
+  images: ["kajo3.jpg", "kajo1.jpg", "kajo4.jpg", "kajo2.jpg"],
+  descriptionStyle: {
+    ...descriptionPlacementBottomRightCorner,
+    right: "60px",
+  },
+
+  imageStyle: {
+    common: {
+      objectPosition: "50% 30%",
+    },
+  },
   mainColorDark: false,
   backgroundColor: "black",
 };
@@ -185,10 +202,8 @@ const tyyniDesignProject = {
     width: minWidth,
   },
   descriptionStyleTablet: {
-    top: "200px",
-    width: "180px",
-    right: "40px",
-    transform: "translateY(0)",
+    width: "240px",
+    right: "60px",
   },
   mainColorDark: false,
   controlColorDark: true,
@@ -563,6 +578,7 @@ export const aestheticsDesignProjects = [
 
 export const industrialProjects = (catalogIsCompressed) => [
   kaarnaDesignProject,
+  kajoDesignProject,
   tyyniDesignProject,
   kierreDesignProject,
   kolmioillaDesignProject(catalogIsCompressed),
