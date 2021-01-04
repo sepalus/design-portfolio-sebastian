@@ -221,6 +221,10 @@ button:disabled {
   overflow: scroll;
 }
 
+.cursor-auto {
+  cursor: auto !important;
+}
+
 @media screen and (max-width: $tablet-max) {
   h1 {
     font-size: 32px;
