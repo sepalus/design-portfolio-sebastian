@@ -21,6 +21,8 @@ function ProjectCard({
   toggleDescriptionClass,
   setCatalogIsOpenMobile,
   selectImage,
+  previousProject,
+  nextProject,
   windowHeight,
   isMobile,
   isTablet,
@@ -133,6 +135,8 @@ function ProjectCard({
           catalogIsCompressed={catalogIsCompressed}
           selectImage={selectImage}
           isMobile={isMobile}
+          previousProject={previousProject}
+          nextProject={nextProject}
         />
       </div>
       <ProjectCardDescription

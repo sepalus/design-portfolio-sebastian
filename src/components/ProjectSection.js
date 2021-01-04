@@ -71,6 +71,19 @@ function ProjectSection({
     return imageIndex;
   };
 
+  const previousProject = (viewport) => {
+    if (viewport !== designArea) return;
+    if (activeProjectIndex < 1) selectViewport(currentViewport - 1);
+    else selectProject(activeProjectIndex - 1);
+  };
+
+  const nextProject = (viewport) => {
+    if (viewport !== designArea) return;
+    if (activeProjectIndex >= projects.length - 1) {
+      selectViewport(currentViewport + 1);
+    } else selectProject(activeProjectIndex + 1);
+  };
+
   const selectProject = (projectIndex) => {
     setCatalogIsOpenMobile(false);
     if (projectIndex === activeProjectIndex && activeImageIndex === 0) return;
@@ -135,6 +148,7 @@ function ProjectSection({
         />
         <ProjectCard
           currentViewport={currentViewport}
+          activeProjectIndex={activeProjectIndex}
           activeProject={activeProject}
           activeImageIndex={activeImageIndex}
           filteredImages={filteredImages}
@@ -150,6 +164,9 @@ function ProjectSection({
           setToggleDescriptionClass={setToggleDescriptionClass}
           setCatalogIsOpenMobile={setCatalogIsOpenMobile}
           selectImage={selectImage}
+          selectProject={selectProject}
+          previousProject={previousProject}
+          nextProject={nextProject}
           windowHeight={windowHeight}
           isMobile={isMobile}
           isTablet={isTablet}
