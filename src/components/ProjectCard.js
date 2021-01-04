@@ -35,7 +35,10 @@ function ProjectCard({
     <div
       className="project-card"
       style={{
-        backgroundColor: activeProject.backgroundColor || "black",
+        backgroundColor:
+          isMobile && activeProject.backgroundColorMobile
+            ? activeProject.backgroundColorMobile
+            : activeProject.backgroundColor || "black",
         color: activeProject.mainColorDark ? "black" : "white",
         borderColor: activeProject.mainColorDark ? "black" : "white",
       }}

@@ -41,11 +41,13 @@ const descriptionPlacementRightVerticalCenter = {
   right: marginSideMin,
 };
 
-const descriptionPlacementTopLeftCatalog = {
-  top: marginTopMin,
+const descriptionPlacementTopLeftCatalog = (catalogIsCompressed) => ({
+  top: "50px",
   right: marginSideMin,
-  left: catalogWidthPlusMargin,
-};
+  left: catalogIsCompressed
+    ? catalogCollapsedWidthPlusMargin
+    : catalogWidthPlusMargin,
+});
 
 const descriptionPlacementTabletRightVerticalCenter = {
   ...alignVerticalCenter,
@@ -278,7 +280,7 @@ const kierreDesignProject = {
   backgroundColor: "black",
 };
 
-const kolmioillaDesignProject = {
+const kolmioillaDesignProject = (catalogIsCompressed) => ({
   id: "kolmiot",
   title: "Kohdataan Kolmioilla",
   description:
@@ -290,8 +292,10 @@ const kolmioillaDesignProject = {
   displayableCategory: 2,
   images: ["kolmiot1.png", "kolmiot2.png", "kolmiot3.png", "kolmiot4.png"],
   iconSize: "26px",
-  descriptionStyle: descriptionPlacementTopLeftCatalog,
-  descriptionStyleTablet: { left: "440px", right: "40px" },
+  descriptionStyle: {
+    ...descriptionPlacementTopLeftCatalog(catalogIsCompressed),
+    transition: "left 1s, right 1s",
+  },
   imageStyle: {
     individual: [{}, {}, {}, { ...imageStyleWide, objectFit: "cover" }],
   },
@@ -304,7 +308,42 @@ const kolmioillaDesignProject = {
   },
   mainColorDark: false,
   backgroundColor: "black",
-};
+});
+
+const rytmiDesignProject = (catalogIsCompressed) => ({
+  id: "rytmi",
+  title: "Rytmi",
+  description:
+    "A solar glass balcony that uses solar glass panels in place of traditional glass to generate electricity for the building and the grid. The patterns are printed on architectural glass using dye-sensitized printing methods, and they integrate seamlessly into the building facade. Inspired by the movement of the sun, the solar panels give expressive character to the otherwise monotone building facade.",
+  year: 2021,
+  isTeam: false,
+  categories: ["Solar Balcony", "Solar Glass", "Solar Panels"],
+  displayableCategory: 2,
+  images: [
+    "rytmi1.jpg",
+    "rytmi2.jpg",
+    "rytmi3.jpg",
+    "rytmi4.jpg",
+    "rytmi5.jpg",
+    "rytmi6.jpg",
+  ],
+  classes: "contain",
+  descriptionStyle: {
+    ...descriptionPlacementTopLeftCatalog(catalogIsCompressed),
+    transition: "left 1s, right 1s",
+  },
+  descriptionStyleTablet: {},
+  imageStyle: {
+    common: alignHorizontalCenter,
+  },
+  imageStyleTablet: {},
+  imageStyleMobile: {},
+  mainColorDark: false,
+  controlColorDark: true,
+  descriptionColorDark: true,
+  backgroundColor: "#dddddd",
+  backgroundColorMobile: backgroundColorDark,
+});
 
 const museDesignProject = (catalogIsCompressed) => ({
   id: "muse",
@@ -526,7 +565,8 @@ export const industrialProjects = (catalogIsCompressed) => [
   kaarnaDesignProject,
   tyyniDesignProject,
   kierreDesignProject,
-  kolmioillaDesignProject,
+  kolmioillaDesignProject(catalogIsCompressed),
+  rytmiDesignProject(catalogIsCompressed),
 ];
 
 export const digitalProjects = (catalogIsCompressed) => [
