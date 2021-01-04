@@ -312,11 +312,10 @@ const kolmioillaDesignProject = (catalogIsCompressed) => ({
     transition: "left 1s, right 1s",
   },
   imageStyle: {
-    individual: [{}, {}, {}, { ...imageStyleWide, objectFit: "cover" }],
+    individual: [{}, {}, { objectFit: "contain" }, { ...imageStyleWide }],
   },
   imageStyleTablet: {
     common: imageStyleWide,
-    individual: [{}, {}, {}, {}],
   },
   imageStyleMobile: {
     individual: [{}, {}, {}, { objectFit: "cover", minHeight: "250px" }],
@@ -342,7 +341,6 @@ const rytmiDesignProject = (catalogIsCompressed) => ({
     "rytmi5.jpg",
     "rytmi6.jpg",
   ],
-  classes: "contain",
   descriptionStyle: {
     ...descriptionPlacementTopLeftCatalog(catalogIsCompressed),
     transition: "left 1s, right 1s",
@@ -350,6 +348,7 @@ const rytmiDesignProject = (catalogIsCompressed) => ({
   descriptionStyleTablet: {},
   imageStyle: {
     common: alignHorizontalCenter,
+    individual: [{ objectFit: "contain" }, {}, {}, { objectFit: "contain" }],
   },
   imageStyleTablet: {},
   imageStyleMobile: {},
@@ -579,10 +578,10 @@ export const aestheticsDesignProjects = [
 export const industrialProjects = (catalogIsCompressed) => [
   kaarnaDesignProject,
   kajoDesignProject,
-  tyyniDesignProject,
-  kierreDesignProject,
-  kolmioillaDesignProject(catalogIsCompressed),
   rytmiDesignProject(catalogIsCompressed),
+  kolmioillaDesignProject(catalogIsCompressed),
+  kierreDesignProject,
+  tyyniDesignProject,
 ];
 
 export const digitalProjects = (catalogIsCompressed) => [

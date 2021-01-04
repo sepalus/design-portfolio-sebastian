@@ -120,7 +120,9 @@ function ProjectCard({
                         ...imageStyleMobile,
                         maxHeight: `${imageMaxSizeMobile}px`,
                       }
-                    : { ...imageStyle, ...imageStyleTablet }
+                    : isTablet
+                    ? { ...imageStyle, ...imageStyleTablet }
+                    : imageStyle
                 }
               />
             </div>
