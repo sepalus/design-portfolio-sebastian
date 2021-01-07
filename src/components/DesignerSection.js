@@ -45,26 +45,28 @@ function DesignerSection({
                   setTimeout(() => setAboutTypistDone(true), 500)
                 }
               >
-                Hi, I'm&nbsp;
+                {isMobile && <span>&nbsp;&nbsp;&nbsp;</span>}Hi, I'm&nbsp;
                 <span
                   className="link-button link-button-narrow"
                   onClick={() => selectViewport(3)}
                 >
                   Jens Sebastian
                 </span>
-                &nbsp;an industrial and furniture designer.
+                &nbsp;an{isMobile ? <br /> : " "}industrial and furniture
+                designer.
               </Typist>
             </h3>
           ) : (
             <h3>
-              Hi, I'm&nbsp;
+              {isMobile && <span>&nbsp;&nbsp;&nbsp;</span>}Hi, I'm&nbsp;
               <span
                 className="link-button link-button-narrow"
                 onClick={() => selectViewport(3)}
               >
                 Jens Sebastian
               </span>
-              &nbsp;an industrial and furniture designer.
+              &nbsp;an{isMobile ? <br /> : " "}industrial and furniture
+              designer.
             </h3>
           )}
           {showTypist ? (
@@ -86,7 +88,9 @@ function DesignerSection({
                     setTimeout(() => setWorkTypistDone(true), 500)
                   }
                 >
-                  If you’re interested in what I’ve done, check out my&nbsp;
+                  If you’re interested in what I’ve{isMobile ? <br /> : " "}
+                  {isMobile && <span>&nbsp;&nbsp;</span>}done, check out
+                  my&nbsp;
                   <span
                     className="link-button link-button-narrow"
                     onClick={() => selectViewport(1)}
@@ -98,7 +102,8 @@ function DesignerSection({
             )
           ) : (
             <h3>
-              If you’re interested in what I’ve done, check out my&nbsp;
+              If you’re interested in what I’ve{isMobile ? <br /> : " "}
+              {isMobile && <span>&nbsp;&nbsp;</span>}done, check out my&nbsp;
               <span
                 className="link-button link-button-narrow"
                 onClick={() => selectViewport(1)}
