@@ -45,30 +45,26 @@ function DesignerSection({
                   setTimeout(() => setAboutTypistDone(true), 500)
                 }
               >
-                {isMobile && <span>&nbsp;&nbsp;&nbsp;</span>}Hello, I'm&nbsp;
+                Hi, I'm&nbsp;
                 <span
                   className="link-button link-button-narrow"
                   onClick={() => selectViewport(3)}
                 >
-                  Sebastian
+                  Jens Sebastian
                 </span>
-                &nbsp;a designer {isMobile && <br />}
-                in both the physical and digital world
-                {isMobile && <span>.</span>}
+                &nbsp;an industrial and furniture designer.
               </Typist>
             </h3>
           ) : (
             <h3>
-              {isMobile && <span>&nbsp;&nbsp;&nbsp;</span>}Hello, I'm&nbsp;
+              Hi, I'm&nbsp;
               <span
                 className="link-button link-button-narrow"
                 onClick={() => selectViewport(3)}
               >
-                Sebastian
+                Jens Sebastian
               </span>
-              &nbsp;a designer {isMobile && <br />}
-              in both the physical and digital world
-              {isMobile && <span>.</span>}
+              &nbsp;an industrial and furniture designer.
             </h3>
           )}
           {showTypist ? (
@@ -90,10 +86,7 @@ function DesignerSection({
                     setTimeout(() => setWorkTypistDone(true), 500)
                   }
                 >
-                  {!isMobile && <span>&nbsp;</span>}If you’re interested in what
-                  I’ve done, {isMobile && <br />}
-                  {isMobile && <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>}please take
-                  a look at my&nbsp;
+                  If you’re interested in what I’ve done, check out my&nbsp;
                   <span
                     className="link-button link-button-narrow"
                     onClick={() => selectViewport(1)}
@@ -105,10 +98,7 @@ function DesignerSection({
             )
           ) : (
             <h3>
-              {!isMobile && <span>&nbsp;</span>} If you’re interested in what
-              I’ve done, {isMobile && <br />}
-              {isMobile && <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>}please take a
-              look at my&nbsp;
+              If you’re interested in what I’ve done, check out my&nbsp;
               <span
                 className="link-button link-button-narrow"
                 onClick={() => selectViewport(1)}
