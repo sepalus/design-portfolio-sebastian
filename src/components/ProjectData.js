@@ -237,11 +237,34 @@ const kiskoDesignProject = {
   isTeam: false,
   categories: ["Furniture Design", "Chair Design", "Component Design"],
   displayableCategory: 2,
-  images: ["kisko1.jpg"],
-  descriptionStyle: descriptionPlacementTopRightCorner,
+  images: [
+    "kisko1.jpg",
+    "kisko2.jpg",
+    "kisko3.jpg",
+    "kisko4.jpg",
+    "kisko5.png",
+  ],
+  descriptionStyle: { width: "270px", right: " 100px", top: " 100px" },
+  descriptionStyleTablet: {
+    top: "70px",
+    right: "80px",
+  },
   mainColorDark: false,
   descriptionColorDark: true,
-  backgroundColor: "black",
+  controlColorDark: true,
+  backgroundColor: "white",
+  imageStyle: {
+    individual: [
+      {},
+      {},
+      {},
+      {},
+      { objectFit: "contain", padding: "100px 200px", boxSizing: "border-box" },
+    ],
+  },
+  imageStyleTablet: {
+    individual: [{}, {}, {}, {}, { padding: "60px 120px" }],
+  },
 };
 
 const kierreDesignProject = {
