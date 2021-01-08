@@ -171,7 +171,7 @@ const kajoDesignProject = {
   isTeam: false,
   categories: ["Furniture Design", "Lamp Design", "Lighting Design"],
   displayableCategory: 1,
-  images: ["kajo3.jpg", "kajo1.jpg", "kajo4.jpg", "kajo2.jpg"],
+  images: ["kajo1.jpg", "kajo2.jpg", "kajo3.jpg", "kajo4.jpg"],
   descriptionStyle: {
     ...descriptionPlacementBottomRightCorner,
     right: "60px",
@@ -190,12 +190,15 @@ const tyyniDesignProject = {
   id: "tyyni",
   title: "Tyyni",
   description:
-    "A sound diffusing wall element, with oustanding acoustic qualities and beautiful form. The overall shape of Tyyni is based on a tested mathematical equation that ensures a high-quality sonic experinece. The wave-like form gives a visual expression that matches the acoustic qualities - without compromising the sound.",
+    "A sound diffusing wall panel, with outstanding acoustic qualities and beautiful form. The overall shape of Tyyni is based on a tested mathematical equation that ensures a high-quality sonic experinece. The wave-like form gives a visual expression that matches the acoustic qualities - without compromising the sound.",
   year: 2017,
   isTeam: false,
   categories: ["Product Design", "Acoustic Design", "Wall Panel Design"],
   displayableCategory: 1,
   images: ["tyyni1.jpg", "tyyni2.jpg"],
+  imageStyle: {
+    common: { objectPosition: "50% 40%" },
+  },
   descriptionStyle: {
     ...descriptionPlacementRightVerticalCenter,
     transform: "translateY(-70%)",
@@ -334,6 +337,7 @@ const rytmiDesignProject = (catalogIsCompressed) => ({
   isTeam: false,
   categories: ["Solar Balcony", "Solar Glass", "Solar Panels"],
   displayableCategory: 2,
+  iconSize: "26px",
   images: [
     "rytmi1.jpg",
     "rytmi2.jpg",
@@ -513,7 +517,6 @@ const axiomDesignProject = (catalogIsCompressed) => ({
     "Yi-tzu Hsiao",
   ],
   displayTeamHorizontal: "true",
-
   categories: ["Service Design", "Co-Design", "Concept Design"],
   displayableCategory: 0,
   images: [
