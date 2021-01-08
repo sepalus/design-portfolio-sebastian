@@ -229,15 +229,16 @@ const kiskoDesignProject = {
   id: "kisko",
   title: "Kisko",
   description:
-    "An elegant industrial furniture series that combines character with comfort. Made out of industrial materials, Kisko furniture gets its identity from the intuitive yet original way of connecting the components.",
+    "An elegant industrial inspired furniture series that combines comfort with character. Kisko introduces an industrial connecting component - the stainless steel U channel tube - to the world of furniture.",
   year: 2019,
   isTeam: false,
   categories: ["Furniture Design", "Chair Design", "Component Design"],
   displayableCategory: 2,
-  images: ["kisko.png"],
-  classes: "contain",
-  mainColorDark: true,
-  backgroundColor: "white",
+  images: ["kisko1.jpg"],
+  descriptionStyle: descriptionPlacementTopRightCorner,
+  mainColorDark: false,
+  descriptionColorDark: true,
+  backgroundColor: "black",
 };
 
 const kierreDesignProject = {
@@ -578,6 +579,7 @@ export const aestheticsDesignProjects = [
 export const industrialProjects = (catalogIsCompressed) => [
   kaarnaDesignProject,
   kajoDesignProject,
+  kiskoDesignProject,
   rytmiDesignProject(catalogIsCompressed),
   kolmioillaDesignProject(catalogIsCompressed),
   kierreDesignProject,
