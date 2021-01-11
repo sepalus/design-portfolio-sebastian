@@ -45,12 +45,12 @@ function DesignerSection({
                   setTimeout(() => setAboutTypistDone(true), 500)
                 }
               >
-                {isMobile && <span>&nbsp;&nbsp;&nbsp;</span>}Hi, I'm&nbsp;
+                Hi, I'm&nbsp;
                 <span
                   className="link-button link-button-narrow"
                   onClick={() => selectViewport(3)}
                 >
-                  Jens Sebastian
+                  Sebastian
                 </span>
                 &nbsp;an{isMobile ? <br /> : " "}industrial and furniture
                 designer.
@@ -58,12 +58,12 @@ function DesignerSection({
             </h3>
           ) : (
             <h3>
-              {isMobile && <span>&nbsp;&nbsp;&nbsp;</span>}Hi, I'm&nbsp;
+              Hi, I'm&nbsp;
               <span
                 className="link-button link-button-narrow"
                 onClick={() => selectViewport(3)}
               >
-                Jens Sebastian
+                Sebastian
               </span>
               &nbsp;an{isMobile ? <br /> : " "}industrial and furniture
               designer.
@@ -89,8 +89,7 @@ function DesignerSection({
                   }
                 >
                   If you’re interested in what I’ve{isMobile ? <br /> : " "}
-                  {isMobile && <span>&nbsp;&nbsp;</span>}done, check out
-                  my&nbsp;
+                  done, check out my&nbsp;
                   <span
                     className="link-button link-button-narrow"
                     onClick={() => selectViewport(1)}
@@ -103,7 +102,7 @@ function DesignerSection({
           ) : (
             <h3>
               If you’re interested in what I’ve{isMobile ? <br /> : " "}
-              {isMobile && <span>&nbsp;&nbsp;</span>}done, check out my&nbsp;
+              done, check out my&nbsp;
               <span
                 className="link-button link-button-narrow"
                 onClick={() => selectViewport(1)}

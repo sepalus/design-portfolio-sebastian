@@ -291,3 +291,7 @@ button:disabled {
     font-size: 14px;
   }
 }
+
+.dont-justify-last {
+  text-align-last: left !important;
+}
