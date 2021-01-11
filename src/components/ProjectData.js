@@ -637,10 +637,10 @@ export const industrialProjects = (catalogIsCompressed) => [
   kaarnaDesignProject,
   kajoDesignProject,
   kiskoDesignProject,
+  puolikuuDesignProject,
   rytmiDesignProject(catalogIsCompressed),
   kolmioillaDesignProject(catalogIsCompressed),
   kierreDesignProject,
-  puolikuuDesignProject,
   tyyniDesignProject,
 ];
 
