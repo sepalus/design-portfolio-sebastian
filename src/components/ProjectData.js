@@ -214,17 +214,28 @@ const tyyniDesignProject = {
   backgroundColor: backgroundColorDark,
 };
 
-const kuutamoDesignProject = {
-  id: "kuutamo",
-  title: "Kuutamo",
+const puolikuuDesignProject = {
+  id: "puolikuu",
+  title: "Puolikuu",
   description:
-    "A directional night light that provides light to you, without interrupting your partner's sleep. The light is perfect for two people sharing a bed, allowing one to stay awake while the other sleeps. Kuutamo works well aesthetically both as a single piece for one person, or as two lamps side-by-side.",
+    "A bedside wall lamp inspired by soothing moonlight. Puolikuu can be installed as a single piece above the bed, or as two lamps side-by-side above a shared bed, allowing one person to stay awake while the other sleeps.",
   year: 2016,
   isTeam: false,
   categories: ["Product Design", "Furniture Design", "Lamp Design"],
   displayableCategory: 2,
-  images: ["kuu.png"],
+  images: ["puolikuu1.jpg", "puolikuu2.jpg", "puolikuu3.jpg"],
+  descriptionStyle: {
+    ...descriptionPlacementRightVerticalCenter,
+    transform: "translateY(-70%)",
+    width: minWidth,
+  },
+  descriptionStyleTablet: {
+    width: "240px",
+    right: "60px",
+  },
   mainColorDark: false,
+  descriptionColorDark: true,
+  controlColorDark: true,
   backgroundColor: "black",
 };
 
@@ -609,6 +620,7 @@ export const industrialProjects = (catalogIsCompressed) => [
   rytmiDesignProject(catalogIsCompressed),
   kolmioillaDesignProject(catalogIsCompressed),
   kierreDesignProject,
+  puolikuuDesignProject,
   tyyniDesignProject,
 ];
 
