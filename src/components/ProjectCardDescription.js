@@ -14,7 +14,7 @@ function ProjectCardDescription({
   isTablet,
 }) {
   const [showTeam, setShowTeam] = useState(false);
-  const isSmallHeight = windowHeight < 600;
+  const isSmallHeight = windowHeight < 550;
 
   useEffect(() => {
     window.addEventListener("click", () => {

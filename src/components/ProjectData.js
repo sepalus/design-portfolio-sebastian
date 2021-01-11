@@ -263,18 +263,38 @@ const kiskoDesignProject = {
   mainColorDark: false,
   descriptionColorDark: true,
   controlColorDark: true,
-  backgroundColor: "white",
+  backgroundColor: "black",
   imageStyle: {
     individual: [
       {},
       {},
       {},
       {},
-      { objectFit: "contain", padding: "100px 200px", boxSizing: "border-box" },
+      {
+        objectFit: "contain",
+        padding: "100px 200px",
+        boxSizing: "border-box",
+        backgroundColor: "white",
+      },
     ],
   },
+
   imageStyleTablet: {
     individual: [{}, {}, {}, {}, { padding: "60px 120px" }],
+  },
+  imageStyleMobile: {
+    individual: [
+      {},
+      {},
+      {},
+      {},
+      {
+        objectFit: "contain",
+        padding: "70px 60px",
+        boxSizing: "border-box",
+        backgroundColor: "white",
+      },
+    ],
   },
 };
 
