@@ -215,12 +215,12 @@ function InformationSection({
                       !isMobile && !textExpanded,
                   }
                 )}`}
-                onClick={() => changeViewport(2)}
+                onClick={() => changeViewport(1)}
               >
-                <p>Digital Creator</p>
+                <p>Furniture Designer</p>
               </button>
               <button
-                className={`disabled-button ${introductionLabelClasses} ${classNames(
+                className={`${introductionLabelClasses} ${classNames(
                   {
                     "animate-title-element-3": !isMobile && textExpanded,
                   },
@@ -229,11 +229,9 @@ function InformationSection({
                       !isMobile && !textExpanded,
                   }
                 )}`}
-                onClick={() => {
-                  return;
-                }}
+                onClick={() => changeViewport(1)}
               >
-                <p>Genuine Aesthete</p>
+                <p>Aesthetics and Function Driven Designer</p>
               </button>
               <div
                 className={classNames(
@@ -257,65 +255,70 @@ function InformationSection({
                 >
                   {isMobile ? (
                     <>
-                      With the problem-solving skills of an engineer and visual
-                      eye of an artist, equipped with Master’s Degrees in both
-                      UX Design (M.Sc.) and Industrial Design (M.A.), I design
-                      functional, aesthetically pleasing solutions that are
-                      delightful to use. I am a passionate Industrial Designer,
-                      who believes that beauty and the capability to produce
-                      aesthetic pleasure are immensely important qualities of
-                      successful products and pieces of furniture. With a
-                      background in programming and UX design, I have produced
-                      elegant digital solutions as a Digital Creator in various
-                      industries. My research in design aesthetics highlights
-                      the significance of aesthetic experiences in our everyday
-                      lives and provides tools for measuring them. As a Genuine
-                      Aetshete I am a strong advocate for the importance of
-                      aesthetics in all designed solutions.
+                      I have the problem-solving skills of an engineer and
+                      visual eye of an artist, and come equipped with Master’s
+                      Degrees in both UX Design (M.Sc.) and Industrial Design
+                      (M.A.). As an Industrial Designer, I design functional,
+                      aesthetically pleasing solutions that are delightful to
+                      use. I believe that every product - regardless of the
+                      category - can be designed to be aesthetically pleasing.
+                      The key in doing so, is to find the essence of the product
+                      and turn that into aesthetic value. I apply this design
+                      philosophy to my work as a Furniture Designer as well. I
+                      have also conducted research in product aesthetics and
+                      furthered the idea of aesthetics-driven design. I am an
+                      Aesthetics and Function Driven Designer, who believes that
+                      true beauty is achieved when all components work together
+                      to create a functioning whole.
                     </>
                   ) : isTablet ? (
                     <>
-                      With the problem-solving skills of an engineer and visual
-                      eye of an artist, equipped with Master’s Degrees in both
-                      UX Design (M.Sc.) and Industrial Design (M.A.), I design
-                      functional, aesthetically pleasing solutions that are
-                      delightful to use. I am a passionate
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      who believes that beauty and the capability to produce
-                      aesthetic pleasure are immensely important qualities of
-                      successful products and pieces of furniture. With a
-                      background in programming and UX design, I have produced
-                      elegant digital solutions as a
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      in various industries. My research in design aesthetics
-                      highlights the significance of aesthetic experiences in
-                      our everyday lives and provides tools for measuring them.
-                      As a
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      I am a strong advocate for the importance of aesthetics in
-                      all designed solutions.
+                      I have the problem-solving skills of an engineer and
+                      visual eye of an artist, and come equipped with Master’s
+                      Degrees in both UX Design (M.Sc.) and Industrial Design
+                      (M.A.). As an
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <br />I design functional, aesthetically pleasing
+                      solutions that are delightful to use. I believe that every
+                      product - regardless of the category - can be designed to
+                      be aesthetically pleasing. The key in doing so, is to find
+                      the essence of the product and turn that into aesthetic
+                      value. I apply this design philosophy to my work as a
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      as well. I have also conducted research in product
+                      aesthetics <br />
+                      and furthered the idea of aesthetics-driven design. I am
+                      an
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      who believes that true <br />
+                      <p className="dont-justify-last">
+                        beauty is achieved when all components work together to
+                        create a functioning whole.
+                      </p>
                     </>
                   ) : (
                     <>
-                      With the problem-solving skills of an engineer and visual
-                      eye of an artist, equipped with Master’s Degrees in both
-                      UX Design (M.Sc.) and Industrial Design (M.A.), I design
-                      functional, aesthetically pleasing solutions that are
-                      delightful to use. I am a passionate
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      who believes that beauty and the capability to produce
-                      aesthetic pleasure are immensely important qualities of
-                      successful products and pieces of furniture. With a
-                      background in programming and UX design, I have produced
-                      elegant digital solutions as a
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      in various industries. My research in design aesthetics
-                      highlights the significance of aesthetic experiences in
-                      our everyday lives and provides tools for measuring them.
-                      As a
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      I am a strong advocate for the importance of aesthetics in
-                      all designed solutions.
+                      I have the problem-solving skills of an engineer and
+                      visual eye of an artist, <br />
+                      and come equipped with Master’s Degrees in both UX Design
+                      (M.Sc.)
+                      <br /> and Industrial Design (M.A.). As an
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      I design functional, aesthetically pleasing solutions that
+                      are delightful to use. I believe that every product -
+                      regardless of the category - can be designed to be
+                      aesthetically pleasing. The key in doing so, is to find
+                      the essence of the product and turn that into aesthetic
+                      value. I apply this design philosophy to my work
+                      <br /> as a
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      as well. I have also conducted research in product
+                      aesthetics and furthered the idea of aesthetics-driven
+                      design. I am an
+                      <br />
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      who believes that true beauty is achieved when all
+                      components work together to create a functioning whole.
                     </>
                   )}
                 </p>
