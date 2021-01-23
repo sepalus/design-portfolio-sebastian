@@ -171,7 +171,7 @@ const kajoDesignProject = {
   isTeam: false,
   categories: ["Furniture Design", "Lamp Design", "Lighting Design"],
   displayableCategory: 1,
-  images: ["kajo1.jpg", "kajo2.jpg", "kajo3.jpg", "kajo4.jpg"],
+  images: ["kajo1.jpg", "kajo2.jpg", "kajo3.jpg", "kajo4.jpg", "kajo5.jpg"],
   descriptionStyle: {
     ...descriptionPlacementBottomRightCorner,
     right: "60px",
