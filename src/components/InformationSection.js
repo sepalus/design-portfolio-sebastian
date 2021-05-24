@@ -52,7 +52,7 @@ function InformationSection({
   const emailAddress = "sebastian.hognabba@gmail.com";
 
   const expandedImageWidth = 334;
-  const textWidth = 488;
+  const textWidth = 496;
   const marginWidth = 32;
 
   const imageWidthTablet = 174;
@@ -217,7 +217,7 @@ function InformationSection({
                 )}`}
                 onClick={() => changeViewport(2)}
               >
-                <p>Digital Creator</p>
+                <p>Service Designer</p>
               </button>
               <button
                 className={`disabled-button ${introductionLabelClasses} ${classNames(
@@ -233,7 +233,7 @@ function InformationSection({
                   return;
                 }}
               >
-                <p>Genuine Aesthete</p>
+                <p>Aesthetics and Function Driven Designer</p>
               </button>
               <div
                 className={classNames(
@@ -266,12 +266,11 @@ function InformationSection({
                       aesthetic pleasure are immensely important qualities of
                       successful products and pieces of furniture. With a
                       background in programming and UX design, I have produced
-                      elegant digital solutions as a Digital Creator in various
+                      elegant digital solutions as a Service Designer in various
                       industries. My research in design aesthetics highlights
                       the significance of aesthetic experiences in our everyday
-                      lives and provides tools for measuring them. As a Genuine
-                      Aetshete I am a strong advocate for the importance of
-                      aesthetics in all designed solutions.
+                      lives. As an Aesthetics and Function Driven Designer, I am a strong advocate for the importance of aesthetics in
+                      all designed solutions.
                     </>
                   ) : isTablet ? (
                     <>
@@ -288,10 +287,11 @@ function InformationSection({
                       elegant digital solutions as a
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       in various industries. My research in design aesthetics
-                      highlights the significance of aesthetic experiences in
-                      our everyday lives and provides tools for measuring them.
-                      As a
+                      highlights the significance of aesthetics and aesthetic experiences in
+                      our everyday lives.
+                      As an
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       I am a strong advocate for the importance of aesthetics in
                       all designed solutions.
                     </>
@@ -308,12 +308,13 @@ function InformationSection({
                       successful products and pieces of furniture. With a
                       background in programming and UX design, I have produced
                       elegant digital solutions as a
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       in various industries. My research in design aesthetics
                       highlights the significance of aesthetic experiences in
-                      our everyday lives and provides tools for measuring them.
-                      As a
+                      our everyday lives.
+                      As an
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       I am a strong advocate for the importance of aesthetics in
                       all designed solutions.
                     </>

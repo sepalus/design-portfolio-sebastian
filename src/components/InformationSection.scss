@@ -1,13 +1,13 @@
 @import "../variables";
 
 $title-element-left-start: 4px;
-$title-element-1-left-end: 231px;
+$title-element-1-left-end: 235px;
 $title-element-1-top-start: 78px;
 $title-element-1-top-end: 168px;
-$title-element-2-left-end: 95px;
+$title-element-2-left-end: 94px;
 $title-element-2-top-start: 118px;
 $title-element-2-top-end: 288px;
-$title-element-3-left-end: 318px;
+$title-element-3-left-end: 74px;
 $title-element-3-top-start: 158px;
 $title-element-3-top-end: 348px;
 
@@ -15,14 +15,14 @@ $title-element-tablet-left-start: 4px;
 $title-element-1-tablet-left-end: 192px;
 $title-element-1-tablet-top-start: 66px;
 $title-element-1-tablet-top-end: 153px;
-$title-element-2-tablet-left-end: 226px;
+$title-element-2-tablet-left-end: 220px;
 $title-element-2-tablet-top-start: 106px;
 $title-element-2-tablet-top-end: 265px;
-$title-element-3-tablet-left-end: 123px;
+$title-element-3-tablet-left-end: 0px;
 $title-element-3-tablet-top-start: 146px;
 $title-element-3-tablet-top-end: 349px;
 
-$text-wrapper-width: 488px;
+$text-wrapper-width: 496px;
 $text-wrapper-width-plus-margin: 520px;
 $text-wrapper-width-tablet: 394px;
 $text-wrapper-width-tablet-plus-margin: 422px;
@@ -90,7 +90,6 @@ $text-wrapper-width-tablet-plus-margin: 422px;
   position: absolute;
   width: $text-wrapper-width;
   text-align: justify;
-  text-align-last: justify;
   margin-bottom: -50px;
   margin-left: -75px;
 
@@ -105,7 +104,6 @@ $text-wrapper-width-tablet-plus-margin: 422px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align-last: initial;
     margin-bottom: 0px;
   }
 }
