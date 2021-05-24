@@ -52,7 +52,7 @@ function DesignerSection({
                 >
                   Sebastian
                 </span>
-                &nbsp;an{isMobile ? <br /> : " "}industrial and furniture
+                &nbsp;an industrial{isMobile ? <br /> : " "}designer and service
                 designer.
               </Typist>
             </h3>
@@ -65,7 +65,7 @@ function DesignerSection({
               >
                 Sebastian
               </span>
-              &nbsp;an{isMobile ? <br /> : " "}industrial and furniture
+              &nbsp;an industrial{isMobile ? <br /> : " "}designer and service
               designer.
             </h3>
           )}
@@ -89,7 +89,7 @@ function DesignerSection({
                   }
                 >
                   If you’re interested in what I’ve{isMobile ? <br /> : " "}
-                  done, check out my&nbsp;
+                  done, please check out my&nbsp;
                   <span
                     className="link-button link-button-narrow"
                     onClick={() => selectViewport(1)}
@@ -102,7 +102,7 @@ function DesignerSection({
           ) : (
             <h3>
               If you’re interested in what I’ve{isMobile ? <br /> : " "}
-              done, check out my&nbsp;
+              done, please check out my&nbsp;
               <span
                 className="link-button link-button-narrow"
                 onClick={() => selectViewport(1)}
