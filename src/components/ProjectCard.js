@@ -52,9 +52,7 @@ function ProjectCard({
           })}
         >
           <Menu onClick={() => setCatalogIsOpenMobile(true)} />
-          <h2>
-            {isDigital ? "Digital and Service" : "Products and Furniture"}
-          </h2>
+          <h2>{isDigital ? "UX and Service" : "Products and Furniture"}</h2>
         </div>
       )}
       <div className="project-card-image-container" {...swipeHandlers}>

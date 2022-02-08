@@ -32,7 +32,8 @@ function ProjectCatalog({
       className={classNames(
         "project-catalog",
         {
-          "project-catalog-compressed animate-catalog-compress": catalogIsCompressed,
+          "project-catalog-compressed animate-catalog-compress":
+            catalogIsCompressed,
         },
         { "animate-catalog-expand": !catalogIsCompressed },
         { "project-catalog-dark": catalogIsDark },
@@ -48,7 +49,7 @@ function ProjectCatalog({
           {catalogIsCompressed
             ? "."
             : isDigital
-            ? "Digital and Service"
+            ? "UX and Service"
             : "Products and Furniture"}
         </h2>
       )}
