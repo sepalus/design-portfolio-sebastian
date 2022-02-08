@@ -217,7 +217,7 @@ function InformationSection({
                 )}`}
                 onClick={() => changeViewport(2)}
               >
-                <p>Service Designer</p>
+                <p>UX and Service Designer</p>
               </button>
               <button
                 className={`disabled-button ${introductionLabelClasses} ${classNames(
@@ -266,11 +266,12 @@ function InformationSection({
                       aesthetic pleasure are immensely important qualities of
                       successful products and pieces of furniture. With a
                       background in programming and UX design, I have produced
-                      elegant digital solutions as a Service Designer in various
-                      industries. My research in design aesthetics highlights
-                      the significance of aesthetic experiences in our everyday
-                      lives. As an Aesthetics and Function Driven Designer, I am a strong advocate for the importance of aesthetics in
-                      all designed solutions.
+                      elegant digital solutions as a UX and Service Designer in
+                      various industries. My research in design aesthetics
+                      highlights the significance of aesthetic experiences in
+                      our everyday lives. As an Aesthetics and Function Driven
+                      Designer, I am a strong advocate for the importance of
+                      aesthetics in all designed solutions.
                     </>
                   ) : isTablet ? (
                     <>
@@ -285,15 +286,16 @@ function InformationSection({
                       successful products and pieces of furniture. With a
                       background in programming and UX design, I have produced
                       elegant digital solutions as a
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       in various industries. My research in design aesthetics
-                      highlights the significance of aesthetics and aesthetic experiences in
-                      our everyday lives.
-                      As an
+                      highlights the significance of aesthetics and aesthetic
+                      experiences in our everyday lives. As an
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      I am a strong advocate for the importance of aesthetics in
-                      all designed solutions.
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      I am a strong
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; advocate
+                      for the importance of aesthetics in all designed
+                      solutions.
                     </>
                   ) : (
                     <>
@@ -308,11 +310,10 @@ function InformationSection({
                       successful products and pieces of furniture. With a
                       background in programming and UX design, I have produced
                       elegant digital solutions as a
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       in various industries. My research in design aesthetics
                       highlights the significance of aesthetic experiences in
-                      our everyday lives.
-                      As an
+                      our everyday lives. As an
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       I am a strong advocate for the importance of aesthetics in

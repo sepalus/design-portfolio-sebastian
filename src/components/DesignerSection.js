@@ -45,27 +45,27 @@ function DesignerSection({
                   setTimeout(() => setAboutTypistDone(true), 500)
                 }
               >
-                Hi, I'm&nbsp;
+                Hello I'm&nbsp;
                 <span
                   className="link-button link-button-narrow"
                   onClick={() => selectViewport(3)}
                 >
-                  Sebastian
+                  Sebastian,
                 </span>
-                &nbsp;an industrial{isMobile ? <br /> : " "}designer and service
+                &nbsp;a UX,{isMobile ? <br /> : " "}service and industrial
                 designer.
               </Typist>
             </h3>
           ) : (
             <h3>
-              Hi, I'm&nbsp;
+              Hello, I'm&nbsp;
               <span
                 className="link-button link-button-narrow"
                 onClick={() => selectViewport(3)}
               >
-                Sebastian
+                Sebastian,
               </span>
-              &nbsp;an industrial{isMobile ? <br /> : " "}designer and service
+              &nbsp;a UX,{isMobile ? <br /> : " "}service and industrial
               designer.
             </h3>
           )}
@@ -94,7 +94,7 @@ function DesignerSection({
                     className="link-button link-button-narrow"
                     onClick={() => selectViewport(1)}
                   >
-                    work
+                    work.
                   </span>
                 </Typist>
               </h3>
@@ -107,7 +107,7 @@ function DesignerSection({
                 className="link-button link-button-narrow"
                 onClick={() => selectViewport(1)}
               >
-                work
+                work.
               </span>
             </h3>
           )}
