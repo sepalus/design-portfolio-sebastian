@@ -17,7 +17,7 @@ function ProjectCatalog({
   catalogIsOpenMobile,
   isMobile,
 }) {
-  const isDigital = designArea === 2;
+  const isDigital = designArea === 1;
 
   const catalogIsDark = projects[activeProjectIndex].hasOwnProperty(
     "catalogColorDark"

@@ -9,11 +9,11 @@ function Navigator({
   isScrollSnapped,
   catalogIsCompressed,
 }) {
-  const hideButton = navigatorViewport === 1 && catalogIsCompressed;
+  const hideButton = navigatorViewport === 2 && catalogIsCompressed;
   return (
     <div
       className={classNames("navigator", {
-        "navigator-dark ": navigatorViewport === 2,
+        "navigator-dark ": navigatorViewport === 1,
         "navigator-hidden": hideButton,
         "animate-navigator-in":
           navigatorViewport === currentViewport && isScrollSnapped,

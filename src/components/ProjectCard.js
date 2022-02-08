@@ -27,7 +27,7 @@ function ProjectCard({
   isMobile,
   isTablet,
 }) {
-  const isDigital = designArea === 2;
+  const isDigital = designArea === 1;
   const swipeHandlers = useSwipeable({
     onSwipedLeft: () => selectImage(activeImageIndex + 1),
     onSwipedRight: () => selectImage(activeImageIndex - 1),
