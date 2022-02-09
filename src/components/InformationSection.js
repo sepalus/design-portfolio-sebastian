@@ -148,19 +148,25 @@ function InformationSection({
         <div className="information-section-about">
           <div className="information-section-about-content-wrapper">
             <div className="information-section-about-header-wrapper">
-              <img
-                src={
-                  isTablet
-                    ? "./assets/sebastian_tablet.jpg"
-                    : "./assets/sebastian_desktop.jpg"
-                }
-                alt="Sebastian"
+              <div
                 className={classNames(
-                  "information-section-about-image",
-                  { "information-section-about-image-open": textExpanded },
-                  { "information-section-about-image-closed": !textExpanded }
+                  "information-section-about-image-wrapper",
+                  {
+                    "information-section-about-image-wrapper-open":
+                      textExpanded,
+                  },
+                  {
+                    "information-section-about-image-wrapper-closed":
+                      !textExpanded,
+                  }
                 )}
-              />
+              >
+                <img
+                  src={"./assets/sebastian.jpg"}
+                  alt="Sebastian"
+                  className="information-section-about-image"
+                />
+              </div>
             </div>
             <div className="information-section-about-text-wrapper-placeholder"></div>
             <div
