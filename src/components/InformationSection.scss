@@ -78,7 +78,8 @@ $text-wrapper-width-tablet-plus-margin: 422px;
     height: 170px;
     width: 170px;
     border-radius: 50%;
-    object-position: center -6px;
+    object-position: center -12px;
+    object-fit: cover;
   }
   @media screen and (max-width: $mobile-max) {
     height: 140px;

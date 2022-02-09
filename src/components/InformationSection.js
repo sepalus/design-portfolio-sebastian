@@ -149,7 +149,11 @@ function InformationSection({
           <div className="information-section-about-content-wrapper">
             <div className="information-section-about-header-wrapper">
               <img
-                src="./assets/face.jpg"
+                src={
+                  isTablet
+                    ? "./assets/sebastian_tablet.jpg"
+                    : "./assets/sebastian_desktop.jpg"
+                }
                 alt="Sebastian"
                 className={classNames(
                   "information-section-about-image",
