@@ -48,8 +48,8 @@ function InformationSection({
     };
   }, [mouseClickedInformation]);
 
-  const phoneNumber = "040 7752722";
-  const emailAddress = "sebastian.hognabba@gmail.com";
+  const phoneNumber = "+358 40 7752722";
+  const emailAddress = "jenssebastian.design@gmail.com";
 
   const expandedImageWidth = 334;
   const textWidth = 496;
@@ -355,6 +355,9 @@ function InformationSection({
                   {
                     "information-section-contact-icon-expandable-icon-wrapper-hide":
                       showPhoneNumber && !isMobile,
+                  },
+                  {
+                    "animate-move-element-left": showEmailAddress,
                   }
                 )}
               >

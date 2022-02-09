@@ -677,10 +677,6 @@ $text-wrapper-width-tablet-plus-margin: 422px;
     img {
       padding-top: 4px;
     }
-
-    span {
-      left: 22px;
-    }
   }
   @media screen and (max-width: $mobile-max) {
     img {
@@ -758,7 +754,7 @@ $text-wrapper-width-tablet-plus-margin: 422px;
   }
 
   @media screen and (max-width: $mobile-max) {
-    left: -66px;
+    left: -75px;
     top: 34px;
     button {
       padding: 5px 8px;
@@ -771,11 +767,12 @@ $text-wrapper-width-tablet-plus-margin: 422px;
 
   &.information-section-contact-icon-expandable-button-wrapper-email {
     @media screen and (max-width: $mobile-max) {
-      left: -93px;
+      left: -100px;
     }
 
     @media screen and (max-width: 499px) {
-      left: -168px;
+      left: unset;
+      right: calc(160px - 50vw);
     }
   }
 }
@@ -810,6 +807,14 @@ $text-wrapper-width-tablet-plus-margin: 422px;
   display: none;
 }
 
+.animate-move-element-left {
+  animation: iconelementfadein 1s forwards;
+
+  @media screen and (max-width: $mobile-max) {
+    animation: none;
+  }
+}
+
 .animate-move-element-right {
   animation: iconelementright 1s forwards;
 
@@ -831,6 +836,15 @@ $text-wrapper-width-tablet-plus-margin: 422px;
   animation-delay: 0s;
 }
 
+@keyframes iconelementfadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @keyframes iconelementin {
   from {
     opacity: 0;
@@ -844,7 +858,7 @@ $text-wrapper-width-tablet-plus-margin: 422px;
 @keyframes iconelementinleft {
   from {
     opacity: 0;
-    transform: translateX(131px);
+    transform: translateX(0px);
   }
   to {
     opacity: 1;
@@ -855,7 +869,7 @@ $text-wrapper-width-tablet-plus-margin: 422px;
 @keyframes iconelementinlefttablet {
   from {
     opacity: 0;
-    transform: translateX(117px);
+    transform: translateX(0px);
   }
   to {
     opacity: 1;
@@ -866,22 +880,22 @@ $text-wrapper-width-tablet-plus-margin: 422px;
 @keyframes iconelementright {
   from {
     opacity: 0;
-    transform: translateX(119px);
+    transform: translateX(152px);
   }
   to {
     opacity: 1;
-    transform: translateX(131px);
+    transform: translateX(164px);
   }
 }
 
 @keyframes iconelementrighttablet {
   from {
     opacity: 0;
-    transform: translateX(105px);
+    transform: translateX(134px);
   }
   to {
     opacity: 1;
-    transform: translateX(117px);
+    transform: translateX(146px);
   }
 }
 
