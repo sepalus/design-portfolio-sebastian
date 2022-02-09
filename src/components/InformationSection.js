@@ -213,7 +213,7 @@ function InformationSection({
                 )}`}
                 onClick={() => changeViewport(2)}
               >
-                <p>Industrial Designer</p>
+                <p>UX and Service Designer</p>
               </button>
               <button
                 className={`${introductionLabelClasses} ${classNames(
@@ -227,24 +227,9 @@ function InformationSection({
                 )}`}
                 onClick={() => changeViewport(1)}
               >
-                <p>UX and Service Designer</p>
+                <p>Industrial and Furniture Designer</p>
               </button>
-              <button
-                className={`disabled-button ${introductionLabelClasses} ${classNames(
-                  {
-                    "animate-title-element-3": !isMobile && textExpanded,
-                  },
-                  {
-                    "animate-title-element-3-reverse":
-                      !isMobile && !textExpanded,
-                  }
-                )}`}
-                onClick={() => {
-                  return;
-                }}
-              >
-                <p>Aesthetics and Function Driven Designer</p>
-              </button>
+
               <div
                 className={classNames(
                   "information-section-about-introduction-text-wrapper",
@@ -267,67 +252,63 @@ function InformationSection({
                 >
                   {isMobile ? (
                     <>
-                      With the problem-solving skills of an engineer and visual
-                      eye of an artist, equipped with Master’s Degrees in both
-                      UX Design (M.Sc.) and Industrial Design (M.A.), I design
-                      functional, aesthetically pleasing solutions that are
-                      delightful to use. I am a passionate Industrial Designer,
-                      who believes that beauty and the capability to produce
-                      aesthetic pleasure are immensely important qualities of
-                      successful products and pieces of furniture. With a
-                      background in programming and UX design, I have produced
-                      elegant digital solutions as a UX and Service Designer in
-                      various industries. My research in design aesthetics
-                      highlights the significance of aesthetic experiences in
-                      our everyday lives. As an Aesthetics and Function Driven
-                      Designer, I am a strong advocate for the importance of
-                      aesthetics in all designed solutions.
+                      Hi, I’m Sebastian and design is my means of contributing
+                      to the world. I design with the problem-solving skills of
+                      an engineer and visual eye of an artist and come equipped
+                      with master’s degrees in both UX Design (M.Sc.) and
+                      Industrial Design (M.A.). Meaningful user experience is my
+                      purpose, design aesthetics my passion and solid technical
+                      expertise my foundation. As a UX and Service designer, I
+                      have created beautiful user interfaces that are delightful
+                      to use for several industries. I have a broad design
+                      toolkit at my disposable, which I use to ensure that my
+                      digital products match the users’ needs across all
+                      touchpoints. As an industrial and furniture designer, I
+                      believe that beauty and functionality go hand in hand. The
+                      aesthetics of my products are often born out of a
+                      technical or functional innovation. My products are
+                      minimalistic and elegant, while possessing strong
+                      character.
                     </>
                   ) : isTablet ? (
                     <>
-                      With the problem-solving skills of an engineer and visual
-                      eye of an artist, equipped with Master’s Degrees in both
-                      UX Design (M.Sc.) and Industrial Design (M.A.), I design
-                      functional, aesthetically pleasing solutions that are
-                      delightful to use. I am a passionate
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      who believes that beauty and the capability to produce
-                      aesthetic pleasure are immensely important qualities of
-                      successful products and pieces of furniture. With a
-                      background in programming and UX design, I have produced
-                      elegant digital solutions as a
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      in various industries. My research in design aesthetics
-                      highlights the significance of aesthetics and aesthetic
-                      experiences in our everyday lives. As an
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      I am a strong
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; advocate
-                      for the importance of aesthetics in all designed
-                      solutions.
+                      Hi, I’m Sebastian and design is my means of contributing
+                      to the world. I design with the problem-solving skills of
+                      an engineer and visual eye of an artist and come equipped
+                      with master’s degrees in both UX Design (M.Sc.) and
+                      Industrial Design (M.A.). Meaningful user experience is my
+                      purpose, design aesthetics my passion and solid technical
+                      expertise my foundation. As a UX and Service designer, I
+                      have created beautiful user interfaces that are delightful
+                      to use for several industries. I have a broad design
+                      toolkit at my disposable, which I use to ensure that my
+                      digital products match the users’ needs across all
+                      touchpoints. As an industrial and furniture designer, I
+                      believe that beauty and functionality go hand in hand. The
+                      aesthetics of my products are often born out of a
+                      technical or functional innovation. My products are
+                      minimalistic and elegant, while possessing strong
+                      character.
                     </>
                   ) : (
                     <>
-                      With the problem-solving skills of an engineer and visual
-                      eye of an artist, equipped with Master’s Degrees in both
-                      UX Design (M.Sc.) and Industrial Design (M.A.), I design
-                      functional, aesthetically pleasing solutions that are
-                      delightful to use. I am a passionate
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      who believes that beauty and the capability to produce
-                      aesthetic pleasure are immensely important qualities of
-                      successful products and pieces of furniture. With a
-                      background in programming and UX design, I have produced
-                      elegant digital solutions as a
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      in various industries. My research in design aesthetics
-                      highlights the significance of aesthetic experiences in
-                      our everyday lives. As an
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      I am a strong advocate for the importance of aesthetics in
-                      all designed solutions.
+                      Hi, I’m Sebastian and design is my means of contributing
+                      to the world. I design with the problem-solving skills of
+                      an engineer and visual eye of an artist and come equipped
+                      with master’s degrees in both UX Design (M.Sc.) and
+                      Industrial Design (M.A.). Meaningful user experience is my
+                      purpose, design aesthetics my passion and solid technical
+                      expertise my foundation. As a UX and Service designer, I
+                      have created beautiful user interfaces that are delightful
+                      to use for several industries. I have a broad design
+                      toolkit at my disposable, which I use to ensure that my
+                      digital products match the users’ needs across all
+                      touchpoints. As an industrial and furniture designer, I
+                      believe that beauty and functionality go hand in hand. The
+                      aesthetics of my products are often born out of a
+                      technical or functional innovation. My products are
+                      minimalistic and elegant, while possessing strong
+                      character.
                     </>
                   )}
                 </p>
