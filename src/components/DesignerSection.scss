@@ -20,9 +20,12 @@ $typist-height-mobile: 144px;
   height: $typist-height;
   white-space: nowrap;
 
+  h3:first-child {
+    letter-spacing: 0.005em;
+  }
+
   h3:not(:first-child) {
     margin-top: 24px;
-    letter-spacing: 0.01em;
   }
 
   @media screen and (max-width: $tablet-max) {
@@ -42,10 +45,12 @@ $typist-height-mobile: 144px;
       margin: 0px;
       line-height: 2em;
     }
+    h3:first-child {
+      letter-spacing: 0em;
+    }
 
     h3:not(:first-child) {
       margin-top: 0px;
-      letter-spacing: 0em;
     }
   }
 }

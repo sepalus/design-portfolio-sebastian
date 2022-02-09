@@ -45,28 +45,28 @@ function DesignerSection({
                   setTimeout(() => setAboutTypistDone(true), 500)
                 }
               >
-                Hello I'm&nbsp;
+                Hi, I'm&nbsp;
                 <span
                   className="link-button link-button-narrow"
                   onClick={() => selectViewport(3)}
                 >
-                  Sebastian,
+                  Sebastian.
                 </span>
-                &nbsp;a UX,{isMobile ? <br /> : " "}service and industrial
-                designer.
+                &nbsp;A designer of{isMobile ? <br /> : " "}both the physical
+                and digital world.
               </Typist>
             </h3>
           ) : (
             <h3>
-              Hello, I'm&nbsp;
+              Hi, I'm&nbsp;
               <span
                 className="link-button link-button-narrow"
                 onClick={() => selectViewport(3)}
               >
-                Sebastian,
+                Sebastian.
               </span>
-              &nbsp;a UX,{isMobile ? <br /> : " "}service and industrial
-              designer.
+              &nbsp;A designer of{isMobile ? <br /> : " "}both the physical and
+              digital world.
             </h3>
           )}
           {showTypist ? (
@@ -89,7 +89,7 @@ function DesignerSection({
                   }
                 >
                   If you’re interested in what I’ve{isMobile ? <br /> : " "}
-                  done, please check out my&nbsp;
+                  designed, please check out my&nbsp;
                   <span
                     className="link-button link-button-narrow"
                     onClick={() => selectViewport(1)}
@@ -102,7 +102,7 @@ function DesignerSection({
           ) : (
             <h3>
               If you’re interested in what I’ve{isMobile ? <br /> : " "}
-              done, please check out my&nbsp;
+              designed, please check out my&nbsp;
               <span
                 className="link-button link-button-narrow"
                 onClick={() => selectViewport(1)}
