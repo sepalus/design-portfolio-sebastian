@@ -53,11 +53,11 @@ function InformationSection({
   const emailAddress = "jenssebastian.design@gmail.com";
 
   const expandedImageWidth = 334;
-  const textWidth = 496;
+  const textWidth = 500;
   const marginWidth = 32;
 
   const imageWidthTablet = 174;
-  const textWidthTablet = 394;
+  const textWidthTablet = 400;
   const marginWidthTablet = 28;
 
   const leftEdge =
@@ -265,7 +265,7 @@ function InformationSection({
                       have created beautiful user interfaces that are delightful
                       to use for several industries. I have a broad design
                       toolkit at my disposable, which I use to ensure that my
-                      digital products match the users’ needs across all
+                      digital products match the user needs across all
                       touchpoints. As an industrial and furniture designer, I
                       believe that beauty and functionality go hand in hand. The
                       aesthetics of my products are often born out of a
@@ -281,12 +281,12 @@ function InformationSection({
                       with master’s degrees in both UX Design (M.Sc.) and
                       Industrial Design (M.A.). Meaningful user experience is my
                       purpose, design aesthetics my passion and solid technical
-                      expertise my foundation. As a UX and Service designer, I
+                      expertise my foundation. As a __________________________ I
                       have created beautiful user interfaces that are delightful
                       to use for several industries. I have a broad design
                       toolkit at my disposable, which I use to ensure that my
-                      digital products match the users’ needs across all
-                      touchpoints. As an industrial and furniture designer, I
+                      digital products match the user needs across all
+                      touchpoints. As an ________________________________ I
                       believe that beauty and functionality go hand in hand. The
                       aesthetics of my products are often born out of a
                       technical or functional innovation. My products are
@@ -301,12 +301,12 @@ function InformationSection({
                       with master’s degrees in both UX Design (M.Sc.) and
                       Industrial Design (M.A.). Meaningful user experience is my
                       purpose, design aesthetics my passion and solid technical
-                      expertise my foundation. As a UX and Service designer, I
+                      expertise my foundation. As a __________________________ I
                       have created beautiful user interfaces that are delightful
                       to use for several industries. I have a broad design
                       toolkit at my disposable, which I use to ensure that my
-                      digital products match the users’ needs across all
-                      touchpoints. As an industrial and furniture designer, I
+                      digital products match the user needs across all
+                      touchpoints. As an _________________________________ I
                       believe that beauty and functionality go hand in hand. The
                       aesthetics of my products are often born out of a
                       technical or functional innovation. My products are
