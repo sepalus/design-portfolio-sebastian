@@ -281,14 +281,16 @@ function InformationSection({
                       with master’s degrees in both UX Design (M.Sc.) and
                       Industrial Design (M.A.). Meaningful user experience is my
                       purpose, design aesthetics my passion and solid technical
-                      expertise my foundation. As a __________________________ I
-                      have created beautiful user interfaces that are delightful
-                      to use for several industries. I have a broad design
-                      toolkit at my disposable, which I use to ensure that my
-                      digital products match the user needs across all
-                      touchpoints. As an ________________________________ I
-                      believe that beauty and functionality go hand in hand. The
-                      aesthetics of my products are often born out of a
+                      expertise my foundation. As a
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      I have created beautiful user interfaces that are
+                      delightful to use for several industries. I have a broad
+                      design toolkit at my disposable, which I use to ensure
+                      that my digital products match the user needs across all
+                      touchpoints. As an
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      I believe that beauty and functionality go hand in hand.
+                      The aesthetics of my products are often born out of a
                       technical or functional innovation. My products are
                       minimalistic and elegant, while possessing strong
                       character.
@@ -301,14 +303,16 @@ function InformationSection({
                       with master’s degrees in both UX Design (M.Sc.) and
                       Industrial Design (M.A.). Meaningful user experience is my
                       purpose, design aesthetics my passion and solid technical
-                      expertise my foundation. As a __________________________ I
-                      have created beautiful user interfaces that are delightful
-                      to use for several industries. I have a broad design
-                      toolkit at my disposable, which I use to ensure that my
-                      digital products match the user needs across all
-                      touchpoints. As an _________________________________ I
-                      believe that beauty and functionality go hand in hand. The
-                      aesthetics of my products are often born out of a
+                      expertise my foundation. As a
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      I have created beautiful user interfaces that are
+                      delightful to use for several industries. I have a broad
+                      design toolkit at my disposable, which I use to ensure
+                      that my digital products match the user needs across all
+                      touchpoints. As an
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      I believe that beauty and functionality go hand in hand.
+                      The aesthetics of my products are often born out of a
                       technical or functional innovation. My products are
                       minimalistic and elegant, while possessing strong
                       character.
