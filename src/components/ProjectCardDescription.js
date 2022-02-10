@@ -10,6 +10,7 @@ function ProjectCardDescription({
   activeProject,
   toggleDescriptionClass,
   windowHeight,
+  isMobileSmall,
   isMobile,
   isTablet,
 }) {
@@ -85,7 +86,8 @@ function ProjectCardDescription({
     >
       <div
         className={classNames("project-card-description-content-container", {
-          "project-card-description-content-container-small-height": isSmallHeight,
+          "project-card-description-content-container-small-height":
+            isSmallHeight,
         })}
       >
         {!isMobile && <div className="vertical-line"></div>}
@@ -94,7 +96,9 @@ function ProjectCardDescription({
         </h3>
         {!isSmallHeight && (
           <p className="project-card-description-text">
-            {activeProject.description}
+            {isMobileSmall && activeProject.descriptionShort
+              ? activeProject.descriptionShort
+              : activeProject.description}
           </p>
         )}
         <div className="project-card-description-tag-wrapper">
@@ -144,7 +148,8 @@ function ProjectCardDescription({
                   className={classNames(
                     "project-card-description-tag-design-team-wrapper",
                     {
-                      "project-card-description-tag-design-team-wrapper-show": showTeam,
+                      "project-card-description-tag-design-team-wrapper-show":
+                        showTeam,
                     },
                     {
                       "project-card-description-tag-design-team-wrapper-horizontal":

@@ -25,6 +25,7 @@ function ProjectCard({
   nextProject,
   windowWidth,
   windowHeight,
+  isMobileSmall,
   isMobile,
   isTablet,
 }) {
@@ -160,6 +161,7 @@ function ProjectCard({
         activeProject={activeProject}
         toggleDescriptionClass={toggleDescriptionClass}
         windowHeight={windowHeight}
+        isMobileSmall={isMobileSmall}
         isMobile={isMobile}
         isTablet={isTablet}
       />

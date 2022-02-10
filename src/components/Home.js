@@ -119,6 +119,7 @@ export default function Home() {
         windowHeight={windowHeight}
         isTablet={isTablet}
         isMobile={isMobile}
+        isMobileSmall={isMobileSmall}
       />
       <ProjectSection
         projectRef={serviceRef}
@@ -133,6 +134,7 @@ export default function Home() {
         windowHeight={windowHeight}
         isTablet={isTablet}
         isMobile={isMobile}
+        isMobileSmall={isMobileSmall}
       />
       <InformationSection
         informationRef={informationRef}

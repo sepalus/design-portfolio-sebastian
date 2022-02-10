@@ -152,7 +152,9 @@ const kaarnaDesignProject = {
   title: "Kaarna",
   description:
     "An electric foldable scooter designed for laid-back cruising. With its innovative rotating folding mechanism, high-quality materials and elegant detailing, Kaarna is designed for people who want to ride the streets in style. An urban mobility solution that matches the character of flourishing cities.",
-  year: 2017,
+  descriptionShort:
+    "An electric foldable scooter designed for laid-back cruising. With its innovative rotating folding mechanism, high-quality materials and elegant detailing, Kaarna is for people who want to ride the streets in style. An urban mobility solution that matches the character of flourishing cities.",
+  year: 2018,
   isTeam: false,
   categories: ["Product Design", "Vehicle Design", "Urban Mobility"],
   displayableCategory: 1,
@@ -368,7 +370,9 @@ const kolmioillaDesignProject = (catalogIsCompressed) => ({
   id: "kolmiot",
   title: "Kohdataan Kolmioilla",
   description:
-    "Three pieces of street furniture that create a space that encourages both planned and incidental encounters. The concept is designed for a triangle-shaped cobblestone plaza in front of the Helsinki Design Museum, where three neighborhoods meet. Together the triangular pieces of furniture create a cultural meeting point for city residents.",
+    "Street furniture that creates a space that encourages both planned and incidental encounters. The concept is designed for a triangle-shaped cobblestone plaza in front of the Helsinki Design Museum, where three neighborhoods meet. Together the three triangular pieces of furniture create a cultural meeting point for city residents.",
+  descriptionShort:
+    "Street furniture that creates a space that encourages both planned and incidental encounters. The concept is designed for a cobblestone plaza in front of the Helsinki Design Museum, where three neighborhoods meet. Together the three pieces of furniture create a cultural meeting point",
   year: 2020,
   isTeam: true,
   designTeam: ["Sebastian Högnabba", "Johanna Kesälä", "Anna Akins"],
@@ -399,6 +403,8 @@ const rytmiDesignProject = (catalogIsCompressed) => ({
   title: "Rytmi",
   description:
     "A solar balcony that uses solar glass panels in place of regular glass to generate electricity for the building and the grid. The design patterns are printed on architectural glass using dye-sensitized printing methods. Inspired by the movement of the sun, the solar panels give expressive character to the otherwise monotone facade.",
+  descriptionShort:
+    "A solar balcony that uses solar glass panels in place of regular glass to generate electricity for the building and the grid. The design patterns are printed on architectural glass using dye-sensitized printing. Inspired by sun movement, the solar panels give character to the monotone facade.",
   year: 2021,
   isTeam: false,
   categories: ["Solar Balcony", "Solar Glass", "Solar Panels"],
@@ -446,6 +452,8 @@ const museDesignProject = (catalogIsCompressed) => ({
   title: "Muse",
   description:
     "A community connecting UBS bank, millennials and startups through providing unique experiences to its members. Muse is a value-added service for millenials that helps them form a connection with their bank from an early age. Muse is a service. Muse is a web application. Muse is a brand. Muse is a community.",
+  descriptionShort:
+    "A community connecting UBS bank, millennials and startups through providing unique experiences to its members. Muse is a service for millenials that helps them form a connection with their bank from an early age. Muse is a service. Muse is a web application. Muse is a brand. Muse is a community.",
   year: 2014,
   isTeam: true,
   designTeam: [
@@ -609,7 +617,9 @@ const axiomDesignProject = (catalogIsCompressed) => ({
   id: "axiom",
   title: "Axiom",
   description:
-    "A network that brings students, university and industry together to produce qualitative doctoral research. A service that manifests itself as a network, series of events and co-creation platform. Axiom allwos doctoral candidates, unviersities and companies to conduct more qualitave, compelling and relevant industrial PhD research.",
+    "A network that brings students, university and industry together to produce qualitative doctoral research. A service that manifests itself as a network, series of events and co-creation platform. Axiom allows doctoral candidates, unviersities and companies to conduct more qualitave, compelling and relevant industrial PhD research.",
+  descriptionShort:
+    "A network that brings students, university and industry together to produce qualitative doctoral research. A service that manifests itself as a network, series of events and co-creation platform. Axiom allows doctoral candidates to conduct more qualitave and relevant industrial PhD research.",
   year: 2019,
   isTeam: true,
   designTeam: [

@@ -21,6 +21,7 @@ function ProjectSection({
   isScrollSnapped,
   windowWidth,
   windowHeight,
+  isMobileSmall,
   isMobile,
   isTablet,
 }) {
@@ -182,6 +183,7 @@ function ProjectSection({
           nextProject={nextProject}
           windowWidth={windowWidth}
           windowHeight={windowHeight}
+          isMobileSmall={isMobileSmall}
           isMobile={isMobile}
           isTablet={isTablet}
         />
