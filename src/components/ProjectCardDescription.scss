@@ -12,6 +12,7 @@
   @media screen and (max-width: $mobile-max) {
     position: static;
     margin: 24px 30px;
+    overflow: hidden;
 
     h3 {
       margin-top: 0px;
@@ -64,6 +65,9 @@
   opacity: 0;
   display: flex;
   margin: 16px 0px 12px;
+  @media screen and (max-width: $mobile-small-max) {
+    display: none;
+  }
 }
 
 .project-card-description-tag {
@@ -72,9 +76,6 @@
   p {
     margin-left: 8px;
     line-height: normal;
-  }
-  @media screen and (max-width: $mobile-small-max) {
-    display: none;
   }
 }
 
