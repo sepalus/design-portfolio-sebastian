@@ -68,13 +68,19 @@ const imageStyleMobilePaddingVertical = {
 };
 
 const imageStyleMobilePadding = {
-  padding: "50px",
+  padding: "20px",
 };
 
 const imageStyleWide = {
   height: "calc(100% - 240px)",
   marginTop: "120px",
   marginBottom: "120px",
+};
+
+const imageStyleMobileCover = {
+  width: "100%",
+  padding: "0px",
+  objectFit: "cover",
 };
 
 const descriptionPlacementCenteredRightExpandable = (catalogIsCompressed) => ({
@@ -468,8 +474,18 @@ const museDesignProject = (catalogIsCompressed) => ({
     individual: [imageStyleServiceTablet(catalogIsCompressed)],
   },
   imageStyleMobile: {
-    common: { ...imageStyleMobilePadding },
+    common: imageStyleMobilePadding,
+    individual: [
+      {},
+      { padding: "0px" },
+      { padding: "0px" },
+      {},
+      {},
+      imageStyleMobileCover,
+      { padding: "0px" },
+    ],
   },
+
   descriptionStyle: {
     ...descriptionPlacementCenteredRightExpandable(catalogIsCompressed),
     bottom: "110px",
@@ -477,6 +493,19 @@ const museDesignProject = (catalogIsCompressed) => ({
   descriptionStyleTablet: descriptionStyleServiceTablet(catalogIsCompressed),
   mainColorDark: true,
   backgroundColor: "#6bc9b7",
+  backgroundColorLight: {
+    common: "#b5e4db",
+    individual: [
+      null,
+      "white",
+      "white",
+      null,
+      null,
+      null,
+      "rgb(180,180,180)",
+      "white",
+    ],
+  },
 });
 
 const anneliinaDesignProject = (catalogIsCompressed) => ({
@@ -513,7 +542,7 @@ const anneliinaDesignProject = (catalogIsCompressed) => ({
     individual: [imageStyleWebTablet(catalogIsCompressed)],
   },
   imageStyleMobile: {
-    common: { ...imageStyleMobilePadding },
+    common: imageStyleMobilePadding,
   },
   descriptionStyle: {
     ...descriptionPlacementCenteredRightExpandable(catalogIsCompressed),
@@ -522,6 +551,7 @@ const anneliinaDesignProject = (catalogIsCompressed) => ({
   descriptionStyleTablet: descriptionStyleWebTablet(catalogIsCompressed),
   mainColorDark: true,
   backgroundColor: "#96c1d9",
+  backgroundColorLight: { common: "#cbe0ec" },
 });
 
 const scootDesignProject = (catalogIsCompressed) => ({
@@ -555,6 +585,7 @@ const scootDesignProject = (catalogIsCompressed) => ({
   individual: [moveImageOnExpand(catalogIsCompressed)],
   mainColorDark: true,
   backgroundColor: "#f8f379",
+  backgroundColorLight: { common: "#fcf9bc" },
 });
 
 const axiomDesignProject = (catalogIsCompressed) => ({
@@ -608,7 +639,17 @@ const axiomDesignProject = (catalogIsCompressed) => ({
     ],
   },
   imageStyleMobile: {
-    common: { ...imageStyleMobilePadding },
+    common: imageStyleMobilePadding,
+    individual: [
+      {},
+      imageStyleMobileCover,
+      imageStyleMobileCover,
+      {},
+      imageStyleMobileCover,
+      imageStyleMobileCover,
+      {},
+      imageStyleMobileCover,
+    ],
   },
   descriptionStyle: {
     ...descriptionPlacementCenteredRightExpandable(catalogIsCompressed),
@@ -617,6 +658,20 @@ const axiomDesignProject = (catalogIsCompressed) => ({
   descriptionStyleTablet: descriptionStyleServiceTablet(catalogIsCompressed),
   mainColorDark: true,
   backgroundColor: "#d2ebf9",
+  backgroundColorLight: {
+    common: "#e9f5fc",
+    individual: [
+      null,
+      null,
+      "white",
+      "white",
+      null,
+      null,
+      "white",
+      null,
+      "white",
+    ],
+  },
 });
 
 export const aestheticsDesignProjects = [

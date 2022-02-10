@@ -57,7 +57,7 @@ function ProjectCard({
           <h2>{isDigital ? "UX and Service" : "Products and Furniture"}</h2>
         </div>
       )}
-      <div className="project-card-image-container" {...swipeHandlers}>
+      <div {...swipeHandlers} className="project-card-image-container">
         {filteredImages.map((image, index) => {
           const imageStyle = activeProject.imageStyle
             ? activeProject.imageStyle.individual
@@ -86,6 +86,13 @@ function ProjectCard({
               : activeProject.imageStyleMobile.common
             : {};
 
+          const imageBackgroundMobile = activeProject.backgroundColorLight
+            ? activeProject.backgroundColorLight.individual &&
+              activeProject.backgroundColorLight.individual[index]
+              ? activeProject.backgroundColorLight.individual[index]
+              : activeProject.backgroundColorLight.common
+            : null;
+
           const imageMaxSizeMobile = Math.max(360, windowHeight - 320);
 
           return (
@@ -107,6 +114,7 @@ function ProjectCard({
                   "animate-card-fade-out": !isMobile && toggleCardClass === 0,
                 }
               )}
+              style={isMobile ? { backgroundColor: imageBackgroundMobile } : {}}
             >
               <img
                 src={`./assets/${image}`}

@@ -49,7 +49,7 @@
   position: relative;
   height: 100%;
   @media screen and (max-width: $mobile-max) {
-    height: auto;
+    height: 250px;
   }
 }
 
@@ -90,12 +90,10 @@
 
     img {
       display: block;
-      object-fit: contain;
-      height: auto;
+      object-fit: cover;
       margin-left: auto;
       margin-right: auto;
       position: static;
-      max-height: 360px;
     }
   }
 }
