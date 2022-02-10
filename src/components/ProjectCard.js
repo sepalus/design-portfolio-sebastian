@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import classNames from "classnames";
 import { useSwipeable } from "react-swipeable";
 
@@ -28,7 +28,6 @@ function ProjectCard({
   isMobile,
   isTablet,
 }) {
-  const projectCardElement = document.getElementById("project-card");
   const isDigital = designArea === 1;
   const swipeHandlers = useSwipeable({
     onSwipedLeft: () => selectImage(activeImageIndex + 1),
@@ -39,21 +38,8 @@ function ProjectCard({
 
   const projectCardImageHeightMobile = Math.min(360, windowWidth / 1.5);
 
-  useEffect(() => {
-    if (!projectCardElement) return;
-    projectCardElement.addEventListener("touchmove", (event) =>
-      event.preventDefault()
-    );
-    return () => {
-      projectCardElement.removeEventListener("touchmove", (event) =>
-        event.preventDefault()
-      );
-    };
-  }, [projectCardElement]);
-
   return (
     <div
-      id="project-card"
       className="project-card"
       style={{
         backgroundColor:
