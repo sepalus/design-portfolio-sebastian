@@ -16,6 +16,8 @@ function ProjectSection({
   currentViewport,
   selectViewport,
   sections,
+  activeProjectFirstLast,
+  setActiveProjectFirstLast,
   isScrollSnapped,
   windowHeight,
   isMobile,
@@ -51,6 +53,14 @@ function ProjectSection({
       : undefined;
 
   useEffect(() => {
+    if (activeProjectFirstLast < 0) return;
+    if (activeProjectFirstLast === 1)
+      setActiveProjectIndex(projects.length - 1);
+    else if (activeProjectFirstLast === 0) setActiveProjectIndex(0);
+    setActiveProjectFirstLast(-1);
+  }, [activeProjectFirstLast]);
+
+  useEffect(() => {
     setActiveImageIndex(0);
     setToggleCardClass(currentViewport === designArea ? 1 : 0);
     setToggleCardImageClass(0);
@@ -74,15 +84,15 @@ function ProjectSection({
 
   const previousProject = (viewport) => {
     if (viewport !== designArea) return;
-    if (activeProjectIndex < 1) selectViewport(currentViewport - 1);
+    if (activeProjectIndex < 1) selectViewport(currentViewport - 1, 1);
     else selectProject(activeProjectIndex - 1);
   };
 
   const nextProject = (viewport) => {
     if (viewport !== designArea) return;
-    if (activeProjectIndex >= projects.length - 1) {
-      selectViewport(currentViewport + 1);
-    } else selectProject(activeProjectIndex + 1);
+    if (activeProjectIndex >= projects.length - 1)
+      selectViewport(currentViewport + 1, 0);
+    else selectProject(activeProjectIndex + 1);
   };
 
   const selectProject = (projectIndex) => {

@@ -15,6 +15,10 @@ export default function Home() {
   const informationRef = useRef(null);
   const rootElement = document.getElementById("root");
   const [isScrollSnapped, setIsScrollSnapped] = useState(true);
+  const [activeDigitalProjectFirstLast, setActiveDigitalProjectFirstLast] =
+    useState(-1); // -1 === none, 0 === first, 1 === last
+  const [activeProductProjectFirstLast, setActiveProductProjectFirstLast] =
+    useState(-1); // -1 === none, 0 === first, 1 === last
 
   const { mobileMaxBreakpoint, tabletMaxBreakpoint, mobileSmallMaxBreakpoint } =
     variables;
@@ -67,7 +71,14 @@ export default function Home() {
       rootElement.removeEventListener("scroll", detectViewportOnScroll);
   }, [currentViewport, previousYOffset, rootElement]);
 
-  const selectViewport = (viewport) => {
+  const selectViewport = (viewport, activeProjectFirstLast) => {
+    if (typeof activeProjectFirstLast !== "undefined") {
+      if (viewport === 1)
+        setActiveDigitalProjectFirstLast(activeProjectFirstLast);
+      else if (viewport === 2)
+        setActiveProductProjectFirstLast(activeProjectFirstLast);
+    }
+
     const ref =
       viewport === 3
         ? informationRef
@@ -101,6 +112,8 @@ export default function Home() {
         currentViewport={currentViewport}
         selectViewport={selectViewport}
         sections={sections}
+        activeProjectFirstLast={activeDigitalProjectFirstLast}
+        setActiveProjectFirstLast={setActiveDigitalProjectFirstLast}
         isScrollSnapped={isScrollSnapped}
         windowHeight={windowHeight}
         isTablet={isTablet}
@@ -112,6 +125,8 @@ export default function Home() {
         currentViewport={currentViewport}
         selectViewport={selectViewport}
         sections={sections}
+        activeProjectFirstLast={activeProductProjectFirstLast}
+        setActiveProjectFirstLast={setActiveProductProjectFirstLast}
         isScrollSnapped={isScrollSnapped}
         windowHeight={windowHeight}
         isTablet={isTablet}
