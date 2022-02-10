@@ -1,7 +1,7 @@
 @import "../variables";
 
 $title-element-left-start: 4px;
-$title-element-1-left-end: 315px;
+$title-element-1-left-end: 319px;
 $title-element-1-top-start: 78px;
 $title-element-1-top-end: 198px;
 $title-element-2-left-end: 0px;
@@ -12,19 +12,19 @@ $title-element-3-top-start: 158px;
 $title-element-3-top-end: 348px;
 
 $title-element-tablet-left-start: 4px;
-$title-element-1-tablet-left-end: 34px;
+$title-element-1-tablet-left-end: 14px;
 $title-element-1-tablet-top-start: 66px;
 $title-element-1-tablet-top-end: 209px;
-$title-element-2-tablet-left-end: 214px;
+$title-element-2-tablet-left-end: 198px;
 $title-element-2-tablet-top-start: 106px;
 $title-element-2-tablet-top-end: 293px;
 $title-element-3-tablet-left-end: 37px;
 $title-element-3-tablet-top-start: 146px;
 $title-element-3-tablet-top-end: 349px;
 
-$text-wrapper-width: 500px;
+$text-wrapper-width: 510px;
 $text-wrapper-width-plus-margin: 520px;
-$text-wrapper-width-tablet: 400px;
+$text-wrapper-width-tablet: 410px;
 $text-wrapper-width-tablet-plus-margin: 422px;
 
 .information-section-content {
@@ -168,10 +168,8 @@ $text-wrapper-width-tablet-plus-margin: 422px;
   p {
     line-height: normal;
   }
+  padding: 4px 9px;
 
-  @media screen and (max-width: $tablet-max) {
-    padding: 4px 8px;
-  }
   @media screen and (max-width: $mobile-max) {
     padding: 3px 7px;
     left: calc(50% - 84px);

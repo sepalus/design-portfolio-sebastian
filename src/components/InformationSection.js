@@ -53,11 +53,11 @@ function InformationSection({
   const emailAddress = "jenssebastian.design@gmail.com";
 
   const expandedImageWidth = 334;
-  const textWidth = 500;
+  const textWidth = 510;
   const marginWidth = 32;
 
   const imageWidthTablet = 174;
-  const textWidthTablet = 400;
+  const textWidthTablet = 410;
   const marginWidthTablet = 28;
 
   const leftEdge =
@@ -261,17 +261,16 @@ function InformationSection({
                       with master’s degrees in both UX Design (M.Sc.) and
                       Industrial Design (M.A.). Meaningful user experience is my
                       purpose, design aesthetics my passion and solid technical
-                      expertise my foundation. As a UX and Service designer, I
+                      expertise my foundation. As a UX and Service Designer, I
                       have created beautiful user interfaces that are delightful
                       to use for several industries. I have a broad design
-                      toolkit at my disposable, which I use to ensure that my
-                      digital products match the user needs across all
-                      touchpoints. As an industrial and furniture designer, I
-                      believe that beauty and functionality go hand in hand. The
-                      aesthetics of my products are often born out of a
-                      technical or functional innovation. My products are
-                      minimalistic and elegant, while possessing strong
-                      character.
+                      toolkit at my disposal, which I use to ensure that my
+                      digital products match the users' needs across all
+                      touchpoints. As an Industrial and Furniture Designer, I
+                      believe that function and beauty go hand in hand. My
+                      products' aesthetics are often born out of a technical or
+                      functional innovation. My designs are minimal and elegant,
+                      while possessing strong character. character.
                     </>
                   ) : isTablet ? (
                     <>
@@ -282,18 +281,17 @@ function InformationSection({
                       Industrial Design (M.A.). Meaningful user experience is my
                       purpose, design aesthetics my passion and solid technical
                       expertise my foundation. As a
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      I have created beautiful user interfaces that are
-                      delightful to use for several industries. I have a broad
-                      design toolkit at my disposable, which I use to ensure
-                      that my digital products match the user needs across all
-                      touchpoints. As an
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      I believe that beauty and functionality go hand in hand.
-                      The aesthetics of my products are often born out of a
-                      technical or functional innovation. My products are
-                      minimalistic and elegant, while possessing strong
-                      character.
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      I have created beautiful user interfaces that
+                      are&nbsp;delightful to use for several industries. I have
+                      a broad design toolkit at my&nbsp;disposal, which I use to
+                      ensure that my digital products match the users' needs
+                      across all touchpoints. As an
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      I believe&nbsp;that function and beauty go hand in hand.
+                      My products' aesthetics are often born out of a technical
+                      or functional innovation. My designs are minimal and
+                      elegant, while possessing strong character.
                     </>
                   ) : (
                     <>
@@ -304,18 +302,17 @@ function InformationSection({
                       Industrial Design (M.A.). Meaningful user experience is my
                       purpose, design aesthetics my passion and solid technical
                       expertise my foundation. As a
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      I have created beautiful user interfaces that are
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      I have&nbsp;created beautiful user interfaces that are
                       delightful to use for several industries. I have a broad
-                      design toolkit at my disposable, which I use to ensure
-                      that my digital products match the user needs across all
+                      design toolkit at my disposal, which I use to ensure that
+                      my digital products match the users' needs across all
                       touchpoints. As an
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      I believe that beauty and functionality go hand in hand.
-                      The aesthetics of my products are often born out of a
-                      technical or functional innovation. My products are
-                      minimalistic and elegant, while possessing strong
-                      character.
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      I believe that function and beauty go hand in hand. My
+                      products' aesthetics are often born out of a technical or
+                      functional innovation. My designs are minimal and elegant,
+                      while possessing strong character.
                     </>
                   )}
                 </p>
