@@ -20,6 +20,10 @@ $typist-height-mobile: 144px;
   height: $typist-height;
   white-space: nowrap;
 
+  h3 {
+    font-weight: 300;
+  }
+
   h3:first-child {
     letter-spacing: 0.005em;
   }
