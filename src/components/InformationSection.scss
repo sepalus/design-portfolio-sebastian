@@ -136,7 +136,7 @@ $text-wrapper-width-tablet-plus-padding: 438px;
   @media screen and (max-width: $mobile-medium-max) {
     left: 167px;
   }
-  @media screen and (max-width: $mobile-small-max) {
+  @media screen and (max-width: $mobile-extra-small-max) {
     left: 160px;
   }
 }
@@ -816,7 +816,7 @@ $text-wrapper-width-tablet-plus-padding: 438px;
       left: -100px;
     }
 
-    @media screen and (max-width: 499px) {
+    @media screen and (max-width: $mobile-small-max) {
       left: unset;
       right: calc(160px - 50vw);
     }

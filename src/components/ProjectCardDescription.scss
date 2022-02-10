@@ -73,6 +73,9 @@
     margin-left: 8px;
     line-height: normal;
   }
+  @media screen and (max-width: $mobile-small-max) {
+    display: none;
+  }
 }
 
 .project-card-description-tag-design-team:hover {

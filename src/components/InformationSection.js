@@ -13,7 +13,7 @@ function InformationSection({
   isScrollSnapped,
   isTablet,
   isMobile,
-  isMobileSmall,
+  isMobileExtraSmall,
   windowWidth,
 }) {
   const [textExpanded, setTextExpanded] = useState(false);
@@ -230,7 +230,7 @@ function InformationSection({
                 onClick={() => changeViewport(2)}
               >
                 <p>{`Industrial${
-                  isMobileSmall ? " " : " and Furniture "
+                  isMobileExtraSmall ? " " : " and Furniture "
                 }Designer`}</p>
               </button>
 

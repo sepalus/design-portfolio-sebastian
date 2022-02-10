@@ -20,13 +20,16 @@ export default function Home() {
   const [activeProductProjectFirstLast, setActiveProductProjectFirstLast] =
     useState(-1); // -1 === none, 0 === first, 1 === last
 
-  const { mobileMaxBreakpoint, tabletMaxBreakpoint, mobileSmallMaxBreakpoint } =
-    variables;
+  const {
+    mobileMaxBreakpoint,
+    tabletMaxBreakpoint,
+    mobileExtraSmallMaxBreakpoint,
+  } = variables;
   const windowWidth = window.innerWidth;
   const windowHeight = window.innerHeight;
   const isTablet = windowWidth <= tabletMaxBreakpoint;
   const isMobile = windowWidth <= mobileMaxBreakpoint;
-  const isMobileSmall = windowWidth <= mobileSmallMaxBreakpoint;
+  const isMobileExtraSmall = windowWidth <= mobileExtraSmallMaxBreakpoint;
 
   useEffect(() => {
     const detectViewportOnScroll = () => {
@@ -119,7 +122,7 @@ export default function Home() {
         windowHeight={windowHeight}
         isTablet={isTablet}
         isMobile={isMobile}
-        isMobileSmall={isMobileSmall}
+        isMobileExtraSmall={isMobileExtraSmall}
       />
       <ProjectSection
         projectRef={serviceRef}
@@ -134,7 +137,7 @@ export default function Home() {
         windowHeight={windowHeight}
         isTablet={isTablet}
         isMobile={isMobile}
-        isMobileSmall={isMobileSmall}
+        isMobileExtraSmall={isMobileExtraSmall}
       />
       <InformationSection
         informationRef={informationRef}
@@ -145,7 +148,7 @@ export default function Home() {
         windowWidth={windowWidth}
         isTablet={isTablet}
         isMobile={isMobile}
-        isMobileSmall={isMobileSmall}
+        isMobileExtraSmall={isMobileExtraSmall}
       />
     </>
   );

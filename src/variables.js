@@ -7,7 +7,7 @@ const variables = {
   catalogCollapsedRemainingWidth: "calc(100% - 120px)",
   backgroundColorBlack: "black",
   backgroundColorDark: "#101010",
-  mobileSmallMaxBreakpoint: 399,
+  mobileExtraSmallMaxBreakpoint: 399,
   mobileMaxBreakpoint: 767,
   tabletMinBreakpoint: 768,
   tabletMaxBreakpoint: 1023,

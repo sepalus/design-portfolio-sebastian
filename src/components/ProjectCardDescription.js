@@ -10,7 +10,7 @@ function ProjectCardDescription({
   activeProject,
   toggleDescriptionClass,
   windowHeight,
-  isMobileSmall,
+  isMobileExtraSmall,
   isMobile,
   isTablet,
 }) {
@@ -96,7 +96,7 @@ function ProjectCardDescription({
         </h3>
         {!isSmallHeight && (
           <p className="project-card-description-text">
-            {isMobileSmall && activeProject.descriptionShort
+            {isMobileExtraSmall && activeProject.descriptionShort
               ? activeProject.descriptionShort
               : activeProject.description}
           </p>
