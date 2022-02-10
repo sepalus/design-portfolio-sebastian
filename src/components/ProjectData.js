@@ -188,6 +188,11 @@ const kajoDesignProject = {
       objectPosition: "50% 30%",
     },
   },
+  imageStyleMobile: {
+    common: {
+      objectPosition: "50% 30%",
+    },
+  },
   mainColorDark: false,
   backgroundColor: "black",
 };
@@ -382,6 +387,7 @@ const kolmioillaDesignProject = (catalogIsCompressed) => ({
     common: imageStyleWide,
   },
   imageStyleMobile: {
+    common: { objectPosition: "43% 50%" },
     individual: [{}, {}, {}, { objectFit: "cover", minHeight: "250px" }],
   },
   mainColorDark: false,
@@ -416,7 +422,18 @@ const rytmiDesignProject = (catalogIsCompressed) => ({
     individual: [{ objectFit: "contain" }, {}, {}, { objectFit: "contain" }],
   },
   imageStyleTablet: {},
-  imageStyleMobile: {},
+  imageStyleMobile: {
+    individual: [
+      {
+        objectPosition: "50% 90%",
+      },
+      {},
+      {},
+      {
+        objectPosition: "50% 90%",
+      },
+    ],
+  },
   mainColorDark: false,
   controlColorDark: true,
   descriptionColorDark: true,
