@@ -30,7 +30,9 @@ function ProjectCard({
   const isDigital = designArea === 1;
   const swipeHandlers = useSwipeable({
     onSwipedLeft: () => selectImage(activeImageIndex + 1),
+    preventDefaultTouchmoveEvent: true,
     onSwipedRight: () => selectImage(activeImageIndex - 1),
+    preventDefaultTouchmoveEvent: true,
   });
 
   return (
