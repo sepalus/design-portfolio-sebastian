@@ -12,6 +12,8 @@ function ProjectCardControls({
   filteredImages,
   currentViewport,
   catalogIsCompressed,
+  scrollImagesPrevious,
+  scrollImagesNext,
   selectImage,
   isMobile,
   previousProject,
@@ -20,11 +22,11 @@ function ProjectCardControls({
   const keyPressHandler = (event) => {
     if (currentViewport === 1 || currentViewport === 2) {
       if (event.keyCode === 32)
-        selectImage(activeImageIndex + 1, currentViewport);
+        scrollImagesNext(activeImageIndex, currentViewport);
       if (event.keyCode === 37)
-        selectImage(activeImageIndex - 1, currentViewport);
+        scrollImagesPrevious(activeImageIndex, currentViewport);
       if (event.keyCode === 39)
-        selectImage(activeImageIndex + 1, currentViewport);
+        scrollImagesNext(activeImageIndex, currentViewport);
       if (event.keyCode === 38) {
         event.preventDefault();
         previousProject(currentViewport);
@@ -74,7 +76,7 @@ function ProjectCardControls({
                   ? "clickable-text-element-dark"
                   : "clickable-text-element"
               }
-              onClick={() => selectImage(activeImageIndex - 1)}
+              onClick={() => scrollImagesPrevious(activeImageIndex)}
             />
             <div className="project-card-controls-image-buttons">
               {filteredImages.map((image, index) => (
@@ -91,7 +93,7 @@ function ProjectCardControls({
                   ? "clickable-text-element-dark"
                   : "clickable-text-element"
               }
-              onClick={() => selectImage(activeImageIndex + 1)}
+              onClick={() => scrollImagesNext(activeImageIndex)}
             />
           </div>
         </>

@@ -21,6 +21,8 @@ function ProjectCard({
   toggleDescriptionClass,
   setCatalogIsOpenMobile,
   selectImage,
+  scrollImagesPrevious,
+  scrollImagesNext,
   previousProject,
   nextProject,
   windowWidth,
@@ -32,16 +34,16 @@ function ProjectCard({
   const isDigital = designArea === 1;
   const isSmallHeight = windowHeight < 500;
   const swipeHandlers = useSwipeable({
-    onSwipedLeft: () => selectImage(activeImageIndex + 1),
+    onSwipedLeft: () => scrollImagesNext(activeImageIndex),
     preventDefaultTouchmoveEvent: true,
-    onSwipedRight: () => selectImage(activeImageIndex - 1),
+    onSwipedRight: () => scrollImagesPrevious(activeImageIndex),
     preventDefaultTouchmoveEvent: true,
   });
 
   const projectCardImageHeightMobile = Math.min(
     360,
     windowWidth / 1.5,
-    isSmallHeight ? windowHeight - 60 : windowHeight - 290
+    isSmallHeight ? windowHeight - 60 : windowHeight - 280
   );
 
   return (
@@ -156,6 +158,8 @@ function ProjectCard({
           filteredImages={filteredImages}
           catalogIsCompressed={catalogIsCompressed}
           selectImage={selectImage}
+          scrollImagesPrevious={scrollImagesPrevious}
+          scrollImagesNext={scrollImagesNext}
           isMobile={isMobile}
           previousProject={previousProject}
           nextProject={nextProject}

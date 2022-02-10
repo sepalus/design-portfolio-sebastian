@@ -42,10 +42,12 @@ function ProjectSection({
 
   const activeProject = projects[activeProjectIndex];
 
-  const filteredImages =
-    isMobile && activeProject.firstImageIsDuplicate
-      ? activeProject.images.slice(1)
-      : activeProject.images;
+  const filterImages = (projects) =>
+    isMobile && projects.firstImageIsDuplicate
+      ? projects.images.slice(1)
+      : projects.images;
+
+  const filteredImages = filterImages(activeProject);
 
   const filteredImageStyleIndividualMobile =
     activeProject.imageStyleMobile && activeProject.imageStyleMobile.individual
@@ -97,18 +99,40 @@ function ProjectSection({
     else selectProject(activeProjectIndex + 1);
   };
 
-  const selectProject = (projectIndex) => {
+  const selectProject = (projectIndex, imageIndex) => {
     setCatalogIsOpenMobile(false);
     if (projectIndex === activeProjectIndex && activeImageIndex === 0) return;
     setToggleCardImageClass(0);
-    setActiveImageIndex(0);
+    setActiveImageIndex(imageIndex || 0);
     setActiveProjectIndex(projectIndex);
     setToggleCardClass(-toggleCardClass);
     setToggleDescriptionClass(toggleDescriptionClass === 1 ? -1 : 1);
   };
 
-  const selectImage = (imageIndex, viewport) => {
+  const scrollImagesPrevious = (imageIndex, viewport) => {
     if (typeof viewport !== "undefined" && viewport !== designArea) return;
+    if (!isMobile || imageIndex > 0) selectImage(imageIndex - 1);
+    else {
+      const previousProjectIndex =
+        activeProjectIndex === 0 ? projects.length - 1 : activeProjectIndex - 1;
+      const previousProjectImageAmount = filterImages(
+        projects[previousProjectIndex]
+      ).length;
+      selectProject(previousProjectIndex, previousProjectImageAmount - 1);
+    }
+  };
+
+  const scrollImagesNext = (imageIndex, viewport) => {
+    if (typeof viewport !== "undefined" && viewport !== designArea) return;
+    if (!isMobile || imageIndex < imageAmount - 1) selectImage(imageIndex + 1);
+    else {
+      const nextProjectIndex =
+        activeProjectIndex === projects.length - 1 ? 0 : activeProjectIndex + 1;
+      selectProject(nextProjectIndex);
+    }
+  };
+
+  const selectImage = (imageIndex) => {
     const updatedImageIndex = updateImageIndex(imageIndex);
     setToggleCardImageClass(0);
     setActiveImageIndex(updatedImageIndex);
@@ -178,6 +202,8 @@ function ProjectSection({
           setToggleDescriptionClass={setToggleDescriptionClass}
           setCatalogIsOpenMobile={setCatalogIsOpenMobile}
           selectImage={selectImage}
+          scrollImagesPrevious={scrollImagesPrevious}
+          scrollImagesNext={scrollImagesNext}
           selectProject={selectProject}
           previousProject={previousProject}
           nextProject={nextProject}
