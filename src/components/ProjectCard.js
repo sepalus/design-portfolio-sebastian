@@ -169,8 +169,8 @@ function ProjectCard({
         <ProjectCardDescription
           currentViewport={currentViewport}
           activeProject={activeProject}
+          activeImageIndex={activeImageIndex}
           toggleDescriptionClass={toggleDescriptionClass}
-          windowHeight={windowHeight}
           isMobileExtraSmall={isMobileExtraSmall}
           isMobile={isMobile}
           isTablet={isTablet}

@@ -8,8 +8,8 @@ import "./ProjectCardDescription.scss";
 function ProjectCardDescription({
   currentViewport,
   activeProject,
+  activeImageIndex,
   toggleDescriptionClass,
-  windowHeight,
   isMobileExtraSmall,
   isMobile,
   isTablet,
@@ -53,11 +53,14 @@ function ProjectCardDescription({
         },
         { "animate-description-static": isMobile },
         {
-          "animate-description-in-1": !isMobile && toggleDescriptionClass === 1,
+          "animate-description-in-1":
+            !isMobile && activeImageIndex === 0 && toggleDescriptionClass === 1,
         },
         {
           "animate-description-in-2":
-            !isMobile && toggleDescriptionClass === -1,
+            !isMobile &&
+            activeImageIndex === 0 &&
+            toggleDescriptionClass === -1,
         },
         {
           "animate-description-out": !isMobile && toggleDescriptionClass === 0,

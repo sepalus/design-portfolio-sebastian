@@ -111,7 +111,7 @@ function ProjectSection({
 
   const scrollImagesPrevious = (imageIndex, viewport) => {
     if (typeof viewport !== "undefined" && viewport !== designArea) return;
-    if (!isMobile || imageIndex > 0) selectImage(imageIndex - 1);
+    if (imageIndex > 0) selectImage(imageIndex - 1);
     else {
       const previousProjectIndex =
         activeProjectIndex === 0 ? projects.length - 1 : activeProjectIndex - 1;
@@ -124,7 +124,7 @@ function ProjectSection({
 
   const scrollImagesNext = (imageIndex, viewport) => {
     if (typeof viewport !== "undefined" && viewport !== designArea) return;
-    if (!isMobile || imageIndex < imageAmount - 1) selectImage(imageIndex + 1);
+    if (imageIndex < imageAmount - 1) selectImage(imageIndex + 1);
     else {
       const nextProjectIndex =
         activeProjectIndex === projects.length - 1 ? 0 : activeProjectIndex + 1;
