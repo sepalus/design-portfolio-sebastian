@@ -68,7 +68,7 @@ const imageStyleMobilePaddingVertical = {
 };
 
 const imageStyleMobilePadding = {
-  padding: "20px",
+  padding: "6%",
 };
 
 const imageStyleWide = {

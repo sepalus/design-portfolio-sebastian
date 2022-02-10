@@ -19,6 +19,7 @@ function ProjectSection({
   activeProjectFirstLast,
   setActiveProjectFirstLast,
   isScrollSnapped,
+  windowWidth,
   windowHeight,
   isMobile,
   isTablet,
@@ -179,6 +180,7 @@ function ProjectSection({
           selectProject={selectProject}
           previousProject={previousProject}
           nextProject={nextProject}
+          windowWidth={windowWidth}
           windowHeight={windowHeight}
           isMobile={isMobile}
           isTablet={isTablet}

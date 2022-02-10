@@ -115,6 +115,7 @@ export default function Home() {
         activeProjectFirstLast={activeDigitalProjectFirstLast}
         setActiveProjectFirstLast={setActiveDigitalProjectFirstLast}
         isScrollSnapped={isScrollSnapped}
+        windowWidth={windowWidth}
         windowHeight={windowHeight}
         isTablet={isTablet}
         isMobile={isMobile}
@@ -128,6 +129,7 @@ export default function Home() {
         activeProjectFirstLast={activeProductProjectFirstLast}
         setActiveProjectFirstLast={setActiveProductProjectFirstLast}
         isScrollSnapped={isScrollSnapped}
+        windowWidth={windowWidth}
         windowHeight={windowHeight}
         isTablet={isTablet}
         isMobile={isMobile}

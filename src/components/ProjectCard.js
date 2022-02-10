@@ -23,6 +23,7 @@ function ProjectCard({
   selectImage,
   previousProject,
   nextProject,
+  windowWidth,
   windowHeight,
   isMobile,
   isTablet,
@@ -34,6 +35,8 @@ function ProjectCard({
     onSwipedRight: () => selectImage(activeImageIndex - 1),
     preventDefaultTouchmoveEvent: true,
   });
+
+  const projectCardImageHeightMobile = Math.min(360, windowWidth / 1.5);
 
   return (
     <div
@@ -57,7 +60,13 @@ function ProjectCard({
           <h2>{isDigital ? "UX and Service" : "Products and Furniture"}</h2>
         </div>
       )}
-      <div {...swipeHandlers} className="project-card-image-container">
+      <div
+        {...swipeHandlers}
+        className="project-card-image-container"
+        style={{
+          height: isMobile ? `${projectCardImageHeightMobile}px` : null,
+        }}
+      >
         {filteredImages.map((image, index) => {
           const imageStyle = activeProject.imageStyle
             ? activeProject.imageStyle.individual
@@ -93,8 +102,6 @@ function ProjectCard({
               : activeProject.backgroundColorLight.common
             : null;
 
-          const imageMaxSizeMobile = Math.max(360, windowHeight - 320);
-
           return (
             <div
               className={classNames(
@@ -126,7 +133,6 @@ function ProjectCard({
                   isMobile
                     ? {
                         ...imageStyleMobile,
-                        maxHeight: `${imageMaxSizeMobile}px`,
                       }
                     : isTablet
                     ? { ...imageStyle, ...imageStyleTablet }

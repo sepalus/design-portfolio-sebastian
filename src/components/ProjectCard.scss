@@ -48,9 +48,6 @@
 .project-card-image-container {
   position: relative;
   height: 100%;
-  @media screen and (max-width: $mobile-max) {
-    height: 250px;
-  }
 }
 
 .project-card-image-wrapper {
