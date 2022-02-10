@@ -19,9 +19,12 @@ function ProjectCardControls({
 }) {
   const keyPressHandler = (event) => {
     if (currentViewport === 1 || currentViewport === 2) {
-      if (event.keyCode === 32) selectImage(activeImageIndex + 1);
-      if (event.keyCode === 37) selectImage(activeImageIndex - 1);
-      if (event.keyCode === 39) selectImage(activeImageIndex + 1);
+      if (event.keyCode === 32)
+        selectImage(activeImageIndex + 1, currentViewport);
+      if (event.keyCode === 37)
+        selectImage(activeImageIndex - 1, currentViewport);
+      if (event.keyCode === 39)
+        selectImage(activeImageIndex + 1, currentViewport);
       if (event.keyCode === 38) {
         event.preventDefault();
         previousProject(currentViewport);

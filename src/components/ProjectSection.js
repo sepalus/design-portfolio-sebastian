@@ -51,6 +51,7 @@ function ProjectSection({
       : undefined;
 
   useEffect(() => {
+    setActiveImageIndex(0);
     setToggleCardClass(currentViewport === designArea ? 1 : 0);
     setToggleCardImageClass(0);
     setToggleDescriptionClass(
@@ -94,7 +95,8 @@ function ProjectSection({
     setToggleDescriptionClass(toggleDescriptionClass === 1 ? -1 : 1);
   };
 
-  const selectImage = (imageIndex) => {
+  const selectImage = (imageIndex, viewport) => {
+    if (typeof viewport !== "undefined" && viewport !== designArea) return;
     const updatedImageIndex = updateImageIndex(imageIndex);
     setToggleCardImageClass(0);
     setActiveImageIndex(updatedImageIndex);
