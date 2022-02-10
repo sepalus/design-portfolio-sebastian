@@ -30,6 +30,7 @@ function ProjectCard({
   isTablet,
 }) {
   const isDigital = designArea === 1;
+  const isSmallHeight = windowHeight < 500;
   const swipeHandlers = useSwipeable({
     onSwipedLeft: () => selectImage(activeImageIndex + 1),
     preventDefaultTouchmoveEvent: true,
@@ -37,7 +38,11 @@ function ProjectCard({
     preventDefaultTouchmoveEvent: true,
   });
 
-  const projectCardImageHeightMobile = Math.min(360, windowWidth / 1.5);
+  const projectCardImageHeightMobile = Math.min(
+    360,
+    windowWidth / 1.5,
+    isSmallHeight ? windowHeight - 60 : windowHeight - 290
+  );
 
   return (
     <div
@@ -156,15 +161,17 @@ function ProjectCard({
           nextProject={nextProject}
         />
       </div>
-      <ProjectCardDescription
-        currentViewport={currentViewport}
-        activeProject={activeProject}
-        toggleDescriptionClass={toggleDescriptionClass}
-        windowHeight={windowHeight}
-        isMobileExtraSmall={isMobileExtraSmall}
-        isMobile={isMobile}
-        isTablet={isTablet}
-      />
+      {!isSmallHeight && (
+        <ProjectCardDescription
+          currentViewport={currentViewport}
+          activeProject={activeProject}
+          toggleDescriptionClass={toggleDescriptionClass}
+          windowHeight={windowHeight}
+          isMobileExtraSmall={isMobileExtraSmall}
+          isMobile={isMobile}
+          isTablet={isTablet}
+        />
+      )}
     </div>
   );
 }

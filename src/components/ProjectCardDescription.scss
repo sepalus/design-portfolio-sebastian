@@ -12,7 +12,6 @@
   @media screen and (max-width: $mobile-max) {
     position: static;
     margin: 24px 30px;
-    overflow: hidden;
 
     h3 {
       margin-top: 0px;
@@ -25,25 +24,6 @@
     max-width: 490px;
     margin-left: auto;
     margin-right: auto;
-  }
-}
-
-.project-card-description-content-container-small-height {
-  display: flex;
-  justify-content: center;
-
-  p {
-    font-weight: 400;
-  }
-  .project-card-description-tag-wrapper {
-    margin-top: 4px;
-    margin-left: 30px;
-  }
-  .project-card-description-tag:not(:first-of-type) {
-    margin-left: 8px;
-  }
-  .project-card-description-tag-designer-wrapper {
-    white-space: nowrap;
   }
 }
 

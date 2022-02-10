@@ -15,7 +15,6 @@ function ProjectCardDescription({
   isTablet,
 }) {
   const [showTeam, setShowTeam] = useState(false);
-  const isSmallHeight = windowHeight < 550;
 
   useEffect(() => {
     window.addEventListener("click", () => {
@@ -84,23 +83,16 @@ function ProjectCardDescription({
             }
       }
     >
-      <div
-        className={classNames("project-card-description-content-container", {
-          "project-card-description-content-container-small-height":
-            isSmallHeight,
-        })}
-      >
+      <div className="project-card-description-content-container">
         {!isMobile && <div className="vertical-line"></div>}
         <h3 className="project-card-description-title">
           {activeProject.title}
         </h3>
-        {!isSmallHeight && (
-          <p className="project-card-description-text">
-            {isMobileExtraSmall && activeProject.descriptionShort
-              ? activeProject.descriptionShort
-              : activeProject.description}
-          </p>
-        )}
+        <p className="project-card-description-text">
+          {isMobileExtraSmall && activeProject.descriptionShort
+            ? activeProject.descriptionShort
+            : activeProject.description}
+        </p>
         <div className="project-card-description-tag-wrapper">
           <div className="project-card-description-tag">
             <CalendarToday className="project-card-description-tag-icon" />
