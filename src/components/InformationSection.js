@@ -52,23 +52,24 @@ function InformationSection({
   const phoneNumber = "+358 40 7752722";
   const emailAddress = "jenssebastian.design@gmail.com";
 
-  const expandedImageWidth = 334;
+  const expandedImageWidth = 314;
   const textWidth = 510;
-  const marginWidth = 32;
+  const paddingWidth = 32;
 
-  const imageWidthTablet = 174;
+  const imageWidthTablet = 164;
   const textWidthTablet = 410;
-  const marginWidthTablet = 28;
+  const paddingWidthTablet = 28;
 
   const leftEdge =
-    (windowWidth - expandedImageWidth - textWidth - marginWidth) / 2 +
+    (windowWidth - expandedImageWidth - textWidth - paddingWidth) / 2 +
     expandedImageWidth +
-    marginWidth;
+    paddingWidth;
 
   const leftEdgeTablet =
-    (windowWidth - imageWidthTablet - textWidthTablet - marginWidthTablet) / 2 +
+    (windowWidth - imageWidthTablet - textWidthTablet - paddingWidthTablet) /
+      2 +
     imageWidthTablet +
-    marginWidthTablet;
+    paddingWidthTablet;
 
   useEffect(() => {
     setPerformAnimation(!textExpanded);

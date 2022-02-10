@@ -23,9 +23,9 @@ $title-element-3-tablet-top-start: 146px;
 $title-element-3-tablet-top-end: 349px;
 
 $text-wrapper-width: 510px;
-$text-wrapper-width-plus-margin: 520px;
+$text-wrapper-width-plus-padding: 542px;
 $text-wrapper-width-tablet: 410px;
-$text-wrapper-width-tablet-plus-margin: 422px;
+$text-wrapper-width-tablet-plus-padding: 438px;
 
 .information-section-content {
   height: 100%;
@@ -142,10 +142,10 @@ $text-wrapper-width-tablet-plus-margin: 422px;
 }
 
 .information-section-about-text-wrapper-placeholder {
-  width: $text-wrapper-width-plus-margin;
+  width: $text-wrapper-width-plus-padding;
   height: 420px;
   @media screen and (max-width: $tablet-max) {
-    width: $text-wrapper-width-tablet-plus-margin;
+    width: $text-wrapper-width-tablet-plus-padding;
   }
 
   @media screen and (max-width: $mobile-max) {
@@ -219,7 +219,7 @@ $text-wrapper-width-tablet-plus-margin: 422px;
 }
 
 .information-section-about-introduction-text-wrapper {
-  height: calc(100vh - 334px);
+  height: calc(100vh - 314px);
   margin-top: 20px;
   margin-bottom: 20px;
 
@@ -624,7 +624,7 @@ $text-wrapper-width-tablet-plus-margin: 422px;
   }
   to {
     height: 400px;
-    width: 330px;
+    width: 310px;
     object-position: 0px -24px;
   }
 }
@@ -632,7 +632,7 @@ $text-wrapper-width-tablet-plus-margin: 422px;
 @keyframes contractimage {
   from {
     height: 400px;
-    width: 330px;
+    width: 310px;
     object-position: 0px -24px;
   }
   to {
@@ -649,14 +649,14 @@ $text-wrapper-width-tablet-plus-margin: 422px;
   }
   to {
     height: 400px;
-    width: 330px;
+    width: 310px;
   }
 }
 
 @keyframes contractimagewrapper {
   from {
     height: 400px;
-    width: 330px;
+    width: 310px;
   }
   to {
     height: 180px;
