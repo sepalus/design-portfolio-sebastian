@@ -5,6 +5,7 @@ import { useSwipeable } from "react-swipeable";
 import "./ProjectCard.scss";
 import ProjectCardDescription from "./ProjectCardDescription";
 import ProjectCardControls from "./ProjectCardControls";
+import ProgressiveImage from "./ProgressiveImage";
 import Menu from "@material-ui/icons/Menu";
 
 function ProjectCard({
@@ -45,7 +46,6 @@ function ProjectCard({
     windowWidth / 1.5,
     isSmallHeight ? windowHeight - 60 : windowHeight - 280
   );
-
   return (
     <div
       className="project-card"
@@ -109,7 +109,6 @@ function ProjectCard({
               ? activeProject.backgroundColorLight.individual[index]
               : activeProject.backgroundColorLight.common
             : null;
-
           return (
             <div
               className={classNames(
@@ -131,8 +130,9 @@ function ProjectCard({
               )}
               style={isMobile ? { backgroundColor: imageBackgroundMobile } : {}}
             >
-              <img
+              <ProgressiveImage
                 src={`./assets/${image}`}
+                placeholderSrc={`./assets_placeholder/${image}`}
                 alt={activeProject.title}
                 className={classNames(activeProject.classes, {
                   "project-card-image-static": toggleCardImageClass === 0,
