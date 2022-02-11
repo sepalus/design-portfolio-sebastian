@@ -184,35 +184,41 @@ function ProjectSection({
           setCatalogIsOpenMobile={setCatalogIsOpenMobile}
           isMobile={isMobile}
         />
-        <ProjectCard
-          currentViewport={currentViewport}
-          activeProjectIndex={activeProjectIndex}
-          activeProject={activeProject}
-          activeImageIndex={activeImageIndex}
-          filteredImages={filteredImages}
-          filteredImageStyleIndividualMobile={
-            filteredImageStyleIndividualMobile
-          }
-          imageAmount={imageAmount}
-          designArea={designArea}
-          catalogIsCompressed={catalogIsCompressed}
-          toggleCardClass={toggleCardClass}
-          toggleCardImageClass={toggleCardImageClass}
-          toggleDescriptionClass={toggleDescriptionClass}
-          setToggleDescriptionClass={setToggleDescriptionClass}
-          setCatalogIsOpenMobile={setCatalogIsOpenMobile}
-          selectImage={selectImage}
-          scrollImagesPrevious={scrollImagesPrevious}
-          scrollImagesNext={scrollImagesNext}
-          selectProject={selectProject}
-          previousProject={previousProject}
-          nextProject={nextProject}
-          windowWidth={windowWidth}
-          windowHeight={windowHeight}
-          isMobileExtraSmall={isMobileExtraSmall}
-          isMobile={isMobile}
-          isTablet={isTablet}
-        />
+        {projects.map((project, index) => {
+          return index === activeProjectIndex ? (
+            <ProjectCard
+              currentViewport={currentViewport}
+              activeProjectIndex={activeProjectIndex}
+              activeProject={activeProject}
+              activeImageIndex={activeImageIndex}
+              filteredImages={filteredImages}
+              filteredImageStyleIndividualMobile={
+                filteredImageStyleIndividualMobile
+              }
+              imageAmount={imageAmount}
+              designArea={designArea}
+              catalogIsCompressed={catalogIsCompressed}
+              toggleCardClass={toggleCardClass}
+              toggleCardImageClass={toggleCardImageClass}
+              toggleDescriptionClass={toggleDescriptionClass}
+              setToggleDescriptionClass={setToggleDescriptionClass}
+              setCatalogIsOpenMobile={setCatalogIsOpenMobile}
+              selectImage={selectImage}
+              scrollImagesPrevious={scrollImagesPrevious}
+              scrollImagesNext={scrollImagesNext}
+              selectProject={selectProject}
+              previousProject={previousProject}
+              nextProject={nextProject}
+              windowWidth={windowWidth}
+              windowHeight={windowHeight}
+              isMobileExtraSmall={isMobileExtraSmall}
+              isMobile={isMobile}
+              isTablet={isTablet}
+            />
+          ) : (
+            <></>
+          );
+        })}
       </div>
     </section>
   );
