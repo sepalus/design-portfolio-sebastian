@@ -219,7 +219,7 @@ $text-wrapper-width-tablet-plus-padding: 438px;
 }
 
 .information-section-about-introduction-text-wrapper {
-  height: calc(100vh - 314px);
+  height: calc(100vh - 334px);
   margin-top: 20px;
   margin-bottom: 20px;
 
@@ -242,6 +242,7 @@ $text-wrapper-width-tablet-plus-padding: 438px;
   letter-spacing: -0.01em;
   @media screen and (max-width: $mobile-max) {
     width: auto;
+    padding-bottom: 8px;
     position: static;
   }
 }
