@@ -24,12 +24,14 @@ export default function Home() {
     mobileMaxBreakpoint,
     tabletMaxBreakpoint,
     mobileExtraSmallMaxBreakpoint,
+    mobileSmallMaxBreakpoint,
   } = variables;
   const windowWidth = window.innerWidth;
   const windowHeight = window.innerHeight;
   const isTablet = windowWidth <= tabletMaxBreakpoint;
   const isMobile = windowWidth <= mobileMaxBreakpoint;
   const isMobileExtraSmall = windowWidth <= mobileExtraSmallMaxBreakpoint;
+  const isMobileSmall = windowWidth <= mobileSmallMaxBreakpoint;
 
   useEffect(() => {
     const detectViewportOnScroll = () => {
@@ -149,6 +151,7 @@ export default function Home() {
         isTablet={isTablet}
         isMobile={isMobile}
         isMobileExtraSmall={isMobileExtraSmall}
+        isMobileSmall={isMobileSmall}
       />
     </>
   );

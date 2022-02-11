@@ -8,6 +8,7 @@ const variables = {
   backgroundColorBlack: "black",
   backgroundColorDark: "#101010",
   mobileExtraSmallMaxBreakpoint: 399,
+  mobileSmallMaxBreakpoint: 499,
   mobileMaxBreakpoint: 767,
   tabletMinBreakpoint: 768,
   tabletMaxBreakpoint: 1023,

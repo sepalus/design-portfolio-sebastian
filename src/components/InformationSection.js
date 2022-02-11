@@ -14,6 +14,7 @@ function InformationSection({
   isTablet,
   isMobile,
   isMobileExtraSmall,
+  isMobileSmall,
   windowWidth,
 }) {
   const [textExpanded, setTextExpanded] = useState(false);
@@ -229,9 +230,11 @@ function InformationSection({
                 )}`}
                 onClick={() => changeViewport(2)}
               >
-                <p>{`Industrial${
-                  isMobileExtraSmall ? " " : " and Furniture "
-                }Designer`}</p>
+                <p>
+                  {isMobileExtraSmall
+                    ? "Product Designer"
+                    : "Industrial and Furniture Designer"}
+                </p>
               </button>
 
               <div
@@ -254,24 +257,39 @@ function InformationSection({
                     }
                   )}
                 >
-                  {isMobile ? (
+                  {isMobileSmall ? (
                     <>
-                      Hi, I’m Sebastian and design is my means of contributing
-                      to the world. I design with the problem-solving skills of
-                      an engineer and visual eye of an artist and come equipped
+                      Design is my means of contributing to the world. Equipped
                       with master’s degrees in both UX Design (M.Sc.) and
-                      Industrial Design (M.A.). Meaningful user experience is my
-                      purpose, design aesthetics my passion and solid technical
-                      expertise my foundation. As a UX and Service Designer, I
-                      have created beautiful user interfaces that are delightful
-                      to use for several industries. I have a broad design
-                      toolkit at my disposal, which I use to ensure that my
-                      digital products match the users' needs across all
-                      touchpoints. As an Industrial and Furniture Designer, I
-                      believe that function and beauty go hand in hand. My
-                      products' aesthetics are often born out of a technical or
-                      functional innovation. My designs are minimal and elegant,
-                      while possessing strong character. character.
+                      Industrial Design (M.A.), I design with the
+                      problem-solving skills of an engineer and visual eye of an
+                      artist. Meaningful user experience is my purpose, design
+                      aesthetics my passion and technical expertise my
+                      foundation. As a UX and Service Designer, I use my broad
+                      design toolkit to create delightful user experiences
+                      across all service touchpoints. As an Industrial and
+                      Furniture Designer, I design elegant products, where
+                      function and beauty go hand in hand. The aesthetics are
+                      often born out of a technical or functional innovation.
+                    </>
+                  ) : isMobile ? (
+                    <>
+                      Design is my means of contributing to the world. Equipped
+                      with master’s degrees in both UX Design (M.Sc.) and
+                      Industrial Design (M.A.), I design with the
+                      problem-solving skills of an engineer and visual eye of an
+                      artist. Meaningful user experience is my purpose, design
+                      aesthetics my passion and solid technical expertise my
+                      foundation. As a UX and Service Designer, I create
+                      beautiful user interfaces that are delightful to use for
+                      many different industries. I use my broad design toolkit
+                      to ensure that my digital products match the users' needs
+                      across all service touchpoints. As an Industrial and
+                      Furniture Designer, I design elegant products, where
+                      function and beauty go hand in hand. The aesthetics are
+                      often born out of a technical or functional innovation. My
+                      designs are minimal and elegant, while possessing strong
+                      character.
                     </>
                   ) : isTablet ? (
                     <>
