@@ -68,34 +68,6 @@ const kajoDesignProject = {
   backgroundColor: "black",
 };
 
-const tyyniDesignProject = {
-  id: "tyyni",
-  title: "Tyyni",
-  description:
-    "A sound diffusing wall panel, with outstanding acoustic qualities and beautiful form. The overall shape of Tyyni is based on a tested mathematical equation that ensures a high-quality sonic experinece. The wave-like form gives a visual expression that matches the acoustic qualities - without compromising the sound.",
-  year: 2017,
-  isTeam: false,
-  categories: ["Product Design", "Acoustic Design", "Wall Panel Design"],
-  displayableCategory: 1,
-  images: ["tyyni1.jpg", "tyyni2.jpg"],
-  imageStyle: {
-    common: { objectPosition: "50% 40%" },
-  },
-  descriptionStyle: {
-    ...descriptionPlacementRightVerticalCenter,
-    transform: "translateY(-70%)",
-    width: minWidth,
-  },
-  descriptionStyleTablet: {
-    width: "240px",
-    right: "60px",
-  },
-  mainColorDark: false,
-  controlColorDark: true,
-  descriptionColorDark: true,
-  backgroundColor: backgroundColorDark,
-};
-
 const puolikuuDesignProject = {
   id: "puolikuu",
   title: "Puolikuu",
