@@ -100,7 +100,7 @@ const museDesignProject = (catalogIsCompressed) => ({
 
 const anneliina2022DesignProject = (catalogIsCompressed) => ({
   id: "anneliina2022",
-  title: "Anneliina 2022",
+  title: "Anneliina (2022)",
   description:
     "A re-design of Hoivapalvelu Anneliina's visual identity and website. The new brand identity is modern, elegant and communicates the caring service's core values: compassion, respect, trust and personalized care. The project included the design of colors, fonts, logos, visual elements and the website.",
   descriptionShort:
@@ -145,7 +145,7 @@ const anneliina2022DesignProject = (catalogIsCompressed) => ({
 
 const anneliina2016DesignProject = (catalogIsCompressed) => ({
   id: "anneliina2016",
-  title: "Anneliina 2016",
+  title: "Anneliina (2016)",
   description:
     "A new brand identity for Anneliina that communicates the caring service's core values: compassion, respect, trust and personalized care. The brand update included the launch of a re-designed responsive website and new marketing material, such as flyers and newspaper ads.",
   year: 2016,
