@@ -98,22 +98,67 @@ const museDesignProject = (catalogIsCompressed) => ({
   },
 });
 
-const anneliinaDesignProject = (catalogIsCompressed) => ({
-  id: "anneliina",
-  title: "Anneliina",
+const anneliina2022DesignProject = (catalogIsCompressed) => ({
+  id: "anneliina2022",
+  title: "Anneliina 2022",
   description:
-    "A new brand identity for Anneliina that communicates the caring service's core values: compassion, respect, trustworthiness and personalized care. The brand update included the launch of a re-designed responsive website and new marketing material, such as flyers and newspaper ads.",
+    "A re-design of Hoivapalvelu Anneliina's visual identity and website. The new brand identity is modern, elegant and communicates the caring service's core values: compassion, respect, trust and personalized care. The project included the design of colors, fonts, logos, visual elements and the website.",
+  descriptionShort:
+    "A re-design of Hoivapalvelu Anneliina's visual identity and website. The new brand identity is modern, elegant and communicates the caring service's core values: compassion, respect, trust and personalized care. The project included the design of colors, fonts, logos and visual elements.",
+  year: 2022,
+  isTeam: false,
+  categories: ["Brand Identity Design", "UX Design", "UI Design"],
+  displayableCategory: 0,
+  images: [
+    "anneliina2022_1.png",
+    "anneliina2022_1.png",
+    "anneliina2022_2.png",
+    "anneliina2022_3.png",
+  ],
+  firstImageIsDuplicate: true,
+  classes: "contain",
+  imageStyle: {
+    common: imageStyleDigital(catalogIsCompressed),
+    individual: [
+      imageStyleWebMain(catalogIsCompressed),
+      {},
+      {},
+      {},
+      { padding: "100px", margin: "0px 72px", backgroundColor: "white" },
+    ],
+  },
+  imageStyleTablet: {
+    individual: [imageStyleWebTablet(catalogIsCompressed)],
+  },
+  imageStyleMobile: {
+    common: imageStyleMobilePadding,
+  },
+  descriptionStyle: {
+    ...descriptionPlacementCenteredRightExpandable(catalogIsCompressed),
+    top: marginTopMin,
+  },
+  descriptionStyleTablet: descriptionStyleWebTablet(catalogIsCompressed),
+  mainColorDark: true,
+  backgroundColor: "#96c1d9",
+  backgroundColorLight: { common: "#cbe0ec" },
+});
+
+const anneliina2016DesignProject = (catalogIsCompressed) => ({
+  id: "anneliina2016",
+  title: "Anneliina 2016",
+  description:
+    "A new brand identity for Anneliina that communicates the caring service's core values: compassion, respect, trust and personalized care. The brand update included the launch of a re-designed responsive website and new marketing material, such as flyers and newspaper ads.",
   year: 2016,
   isTeam: false,
   categories: ["Brand Identity Design", "Web Design", "Graphic Design"],
   displayableCategory: 0,
   images: [
-    "anneliina1.png",
-    "anneliina1.png",
-    "anneliina2.png",
-    "anneliina3.png",
-    "anneliina4.png",
-    "anneliina5.png",
+    "anneliina2016_1.png",
+    "anneliina2016_1.png",
+    "anneliina2016_2.png",
+    "anneliina2016_3.png",
+    "anneliina2016_4.png",
+    "anneliina2016_5.png",
   ],
   firstImageIsDuplicate: true,
   classes: "contain",
@@ -140,8 +185,8 @@ const anneliinaDesignProject = (catalogIsCompressed) => ({
   },
   descriptionStyleTablet: descriptionStyleWebTablet(catalogIsCompressed),
   mainColorDark: true,
-  backgroundColor: "#96c1d9",
-  backgroundColorLight: { common: "#cbe0ec" },
+  backgroundColor: "#ebe6da",
+  backgroundColorLight: { common: "#f4f1e9" },
 });
 
 const scootDesignProject = (catalogIsCompressed) => ({
@@ -267,8 +312,9 @@ const axiomDesignProject = (catalogIsCompressed) => ({
 });
 
 export const digitalProjects = (catalogIsCompressed) => [
+  anneliina2022DesignProject(catalogIsCompressed),
   museDesignProject(catalogIsCompressed),
-  anneliinaDesignProject(catalogIsCompressed),
   scootDesignProject(catalogIsCompressed),
   axiomDesignProject(catalogIsCompressed),
+  anneliina2016DesignProject(catalogIsCompressed),
 ];
