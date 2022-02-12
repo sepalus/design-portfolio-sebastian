@@ -4,11 +4,8 @@ import ProjectCatalog from "./ProjectCatalog";
 import ProjectCard from "./ProjectCard";
 import "./ProjectSection.scss";
 import Navigator from "./Navigator.js";
-import {
-  aestheticsDesignProjects,
-  industrialProjects,
-  digitalProjects,
-} from "./ProjectData";
+import { industrialProjects } from "./ProjectDataIndustrial";
+import { digitalProjects } from "./ProjectDataDigital";
 
 function ProjectSection({
   projectRef,
@@ -34,9 +31,7 @@ function ProjectSection({
   const [toggleDescriptionClass, setToggleDescriptionClass] = useState(0);
 
   const projects =
-    designArea === 3
-      ? aestheticsDesignProjects
-      : designArea === 2
+    designArea === 2
       ? industrialProjects(catalogIsCompressed)
       : digitalProjects(catalogIsCompressed);
 
