@@ -98,35 +98,53 @@ const museDesignProject = (catalogIsCompressed) => ({
   },
 });
 
-const anneliinaDesignProject = (catalogIsCompressed) => ({
+const anneliinaPrintDesignProject = (catalogIsCompressed) => ({
   id: "anneliina",
-  title: "Anneliina",
+  title: "Anneliina Ads",
   description:
-    "A new brand identity for Anneliina that communicates the caring service's core values: compassion, respect, trustworthiness and personalized care. The brand update included the launch of a re-designed responsive website and new marketing material, such as flyers and newspaper ads.",
-  year: 2016,
+    "The design of various marketing material for the caring service Anneliina Hoiva.",
+  year: 2017,
   isTeam: false,
-  categories: ["Brand Identity Design", "Web Design", "Graphic Design"],
+  categories: ["Graphic Design", "Advertisement Design", "Print Media Design"],
+  displayableCategory: 0,
+  images: ["anneliina4.png", "anneliina5.png"],
+  classes: "contain",
+  imageStyle: {
+    common: { ...imageStyleDigital(catalogIsCompressed), padding: "0px 100px" },
+  },
+  imageStyleMobile: {
+    common: imageStyleMobilePadding,
+  },
+  descriptionStyle: {
+    ...descriptionPlacementCenteredRightExpandable(catalogIsCompressed),
+    top: marginTopMin,
+  },
+  descriptionStyleTablet: descriptionStyleWebTablet(catalogIsCompressed),
+  mainColorDark: true,
+  backgroundColor: "#96c1d9",
+  backgroundColorLight: { common: "#cbe0ec" },
+});
+
+const anneliinaWebDesignProject = (catalogIsCompressed) => ({
+  id: "anneliina",
+  title: "Anneliina Web",
+  description:
+    "A web site for Hoivapalvelu Anneliina that communicates the caring service's core values: compassion, respect, trustworthiness and personalized care. ",
+  year: 2022,
+  isTeam: false,
+  categories: ["UX Design", "UI Design", "Web Design"],
   displayableCategory: 0,
   images: [
     "anneliina1.png",
     "anneliina1.png",
     "anneliina2.png",
     "anneliina3.png",
-    "anneliina4.png",
-    "anneliina5.png",
   ],
   firstImageIsDuplicate: true,
   classes: "contain",
   imageStyle: {
     common: imageStyleDigital(catalogIsCompressed),
-    individual: [
-      imageStyleWebMain(catalogIsCompressed),
-      {},
-      {},
-      {},
-      { padding: "0px 100px" },
-      { padding: "0px 100px" },
-    ],
+    individual: [imageStyleWebMain(catalogIsCompressed)],
   },
   imageStyleTablet: {
     individual: [imageStyleWebTablet(catalogIsCompressed)],
@@ -268,7 +286,8 @@ const axiomDesignProject = (catalogIsCompressed) => ({
 
 export const digitalProjects = (catalogIsCompressed) => [
   museDesignProject(catalogIsCompressed),
-  anneliinaDesignProject(catalogIsCompressed),
+  anneliinaWebDesignProject(catalogIsCompressed),
+  anneliinaPrintDesignProject(catalogIsCompressed),
   scootDesignProject(catalogIsCompressed),
   axiomDesignProject(catalogIsCompressed),
 ];
