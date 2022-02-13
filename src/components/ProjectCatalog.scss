@@ -2,8 +2,8 @@
 
 .project-catalog {
   opacity: 0;
-  height: 100%;
   width: $catalog-width;
+  height: 100%;
   transition: width 1s, padding 1s;
   position: absolute;
   box-sizing: border-box;
@@ -68,6 +68,8 @@
   }
 
   @media screen and (max-width: $mobile-max) {
+    display: flex;
+    flex-direction: column;
     width: $catalog-width-mobile;
     padding: 0px 30px;
     background-color: $background-color-dark;
@@ -86,7 +88,7 @@
   }
 }
 .project-catalog-mobile-close-button-wrapper {
-  height: 90px;
+  height: 80px;
   display: flex;
   align-items: center;
   svg {
@@ -201,6 +203,10 @@
   .project-catalog {
     right: 0px;
     padding: 40px 48px;
+
+    @media screen and (max-width: $mobile-max) {
+      padding: 0px 30px;
+    }
   }
   .project-catalog-dark {
     border-color: $text-color-dark;
@@ -230,6 +236,11 @@
     transition: right 1s;
     left: auto;
   }
+
+  .vertical-line-mobile {
+    right: $catalog-width-mobile;
+  }
+
   .project-catalog-compressed {
     .project-catalog-expand-button {
       right: $catalog-collapsed-width;
@@ -237,6 +248,9 @@
     .vertical-line {
       right: $catalog-collapsed-width;
     }
+  }
+  .project-catalog-mobile-close-button-wrapper {
+    align-self: flex-end;
   }
 }
 
