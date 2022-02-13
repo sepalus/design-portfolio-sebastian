@@ -43,7 +43,7 @@ $text-wrapper-width-tablet-plus-padding: 438px;
   justify-content: center;
   @media screen and (max-width: $mobile-max) {
     flex-grow: unset;
-    height: calc(100% - 140px);
+    height: calc(100% - 110px);
   }
 }
 
@@ -219,7 +219,7 @@ $text-wrapper-width-tablet-plus-padding: 438px;
 }
 
 .information-section-about-introduction-text-wrapper {
-  height: calc(100vh - 334px);
+  height: calc(100vh - 354px);
   margin-top: 20px;
   margin-bottom: 20px;
 
