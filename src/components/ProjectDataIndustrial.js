@@ -156,7 +156,9 @@ const kierreDesignProject = {
   id: "kierre",
   title: "Kierre",
   description:
-    "An electric toothbrush designed for recyclability and the circular economy. The shell of the toothbrush is manufactured from recycled ABS plastic, made out of monomaterial components and designed for easy disassembly. Kierre demonstrates that products designed for recyclability can have beautiful and elegent aesthetics.",
+    "An electric toothbrush designed for recyclability and the circular economy. The toothbrush is manufactured from recycled ABS plastic, made out of monomaterial components and designed for easy disassembly. Kierre demonstrates that products designed for recyclability can have beautiful and elegent aesthetics.",
+  descriptionShort:
+    "An electric toothbrush designed for recyclability and the circular economy. Kierre is manufactured from recycled ABS plastic, made from monomaterial components and designed for easy disassembly. It demonstrates that products designed for recyclability can have beautiful and elegant aesthetics.",
   year: 2020,
   isTeam: true,
   designTeam: [
