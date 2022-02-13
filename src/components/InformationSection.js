@@ -3,6 +3,7 @@ import classNames from "classnames";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import ExpandLess from "@material-ui/icons/ExpandLess";
 import Navigator from "./Navigator.js";
+import ProgressiveImage from "./ProgressiveImage";
 import "./InformationSection.scss";
 
 function InformationSection({
@@ -164,7 +165,7 @@ function InformationSection({
                   }
                 )}
               >
-                <img
+                <ProgressiveImage
                   src={"./assets/sebastian.jpg"}
                   alt="Sebastian"
                   className="information-section-about-image"
