@@ -10,8 +10,8 @@ export default function Home() {
   const showFirstTimeViewport0 = useRef(true);
   const sections = ["Home", "Digital", "Product", "About"];
   const designerRef = useRef(null);
-  const productRef = useRef(null);
   const serviceRef = useRef(null);
+  const productRef = useRef(null);
   const informationRef = useRef(null);
   const rootElement = document.getElementById("root");
   const [isScrollSnapped, setIsScrollSnapped] = useState(true);
@@ -38,13 +38,13 @@ export default function Home() {
       setIsScrollSnapped(false);
       const currentYOffset = rootElement.scrollTop;
       const designerRefOffset = designerRef.current.offsetTop;
-      const projductRefOffset = productRef.current.offsetTop;
       const serviceRefOffset = serviceRef.current.offsetTop;
+      const productRefOffset = productRef.current.offsetTop;
       const informationRefOffset = informationRef.current.offsetTop;
       const offsetBreakpoints = [
         designerRefOffset,
-        projductRefOffset,
         serviceRefOffset,
+        productRefOffset,
         informationRefOffset,
       ];
 
@@ -88,9 +88,9 @@ export default function Home() {
       viewport === 3
         ? informationRef
         : viewport === 2
-        ? serviceRef
-        : viewport === 1
         ? productRef
+        : viewport === 1
+        ? serviceRef
         : designerRef;
 
     rootElement.scrollTo({
@@ -112,7 +112,7 @@ export default function Home() {
         isMobile={isMobile}
       />
       <ProjectSection
-        projectRef={productRef}
+        projectRef={serviceRef}
         designArea={1}
         currentViewport={currentViewport}
         selectViewport={selectViewport}
@@ -127,7 +127,7 @@ export default function Home() {
         isMobileExtraSmall={isMobileExtraSmall}
       />
       <ProjectSection
-        projectRef={serviceRef}
+        projectRef={productRef}
         designArea={2}
         currentViewport={currentViewport}
         selectViewport={selectViewport}
