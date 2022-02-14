@@ -301,7 +301,7 @@
 
 .project-catalog-animate-open {
   @media screen and (max-width: $mobile-max) {
-    animation: moveleftopen 5s forwards;
+    animation: moveleftopen 1s forwards;
   }
 }
 
@@ -311,13 +311,13 @@
 
 .project-catalog-animate-close-selection {
   @media screen and (max-width: $mobile-max) {
-    animation: fadeoutclose 5s forwards;
+    animation: fadeoutclose 1s forwards;
   }
 }
 
 .project-catalog-animate-close-noselection {
   @media screen and (max-width: $mobile-max) {
-    animation: moverightclose 5s forwards;
+    animation: moverightclose 1s forwards;
   }
 }
 
@@ -366,8 +366,13 @@
 @keyframes fadeoutclose {
   from {
     opacity: 0.95;
+    left: 0%;
+  }
+  99% {
+    opacity: 0;
+    left: 0%;
   }
   to {
-    opacity: 0;
+    left: 100%;
   }
 }
