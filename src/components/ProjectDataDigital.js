@@ -114,18 +114,14 @@ const anneliina2022DesignProject = (catalogIsCompressed) => ({
     "anneliina2022_1.png",
     "anneliina2022_2.png",
     "anneliina2022_3.png",
+    "anneliina2022_5.jpg",
+    "anneliina2022_4.png",
   ],
   firstImageIsDuplicate: true,
   classes: "contain",
   imageStyle: {
     common: imageStyleDigital(catalogIsCompressed),
-    individual: [
-      imageStyleWebMain(catalogIsCompressed),
-      {},
-      {},
-      {},
-      { padding: "100px", margin: "0px 72px", backgroundColor: "white" },
-    ],
+    individual: [imageStyleWebMain(catalogIsCompressed)],
   },
   imageStyleTablet: {
     individual: [imageStyleWebTablet(catalogIsCompressed)],
