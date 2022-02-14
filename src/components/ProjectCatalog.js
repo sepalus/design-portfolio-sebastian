@@ -3,7 +3,6 @@ import classNames from "classnames";
 import "./ProjectCatalog.scss";
 import ChevronRight from "@material-ui/icons/ChevronRight";
 import ChevronLeft from "@material-ui/icons/ChevronLeft";
-import Close from "@material-ui/icons/Close";
 
 function ProjectCatalog({
   designArea,
@@ -40,11 +39,7 @@ function ProjectCatalog({
         { "project-catalog-closed": isMobile && !catalogIsOpenMobile }
       )}
     >
-      {isMobile ? (
-        <div className="project-catalog-mobile-close-button-wrapper">
-          <Close onClick={() => setCatalogIsOpenMobile(false)} />
-        </div>
-      ) : (
+      {!isMobile && (
         <h2>
           {catalogIsCompressed
             ? "."

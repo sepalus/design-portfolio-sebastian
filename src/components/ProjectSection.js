@@ -197,6 +197,7 @@ function ProjectSection({
               toggleCardImageClass={toggleCardImageClass}
               toggleDescriptionClass={toggleDescriptionClass}
               setToggleDescriptionClass={setToggleDescriptionClass}
+              catalogIsOpenMobile={catalogIsOpenMobile}
               setCatalogIsOpenMobile={setCatalogIsOpenMobile}
               selectImage={selectImage}
               scrollImagesPrevious={scrollImagesPrevious}

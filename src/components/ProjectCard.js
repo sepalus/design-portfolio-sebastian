@@ -7,6 +7,7 @@ import ProjectCardDescription from "./ProjectCardDescription";
 import ProjectCardControls from "./ProjectCardControls";
 import ProgressiveImage from "./ProgressiveImage";
 import Menu from "@material-ui/icons/Menu";
+import Close from "@material-ui/icons/Close";
 
 function ProjectCard({
   currentViewport,
@@ -20,6 +21,7 @@ function ProjectCard({
   toggleCardClass,
   toggleCardImageClass,
   toggleDescriptionClass,
+  catalogIsOpenMobile,
   setCatalogIsOpenMobile,
   selectImage,
   scrollImagesPrevious,
@@ -65,7 +67,12 @@ function ProjectCard({
             "project-card-title-element-mobile-digital"
           )}
         >
-          <Menu onClick={() => setCatalogIsOpenMobile(true)} />
+          {catalogIsOpenMobile ? (
+            <Close onClick={() => setCatalogIsOpenMobile(false)} />
+          ) : (
+            <Menu onClick={() => setCatalogIsOpenMobile(true)} />
+          )}
+
           <h2>{isDigital ? "UX and Service" : "Products and Furniture"}</h2>
         </div>
       )}

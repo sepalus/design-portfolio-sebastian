@@ -73,7 +73,7 @@
     flex-direction: column;
     right: 0px;
     width: $catalog-width-mobile;
-    padding: 0px 30px;
+    padding: 100px 30px 0px;
     background-color: $background-color-dark;
     opacity: 0.95;
     ul {
@@ -88,15 +88,6 @@
       padding-left: 16px;
       padding-right: 16px;
     }
-  }
-}
-.project-catalog-mobile-close-button-wrapper {
-  height: 80px;
-  display: flex;
-  align-self: flex-end;
-  align-items: center;
-  svg {
-    font-size: 20px;
   }
 }
 
@@ -209,7 +200,7 @@
     padding: 40px 48px;
 
     @media screen and (max-width: $mobile-max) {
-      padding: 0px 30px;
+      padding: 100px 30px 0px;
     }
   }
   .project-catalog-dark {
