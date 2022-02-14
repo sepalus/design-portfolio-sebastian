@@ -41,7 +41,12 @@
     height: 100%;
     justify-content: space-between;
     box-sizing: border-box;
-    padding: 20px 16px;
+    padding: 20px 0px;
+
+    svg {
+      padding: 20px 16px;
+      height: 100%;
+    }
   }
 }
 
