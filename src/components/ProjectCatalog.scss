@@ -309,9 +309,15 @@
   display: none;
 }
 
-.project-catalog-animate-close {
+.project-catalog-animate-close-selection {
   @media screen and (max-width: $mobile-max) {
     animation: fadeoutclose 5s forwards;
+  }
+}
+
+.project-catalog-animate-close-noselection {
+  @media screen and (max-width: $mobile-max) {
+    animation: moverightclose 5s forwards;
   }
 }
 
@@ -346,7 +352,7 @@
   }
 }
 
-@keyframes fadeoutclose {
+@keyframes moverightclose {
   from {
     opacity: 0.95;
     left: 0%;
@@ -354,5 +360,14 @@
   to {
     opacity: 0;
     left: 100%;
+  }
+}
+
+@keyframes fadeoutclose {
+  from {
+    opacity: 0.95;
+  }
+  to {
+    opacity: 0;
   }
 }

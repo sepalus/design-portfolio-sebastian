@@ -13,6 +13,7 @@ function ProjectCatalog({
   setToggleCardImageClass,
   selectProject,
   catalogIsOpenMobile,
+  setToggleMenuClass,
   toggleMenuClass,
   isMobile,
 }) {
@@ -42,8 +43,12 @@ function ProjectCatalog({
             isMobile && !catalogIsOpenMobile && toggleMenuClass === 0,
         },
         {
-          "project-catalog-animate-close":
-            isMobile && !catalogIsOpenMobile && toggleMenuClass !== 0,
+          "project-catalog-animate-close-selection":
+            isMobile && !catalogIsOpenMobile && toggleMenuClass === 1,
+        },
+        {
+          "project-catalog-animate-close-noselection":
+            isMobile && !catalogIsOpenMobile && toggleMenuClass === -1,
         }
       )}
     >
@@ -69,7 +74,10 @@ function ProjectCatalog({
                 className={classNames("link-button", {
                   "icon-button icon-button-space": isActive,
                 })}
-                onClick={() => selectProject(index)}
+                onClick={() => {
+                  setToggleMenuClass(1);
+                  selectProject(index);
+                }}
               >
                 {catalogIsCompressed ? (
                   <img

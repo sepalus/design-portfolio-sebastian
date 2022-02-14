@@ -69,14 +69,14 @@ function ProjectCard({
           )}
         >
           {catalogIsOpenMobile ? (
-            <Close onClick={() => setCatalogIsOpenMobile(false)} />
-          ) : (
-            <Menu
+            <Close
               onClick={() => {
-                setToggleMenuClass(1);
-                setCatalogIsOpenMobile(true);
+                setToggleMenuClass(-1);
+                setCatalogIsOpenMobile(false);
               }}
             />
+          ) : (
+            <Menu onClick={() => setCatalogIsOpenMobile(true)} />
           )}
 
           <h2>{isDigital ? "UX and Service" : "Products and Furniture"}</h2>

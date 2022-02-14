@@ -179,6 +179,7 @@ function ProjectSection({
           catalogIsOpenMobile={catalogIsOpenMobile}
           setCatalogIsOpenMobile={setCatalogIsOpenMobile}
           toggleMenuClass={toggleMenuClass}
+          setToggleMenuClass={setToggleMenuClass}
           isMobile={isMobile}
         />
         {projects.map((project, index) => {
