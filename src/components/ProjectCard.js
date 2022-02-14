@@ -60,9 +60,10 @@ function ProjectCard({
     >
       {isMobile && (
         <div
-          className={classNames("project-card-title-element-mobile", {
-            "project-card-title-element-mobile-digital": isDigital,
-          })}
+          className={classNames(
+            "project-card-title-element-mobile",
+            "project-card-title-element-mobile-digital"
+          )}
         >
           <Menu onClick={() => setCatalogIsOpenMobile(true)} />
           <h2>{isDigital ? "UX and Service" : "Products and Furniture"}</h2>

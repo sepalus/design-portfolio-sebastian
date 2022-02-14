@@ -64,15 +64,18 @@
   .vertical-line-mobile {
     top: 0px;
     height: 100%;
-    left: $catalog-width-mobile;
+    left: unset;
+    right: $catalog-width-mobile;
   }
 
   @media screen and (max-width: $mobile-max) {
     display: flex;
     flex-direction: column;
+    right: 0px;
     width: $catalog-width-mobile;
     padding: 0px 30px;
     background-color: $background-color-dark;
+    opacity: 0.95;
     ul {
       margin-top: 0px;
     }
@@ -90,6 +93,7 @@
 .project-catalog-mobile-close-button-wrapper {
   height: 80px;
   display: flex;
+  align-self: flex-end;
   align-items: center;
   svg {
     font-size: 20px;
@@ -238,6 +242,7 @@
   }
 
   .vertical-line-mobile {
+    left: unset;
     right: $catalog-width-mobile;
   }
 
@@ -248,9 +253,6 @@
     .vertical-line {
       right: $catalog-collapsed-width;
     }
-  }
-  .project-catalog-mobile-close-button-wrapper {
-    align-self: flex-end;
   }
 }
 

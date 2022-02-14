@@ -9,7 +9,7 @@ $mobile-small-max: 499px;
 $mobile-medium-max: 569px;
 
 $catalog-width: 380px;
-$catalog-width-mobile: 300px;
+$catalog-width-mobile: 100%;
 $catalog-remaining-width: calc(100% - 380px);
 $catalog-collapsed-width: 120px;
 $catalog-collapsed-remaining-width: calc(100% - 120px);
