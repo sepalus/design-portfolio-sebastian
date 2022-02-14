@@ -101,7 +101,7 @@ function ProjectCatalog({
             "vertical-line-right": isDigital,
           },
           {
-            " vertical-line-mobile": isMobile,
+            "hide-element": isMobile,
           }
         )}
       ></div>
