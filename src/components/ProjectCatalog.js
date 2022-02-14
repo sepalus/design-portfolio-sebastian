@@ -12,8 +12,8 @@ function ProjectCatalog({
   setCatalogIsCompressed,
   setToggleCardImageClass,
   selectProject,
-  setCatalogIsOpenMobile,
   catalogIsOpenMobile,
+  toggleMenuClass,
   isMobile,
 }) {
   const isDigital = designArea === 1;
@@ -36,7 +36,15 @@ function ProjectCatalog({
         },
         { "animate-catalog-expand": !catalogIsCompressed },
         { "project-catalog-dark": catalogIsDark },
-        { "project-catalog-closed": isMobile && !catalogIsOpenMobile }
+        { "project-catalog-animate-open": isMobile && catalogIsOpenMobile },
+        {
+          "project-catalog-static-closed":
+            isMobile && !catalogIsOpenMobile && toggleMenuClass === 0,
+        },
+        {
+          "project-catalog-animate-close":
+            isMobile && !catalogIsOpenMobile && toggleMenuClass !== 0,
+        }
       )}
     >
       {!isMobile && (

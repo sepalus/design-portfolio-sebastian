@@ -29,6 +29,7 @@ function ProjectSection({
   const [toggleCardClass, setToggleCardClass] = useState(0);
   const [toggleCardImageClass, setToggleCardImageClass] = useState(0);
   const [toggleDescriptionClass, setToggleDescriptionClass] = useState(0);
+  const [toggleMenuClass, setToggleMenuClass] = useState(0);
 
   const projects =
     designArea === 2
@@ -177,6 +178,7 @@ function ProjectSection({
           selectProject={selectProject}
           catalogIsOpenMobile={catalogIsOpenMobile}
           setCatalogIsOpenMobile={setCatalogIsOpenMobile}
+          toggleMenuClass={toggleMenuClass}
           isMobile={isMobile}
         />
         {projects.map((project, index) => {
@@ -197,6 +199,7 @@ function ProjectSection({
               toggleCardImageClass={toggleCardImageClass}
               toggleDescriptionClass={toggleDescriptionClass}
               setToggleDescriptionClass={setToggleDescriptionClass}
+              setToggleMenuClass={setToggleMenuClass}
               catalogIsOpenMobile={catalogIsOpenMobile}
               setCatalogIsOpenMobile={setCatalogIsOpenMobile}
               selectImage={selectImage}
