@@ -21,6 +21,7 @@
 }
 
 .project-card-title-element-mobile {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -41,6 +42,14 @@
 
   svg {
     font-size: 20px;
+  }
+
+  .horizontal-line {
+    z-index: 3;
+    bottom: -1px;
+    left: 28px;
+    right: 28px;
+    width: auto;
   }
 }
 

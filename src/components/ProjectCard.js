@@ -80,6 +80,11 @@ function ProjectCard({
           )}
 
           <h2>{isDigital ? "UX and Service" : "Products and Furniture"}</h2>
+          <div
+            className={classNames("horizontal-line", {
+              "hide-element": !catalogIsOpenMobile,
+            })}
+          ></div>
         </div>
       )}
       <div

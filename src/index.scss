@@ -197,8 +197,8 @@ button:disabled {
 /* Elements */
 
 .horizontal-line {
-  border-top: 1px solid $text-color-light;
-  margin: 16px 0px;
+  position: absolute;
+  border-top: 1px solid;
   width: 100%;
 }
 
