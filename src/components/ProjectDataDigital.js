@@ -98,6 +98,54 @@ const museDesignProject = (catalogIsCompressed) => ({
   },
 });
 
+const sydanpuuDesignProject = (catalogIsCompressed) => ({
+  id: "sydanpuu",
+  title: "Sydänpuu",
+  description:
+    "A graphic visualization of the company's sustainability efforts and strategy. The infographic communicates the sustainable materials, sustainable values and climate actions of the company with both measurable metrics and narratives.",
+  year: 2021,
+  isTeam: true,
+  designTeam: ["Sebastian Högnabba", "Linnea Seeskari", "Ida Gröndahl"],
+  displayTeamHorizontal: "true",
+  categories: ["Graphic Design", "Sustainability Design", "Infographic Design"],
+  displayableCategory: 0,
+  images: ["sydanpuu1.jpg", "sydanpuu2.png", "sydanpuu3.png"],
+  classes: "contain",
+  imageStyle: {
+    common: imageStyleDigital(catalogIsCompressed),
+    individual: [
+      {
+        ...moveImageOnExpand(catalogIsCompressed),
+        marginTop: marginTopMin,
+        marginBottom: "300px",
+        width: "auto",
+        height: "calc(100% - 370px)",
+        padding: "0px",
+      },
+    ],
+  },
+  imageStyleTablet: {
+    individual: [imageStyleServiceTablet(catalogIsCompressed)],
+  },
+  imageStyleMobile: {
+    common: imageStyleMobilePadding,
+    individual: [{}, { padding: "0px" }, { padding: "0px" }],
+  },
+
+  descriptionStyle: {
+    ...descriptionPlacementCenteredRightExpandable(catalogIsCompressed),
+    letterSpacing: "-0.005em",
+    bottom: "110px",
+  },
+  descriptionStyleTablet: descriptionStyleServiceTablet(catalogIsCompressed),
+  mainColorDark: true,
+  backgroundColor: "#f8f3bb",
+  backgroundColorLight: {
+    common: "f8f8da",
+    individual: [null, "white", "white"],
+  },
+});
+
 const anneliina2022DesignProject = (catalogIsCompressed) => ({
   id: "anneliina2022",
   title: "Anneliina (2022)",
@@ -310,6 +358,7 @@ const axiomDesignProject = (catalogIsCompressed) => ({
 export const digitalProjects = (catalogIsCompressed) => [
   anneliina2022DesignProject(catalogIsCompressed),
   museDesignProject(catalogIsCompressed),
+  sydanpuuDesignProject(catalogIsCompressed),
   scootDesignProject(catalogIsCompressed),
   axiomDesignProject(catalogIsCompressed),
   anneliina2016DesignProject(catalogIsCompressed),
