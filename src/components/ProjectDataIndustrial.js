@@ -292,10 +292,10 @@ const rytmiDesignProject = (catalogIsCompressed) => ({
 
 export const industrialProjects = (catalogIsCompressed) => [
   kaarnaDesignProject,
+  kierreDesignProject,
   kajoDesignProject,
   kiskoDesignProject,
   puolikuuDesignProject,
   rytmiDesignProject(catalogIsCompressed),
   kolmioillaDesignProject(catalogIsCompressed),
-  kierreDesignProject,
 ];
