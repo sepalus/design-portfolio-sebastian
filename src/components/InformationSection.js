@@ -215,9 +215,13 @@ function InformationSection({
                       !isMobile && !textExpanded,
                   }
                 )}`}
-                onClick={() => changeViewport(2)}
+                onClick={() => changeViewport(1)}
               >
-                <p>UX and Service Designer</p>
+                <p>
+                  {isMobileExtraSmall
+                    ? "Product Designer"
+                    : "Industrial and Furniture Designer"}
+                </p>
               </button>
               <button
                 className={`${introductionLabelClasses} ${classNames(
@@ -229,15 +233,10 @@ function InformationSection({
                       !isMobile && !textExpanded,
                   }
                 )}`}
-                onClick={() => changeViewport(1)}
+                onClick={() => changeViewport(2)}
               >
-                <p>
-                  {isMobileExtraSmall
-                    ? "Product Designer"
-                    : "Industrial and Furniture Designer"}
-                </p>
+                <p>UX and Service Designer</p>
               </button>
-
               <div
                 className={classNames(
                   "information-section-about-introduction-text-wrapper",
@@ -294,45 +293,45 @@ function InformationSection({
                     </>
                   ) : isTablet ? (
                     <>
-                      Hi, I’m Sebastian and design is my means of contributing
-                      to the world. I design with the problem-solving skills of
-                      an engineer and visual eye of an artist and come equipped
-                      with master’s degrees in both UX Design (M.Sc.) and
-                      Industrial Design (M.A.). Meaningful user experience is my
-                      purpose, design aesthetics my passion and solid technical
-                      expertise my foundation. As a
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      I have created beautiful user interfaces that
-                      are&nbsp;delightful to use for several industries. I have
-                      a broad design toolkit at my&nbsp;disposal, which I use to
-                      ensure that my digital products match the users' needs
-                      across all touchpoints. As an
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      I believe&nbsp;that function and beauty go hand in hand.
+                      Design is my means of contributing to the world. I design
+                      with the problem&#8209;solving skills of an engineer and
+                      visual eye of an artist and come equipped with master’s
+                      degrees in both UX Design (M.Sc.) and Industrial Design
+                      (M.A.). Meaningful user experience is my purpose, design
+                      aesthetics my passion and solid technical expertise my
+                      foundation. As an
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      I believe that function and beauty go hand&nbsp;in hand.
                       My products' aesthetics are often born out of a technical
                       or functional innovation. My designs are minimal and
-                      elegant, while possessing strong character.
-                    </>
-                  ) : (
-                    <>
-                      Hi, I’m Sebastian and design is my means of contributing
-                      to the world. I design with the problem-solving skills of
-                      an engineer and visual eye of an artist and come equipped
-                      with master’s degrees in both UX Design (M.Sc.) and
-                      Industrial Design (M.A.). Meaningful user experience is my
-                      purpose, design aesthetics my passion and solid technical
-                      expertise my foundation. As a
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      I have&nbsp;created beautiful user interfaces that are
+                      elegant, while&nbsp;possessing strong character. As a
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      I have created beautiful user interfaces that are
                       delightful to use for several industries. I have a broad
                       design toolkit at my disposal, which I use to ensure that
                       my digital products match the users' needs across all
-                      touchpoints. As an
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      touchpoints.
+                    </>
+                  ) : (
+                    <>
+                      Design is my means of contributing to the world. I design
+                      with the problem-solving skills of an engineer and visual
+                      eye of an artist and come equipped with master’s degrees
+                      in both UX Design (M.Sc.) and Industrial Design (M.A.).
+                      Meaningful user experience is my purpose, design
+                      aesthetics my passion and solid technical expertise my
+                      foundation. As an
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       I believe that function and beauty go hand in hand. My
                       products' aesthetics are often born out of a technical or
                       functional innovation. My designs are minimal and elegant,
-                      while possessing strong character.
+                      while&nbsp;possessing strong character. As a
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      I have created beautiful user interfaces that are
+                      delightful to use for several industries. I have a broad
+                      design toolkit at my disposal, which I use to ensure that
+                      my digital products match the users' needs across all
+                      touchpoints.
                     </>
                   )}
                 </p>
