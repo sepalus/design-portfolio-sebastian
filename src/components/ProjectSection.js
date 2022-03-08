@@ -33,8 +33,8 @@ function ProjectSection({
 
   const projects =
     designArea === 2
-      ? industrialProjects(catalogIsCompressed)
-      : digitalProjects(catalogIsCompressed);
+      ? digitalProjects(catalogIsCompressed)
+      : industrialProjects(catalogIsCompressed);
 
   const activeProject = projects[activeProjectIndex];
 
@@ -150,10 +150,10 @@ function ProjectSection({
         className={classNames(
           "project-section",
           {
-            "project-section-digital": designArea === 1,
+            "project-section-digital": designArea === 2,
           },
           {
-            "project-section-industrial": designArea === 2,
+            "project-section-industrial": designArea === 1,
           },
           {
             "project-section-animation-static": isMobile,
