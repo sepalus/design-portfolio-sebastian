@@ -6,11 +6,11 @@
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.5.1",
     "classnames": "^2.2.6",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-helmet": "^6.1.0",
-    "react-scripts": "^4.0.0",
+    "react-scripts": "^5.0.1",
     "react-swipeable": "^6.0.1",
     "react-typist": "^2.0.5"
   },
