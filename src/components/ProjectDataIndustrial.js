@@ -538,19 +538,20 @@ const arkkiDesignProject = {
   },
   mainColorDark: false,
   backgroundColor: "black",
+  descriptionColorDark: true,
 };
 
 export const industrialProjects = (catalogIsCompressed) => [
   kajoDesignProject,
   tyyniDesignProject,
   kiskoDesignProject,
-  koloDesignProject,
+  //koloDesignProject,
   arkkiDesignProject,
   runkoDesignProject,
-  kuutiotDesignProject,
+  //kuutiotDesignProject,
   puolikuuDesignProject,
   kaarnaDesignProject,
   kierreDesignProject,
-  rytmiDesignProject(catalogIsCompressed),
-  kolmioillaDesignProject(catalogIsCompressed),
+  //rytmiDesignProject(catalogIsCompressed),
+  //kolmioillaDesignProject(catalogIsCompressed),
 ];
