@@ -1,6 +1,7 @@
 import variables from "../variables.js";
 
-const { backgroundColorBlack, backgroundColorDark } = variables;
+const { backgroundColorBlack, backgroundColorDark, catalogWidthPlusMargin } =
+  variables;
 
 import {
   minWidth,
@@ -43,26 +44,103 @@ const kajoDesignProject = {
   id: "kajo",
   title: "Kajo",
   description:
-    "A dining room pendant lamp designed for atmospheric dining. The lamp has three lampshades that reflect different intensities of light, giving both a focused and relaxed ambience to the dining experience.",
-  year: 2020,
+    "With its three different lamp shades, the Kajo lamp lights up the room with a rich and atmospheric light. The elegant and minimalistic lamp is shaped entirely by the conditions of light. Each lamp shade directs and reflects light in a carefully designed matter. As a result, Kajo provides atmospheric lighting to the surrounding space, and is also a stylish interior design piece in its own right.",
+  year: 2021,
   isTeam: false,
   categories: ["Furniture Design", "Lamp Design", "Lighting Design"],
   displayableCategory: 1,
-  images: ["kajo1.jpg", "kajo2.jpg", "kajo3.jpg", "kajo4.jpg", "kajo5.jpg"],
+  images: [
+    "kajo1.jpg",
+    "kajo2.jpg",
+    "kajo3.png",
+    "kajo4.png",
+    "kajo5.jpg",
+    "kajo6.jpg",
+    "kajo7.jpg",
+    "kajo8.png",
+    "kajo9.jpg",
+  ],
   descriptionStyle: {
     ...descriptionPlacementBottomRightCorner,
     right: "60px",
   },
-
   imageStyle: {
-    common: {
-      objectPosition: "50% 30%",
-    },
+    individual: [
+      {
+        objectPosition: "50% 30%",
+      },
+      {
+        objectPosition: "50% 30%",
+      },
+      {
+        objectFit: "contain",
+      },
+      {
+        objectFit: "contain",
+      },
+    ],
   },
   imageStyleMobile: {
-    common: {
-      objectPosition: "50% 30%",
-    },
+    individual: [
+      {
+        objectPosition: "50% 30%",
+      },
+      {
+        objectPosition: "50% 30%",
+      },
+      {
+        objectFit: "contain",
+      },
+      {
+        objectFit: "contain",
+      },
+    ],
+  },
+  mainColorDark: false,
+  backgroundColor: "black",
+};
+
+const tyyniDesignProject = {
+  id: "tyyni",
+  title: "Tyyni",
+  description:
+    "Tyyni is a fascinating and elegant pendant lamp made from acrylic plastic. The formal language of the lamp expresses lightness, serenity, and stability. Inspired my tranquil motion in nature, Tyyni provides a calm ambience to the room. It has a sort of elegant and serene floating presence.",
+  year: 2021,
+  isTeam: false,
+  categories: ["Furniture Design", "Lamp Design", "Lighting Design"],
+  displayableCategory: 1,
+  images: [
+    "tyyni1.jpg",
+    "tyyni2.jpg",
+    "tyyni3.jpg",
+    "tyyni4.jpg",
+    "tyyni5.jpg",
+    "tyyni6.jpg",
+    "tyyni7.jpg",
+  ],
+  descriptionStyle: {
+    ...descriptionPlacementBottomRightCorner,
+    right: "60px",
+  },
+  imageStyle: {
+    individual: [
+      {
+        objectPosition: "50% 30%",
+      },
+      {
+        objectPosition: "50% 30%",
+      },
+    ],
+  },
+  imageStyleMobile: {
+    individual: [
+      {
+        objectPosition: "50% 30%",
+      },
+      {
+        objectPosition: "50% 30%",
+      },
+    ],
   },
   mainColorDark: false,
   backgroundColor: "black",
@@ -97,7 +175,7 @@ const kiskoDesignProject = {
   id: "kisko",
   title: "Kisko",
   description:
-    "An elegant industrial inspired furniture series that combines comfort with character. Kisko introduces an industrial connecting component - the stainless steel U channel tube - to the world of furniture.",
+    "Kisko is an elegant, industrial furniture series that combines beauty with expressive character. Kisko introduces an industrial connecting component - the stainless steel U-channel - to the world of furniture. The U-channel is a widely used component in industrial design. It is strong and robust, and increases its strength when bent appropriately. The component functions great as a furniture connector, as it can be inserted into slits in wooden boards.",
   year: 2019,
   isTeam: false,
   categories: ["Furniture Design", "Chair Design", "Component Design"],
@@ -107,49 +185,95 @@ const kiskoDesignProject = {
     "kisko2.jpg",
     "kisko3.jpg",
     "kisko4.jpg",
-    "kisko5.png",
+    "kisko5.jpg",
   ],
-  descriptionStyle: { width: "270px", right: " 100px", top: " 100px" },
-  descriptionStyleTablet: {
-    top: "70px",
-    right: "80px",
-  },
-  mainColorDark: false,
-  descriptionColorDark: true,
-  controlColorDark: true,
-  backgroundColor: "black",
-  imageStyle: {
-    individual: [
-      {},
-      {},
-      {},
-      {},
-      {
-        objectFit: "contain",
-        padding: "100px 200px",
-        boxSizing: "border-box",
-        backgroundColor: "white",
-      },
-    ],
+  descriptionStyle: {
+    bottom: "80px",
+    left: catalogWidthPlusMargin,
   },
 
-  imageStyleTablet: {
-    individual: [{}, {}, {}, {}, { padding: "60px 120px" }],
+  mainColorDark: false,
+  backgroundColor: "black",
+  descriptionColorDark: true,
+  imageStyle: {
+    individual: [
+      {
+        objectFit: "contain",
+        paddingTop: "20px",
+        paddingBottom: "200px",
+        height: "auto",
+        backgroundColor: "white",
+      },
+      {},
+      {},
+      {},
+      {},
+      { objectFit: "contain" },
+      { objectFit: "contain" },
+      { objectFit: "contain" },
+      { objectFit: "contain" },
+    ],
   },
   imageStyleMobile: {
     individual: [
+      { objectFit: "contain", backgroundColor: "white" },
       {},
       {},
       {},
       {},
-      {
-        objectFit: "contain",
-        padding: "70px 60px",
-        boxSizing: "border-box",
-        backgroundColor: "white",
-      },
+      { objectFit: "contain" },
+      { objectFit: "contain" },
+      { objectFit: "contain" },
+      { objectFit: "contain" },
     ],
   },
+};
+
+const koloDesignProject = {
+  id: "kolo",
+  title: "Kolo",
+  description:
+    "Kolo is a modular, configurable seating solution for children of all ages. Through its modularity and easy setup, Kolo caters to all types of learners. The Kolo seat can be assembled and re-assembled in a number of different ways, to set up different learning environments. With the help of the light-weight, yet robust acoustic panels made out of recycled PET plastic a multitude of seating solutions can be assembled.",
+  year: 2022,
+  isTeam: false,
+  categories: ["Furniture Design", "Lamp Design", "Lighting Design"],
+  displayableCategory: 1,
+  images: [
+    "kolo1.jpg",
+    "kolo2.jpg",
+    "kolo3.jpg",
+    "kolo4.jpg",
+    "kolo5.jpg",
+    "kolo6.jpg",
+  ],
+  descriptionStyle: {
+    ...descriptionPlacementTopRightCorner,
+    right: "60px",
+  },
+
+  imageStyle: {
+    common: {},
+    individual: [
+      {},
+      {},
+      { objectFit: "contain", backgroundColor: "white" },
+      { objectFit: "contain", backgroundColor: "white" },
+      { objectPosition: "50% 100%" },
+    ],
+  },
+  imageStyleMobile: {
+    common: {},
+    individual: [
+      {},
+      {},
+      { objectFit: "contain", backgroundColor: "white" },
+      { objectFit: "contain", backgroundColor: "white" },
+      { objectPosition: "50% 100%" },
+    ],
+  },
+  mainColorDark: false,
+  backgroundColor: "black",
+  descriptionColorDark: true,
 };
 
 const kierreDesignProject = {
@@ -207,6 +331,80 @@ const kierreDesignProject = {
   },
   mainColorDark: false,
   backgroundColor: "black",
+};
+
+const runkoDesignProject = {
+  id: "runko",
+  title: "Runko",
+  description:
+    "The Runko display cabinet is made from solid wood and glass. The rounded wooden corner pillars, cladded with wooden ribs express strength and durability and emphasize the importance and value of the items being displayed. The Runko display cabinet expresses stability and security is a modern and elegant manner, with a touch of decor. A perfect place to showcase your valuables.",
+  year: 2022,
+  isTeam: false,
+  categories: ["Furniture Design", "Lamp Design", "Lighting Design"],
+  displayableCategory: 1,
+  images: ["runko1.jpg", "runko2.jpg", "runko3.jpg", "runko4.jpg"],
+  descriptionStyle: {
+    ...descriptionPlacementTopRightCorner,
+    right: "60px",
+  },
+
+  imageStyle: {
+    individual: [
+      { objectFit: "contain", backgroundColor: "white" },
+      {
+        objectFit: "contain",
+        backgroundColor: "white",
+        paddingLeft: "10vw",
+        paddingTop: "5vw",
+      },
+    ],
+  },
+  imageStyleMobile: {
+    individual: [
+      { objectFit: "contain", backgroundColor: "white" },
+      {
+        objectFit: "contain",
+        backgroundColor: "white",
+        paddingLeft: "10vw",
+        paddingTop: "5vw",
+      },
+    ],
+  },
+  mainColorDark: false,
+  backgroundColor: "black",
+  descriptionColorDark: true,
+};
+
+const kuutiotDesignProject = {
+  id: "kuutiot",
+  title: "Kuutiot",
+  description:
+    "The Kuutiot display cabinet is made from a steel structure and glass panels. It is based on the pure geometric form of the cube. Visually, the cabinet consists of a cube inside a cube. Two key functions of the cabinet - the supporting and the enveloping - are visually detached from each other. This creates an aesthetically pleasing composition, while allowing the displayable objects to receive most of the viewers’ attention.",
+  year: 2022,
+  isTeam: false,
+  categories: ["Furniture Design", "Lamp Design", "Lighting Design"],
+  displayableCategory: 1,
+  images: [
+    "kuutiot1.jpg",
+    "kuutiot2.jpg",
+    "kuutiot3.jpg",
+    "kuutiot4.jpg",
+    "kuutiot5.jpg",
+  ],
+  descriptionStyle: {
+    ...descriptionPlacementTopRightCorner,
+    right: "60px",
+  },
+
+  imageStyle: {
+    common: {},
+  },
+  imageStyleMobile: {
+    common: {},
+  },
+  mainColorDark: false,
+  backgroundColor: "black",
+  descriptionColorDark: true,
 };
 
 const kolmioillaDesignProject = (catalogIsCompressed) => ({
@@ -290,12 +488,69 @@ const rytmiDesignProject = (catalogIsCompressed) => ({
   backgroundColorMobile: backgroundColorDark,
 });
 
+const arkkiDesignProject = {
+  id: "arkki",
+  title: "Arkki",
+  description:
+    "Arkki is a beautiful and functional coffee table that combines rattan and leather in an elegant fashion. Arkki is a multifunctional piece of furniture that functions as a coffee table, a serving tray and a storage unit. The leather , creating aesthetical value from its functionality. The leather - which performs several functions of the furniture piece - combined with various rattan weaves creates and interesting, elegant, multifunctional and highly useful piece of furniture.",
+  year: 2022,
+  isTeam: false,
+  categories: ["Furniture Design", "Lamp Design", "Lighting Design"],
+  displayableCategory: 1,
+  images: [
+    "arkki1.png",
+    "arkki2.png",
+    "arkki3.png",
+    "arkki4.png",
+    "arkki5.jpg",
+    "arkki6.jpg",
+    "arkki7.jpg",
+    "arkki8.jpg",
+  ],
+  descriptionStyle: {
+    ...descriptionPlacementTopRightCorner,
+    width: "280px",
+  },
+
+  imageStyle: {
+    common: {},
+    individual: [
+      { objectFit: "contain", backgroundColor: "white" },
+      { objectFit: "contain", backgroundColor: "white" },
+      { objectFit: "contain", backgroundColor: "white" },
+      { objectFit: "contain", backgroundColor: "white" },
+      { objectPosition: "50% 100%" },
+      { objectPosition: "50% 100%" },
+      { objectPosition: "50% 100%" },
+    ],
+  },
+  imageStyleMobile: {
+    common: {},
+    individual: [
+      { objectFit: "contain", backgroundColor: "white" },
+      { objectFit: "contain", backgroundColor: "white" },
+      { objectFit: "contain", backgroundColor: "white" },
+      { objectFit: "contain", backgroundColor: "white" },
+      { objectPosition: "50% 100%" },
+      { objectPosition: "50% 100%" },
+      { objectPosition: "50% 100%" },
+    ],
+  },
+  mainColorDark: false,
+  backgroundColor: "black",
+};
+
 export const industrialProjects = (catalogIsCompressed) => [
+  kajoDesignProject,
+  tyyniDesignProject,
+  kiskoDesignProject,
+  koloDesignProject,
+  arkkiDesignProject,
+  runkoDesignProject,
+  kuutiotDesignProject,
+  puolikuuDesignProject,
   kaarnaDesignProject,
   kierreDesignProject,
-  kajoDesignProject,
-  kiskoDesignProject,
-  puolikuuDesignProject,
   rytmiDesignProject(catalogIsCompressed),
   kolmioillaDesignProject(catalogIsCompressed),
 ];

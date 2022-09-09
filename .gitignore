@@ -12,6 +12,11 @@
 # production
 /build
 
+
+# hidden assets
+/public/assets_hidden
+/public/assets_hidden_placeholder
+
 # misc
 .DS_Store
 .env.local
@@ -23,3 +28,4 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
