@@ -30,6 +30,7 @@ $typist-height-mobile: 144px;
 
   h3:not(:first-child) {
     margin-top: 24px;
+    letter-spacing: 0.015em;
   }
 
   @media screen and (max-width: $tablet-max) {
@@ -55,6 +56,7 @@ $typist-height-mobile: 144px;
 
     h3:not(:first-child) {
       margin-top: 0px;
+      letter-spacing: normal;
     }
   }
 }

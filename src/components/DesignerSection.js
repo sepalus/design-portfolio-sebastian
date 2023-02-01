@@ -88,8 +88,7 @@ function DesignerSection({
                     setTimeout(() => setWorkTypistDone(true), 500)
                   }
                 >
-                  If you’re interested in what I’ve
-                  {isMobile ? " done, " : " designed, "}please check out
+                  If you’re interested in what I’ve done, please check out
                   my&nbsp;
                   <span
                     className="link-button link-button-narrow"
@@ -102,8 +101,7 @@ function DesignerSection({
             )
           ) : (
             <h3>
-              If you’re interested in what I’ve
-              {isMobile ? " done, " : " designed, "}please check out my&nbsp;
+              If you’re interested in what I’ve done, please check out my&nbsp;
               <span
                 className="link-button link-button-narrow"
                 onClick={() => selectViewport(1)}
