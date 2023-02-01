@@ -542,16 +542,16 @@ const arkkiDesignProject = {
 };
 
 export const industrialProjects = (catalogIsCompressed) => [
+  kaarnaDesignProject,
+  //koloDesignProject,
   kajoDesignProject,
   tyyniDesignProject,
-  kaarnaDesignProject,
+  kierreDesignProject,
   kiskoDesignProject,
-  //koloDesignProject,
-  //arkkiDesignProject,
+  arkkiDesignProject,
   runkoDesignProject,
   kuutiotDesignProject,
-  kierreDesignProject,
-  puolikuuDesignProject,
-  //rytmiDesignProject(catalogIsCompressed),
-  //kolmioillaDesignProject(catalogIsCompressed),
+  //puolikuuDesignProject,
+  rytmiDesignProject(catalogIsCompressed),
+  kolmioillaDesignProject(catalogIsCompressed),
 ];
