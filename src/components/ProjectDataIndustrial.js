@@ -190,6 +190,7 @@ const kiskoDesignProject = {
   descriptionStyle: {
     bottom: "80px",
     left: catalogWidthPlusMargin,
+    width: "calc(100vw - 540px)",
   },
 
   mainColorDark: false,
@@ -490,6 +491,66 @@ const koittoDesignProject = {
   descriptionColorDark: true,
 };
 
+const jemmaDesignProject = {
+  id: "jemma",
+  title: "Jemma",
+  description:
+    "Jemma is a beautiful and elegant functional headboard, which consists of a wooden frame and an upholstered headboard pillow. Jemma provides many functional solutions to the bedroom, like storage and table space, lighting and charging for electronic devices. During the day these functions can be hidden away behind cabinet doors, so the bed environment stays neat and tidy.",
+  year: 2023,
+  isTeam: false,
+  categories: ["Furniture Design", "Lamp Design", "Lighting Design"],
+  displayableCategory: 1,
+  images: [
+    "jemma1.jpg",
+    "jemma2.jpg",
+    "jemma3.jpg",
+    "jemma4.jpg",
+    "jemma5.png",
+    "jemma6.png",
+    "jemma7.png",
+    "jemma8.png",
+    "jemma9.png",
+  ],
+  descriptionStyle: {
+    top: "80px",
+    left: catalogWidthPlusMargin,
+    width: "calc(100vw - 540px)",
+  },
+
+  imageStyle: {
+    common: { backgroundColor: "white" },
+
+    individual: [
+      {},
+      {},
+      {},
+      {},
+      {
+        objectFit: "contain",
+      },
+      {
+        objectFit: "contain",
+      },
+      {
+        objectFit: "contain",
+      },
+      {
+        objectFit: "contain",
+      },
+      {
+        objectFit: "contain",
+      },
+    ],
+  },
+  imageStyleMobile: {
+    common: { backgroundColor: "white" },
+  },
+
+  mainColorDark: false,
+  backgroundColor: "black",
+  descriptionColorDark: true,
+};
+
 const kolmioillaDesignProject = (catalogIsCompressed) => ({
   id: "kolmiot",
   title: "Kohdataan Kolmioilla",
@@ -627,6 +688,7 @@ const arkkiDesignProject = {
 export const industrialProjects = (catalogIsCompressed) => [
   kaarnaDesignProject,
   koittoDesignProject,
+  jemmaDesignProject,
   koloDesignProject,
   kierreDesignProject,
   kajoDesignProject,
