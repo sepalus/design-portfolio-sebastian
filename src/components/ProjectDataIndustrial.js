@@ -407,6 +407,88 @@ const kuutiotDesignProject = {
   descriptionColorDark: true,
 };
 
+const koittoDesignProject = {
+  id: "koitto",
+  title: "Koitto",
+  description:
+    "Koitto is a bright light therapy lamp - but it doesn’t look like one. With its two different light sources, it functions both as a bright light and as a regular lamp. The design is minimalist and elegant, making it a stylish interior design product, that can be used throughout the year. As opposed to most bright light devices, Koitto gives bright light therapy from above, as we are used to in nature. The bright light function can be switched off using a knob on the lamp, after which the lamp functions as a regular lamp.",
+  year: 2023,
+  isTeam: false,
+  categories: ["Furniture Design", "Lamp Design", "Lighting Design"],
+  displayableCategory: 1,
+  images: [
+    "koitto1.jpg",
+    "koitto2.jpg",
+    "koitto3.png",
+    "koitto4.png",
+    "koitto5.png",
+    "koitto6.jpg",
+    "koitto7.jpg",
+    "koitto8.jpg",
+  ],
+  descriptionStyle: {
+    ...descriptionPlacementTopRightCorner,
+    width: "280px",
+  },
+
+  imageStyle: {
+    common: { backgroundColor: "white" },
+
+    individual: [
+      {
+        objectFit: "contain",
+        boxSizing: "border-box",
+        padding: "0 30vh 35vh 10vh",
+      },
+      {},
+      {
+        objectFit: "contain",
+        boxSizing: "border-box",
+        padding: "20vh",
+      },
+      {
+        objectFit: "contain",
+        boxSizing: "border-box",
+        padding: "20vh",
+      },
+      {
+        objectFit: "contain",
+      },
+    ],
+  },
+  imageStyleMobile: {
+    individual: [
+      {
+        objectFit: "contain",
+        boxSizing: "border-box",
+        padding: "0px 40px 70px 40px",
+        backgroundColor: "white",
+      },
+      {},
+      {
+        objectFit: "contain",
+        boxSizing: "border-box",
+        padding: "80px",
+        backgroundColor: "white",
+      },
+      {
+        objectFit: "contain",
+        boxSizing: "border-box",
+        padding: "30px 50px 70px 50px",
+        backgroundColor: "white",
+      },
+      {
+        objectFit: "contain",
+        backgroundColor: "white",
+      },
+    ],
+  },
+
+  mainColorDark: false,
+  backgroundColor: "black",
+  descriptionColorDark: true,
+};
+
 const kolmioillaDesignProject = (catalogIsCompressed) => ({
   id: "kolmiot",
   title: "Kohdataan Kolmioilla",
@@ -543,10 +625,11 @@ const arkkiDesignProject = {
 
 export const industrialProjects = (catalogIsCompressed) => [
   kaarnaDesignProject,
+  koittoDesignProject,
+  kierreDesignProject,
   //koloDesignProject,
   kajoDesignProject,
   tyyniDesignProject,
-  kierreDesignProject,
   kiskoDesignProject,
   arkkiDesignProject,
   runkoDesignProject,
