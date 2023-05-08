@@ -249,6 +249,7 @@ const koloDesignProject = {
   descriptionStyle: {
     ...descriptionPlacementTopRightCorner,
     right: "60px",
+    width: "280px",
   },
 
   imageStyle: {
@@ -626,8 +627,8 @@ const arkkiDesignProject = {
 export const industrialProjects = (catalogIsCompressed) => [
   kaarnaDesignProject,
   koittoDesignProject,
+  koloDesignProject,
   kierreDesignProject,
-  //koloDesignProject,
   kajoDesignProject,
   tyyniDesignProject,
   kiskoDesignProject,
