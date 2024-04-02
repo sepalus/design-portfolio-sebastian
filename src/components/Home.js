@@ -99,7 +99,6 @@ export default function Home() {
       behavior: "smooth",
     });
   };
-  console.log("Boom");
   return (
     <>
       <DesignerSection
