@@ -35,7 +35,7 @@ function ProjectCard({
   isMobile,
   isTablet,
 }) {
-  const isDigital = designArea === 2;
+  const isDigital = designArea === 1;
   const isSmallHeight = windowHeight < 500;
   const swipeHandlers = useSwipeable({
     onSwipedLeft: () => scrollImagesNext(activeImageIndex),
