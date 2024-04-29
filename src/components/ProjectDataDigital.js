@@ -240,7 +240,10 @@ const anneliina2022DesignProject = (catalogIsCompressed) => ({
   descriptionStyleTablet: descriptionStyleWebTablet(catalogIsCompressed),
   mainColorDark: true,
   backgroundColor: "#96c1d9",
-  backgroundColorLight: { common: "#cbe0ec" },
+  backgroundColorLight: {
+    common: "#cbe0ec",
+    individual: ["#cbe0ec", "#cbe0ec", "#cbe0ec", "white", "white"],
+  },
 });
 
 const anneliina2016DesignProject = (catalogIsCompressed) => ({
