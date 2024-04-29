@@ -146,6 +146,62 @@ const sydanpuuDesignProject = (catalogIsCompressed) => ({
   },
 });
 
+const helfiDesignProject = (catalogIsCompressed) => ({
+  id: "helfi",
+  title: "Hel.fi",
+  description:
+    "The complete re-design of the City of Helsinki’s website of over 7000 pages. This extensive project transformed Hel.fi into a highly accessible, user-centric website, that allows for navigation of city services according to user needs rather than organizational structures. The work included designing strategic theme sites that align with the City of Helsinki’s startegy, and establishing a city-wide Design System inclusing UX components, patterns and templates. The project resulted in a unified digital experience that emphasizes inclusivity and accessibility, allowing all citizens to easily navigate and utilize city services.",
+  descriptionShort:
+    "The complete re-design of the City of Helsinki’s website of over 7000 pages. The project transformed Hel.fi into a highly accessible, user-centric website, that allows for navigation of city services according to user needs rather than organizational structures.",
+  isTeam: true,
+  categories: ["Design", " Design", "Design"],
+  displayableCategory: 0,
+  images: [
+    "helfi1.png",
+    "helfi2.jpg",
+    "helfi3.jpg",
+    "helfi4.png",
+    "helfi5.png",
+    "helfi6.png",
+  ],
+  firstImageIsDuplicate: false,
+  classes: "contain",
+  imageStyle: {
+    individual: [
+      {
+        ...imageStyleDigital(catalogIsCompressed),
+        ...imageStyleWebMain(catalogIsCompressed),
+      },
+      { objectFit: "cover" },
+      { objectFit: "cover" },
+      imageStyleDigital(catalogIsCompressed),
+      imageStyleDigital(catalogIsCompressed),
+      imageStyleDigital(catalogIsCompressed),
+    ],
+  },
+  imageStyleTablet: {
+    individual: [imageStyleWebTablet(catalogIsCompressed)],
+  },
+  imageStyleMobile: {
+    individual: [
+      { imageStyleMobilePadding },
+      { objectFit: "cover" },
+      { objectFit: "cover", padding: "0px" },
+      { imageStyleMobilePadding },
+      { imageStyleMobilePadding },
+      { imageStyleMobilePadding },
+    ],
+  },
+  descriptionStyle: {
+    ...descriptionPlacementCenteredRightExpandable(catalogIsCompressed),
+    top: marginTopMin,
+  },
+  descriptionStyleTablet: descriptionStyleWebTablet(catalogIsCompressed),
+  mainColorDark: true,
+  backgroundColor: "#ccf7ed",
+  backgroundColorLight: { common: "#e6fbf6" },
+});
+
 const anneliina2022DesignProject = (catalogIsCompressed) => ({
   id: "anneliina2022",
   title: "Anneliina (2022)",
@@ -356,6 +412,7 @@ const axiomDesignProject = (catalogIsCompressed) => ({
 });
 
 export const digitalProjects = (catalogIsCompressed) => [
+  helfiDesignProject(catalogIsCompressed),
   anneliina2022DesignProject(catalogIsCompressed),
   museDesignProject(catalogIsCompressed),
   sydanpuuDesignProject(catalogIsCompressed),
