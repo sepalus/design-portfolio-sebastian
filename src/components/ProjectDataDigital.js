@@ -415,22 +415,10 @@ const axiomDesignProject = (catalogIsCompressed) => ({
   },
 });
 
-const professionalServicesDesignProject = (catalogIsCompressed) => ({
-  id: "professionalServices",
-  title: "Professional Services",
-  description:
-    "Crafting digital products to streamline professional services, focusing on automating tasks like risk assurance and tax advisory to enhance efficiency and client satisfaction..",
-  descriptionShort:
-    "Crafting digital products to streamline professional services, focusing on automating tasks like risk assurance and tax advisory to enhance efficiency and client satisfaction.",
+const consultancyProject = (catalogIsCompressed) => ({
   isTeam: true,
   categories: ["Design", " Design", "Design"],
   displayableCategory: 0,
-  images: [
-    "professionalServices1.png",
-    "professionalServices2.png",
-    "professionalServices3.png",
-    "professionalServices4.png",
-  ],
   firstImageIsDuplicate: false,
   classes: "contain",
   imageStyle: {
@@ -458,6 +446,22 @@ const professionalServicesDesignProject = (catalogIsCompressed) => ({
   mainColorDark: true,
   backgroundColor: "#9098bc",
   backgroundColorLight: { common: "#d9d9ed" },
+});
+
+const professionalServicesDesignProject = (catalogIsCompressed) => ({
+  ...consultancyProject(catalogIsCompressed),
+  id: "professionalServices",
+  title: "Professional Services",
+  description:
+    "Crafting digital products to streamline professional services, focusing on automating tasks like risk assurance and tax advisory to enhance efficiency and client satisfaction..",
+  descriptionShort:
+    "Crafting digital products to streamline professional services, focusing on automating tasks like risk assurance and tax advisory to enhance efficiency and client satisfaction.",
+  images: [
+    "professionalServices1.png",
+    "professionalServices2.png",
+    "professionalServices3.png",
+    "professionalServices4.png",
+  ],
 });
 
 export const digitalProjects = (catalogIsCompressed) => [
