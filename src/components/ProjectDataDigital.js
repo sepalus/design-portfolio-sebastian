@@ -20,7 +20,7 @@ const museDesignProject = (catalogIsCompressed) => ({
     "A community connecting UBS bank, millennials and startups through providing unique experiences to its members. Muse is a value-added service for millenials that helps them form a connection with their bank from an early age. Muse is a service. Muse is a web application. Muse is a brand. Muse is a community.",
   descriptionShort:
     "A community connecting UBS bank, millennials and startups through providing unique experiences to its members. Muse is a service for millenials that helps them form a connection with their bank from an early age. Muse is a service. Muse is a web application. Muse is a brand. Muse is a community.",
-  year: 2014,
+  year: "2013 - 2014",
   isTeam: true,
   designTeam: [
     "Sebastian Högnabba",
@@ -154,6 +154,7 @@ const helfiDesignProject = (catalogIsCompressed) => ({
     "The complete re-design of the City of Helsinki’s website of over 7000 pages. This extensive project transformed Hel.fi into a highly accessible, user-centric website, that allows for navigation of city services according to user needs rather than organizational structures. The work included designing strategic theme sites that align with the City of Helsinki’s startegy, and establishing a city-wide Design System inclusing UX components, patterns and templates. The project resulted in a unified digital experience that emphasizes inclusivity and accessibility, allowing all citizens to easily navigate and utilize city services.",
   descriptionShort:
     "The complete re-design of the City of Helsinki’s website of over 7000 pages. The project transformed Hel.fi into a highly accessible, user-centric website, that allows for navigation of city services according to user needs rather than organizational structures.",
+  year: "2022 - 2023",
   isTeam: true,
   categories: ["Design", " Design", "Design"],
   displayableCategory: 0,
@@ -210,7 +211,7 @@ const anneliina2022DesignProject = (catalogIsCompressed) => ({
     "A re-design of Hoivapalvelu Anneliina's visual identity and website. The new brand identity is modern, elegant and communicates the caring service's core values: compassion, respect, trust and personalized care. The project included the design of colors, fonts, logos, visual elements and the website.",
   descriptionShort:
     "A re-design of Hoivapalvelu Anneliina's visual identity and website. The new brand identity is modern, elegant and communicates the caring service's core values: compassion, respect, trust and personalized care. The project included the design of colors, fonts, logos and visual elements.",
-  year: 2022,
+  year: "2021 - 2022",
   isTeam: false,
   categories: ["Brand Identity Design", "UX Design", "UI Design"],
   displayableCategory: 0,
@@ -252,7 +253,7 @@ const anneliina2016DesignProject = (catalogIsCompressed) => ({
   title: "Anneliina (2016)",
   description:
     "A new brand identity for Anneliina that communicates the caring service's core values: compassion, respect, trust and personalized care. The brand update included the launch of a re-designed responsive website and new marketing material, such as flyers and newspaper ads.",
-  year: 2016,
+  year: "2016",
   isTeam: false,
   categories: ["Brand Identity Design", "Web Design", "Graphic Design"],
   displayableCategory: 0,
@@ -416,7 +417,6 @@ const axiomDesignProject = (catalogIsCompressed) => ({
 });
 
 const consultancyProject = (catalogIsCompressed) => ({
-  isTeam: true,
   categories: ["Design", " Design", "Design"],
   displayableCategory: 0,
   firstImageIsDuplicate: false,
@@ -457,6 +457,8 @@ const professionalServicesDesignProject = (catalogIsCompressed) => ({
     "Crafting digital products to streamline professional services, focusing on automating tasks like risk assurance and tax advisory to enhance efficiency and client satisfaction..",
   descriptionShort:
     "Crafting digital products to streamline professional services, focusing on automating tasks like risk assurance and tax advisory to enhance efficiency and client satisfaction.",
+  year: "2019",
+  isTeam: false,
   images: [
     "professionalServices1.png",
     "professionalServices2.png",
@@ -473,6 +475,8 @@ const retailDesignProject = (catalogIsCompressed) => ({
     "Creating a seamless online shopping experience through a responsive webshop, enhancing customer engagement and streamlining the retail journey from browsing to checkout.",
   descriptionShort:
     "Creating a seamless online shopping experience through a responsive webshop, enhancing customer engagement and streamlining the retail journey from browsing to checkout.",
+  year: "2018-2019",
+  isTeam: true,
   images: ["retail1.png", "retail2.png", "retail3.png", "retail4.png"],
 });
 
@@ -484,6 +488,8 @@ const publicTransportDesignProject = (catalogIsCompressed) => ({
     "Designing user-friendly digital products, that improve route planning for citizens and training for HSL employees, resulting in a better commuting experience.",
   descriptionShort:
     "Designing user-friendly digital products, that improve route planning for citizens and training for HSL employees, resulting in a better commuting experience.",
+  year: "2016-2017",
+  isTeam: true,
   images: [
     "publicTransport1.png",
     "publicTransport2.png",
@@ -499,6 +505,8 @@ const ministryDesignProject = (catalogIsCompressed) => ({
     "Transforming legal processes by designing an award-winning intuitive digital service that digitizes court proceedings, enhancing efficiency and accessibility in the justice system.",
   descriptionShort:
     "Transforming legal processes by designing an award-winning intuitive digital service that digitizes court proceedings, enhancing efficiency and accessibility in the justice system.",
+  year: "2015-2016",
+  isTeam: true,
   images: ["ministry1.png", "ministry2.png", "ministry3.png", "ministry4.png"],
 });
 
@@ -510,6 +518,8 @@ const financialServicesDesignProject = (catalogIsCompressed) => ({
     "Re-designing the company’s website to modernize its online presence, making financial information and services more accessible and user-friendly for clients.",
   descriptionShort:
     "Re-designing the company’s website to modernize its online presence, making financial information and services more accessible and user-friendly for clients.",
+  year: "2014-2015",
+  isTeam: true,
   images: [
     "financialServices1.png",
     "financialServices2.png",
