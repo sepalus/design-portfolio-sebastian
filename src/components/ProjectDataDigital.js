@@ -6,6 +6,7 @@ import {
   imageStyleDigital,
   imageStyleServiceTablet,
   imageStyleWebMain,
+  imageStyleWebMainDynamicWidth,
   imageStyleWebTablet,
   imageStyleMobileCover,
   imageStyleMobilePadding,
@@ -414,6 +415,51 @@ const axiomDesignProject = (catalogIsCompressed) => ({
   },
 });
 
+const professionalServicesDesignProject = (catalogIsCompressed) => ({
+  id: "professionalServices",
+  title: "Professional Services",
+  description:
+    "Crafting digital products to streamline professional services, focusing on automating tasks like risk assurance and tax advisory to enhance efficiency and client satisfaction..",
+  descriptionShort:
+    "Crafting digital products to streamline professional services, focusing on automating tasks like risk assurance and tax advisory to enhance efficiency and client satisfaction.",
+  isTeam: true,
+  categories: ["Design", " Design", "Design"],
+  displayableCategory: 0,
+  images: [
+    "professionalServices1.png",
+    "professionalServices2.png",
+    "professionalServices3.png",
+    "professionalServices4.png",
+  ],
+  firstImageIsDuplicate: false,
+  classes: "contain",
+  imageStyle: {
+    common: {
+      ...imageStyleDigital(catalogIsCompressed),
+      maxHeight: "500px",
+      backgroundColor: "#fdeaef",
+      padding: "0px",
+      margin: "50px",
+    },
+    individual: [
+      { ...imageStyleWebMainDynamicWidth(catalogIsCompressed) },
+      {},
+      { backgroundColor: "none" },
+    ],
+  },
+  imageStyleMobile: {
+    common: imageStyleMobilePadding,
+  },
+  descriptionStyle: {
+    ...descriptionPlacementCenteredRightExpandable(catalogIsCompressed),
+    top: marginTopMin,
+  },
+  descriptionStyleTablet: descriptionStyleWebTablet(catalogIsCompressed),
+  mainColorDark: true,
+  backgroundColor: "#9098bc",
+  backgroundColorLight: { common: "#d9d9ed" },
+});
+
 export const digitalProjects = (catalogIsCompressed) => [
   helfiDesignProject(catalogIsCompressed),
   anneliina2022DesignProject(catalogIsCompressed),
@@ -422,4 +468,5 @@ export const digitalProjects = (catalogIsCompressed) => [
   scootDesignProject(catalogIsCompressed),
   axiomDesignProject(catalogIsCompressed),
   anneliina2016DesignProject(catalogIsCompressed),
+  professionalServicesDesignProject(catalogIsCompressed),
 ];

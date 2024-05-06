@@ -110,6 +110,15 @@ export const imageStyleWebMain = (catalogIsCompressed) => ({
   width: "auto",
 });
 
+export const imageStyleWebMainDynamicWidth = (catalogIsCompressed) => ({
+  ...moveImageOnExpand(catalogIsCompressed),
+  margin: "300px 0px 100px -20px",
+  padding: "15px",
+  width: catalogIsCompressed ? "calc(100% - 280px)" : "calc(100% - 480px)",
+  height: "auto",
+  transition: "left 1s, width 1s",
+});
+
 export const imageStyleWebTablet = (catalogIsCompressed) => ({
   left: catalogIsCompressed ? "118px" : "90px",
   margin: "350px 0px 100px -20px",
