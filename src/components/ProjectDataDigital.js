@@ -428,6 +428,7 @@ const consultancyProject = (catalogIsCompressed) => ({
       backgroundColor: "#fdeaef",
       padding: "0px",
       margin: "50px",
+      width: "auto",
     },
     individual: [
       { ...imageStyleWebMainDynamicWidth(catalogIsCompressed) },
@@ -451,7 +452,7 @@ const consultancyProject = (catalogIsCompressed) => ({
 const professionalServicesDesignProject = (catalogIsCompressed) => ({
   ...consultancyProject(catalogIsCompressed),
   id: "professionalServices",
-  title: "Professional Services",
+  title: "Professional Services Portal",
   description:
     "Crafting digital products to streamline professional services, focusing on automating tasks like risk assurance and tax advisory to enhance efficiency and client satisfaction..",
   descriptionShort:
@@ -464,6 +465,17 @@ const professionalServicesDesignProject = (catalogIsCompressed) => ({
   ],
 });
 
+const retailDesignProject = (catalogIsCompressed) => ({
+  ...consultancyProject(catalogIsCompressed),
+  id: "retail",
+  title: "E-Commerce Website",
+  description:
+    "Creating a seamless online shopping experience through a responsive webshop, enhancing customer engagement and streamlining the retail journey from browsing to checkout.",
+  descriptionShort:
+    "Creating a seamless online shopping experience through a responsive webshop, enhancing customer engagement and streamlining the retail journey from browsing to checkout.",
+  images: ["retail1.png", "retail2.png", "retail3.png", "retail4.png"],
+});
+
 export const digitalProjects = (catalogIsCompressed) => [
   helfiDesignProject(catalogIsCompressed),
   anneliina2022DesignProject(catalogIsCompressed),
@@ -473,4 +485,5 @@ export const digitalProjects = (catalogIsCompressed) => [
   axiomDesignProject(catalogIsCompressed),
   anneliina2016DesignProject(catalogIsCompressed),
   professionalServicesDesignProject(catalogIsCompressed),
+  retailDesignProject(catalogIsCompressed),
 ];
