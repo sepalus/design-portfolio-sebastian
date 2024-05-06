@@ -476,9 +476,9 @@ const retailDesignProject = (catalogIsCompressed) => ({
   images: ["retail1.png", "retail2.png", "retail3.png", "retail4.png"],
 });
 
-const publicTransportProject = (catalogIsCompressed) => ({
+const publicTransportDesignProject = (catalogIsCompressed) => ({
   ...consultancyProject(catalogIsCompressed),
-  id: "retail",
+  id: "publicTransport",
   title: "HSL - Public Transportation",
   description:
     "Designing user-friendly digital products, that improve route planning for citizens and training for HSL employees, resulting in a better commuting experience.",
@@ -489,6 +489,32 @@ const publicTransportProject = (catalogIsCompressed) => ({
     "publicTransport2.png",
     "publicTransport3.png",
     "publicTransport4.png",
+  ],
+});
+const ministryDesignProject = (catalogIsCompressed) => ({
+  ...consultancyProject(catalogIsCompressed),
+  id: "ministry",
+  title: "Ministry of Justice",
+  description:
+    "Transforming legal processes by designing an award-winning intuitive digital service that digitizes court proceedings, enhancing efficiency and accessibility in the justice system.",
+  descriptionShort:
+    "Transforming legal processes by designing an award-winning intuitive digital service that digitizes court proceedings, enhancing efficiency and accessibility in the justice system.",
+  images: ["ministry1.png", "ministry2.png", "ministry3.png", "ministry4.png"],
+});
+
+const financialServicesDesignProject = (catalogIsCompressed) => ({
+  ...consultancyProject(catalogIsCompressed),
+  id: "financialServices",
+  title: "Financial Services Website",
+  description:
+    "Re-designing the company’s website to modernize its online presence, making financial information and services more accessible and user-friendly for clients.",
+  descriptionShort:
+    "Re-designing the company’s website to modernize its online presence, making financial information and services more accessible and user-friendly for clients.",
+  images: [
+    "financialServices1.png",
+    "financialServices2.png",
+    "financialServices3.png",
+    "financialServices4.png",
   ],
 });
 
@@ -502,5 +528,7 @@ export const digitalProjects = (catalogIsCompressed) => [
   anneliina2016DesignProject(catalogIsCompressed),
   professionalServicesDesignProject(catalogIsCompressed),
   retailDesignProject(catalogIsCompressed),
-  publicTransportProject(catalogIsCompressed),
+  publicTransportDesignProject(catalogIsCompressed),
+  ministryDesignProject(catalogIsCompressed),
+  financialServicesDesignProject(catalogIsCompressed),
 ];
