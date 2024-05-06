@@ -476,6 +476,22 @@ const retailDesignProject = (catalogIsCompressed) => ({
   images: ["retail1.png", "retail2.png", "retail3.png", "retail4.png"],
 });
 
+const publicTransportProject = (catalogIsCompressed) => ({
+  ...consultancyProject(catalogIsCompressed),
+  id: "retail",
+  title: "HSL - Public Transportation",
+  description:
+    "Designing user-friendly digital products, that improve route planning for citizens and training for HSL employees, resulting in a better commuting experience.",
+  descriptionShort:
+    "Designing user-friendly digital products, that improve route planning for citizens and training for HSL employees, resulting in a better commuting experience.",
+  images: [
+    "publicTransport1.png",
+    "publicTransport2.png",
+    "publicTransport3.png",
+    "publicTransport4.png",
+  ],
+});
+
 export const digitalProjects = (catalogIsCompressed) => [
   helfiDesignProject(catalogIsCompressed),
   anneliina2022DesignProject(catalogIsCompressed),
@@ -486,4 +502,5 @@ export const digitalProjects = (catalogIsCompressed) => [
   anneliina2016DesignProject(catalogIsCompressed),
   professionalServicesDesignProject(catalogIsCompressed),
   retailDesignProject(catalogIsCompressed),
+  publicTransportProject(catalogIsCompressed),
 ];
