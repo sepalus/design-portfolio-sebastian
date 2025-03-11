@@ -8,7 +8,7 @@ export default function Home() {
   const [previousYOffset, setPreviousYOffset] = useState(0);
   const [currentViewport, setCurrentViewport] = useState(0); // 0 === 'designer', 1 === 'product', 2 === 'service', 3 === 'aesthetics', 4 === 'information'
   const showFirstTimeViewport0 = useRef(true);
-  const sections = ["Home", "Digital", "Product", "About"];
+  const sections = ["Home", "Product", "Digital", "About"];
   const designerRef = useRef(null);
   const serviceRef = useRef(null);
   const productRef = useRef(null);
@@ -43,8 +43,8 @@ export default function Home() {
       const informationRefOffset = informationRef.current.offsetTop;
       const offsetBreakpoints = [
         designerRefOffset,
-        serviceRefOffset,
         productRefOffset,
+        serviceRefOffset,
         informationRefOffset,
       ];
 
@@ -79,18 +79,18 @@ export default function Home() {
   const selectViewport = (viewport, activeProjectFirstLast) => {
     if (typeof activeProjectFirstLast !== "undefined") {
       if (viewport === 1)
-        setActiveDigitalProjectFirstLast(activeProjectFirstLast);
-      else if (viewport === 2)
         setActiveProductProjectFirstLast(activeProjectFirstLast);
+      else if (viewport === 2)
+        setActiveDigitalProjectFirstLast(activeProjectFirstLast);
     }
 
     const ref =
       viewport === 3
         ? informationRef
         : viewport === 2
-        ? productRef
-        : viewport === 1
         ? serviceRef
+        : viewport === 1
+        ? productRef
         : designerRef;
 
     rootElement.scrollTo({
@@ -111,13 +111,13 @@ export default function Home() {
         isMobile={isMobile}
       />
       <ProjectSection
-        projectRef={serviceRef}
+        projectRef={productRef}
         designArea={1}
         currentViewport={currentViewport}
         selectViewport={selectViewport}
         sections={sections}
-        activeProjectFirstLast={activeDigitalProjectFirstLast}
-        setActiveProjectFirstLast={setActiveDigitalProjectFirstLast}
+        activeProjectFirstLast={activeProductProjectFirstLast}
+        setActiveProjectFirstLast={setActiveProductProjectFirstLast}
         isScrollSnapped={isScrollSnapped}
         windowWidth={windowWidth}
         windowHeight={windowHeight}
@@ -126,13 +126,13 @@ export default function Home() {
         isMobileExtraSmall={isMobileExtraSmall}
       />
       <ProjectSection
-        projectRef={productRef}
+        projectRef={serviceRef}
         designArea={2}
         currentViewport={currentViewport}
         selectViewport={selectViewport}
         sections={sections}
-        activeProjectFirstLast={activeProductProjectFirstLast}
-        setActiveProjectFirstLast={setActiveProductProjectFirstLast}
+        activeProjectFirstLast={activeDigitalProjectFirstLast}
+        setActiveProjectFirstLast={setActiveDigitalProjectFirstLast}
         isScrollSnapped={isScrollSnapped}
         windowWidth={windowWidth}
         windowHeight={windowHeight}
