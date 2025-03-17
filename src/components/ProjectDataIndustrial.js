@@ -239,14 +239,7 @@ const koloDesignProject = {
   isTeam: false,
   categories: ["Furniture Design", "Lamp Design", "Lighting Design"],
   displayableCategory: 1,
-  images: [
-    "kolo1.jpg",
-    "kolo2.jpg",
-    "kolo3.jpg",
-    "kolo4.jpg",
-    "kolo5.jpg",
-    "kolo6.jpg",
-  ],
+  images: ["kolo1.jpg", "kolo2.jpg", "kolo3.jpg", "kolo4.jpg", "kolo6.jpg"],
   descriptionStyle: {
     ...descriptionPlacementTopRightCorner,
     right: "60px",
@@ -641,16 +634,7 @@ const arkkiDesignProject = {
   isTeam: false,
   categories: ["Furniture Design", "Lamp Design", "Lighting Design"],
   displayableCategory: 1,
-  images: [
-    "arkki1.png",
-    "arkki2.png",
-    "arkki3.png",
-    "arkki4.png",
-    "arkki5.jpg",
-    "arkki6.jpg",
-    "arkki7.jpg",
-    "arkki8.jpg",
-  ],
+  images: ["arkki1.png", "arkki2.png", "arkki6.jpg", "arkki8.jpg"],
   descriptionStyle: {
     ...descriptionPlacementTopRightCorner,
     width: "280px",
